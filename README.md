@@ -18,8 +18,8 @@ Tres civilizaciones no humanas — **Micelios, Rúnicos y Ferrinos** — evoluci
 |---|---|
 | [`docs/`](docs/) | 62 capítulos Markdown (01–40 históricos vigentes salvo enmiendas; 41–62 nuevos y normativos donde se indique) |
 | [`data/`](data/) | Catálogos declarativos JSON, no lógica ejecutable |
-| [`architecture/`](architecture/) | Modelo SQL de referencia **sin ejecutar** y transacciones conceptuales |
-| [`contracts/`](contracts/) | JSON Schema/OpenAPI/SignalR de diseño, aún no sincronizados con módulos nuevos v2.2 |
+| [`architecture/`](architecture/) | Modelo SQL base y anexo v2.2 de diseño **sin ejecutar**; transacciones conceptuales |
+| [`contracts/`](contracts/) | JSON Schema/OpenAPI/SignalR de diseño y anexo v2.2, aún no consolidados en versión API operativa |
 | [`audit/`](audit/) | Registro histórico, riesgos, checksums y simulación simplificada no autoritativa |
 | [`PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md`](PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md) | Compendio **histórico v2.1**, no prevalece sobre correcciones v2.2 |
 

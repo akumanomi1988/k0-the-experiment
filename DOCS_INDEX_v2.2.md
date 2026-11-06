@@ -73,7 +73,7 @@
 - [Edificios básicos](data/buildings.v2.json), [proyectos y maravillas](data/strategic_projects.v2.json), [tecnologías](data/technologies.v2.json), [hitos](data/milestones.v2.json), [profesiones](data/professions.v2.json) y [habilidades](data/skills.v2.json).
 - [Combate automático v2.2](data/combat_units.v2.2.json), [cosméticos de patrocinio v2.2](data/cosmetic_sponsorship.v2.2.json).
 - [Especificación de arte](data/art_spec.v2.json), [facciones](data/factions.v2.json).
-- [Arquitectura SQL propuesta](architecture/001_schema_v2.sql), [contratos API](contracts/openapi.v2.yaml).
+- [Arquitectura SQL propuesta](architecture/001_schema_v2.sql), [anexo SQL v2.2](architecture/002_extensiones_diseno_v2.2.sql), [contratos API](contracts/openapi.v2.yaml) y [anexo de contratos v2.2](contracts/extensiones_lectura_v2.2.md).
 - [Auditoría y gates externos](audit/EXTERNAL_GATES.md), [criterio D0–D4](docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md).
 
 **Vigencia:** el compendio `PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md` y el manifiesto v2.1 son archivo histórico; no contienen enmiendas posteriores.

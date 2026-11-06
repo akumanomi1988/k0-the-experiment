@@ -23,7 +23,7 @@ Escritor único lógico por nación, más arbitraje global por temporada para pr
 
 ## Entidades clave
 
-`Campaign`, `Season`, `Nation`, `ChannelBinding`, `ProviderIdentity`, `Citizen`, `CitizenSkill`, `ResourceBalance`, `ResourceLedger`, `GoldDebt`, `Building`, `TechnologyProgress`, `MilestoneProgress`, `MissionPeriod`, `GovernmentElection`, `StrategicBallot`, `RpsRound`, `CompetitionEvent`, `WonderClaim`, `NarrationCue`, `AuditLog`, `Snapshot`, `Inbox`, `Outbox`. V2.2 introduce además estados conceptuales `GarrisonUnit`, `AutomatedBattle`, `CosmeticSponsorship`; **el DDL actual debe ampliarse antes de implementar**. Ninguna nueva entidad necesita un microservicio propio en fase 1.
+`Campaign`, `Season`, `Nation`, `ChannelBinding`, `ProviderIdentity`, `Citizen`, `CitizenSkill`, `ResourceBalance`, `ResourceLedger`, `GoldDebt`, `Building`, `TechnologyProgress`, `MilestoneProgress`, `MissionPeriod`, `GovernmentElection`, `StrategicBallot`, `RpsRound`, `CompetitionEvent`, `WonderClaim`, `NarrationCue`, `AuditLog`, `Snapshot`, `Inbox`, `Outbox`. V2.2 introduce además estados conceptuales `GarrisonUnit`, `AutomatedBattle`, `CosmeticSponsorship`; **el DDL base se acompaña del anexo de diseño `architecture/002_extensiones_diseno_v2.2.sql`, todavía no ensayado ni integrado en migraciones**. Ninguna nueva entidad necesita un microservicio propio en fase 1.
 
 ## API y presencia
 

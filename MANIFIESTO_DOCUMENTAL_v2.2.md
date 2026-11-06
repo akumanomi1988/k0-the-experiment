@@ -2,15 +2,16 @@
 
 **Inventario de bytes; no certificación funcional, visual ni legal.** El manifiesto v2.1 queda archivado y no prevalece sobre esta revisión.
 
-Archivos enumerados (sin este manifiesto): 105. Tipos: {'.md': 72, '.sql': 1, '.json': 31, '.yaml': 1}.
+Archivos enumerados (sin este manifiesto): 107. Tipos: {'.md': 73, '.sql': 2, '.json': 31, '.yaml': 1}.
 
 | Archivo | Tamaño (bytes) | SHA-256 |
 |---|---:|---|
-| `DOCS_INDEX_v2.2.md` | 8424 | `896c6b78eab93b9d5721815fe576d3b51de37a2fb04fa025d66760d0615a2a7b` |
+| `DOCS_INDEX_v2.2.md` | 8555 | `3c64097c286ad6646e2cf71d075d62ed7a1741e208c37559a68c468db839c66b` |
 | `MANIFIESTO_DOCUMENTAL_v2.1.md` | 9724 | `81202048c6f416007482121716b3cad14974f23d0f91a1893fdb770fd81c0a08` |
 | `PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md` | 194767 | `55700409568747422e98684eb062d273e3b6845e47dc07f30c1af188455faef1` |
-| `README.md` | 4066 | `88630a9dceefb57b36eb8b516896c8feeab30beb4b58fea566bb6efc8012439d` |
+| `README.md` | 4093 | `121719721611ef27c19dfbd88de60a3f6a10bcd98fe33ab12cb3dcfc0965c8f4` |
 | `architecture/001_schema_v2.sql` | 13750 | `6b38521412cbe55126c4b93035fa547959100a0927204b47cc3ef622a04a1291` |
+| `architecture/002_extensiones_diseno_v2.2.sql` | 3552 | `914050517fd1b93875c9fe9d548948162afb9cb91cab5b734c60adbf734db69e` |
 | `architecture/02_TRANSACTIONS_Y_INVARIANTES.md` | 3829 | `5f1fbb1cd68c721e36b9d81f50fb750814b3620af15e96d0bacac6ff83725c60` |
 | `architecture/README.md` | 1988 | `5e884451840e8db2af4917fb4a8c1123f57cc1f7694403dfec9f55c3a6f19bf3` |
 | `audit/BALANCE_SIMULATION_REFERENCE.json` | 4376 | `81460b1fd64877a4765d4db1a22fbc01929be38878fdd91b4ed9077176f51532` |
@@ -19,6 +20,7 @@ Archivos enumerados (sin este manifiesto): 105. Tipos: {'.md': 72, '.sql': 1, '.
 | `audit/RULESET_AND_CONTENT_HASHES.md` | 453 | `0691d0b9fc989266ef8754fc2102ca3f3f304408178ef514d9bf6ad7cb4ee0b3` |
 | `audit/decision_traceability.json` | 18819 | `5e274e1615909bbe8c1a2d9b3b523ca631743ed11a5c9ac29f35ca1301cee04f` |
 | `contracts/channel_binding.schema.json` | 2970 | `abded36bab95b2414132a682aa3e421c3940b9a2d8eacf9331fd44456e2488a9` |
+| `contracts/extensiones_lectura_v2.2.md` | 2491 | `d9a2ec181053338733930eaf39d32fc35d7cb0be420b2ac5ec21676596d7d610` |
 | `contracts/nation_delta.schema.json` | 2106 | `20b18eed94e64ae6f4a609379663789d2efbdaa96ee426ed1516b90d18b7965e` |
 | `contracts/normalized_event.schema.json` | 1876 | `12d4314597b5b964a8b9ee3638186f8302a1b79e9983a2fefe1ab2dd33a74b26` |
 | `contracts/openapi.v2.yaml` | 6193 | `10dc46f27a0004af954340b34c6601fd127e550e3979be042a46d985f13356e5` |
@@ -89,7 +91,7 @@ Archivos enumerados (sin este manifiesto): 105. Tipos: {'.md': 72, '.sql': 1, '.
 | `docs/38_PRUEBAS_ACEPTACION_EN_LENGUAJE_NATURAL.md` | 4033 | `17f324ee65cc74866ba135b74a3c6ded38c934d816202e02d5e7a1b5d7b312f4` |
 | `docs/39_REGISTRO_DE_CIERRE_Y_VALIDACIONES_EXTERNAS.md` | 3123 | `437ca49d7646f8605564236056ceea047fb77297f144aaae238287710b609b52` |
 | `docs/40_DESCRIPCION_NO_FUNCIONAL_Y_CALIDAD.md` | 2738 | `ecdc71f6f33ed44b46238687cdc042b3504ebe2d2bf97448bbc23a55b40aaa9f` |
-| `docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA_v2.2.md` | 6612 | `e1a48f7098065014c523f72fa0111e3cca4442e0d821937e577db0f3e902ed1f` |
+| `docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA_v2.2.md` | 6730 | `639b179dcdfc91016b720293188c947c99276c17d6b22079ecfb4d94c188e883` |
 | `docs/42_CONTRATOS_DE_ESTADOS_Y_TIEMPO_v2.2.md` | 4484 | `0ad45d294a32edc771a4cfbf82bf4e8873f92e75abc68171b7553800e12a254d` |
 | `docs/43_EJERCITOS_Y_COMBATE_AUTOMATICO_v2.2.md` | 5067 | `139f474f9f7cea53031a2638c03e13591d4c83e229b7030ccd76a846747db0df` |
 | `docs/44_CONSEJO_GRATUITO_PATROCINIO_Y_ECONOMIA_v2.2.md` | 3887 | `fe728705ed4c385a34cc89e4d5eb2dd1e508e57be8e524b9ca6b777d758cad7a` |
@@ -103,11 +105,11 @@ Archivos enumerados (sin este manifiesto): 105. Tipos: {'.md': 72, '.sql': 1, '.
 | `docs/52_CALENDARIO_DE_EMISION_Y_EVENTOS_v2.2.md` | 3374 | `ee3574812f3cec0f0a2f52190a186846e207dc7141321a72672029ca3652366d` |
 | `docs/53_MATRIZ_DE_INTEGRACIONES_LIVE_v2.2.md` | 3950 | `7887777318c5b053929177397d878e3d723db273b1f755e6f167207a441f8039` |
 | `docs/54_SEGURIDAD_PRIVACIDAD_Y_DATOS_v2.2.md` | 3744 | `b4ca9a01cc4f5dc8884976bd5fbc8bfeefdb58d861035d2be63aa709aa82c8a1` |
-| `docs/55_ARQUITECTURA_TECNICA_Y_LIMITES_v2.2.md` | 4005 | `fbabe62bb9e446805f1b19ed81acbe38e160a4662d47b0bb99774bdb49ec2044` |
+| `docs/55_ARQUITECTURA_TECNICA_Y_LIMITES_v2.2.md` | 4098 | `132674b439f7b3c0892f48af6bfb1bb90f3c9c440536af863f1ba626c738905e` |
 | `docs/56_MODELO_DE_BALANCE_Y_PRUEBAS_NUMERICAS_v2.2.md` | 4268 | `92e8b67df45f5fd05042864c467e412eaac39bb81daca1b11fc5e80fc61e99ea` |
 | `docs/57_MATRIZ_DE_PRUEBAS_Y_CRITERIOS_DE_ACEPTACION_v2.2.md` | 4081 | `8b981b0250529e437204dbc77ae099cbbb0a9f7d0c5594ac8cc341d0dffab8ac` |
 | `docs/58_IDENTIDAD_DE_PRODUCTO_Y_DESCUBRIMIENTO_v2.2.md` | 2668 | `5afdb5c713c53cd7682a821fbadf03ed642dab9fab3695ffe67a5df2aa67d1f3` |
 | `docs/59_PRODUCTO_NEGOCIO_Y_COSTES_v2.2.md` | 3015 | `1022b66b8d309d7cb65568b55129131ddba460154cc25141413775364277f55f` |
-| `docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md` | 3618 | `3a9cf2e67770a20892f63a7a9000152da40fb7c9830910f6213ec64b69e3b347` |
+| `docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md` | 3638 | `cfec9c2ba683acacb0fccbb81da9b9ddbe1c7833c134f48c423d34d9da9c0e71` |
 | `docs/61_CATALOGO_ARTISTICO_DE_EDIFICIOS_Y_MARAVILLAS_v2.2.md` | 15818 | `44c704acd28b91e41a6c8b20035816c0e2f7ab29febbb713570166b7cf1b7d1b` |
 | `docs/62_PERSONAJES_NPC_Y_EVOLUCION_ESTETICA_v2.2.md` | 6231 | `d738df75af99b4420b744154ad74f019104263e44abd7340b5436ec7615076a8` |

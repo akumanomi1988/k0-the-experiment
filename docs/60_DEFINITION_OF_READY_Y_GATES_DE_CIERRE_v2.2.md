@@ -24,7 +24,7 @@
 
 ## Gate de cierre técnico
 
-- [ ] SQL actualizado para combate, patrocinios y demás nuevos estados; migraciones reales ejecutadas con tests transaccionales.
+- [ ] Anexo SQL v2.2 integrado y validado para combate, patrocinios y demás nuevos estados; migraciones reales ejecutadas con tests transaccionales.
 - [ ] Contratos REST/SignalR actualizados a las entidades efectivas y sus versiones.
 - [ ] Ingesta idempotente, escritura única, determinismo, replays y backups restaurados con evidencia.
 - [ ] Pruebas de carga y mediciones de costes con perfiles realistas y 30 FPS OBS estable.
