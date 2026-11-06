@@ -5,7 +5,8 @@
   "sourcePriority": [
     "latest-explicit-user-message",
     "confirmed-user-decisions-1-92",
-    "v2-canonical-rules",
+    "v2.2-amendments-and-catalogs",
+    "v2-canonical-rules-unless-amended",
     "v2-typed-data",
     "v1-historical-reference"
   ],
@@ -158,7 +159,8 @@
     "mapInitialHeight": 48,
     "expandTileMarginPerEra": 8,
     "mapMaxWidth": 256,
-    "mapMaxHeight": 256
+    "mapMaxHeight": 256,
+    "workshopResearchRequireEraTech": true
   },
   "progression": {
     "eras": [
@@ -224,7 +226,10 @@
     "tie": "uniform_seeded_random_among_tied",
     "costPayment": "atomic_full_on_approval",
     "cancelReleasesHold": true,
-    "wonderClaim": "global_atomic_first_completed"
+    "wonderClaim": "global_atomic_first_completed",
+    "requiresGoldForCouncilOrWonders": false,
+    "goldPrestigeOnlyAndSeparateCosmeticSponsorship": true,
+    "cosmeticSponsorshipCatalog": "cosmetic_sponsorship.v2.2.json"
   },
   "tournaments": {
     "kind": "triangular_rps",
@@ -249,7 +254,11 @@
     "territoryMaxNationOutputShareBp": 1000,
     "drawAfterExtraRounds": "joint_winners_no_penalty",
     "noGoldRewardsOrLosses": true,
-    "allowAutomaticAttacks": false
+    "allowAutomaticAttacks": false,
+    "automatedBattleCatalog": "combat_units.v2.2.json",
+    "automatedBattleScheduledOnly": true,
+    "automatedBattleCooldownLiveHours": 24,
+    "automatedBattleNoGoldNoPermaLoss": true
   },
   "missions": {
     "timezone": "UTC",
@@ -290,7 +299,8 @@
     "visibleCharacterTargetVertical": 45,
     "visibleCharacterTargetHorizontal": 90,
     "cosmeticBiomesOnly": true,
-    "approvedFinalSprites": false
+    "approvedFinalSprites": false,
+    "combatUnitSkinsThreeFactions": true
   },
   "operator": {
     "fullLiveUnattendedAllowed": false,

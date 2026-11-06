@@ -1,0 +1,949 @@
+{
+  "schemaVersion": "2.2.0",
+  "status": "DESIGN_BASELINE_UNVALIDATED",
+  "unitFamilies": [
+    "guard",
+    "scout",
+    "heavy"
+  ],
+  "units": [
+    {
+      "id": "paleolithic_guard",
+      "eraIndex": 1,
+      "eraId": "paleolithic",
+      "displayName": "Vigía",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 12,
+      "costPerNewUnit": {
+        "wood": 1,
+        "stone": 1,
+        "ore": 0
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "paleolithic_scout",
+      "eraIndex": 1,
+      "eraId": "paleolithic",
+      "displayName": "Batidor",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 12,
+      "costPerNewUnit": {
+        "wood": 1,
+        "stone": 1,
+        "ore": 0
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "paleolithic_heavy",
+      "eraIndex": 1,
+      "eraId": "paleolithic",
+      "displayName": "Defensor pétreo",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 12,
+      "costPerNewUnit": {
+        "wood": 1,
+        "stone": 1,
+        "ore": 0
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "neolithic_guard",
+      "eraIndex": 2,
+      "eraId": "neolithic",
+      "displayName": "Centinela",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 14,
+      "costPerNewUnit": {
+        "wood": 1,
+        "stone": 1,
+        "ore": 0
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "neolithic_scout",
+      "eraIndex": 2,
+      "eraId": "neolithic",
+      "displayName": "Rastreador",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 14,
+      "costPerNewUnit": {
+        "wood": 1,
+        "stone": 1,
+        "ore": 0
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "neolithic_heavy",
+      "eraIndex": 2,
+      "eraId": "neolithic",
+      "displayName": "Muralla viva",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 14,
+      "costPerNewUnit": {
+        "wood": 1,
+        "stone": 1,
+        "ore": 0
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "copper_guard",
+      "eraIndex": 3,
+      "eraId": "copper",
+      "displayName": "Guardia de cobre",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 16,
+      "costPerNewUnit": {
+        "wood": 1,
+        "stone": 1,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "copper_scout",
+      "eraIndex": 3,
+      "eraId": "copper",
+      "displayName": "Corredor",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 16,
+      "costPerNewUnit": {
+        "wood": 1,
+        "stone": 1,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "copper_heavy",
+      "eraIndex": 3,
+      "eraId": "copper",
+      "displayName": "Portador de escudo",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 16,
+      "costPerNewUnit": {
+        "wood": 1,
+        "stone": 1,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "bronze_guard",
+      "eraIndex": 4,
+      "eraId": "bronze",
+      "displayName": "Lancero",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 18,
+      "costPerNewUnit": {
+        "wood": 2,
+        "stone": 1,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "bronze_scout",
+      "eraIndex": 4,
+      "eraId": "bronze",
+      "displayName": "Explorador de frontera",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 18,
+      "costPerNewUnit": {
+        "wood": 2,
+        "stone": 1,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "bronze_heavy",
+      "eraIndex": 4,
+      "eraId": "bronze",
+      "displayName": "Custodio de bronce",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 18,
+      "costPerNewUnit": {
+        "wood": 2,
+        "stone": 1,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "iron_guard",
+      "eraIndex": 5,
+      "eraId": "iron",
+      "displayName": "Guardián férreo",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 20,
+      "costPerNewUnit": {
+        "wood": 2,
+        "stone": 2,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "iron_scout",
+      "eraIndex": 5,
+      "eraId": "iron",
+      "displayName": "Hostigador",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 20,
+      "costPerNewUnit": {
+        "wood": 2,
+        "stone": 2,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "iron_heavy",
+      "eraIndex": 5,
+      "eraId": "iron",
+      "displayName": "Bastión de hierro",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 20,
+      "costPerNewUnit": {
+        "wood": 2,
+        "stone": 2,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "antiquity_guard",
+      "eraIndex": 6,
+      "eraId": "antiquity",
+      "displayName": "Legionario",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 22,
+      "costPerNewUnit": {
+        "wood": 2,
+        "stone": 2,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "antiquity_scout",
+      "eraIndex": 6,
+      "eraId": "antiquity",
+      "displayName": "Correo",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 22,
+      "costPerNewUnit": {
+        "wood": 2,
+        "stone": 2,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "antiquity_heavy",
+      "eraIndex": 6,
+      "eraId": "antiquity",
+      "displayName": "Custodio de ciudad",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 22,
+      "costPerNewUnit": {
+        "wood": 2,
+        "stone": 2,
+        "ore": 1
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "medieval_guard",
+      "eraIndex": 7,
+      "eraId": "medieval",
+      "displayName": "Centinela de torre",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 24,
+      "costPerNewUnit": {
+        "wood": 3,
+        "stone": 2,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "medieval_scout",
+      "eraIndex": 7,
+      "eraId": "medieval",
+      "displayName": "Avanzadilla",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 24,
+      "costPerNewUnit": {
+        "wood": 3,
+        "stone": 2,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "medieval_heavy",
+      "eraIndex": 7,
+      "eraId": "medieval",
+      "displayName": "Guardián acorazado",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 24,
+      "costPerNewUnit": {
+        "wood": 3,
+        "stone": 2,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "renaissance_guard",
+      "eraIndex": 8,
+      "eraId": "renaissance",
+      "displayName": "Guardia de academia",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 26,
+      "costPerNewUnit": {
+        "wood": 3,
+        "stone": 2,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "renaissance_scout",
+      "eraIndex": 8,
+      "eraId": "renaissance",
+      "displayName": "Cartógrafo",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 26,
+      "costPerNewUnit": {
+        "wood": 3,
+        "stone": 2,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "renaissance_heavy",
+      "eraIndex": 8,
+      "eraId": "renaissance",
+      "displayName": "Artillero ceremonial",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 26,
+      "costPerNewUnit": {
+        "wood": 3,
+        "stone": 2,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "industrial_guard",
+      "eraIndex": 9,
+      "eraId": "industrial",
+      "displayName": "Defensor industrial",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 28,
+      "costPerNewUnit": {
+        "wood": 3,
+        "stone": 3,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "industrial_scout",
+      "eraIndex": 9,
+      "eraId": "industrial",
+      "displayName": "Observador",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 28,
+      "costPerNewUnit": {
+        "wood": 3,
+        "stone": 3,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "industrial_heavy",
+      "eraIndex": 9,
+      "eraId": "industrial",
+      "displayName": "Autómata de defensa",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 28,
+      "costPerNewUnit": {
+        "wood": 3,
+        "stone": 3,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "modern_guard",
+      "eraIndex": 10,
+      "eraId": "modern",
+      "displayName": "Guardia técnica",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 30,
+      "costPerNewUnit": {
+        "wood": 4,
+        "stone": 3,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "modern_scout",
+      "eraIndex": 10,
+      "eraId": "modern",
+      "displayName": "Reconocedor",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 30,
+      "costPerNewUnit": {
+        "wood": 4,
+        "stone": 3,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "modern_heavy",
+      "eraIndex": 10,
+      "eraId": "modern",
+      "displayName": "Unidad blindada",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 30,
+      "costPerNewUnit": {
+        "wood": 4,
+        "stone": 3,
+        "ore": 2
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "digital_guard",
+      "eraIndex": 11,
+      "eraId": "digital",
+      "displayName": "Centinela de datos",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 32,
+      "costPerNewUnit": {
+        "wood": 4,
+        "stone": 3,
+        "ore": 3
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "digital_scout",
+      "eraIndex": 11,
+      "eraId": "digital",
+      "displayName": "Explorador de red",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 32,
+      "costPerNewUnit": {
+        "wood": 4,
+        "stone": 3,
+        "ore": 3
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "digital_heavy",
+      "eraIndex": 11,
+      "eraId": "digital",
+      "displayName": "Núcleo protector",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 32,
+      "costPerNewUnit": {
+        "wood": 4,
+        "stone": 3,
+        "ore": 3
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "space_guard",
+      "eraIndex": 12,
+      "eraId": "space",
+      "displayName": "Guardia orbital",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 34,
+      "costPerNewUnit": {
+        "wood": 4,
+        "stone": 3,
+        "ore": 3
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "space_scout",
+      "eraIndex": 12,
+      "eraId": "space",
+      "displayName": "Rastreador astral",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 34,
+      "costPerNewUnit": {
+        "wood": 4,
+        "stone": 3,
+        "ore": 3
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "space_heavy",
+      "eraIndex": 12,
+      "eraId": "space",
+      "displayName": "Protector espacial",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 34,
+      "costPerNewUnit": {
+        "wood": 4,
+        "stone": 3,
+        "ore": 3
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "interstellar_guard",
+      "eraIndex": 13,
+      "eraId": "interstellar",
+      "displayName": "Centinela estelar",
+      "role": "guard",
+      "combatPowerBp": 10000,
+      "baseStrengthPoints": 36,
+      "costPerNewUnit": {
+        "wood": 5,
+        "stone": 4,
+        "ore": 3
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "interstellar_scout",
+      "eraIndex": 13,
+      "eraId": "interstellar",
+      "displayName": "Navegante",
+      "role": "scout",
+      "combatPowerBp": 8500,
+      "baseStrengthPoints": 36,
+      "costPerNewUnit": {
+        "wood": 5,
+        "stone": 4,
+        "ore": 3
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    },
+    {
+      "id": "interstellar_heavy",
+      "eraIndex": 13,
+      "eraId": "interstellar",
+      "displayName": "Bastión cuántico",
+      "role": "heavy",
+      "combatPowerBp": 11500,
+      "baseStrengthPoints": 36,
+      "costPerNewUnit": {
+        "wood": 5,
+        "stone": 4,
+        "ore": 3
+      },
+      "spawnEveryLiveSecondsPerDefenseSite": 1200,
+      "maxUnitsPerDefenseSite": 6,
+      "factionSkins": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ],
+      "noPermanentDeath": true,
+      "notSpawnedDuringOffline": true
+    }
+  ],
+  "garrisonPolicy": {
+    "startUnits": 0,
+    "maxUnitsPerNation": 120,
+    "spawnSource": "completed_current_or_old_defense_building",
+    "siteCap": 6,
+    "nationalCap": 120,
+    "spawnCycleLiveSeconds": 1200,
+    "spawnRoleCycle": [
+      "guard",
+      "scout",
+      "heavy"
+    ],
+    "oneNewUnitPerEligibleSitePerCycle": true,
+    "skipIfWouldBreakProtectedOrdinaryResourceReserve": true,
+    "protectedReserveFormula": "max(24h_npc_food_upkeep, next_mandatory_civic_cost_per_resource)",
+    "noGoldEver": true
+  },
+  "eventPolicy": {
+    "type": "automated_defense_tournament",
+    "operatorScheduledOnly": true,
+    "allThreeNationsLive": true,
+    "maximumPerCampaignLiveDay": 1,
+    "roundRobinPairs": [
+      "micelios-runicos",
+      "runicos-ferrinos",
+      "ferrinos-micelios"
+    ],
+    "attacksOutsideEvents": false,
+    "unitsOnlyVirtualOffensiveRole": true,
+    "combatStrengthFormula": "sum(floor(baseStrengthPoints*combatPowerBp/10000) per garrison unit) with government and priority bonus on defensive side; use 64-bit integer and single final floor",
+    "pairOutcome": "higher_strength_wins; equal_strength_draw; no randomness",
+    "winPoints": 2,
+    "drawPoints": 1,
+    "lossPoints": 0,
+    "tiePolicy": "joint_leaders_no_penalty",
+    "penaltyPolicy": "same_scope_as_rps_max_2pct_wood_stone_and_1800_live_seconds_territory; no_double_penalty_stack",
+    "eligibility": "no combat if any faction has zero defense buildings: postpone with reason; max age gap two eras, otherwise postpone",
+    "noGoldNoBuildingDestruction": true,
+    "noUnitPermaDeath": true,
+    "noRealValuePrizes": true
+  }
+}

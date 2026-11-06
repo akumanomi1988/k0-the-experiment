@@ -1,42 +1,41 @@
-# K0: The Experiment
+# K0: The Experiment — Game Design & Technical Specification
 
-**Estado del proyecto:** diseño y especificación. **No existe todavía un videojuego implementado.**
+> **Estado: DISEÑO DOCUMENTAL v2.2 / SIN JUEGO IMPLEMENTADO.** Repositorio canónico público. Google Drive queda como respaldo histórico. No hay código de aplicación, scripts, CI/CD ni infraestructura desplegada.
 
-K0: The Experiment es el título de trabajo del videojuego interactivo anteriormente documentado como **Project CHAOS**. Doctor K-0, un científico cyborg, presenta una competición entre tres civilizaciones que evolucionan a través de las eras bajo la influencia de los espectadores de emisiones en directo. La dirección artística prevista es pixel art retro 2D de baja resolución y perspectiva oblicua/isométrica.
+Tres civilizaciones no humanas — **Micelios, Rúnicos y Ferrinos** — evolucionan desde el Paleolítico hasta la Era Interestelar en un espectáculo interactivo presentado por **Doctor K-0**, científico cyborg neutral. Los espectadores participan desde tres fuentes de chat diferenciadas (mismo proveedor o varios, cuando existan permisos). Estilo propuesto: pixel art retro 2D de baja resolución, proyección oblicua 2:1.
 
-> **Repositorio canónico:** este repositorio GitHub es la fuente principal de la documentación vigente. Las copias de Google Drive y los paquetes ZIP anteriores son respaldos históricos, no la fuente de modificaciones futuras.
+## Empieza aquí
 
-## Contenido
+1. **[Auditoría de alcance y correcciones v2.2](docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA_v2.2.md)** — qué está y no está cerrado.
+2. **[Índice de los 62 capítulos](DOCS_INDEX_v2.2.md)** — navegación de todo el diseño.
+3. **[Visión y reglas de base](docs/01_VISION_Y_ALCANCE.md)**, **[economía](docs/04_ECONOMIA_Y_BALANCE.md)**, **[progresión](docs/07_PROGRESION_TECNOLOGICA_Y_TEMPORADAS.md)**.
+4. **[Universo y personajes](docs/25_BIBLIA_NARRATIVA_UNIVERSO_Y_PERSONAJES.md)**, **[estilo visual](docs/46_MANUAL_DE_ESTILO_PIXEL_ART_v2.2.md)**, **[HUD](docs/47_LAYOUT_HUD_Y_ESCENAS_PIXEL_PERFECT_v2.2.md)**.
+5. **[Contratos de integridad](docs/42_CONTRATOS_DE_ESTADOS_Y_TIEMPO_v2.2.md)**, **[arquitectura](docs/55_ARQUITECTURA_TECNICA_Y_LIMITES_v2.2.md)** y **[criterios de cierre](docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md)**.
 
-| Ruta | Función |
-| --- | --- |
-| [`PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md`](PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md) | Especificación maestra consolidada. Conserva la denominación interna histórica. |
-| [`docs/`](docs/) | **40 capítulos** de mecánicas, economía, progresión, público, narrativa, arte, operación, calidad y aceptación. |
-| [`data/`](data/) | **JSON declarativos**: 3 facciones, 13 eras, 5 oficios, 130 edificios básicos, 39 proyectos, 13 maravillas, 65 hitos, 39 tecnologías, 30 habilidades, gobiernos y reglas. |
-| [`architecture/`](architecture/) | Arquitectura conceptual y esquema SQL **propuesto**, no desplegado ni probado. |
-| [`contracts/`](contracts/) | Contratos de diseño JSON Schema, OpenAPI y SignalR; **no** son servicios implementados. |
-| [`audit/`](audit/) | Trazabilidad, decisiones, limitaciones y verificaciones aún pendientes. |
-| [`MANIFIESTO_DOCUMENTAL_v2.1.md`](MANIFIESTO_DOCUMENTAL_v2.1.md) | Inventario y hashes de integridad de los archivos de documentación. |
+## Directorios
 
-## Orden de lectura
+| Ruta | Contenido |
+|---|---|
+| [`docs/`](docs/) | 62 capítulos Markdown (01–40 históricos vigentes salvo enmiendas; 41–62 nuevos y normativos donde se indique) |
+| [`data/`](data/) | Catálogos declarativos JSON, no lógica ejecutable |
+| [`architecture/`](architecture/) | Modelo SQL de referencia **sin ejecutar** y transacciones conceptuales |
+| [`contracts/`](contracts/) | JSON Schema/OpenAPI/SignalR de diseño, aún no sincronizados con módulos nuevos v2.2 |
+| [`audit/`](audit/) | Registro histórico, riesgos, checksums y simulación simplificada no autoritativa |
+| [`PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md`](PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md) | Compendio **histórico v2.1**, no prevalece sobre correcciones v2.2 |
 
-1. [Glosario y jerarquía de fuentes](docs/23_GLOSARIO_JERARQUIA_Y_LIMITE_DE_DISENO.md).
-2. [Visión del juego](docs/01_VISION_Y_ALCANCE.md) y [decisiones corregidas](docs/18_DECISIONES_DE_BASE_CORREGIDAS.md).
-3. [Funcionamiento de las tres cuentas y naciones](docs/02_CANALES_CUENTAS_Y_NACIONES.md), [economía](docs/04_ECONOMIA_Y_BALANCE.md) y [progresión](docs/07_PROGRESION_TECNOLOGICA_Y_TEMPORADAS.md).
-4. [Universo y personajes](docs/25_BIBLIA_NARRATIVA_UNIVERSO_Y_PERSONAJES.md), [biblia visual](docs/26_BIBLIA_VISUAL_FACCIONES_EPOCAS_Y_SILUETAS.md) y [experiencia del espectador](docs/24_RECORRIDOS_ESPECTADOR_Y_CIUDADANIA.md).
-5. [Catálogo de edificios](docs/34_CATALOGO_LEGIBLE_EDIFICIOS.md), [proyectos y maravillas](docs/35_CATALOGO_LEGIBLE_PROYECTOS_Y_MARAVILLAS.md), [tecnologías e hitos](docs/36_CATALOGO_LEGIBLE_TECNOLOGIAS_E_HITOS.md), [profesiones, habilidades y gobiernos](docs/37_CATALOGO_LEGIBLE_PROFESIONES_HABILIDADES_GOBIERNOS.md).
-6. [Condiciones externas pendientes](audit/EXTERNAL_GATES.md) y [registro de cierre](docs/39_REGISTRO_DE_CIERRE_Y_VALIDACIONES_EXTERNAS.md).
+## Revisiones relevantes v2.2
 
-## Autoridad documental
+- Todos los **39 proyectos de Consejo** y **13 maravillas** tienen coste de oro igual a **cero** para mantener participación gratuita. El oro verificado, si se habilita, se dedica a cosméticos no competitivos.
+- Tecnologías troncales ahora se corresponden con prerrequisitos reales de talleres y centros de investigación.
+- Nueva definición de **guarniciones y 39 unidades de combate automático**; **no** es código funcional ni balance probado.
+- Manuales ampliados de estética, sonido, composición de pantalla, K-0, UX, streaming, proveedores, seguridad, arquitectura, balance, QA y aceptación.
 
-Las **92 decisiones originales** y los valores de diseño siguen conservados. Para conflictos se aplica la [jerarquía de fuentes](docs/23_GLOSARIO_JERARQUIA_Y_LIMITE_DE_DISENO.md). El nombre público **K0: The Experiment** sustituye a *Project CHAOS* como identificación del producto; los identificadores y títulos internos `CHAOS` se mantienen por trazabilidad documental hasta una revisión controlada.
+## Jerarquía de decisiones
 
-La instrucción histórica de no crear repositorios, presente en documentos v2.1, queda **sustituida exclusivamente** por la decisión posterior del propietario de versionar esta documentación en GitHub. Continúa vigente la restricción de **no desarrollar código de aplicación por ahora**.
+Mensaje explícito posterior del propietario → 92 decisiones originales confirmadas (salvo sustituciones trazadas) → enmiendas documentadas v2.2 → datos canónicos → documentos heredados 01–40 → históricos anteriores. Las enmiendas D-01–D-10 se explican en `docs/41`.
 
-Este repositorio no contiene Python, Docker, CI/CD, secretos ni backend/frontend. Los archivos SQL, YAML y JSON son propuestas de diseño, no una implementación.
+**No se presume que todo esté validado.** Los artefactos visuales siguen sin dibujar/aprobar; el juego no está programado; el SQL no está ejecutado; las APIs de proveedores no se han autorizado para las cuentas; la simulación simplificada anterior no prueba los cinco hitos de cada era. Todos los gates están inventariados en `docs/60`.
 
-## Estado y límites
+## Repositorio público y derechos
 
-El equilibrio numérico, las integraciones con plataformas, los permisos LIVE, el cumplimiento normativo, el SQL y los assets finales requieren validación posterior. La presencia de una regla o contrato aquí **no acredita su ejecución en producción**.
-
-**Visibilidad actual:** repositorio público. No incorporar tokens, credenciales, datos personales reales, documentación privada de terceros ni material sin derechos de publicación.
+No subir tokens, credenciales, emails de espectadores, conversaciones privadas, material de terceros sin derechos ni datos de pago. La denominación **K0: The Experiment** está pendiente de comprobación registral; publicar documentación no garantiza exclusividad comercial. No existe licencia explícita para uso por terceros: decidirla antes de invitar contribuciones externas.

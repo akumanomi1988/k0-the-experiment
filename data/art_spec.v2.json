@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "status": "SPECIFICATION_ONLY_NO_ASSETS_RENDERED",
+  "status": "V2_2_SPECIFICATION_ONLY_NO_ASSETS_RENDERED",
   "tileSize": [
     32,
     16
@@ -65,7 +65,9 @@
     "buildings": 390,
     "strategicBuildings": 117,
     "wonders": 39,
-    "k0": "cyborg scientist, metallic limbs and face plate; animated portrait+world sprite"
+    "k0": "cyborg scientist, metallic limbs and face plate; animated portrait+world sprite",
+    "combatRoleEraVariants": 39,
+    "combatUnitSkinsAcrossFactions": 117
   },
   "camera": {
     "verticalHudTopPercent": 14,

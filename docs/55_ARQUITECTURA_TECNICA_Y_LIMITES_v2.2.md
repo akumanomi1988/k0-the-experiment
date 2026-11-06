@@ -1,0 +1,38 @@
+# 55 — Arquitectura técnica de producción propuesta
+
+**No es código ni infraestructura creada.** Se mantienen las tecnologías ya discutidas: motor autoritativo .NET/C#, PostgreSQL como almacenamiento transaccional, entrada por adaptadores de streaming, API/SignalR de solo proyección, cliente Phaser/React para OBS.
+
+## Responsabilidades y límites
+
+| Subsistema | Responsabilidad | No debe hacer |
+|---|---|---|
+| `CampaignConfiguration` | Facciones, temporada, reglas inmutables y bindings | Cambiar estado de partida en directo sin aprobación |
+| `ProviderIngress` | Validar origen, evento, permisos, idempotencia | Crear recursos o acreditar oro |
+| `NationSimulation` | Tick de 5s, economía, ciudadanía, obras, investigación | Renderizar sprites, llamar APIs externas durante transacción |
+| `PoliticalScheduler` | Elecciones y Consejos con reloj LIVE | Abrir dos votaciones políticas incompatibles |
+| `CompetitionEngine` | RPS y batallas programadas | Activar ataque espontáneo |
+| `ContributionLedger` | Aportaciones verificadas, devoluciones y deuda | Confiar en texto de chat |
+| `ShowDirector` | Cues autorizados y modulación narrativa | Elegir ganador o cambiar balance |
+| `ProjectionAPI` | DTO público/versionado y snapshots | Exponer identificadores y secretos de proveedor |
+| `OverlayClient` | Render 2D/LOD, animación y subtítulos | Autorizar gastos/posiciones económicas |
+| `OperatorConsole` | Control auditado/pausas/escena segura | Saltarse restricciones del motor |
+
+## Consistencia y concurrencia
+
+Escritor único lógico por nación, más arbitraje global por temporada para primera maravilla y ganador. Inbox y Outbox permiten idempotencia y entrega eventual; los deltas de HUD son proyección, no verdad. Todas las mutaciones económicas usan ledger, locks/versiones y commit atómico. Baseline: PostgreSQL 16+ como referencia del SQL propuesto; no hay todavía pruebas de migración. Cada entrada lleva secuencia para replay; el RNG estable depende de seed y contador, no de reloj ni entorno.
+
+## Entidades clave
+
+`Campaign`, `Season`, `Nation`, `ChannelBinding`, `ProviderIdentity`, `Citizen`, `CitizenSkill`, `ResourceBalance`, `ResourceLedger`, `GoldDebt`, `Building`, `TechnologyProgress`, `MilestoneProgress`, `MissionPeriod`, `GovernmentElection`, `StrategicBallot`, `RpsRound`, `CompetitionEvent`, `WonderClaim`, `NarrationCue`, `AuditLog`, `Snapshot`, `Inbox`, `Outbox`. V2.2 introduce además estados conceptuales `GarrisonUnit`, `AutomatedBattle`, `CosmeticSponsorship`; **el DDL actual debe ampliarse antes de implementar**. Ninguna nueva entidad necesita un microservicio propio en fase 1.
+
+## API y presencia
+
+El cliente OBS solo consume snapshots y deltas con secuencia; en reconexión solicita snapshot base y reanuda del último confirmado, nunca inventa recursos. Eventos de chat no se envían desde frontend como autoridad. API admin se protege de forma distinta de API overlay; los endpoints declarados en `contracts/openapi.v2.yaml` aún no incluyen todos los módulos de v2.2 y no deben tratarse como contrato final. El backend no publica directamente tokens de proveedor al cliente.
+
+## Despliegue de referencia (no ejecutado)
+
+Un backend .NET modular + worker de simulación + PostgreSQL gestionado + UI overlay y consola, con monitorización de señales LIVE, logs estructurados y backups. No añadir colas distribuidas, CQRS completo o contenedores por facción sin datos de carga que los justifiquen. Separar proceso web y worker cuando rendimiento lo exija; diseñar frontera desde el principio para mantener determinismo y evitar caídas de FPS que alteren estado.
+
+## SLO propuestos, no logrados
+
+Tick de 5s con CPU interna objetivo de 50 ms por nación a carga de referencia; P95 de Inbox→aplicación <1s; P95 delta visible <2s; escena 30 FPS; RPO/RTO solo se fijan tras ensayar backups y recuperación. La alta disponibilidad de un proveedor no se presume. Meter 100k ciudadanos en DB no implica 100k entidades renderizadas.

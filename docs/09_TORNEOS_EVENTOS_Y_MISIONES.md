@@ -14,3 +14,7 @@ Solo hay sanción material a una nación con menos puntos que **un ganador únic
 
 ## Misiones
 Tres tipos diarios y dos semanales definidos en `missions.v2.json`. Periodos UTC completos: día desde 00:00 UTC; semana desde lunes 00:00 UTC. Los NPC pueden progresar y completar objetivos colectivos cuando no hay público; recompensas automáticas por nación una sola vez por instancia; al expirar la ventana se descarta misión no completada. Recompensas son materiales ordinarios no restringidos por monetización y **no añaden puntos a la barra de hitos**. Recompensas que excedan almacén se recortan con `rewardOverflowDiscarded`, auditado.
+
+## Segunda modalidad de evento definida en v2.2
+
+Además de RPS existe un **torneo automático de guarniciones** exclusivamente programado y con las tres naciones LIVE. Su catálogo de 39 roles/era, formación, costes ordinarios, combate sin azar y penalización no acumulativa se detalla en [`docs/43_EJERCITOS_Y_COMBATE_AUTOMATICO_v2.2.md`](43_EJERCITOS_Y_COMBATE_AUTOMATICO_v2.2.md). La simulación de esa modalidad todavía no está ejecutada.

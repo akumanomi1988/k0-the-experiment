@@ -1,6 +1,6 @@
 # 39 — Registro de cierre documental y validaciones externas
 
-**Estado:** v2.1 diseño puro. La definición es suficientemente detallada para orientar implementación, pero no se declara producto al 100 % probado. Se conserva distinción entre decisiones cerradas, supuestos de balance y hechos externos.
+**Estado:** registro histórico v2.1 ampliado por `docs/41` y `docs/60` de v2.2; diseño, no validación de implementación. La definición es suficientemente detallada para orientar implementación, pero no se declara producto al 100 % probado. Se conserva distinción entre decisiones cerradas, supuestos de balance y hechos externos.
 
 ## Diseñado y expresado documentalmente
 

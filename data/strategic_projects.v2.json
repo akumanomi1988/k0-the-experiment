@@ -1,5 +1,5 @@
 {
-  "status": "V2_BASELINE",
+  "status": "V2_2_DESIGN_BASELINE_NOT_TESTED",
   "projects": [
     {
       "id": "paleolithic_memorial",
@@ -14,7 +14,7 @@
         "stone": 85,
         "ore": 0,
         "knowledge": 20,
-        "gold": 30
+        "gold": 0
       },
       "buildWorkUnits": 590,
       "footprintTiles": [
@@ -29,7 +29,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "paleolithic_spectacle",
@@ -44,7 +45,7 @@
         "stone": 85,
         "ore": 0,
         "knowledge": 20,
-        "gold": 30
+        "gold": 0
       },
       "buildWorkUnits": 590,
       "footprintTiles": [
@@ -59,7 +60,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "paleolithic_archive",
@@ -74,7 +76,7 @@
         "stone": 85,
         "ore": 0,
         "knowledge": 20,
-        "gold": 30
+        "gold": 0
       },
       "buildWorkUnits": 590,
       "footprintTiles": [
@@ -89,7 +91,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "neolithic_memorial",
@@ -104,7 +107,7 @@
         "stone": 110,
         "ore": 0,
         "knowledge": 40,
-        "gold": 40
+        "gold": 0
       },
       "buildWorkUnits": 730,
       "footprintTiles": [
@@ -119,7 +122,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "neolithic_spectacle",
@@ -134,7 +138,7 @@
         "stone": 110,
         "ore": 0,
         "knowledge": 40,
-        "gold": 40
+        "gold": 0
       },
       "buildWorkUnits": 730,
       "footprintTiles": [
@@ -149,7 +153,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "neolithic_archive",
@@ -164,7 +169,7 @@
         "stone": 110,
         "ore": 0,
         "knowledge": 40,
-        "gold": 40
+        "gold": 0
       },
       "buildWorkUnits": 730,
       "footprintTiles": [
@@ -179,7 +184,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "copper_memorial",
@@ -194,7 +200,7 @@
         "stone": 135,
         "ore": 15,
         "knowledge": 60,
-        "gold": 50
+        "gold": 0
       },
       "buildWorkUnits": 870,
       "footprintTiles": [
@@ -209,7 +215,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "copper_spectacle",
@@ -224,7 +231,7 @@
         "stone": 135,
         "ore": 15,
         "knowledge": 60,
-        "gold": 50
+        "gold": 0
       },
       "buildWorkUnits": 870,
       "footprintTiles": [
@@ -239,7 +246,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "copper_archive",
@@ -254,7 +262,7 @@
         "stone": 135,
         "ore": 15,
         "knowledge": 60,
-        "gold": 50
+        "gold": 0
       },
       "buildWorkUnits": 870,
       "footprintTiles": [
@@ -269,7 +277,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "bronze_memorial",
@@ -284,7 +293,7 @@
         "stone": 160,
         "ore": 30,
         "knowledge": 80,
-        "gold": 60
+        "gold": 0
       },
       "buildWorkUnits": 1010,
       "footprintTiles": [
@@ -299,7 +308,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "bronze_spectacle",
@@ -314,7 +324,7 @@
         "stone": 160,
         "ore": 30,
         "knowledge": 80,
-        "gold": 60
+        "gold": 0
       },
       "buildWorkUnits": 1010,
       "footprintTiles": [
@@ -329,7 +339,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "bronze_archive",
@@ -344,7 +355,7 @@
         "stone": 160,
         "ore": 30,
         "knowledge": 80,
-        "gold": 60
+        "gold": 0
       },
       "buildWorkUnits": 1010,
       "footprintTiles": [
@@ -359,7 +370,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "iron_memorial",
@@ -374,7 +386,7 @@
         "stone": 185,
         "ore": 45,
         "knowledge": 100,
-        "gold": 70
+        "gold": 0
       },
       "buildWorkUnits": 1150,
       "footprintTiles": [
@@ -389,7 +401,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "iron_spectacle",
@@ -404,7 +417,7 @@
         "stone": 185,
         "ore": 45,
         "knowledge": 100,
-        "gold": 70
+        "gold": 0
       },
       "buildWorkUnits": 1150,
       "footprintTiles": [
@@ -419,7 +432,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "iron_archive",
@@ -434,7 +448,7 @@
         "stone": 185,
         "ore": 45,
         "knowledge": 100,
-        "gold": 70
+        "gold": 0
       },
       "buildWorkUnits": 1150,
       "footprintTiles": [
@@ -449,7 +463,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "antiquity_memorial",
@@ -464,7 +479,7 @@
         "stone": 210,
         "ore": 60,
         "knowledge": 120,
-        "gold": 80
+        "gold": 0
       },
       "buildWorkUnits": 1290,
       "footprintTiles": [
@@ -479,7 +494,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "antiquity_spectacle",
@@ -494,7 +510,7 @@
         "stone": 210,
         "ore": 60,
         "knowledge": 120,
-        "gold": 80
+        "gold": 0
       },
       "buildWorkUnits": 1290,
       "footprintTiles": [
@@ -509,7 +525,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "antiquity_archive",
@@ -524,7 +541,7 @@
         "stone": 210,
         "ore": 60,
         "knowledge": 120,
-        "gold": 80
+        "gold": 0
       },
       "buildWorkUnits": 1290,
       "footprintTiles": [
@@ -539,7 +556,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "medieval_memorial",
@@ -554,7 +572,7 @@
         "stone": 235,
         "ore": 75,
         "knowledge": 140,
-        "gold": 90
+        "gold": 0
       },
       "buildWorkUnits": 1430,
       "footprintTiles": [
@@ -569,7 +587,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "medieval_spectacle",
@@ -584,7 +603,7 @@
         "stone": 235,
         "ore": 75,
         "knowledge": 140,
-        "gold": 90
+        "gold": 0
       },
       "buildWorkUnits": 1430,
       "footprintTiles": [
@@ -599,7 +618,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "medieval_archive",
@@ -614,7 +634,7 @@
         "stone": 235,
         "ore": 75,
         "knowledge": 140,
-        "gold": 90
+        "gold": 0
       },
       "buildWorkUnits": 1430,
       "footprintTiles": [
@@ -629,7 +649,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "renaissance_memorial",
@@ -644,7 +665,7 @@
         "stone": 260,
         "ore": 90,
         "knowledge": 160,
-        "gold": 100
+        "gold": 0
       },
       "buildWorkUnits": 1570,
       "footprintTiles": [
@@ -659,7 +680,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "renaissance_spectacle",
@@ -674,7 +696,7 @@
         "stone": 260,
         "ore": 90,
         "knowledge": 160,
-        "gold": 100
+        "gold": 0
       },
       "buildWorkUnits": 1570,
       "footprintTiles": [
@@ -689,7 +711,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "renaissance_archive",
@@ -704,7 +727,7 @@
         "stone": 260,
         "ore": 90,
         "knowledge": 160,
-        "gold": 100
+        "gold": 0
       },
       "buildWorkUnits": 1570,
       "footprintTiles": [
@@ -719,7 +742,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "industrial_memorial",
@@ -734,7 +758,7 @@
         "stone": 285,
         "ore": 105,
         "knowledge": 180,
-        "gold": 110
+        "gold": 0
       },
       "buildWorkUnits": 1710,
       "footprintTiles": [
@@ -749,7 +773,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "industrial_spectacle",
@@ -764,7 +789,7 @@
         "stone": 285,
         "ore": 105,
         "knowledge": 180,
-        "gold": 110
+        "gold": 0
       },
       "buildWorkUnits": 1710,
       "footprintTiles": [
@@ -779,7 +804,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "industrial_archive",
@@ -794,7 +820,7 @@
         "stone": 285,
         "ore": 105,
         "knowledge": 180,
-        "gold": 110
+        "gold": 0
       },
       "buildWorkUnits": 1710,
       "footprintTiles": [
@@ -809,7 +835,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "modern_memorial",
@@ -824,7 +851,7 @@
         "stone": 310,
         "ore": 120,
         "knowledge": 200,
-        "gold": 120
+        "gold": 0
       },
       "buildWorkUnits": 1850,
       "footprintTiles": [
@@ -839,7 +866,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "modern_spectacle",
@@ -854,7 +882,7 @@
         "stone": 310,
         "ore": 120,
         "knowledge": 200,
-        "gold": 120
+        "gold": 0
       },
       "buildWorkUnits": 1850,
       "footprintTiles": [
@@ -869,7 +897,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "modern_archive",
@@ -884,7 +913,7 @@
         "stone": 310,
         "ore": 120,
         "knowledge": 200,
-        "gold": 120
+        "gold": 0
       },
       "buildWorkUnits": 1850,
       "footprintTiles": [
@@ -899,7 +928,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "digital_memorial",
@@ -914,7 +944,7 @@
         "stone": 335,
         "ore": 135,
         "knowledge": 220,
-        "gold": 130
+        "gold": 0
       },
       "buildWorkUnits": 1990,
       "footprintTiles": [
@@ -929,7 +959,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "digital_spectacle",
@@ -944,7 +975,7 @@
         "stone": 335,
         "ore": 135,
         "knowledge": 220,
-        "gold": 130
+        "gold": 0
       },
       "buildWorkUnits": 1990,
       "footprintTiles": [
@@ -959,7 +990,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "digital_archive",
@@ -974,7 +1006,7 @@
         "stone": 335,
         "ore": 135,
         "knowledge": 220,
-        "gold": 130
+        "gold": 0
       },
       "buildWorkUnits": 1990,
       "footprintTiles": [
@@ -989,7 +1021,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "space_memorial",
@@ -1004,7 +1037,7 @@
         "stone": 360,
         "ore": 150,
         "knowledge": 240,
-        "gold": 140
+        "gold": 0
       },
       "buildWorkUnits": 2130,
       "footprintTiles": [
@@ -1019,7 +1052,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "space_spectacle",
@@ -1034,7 +1068,7 @@
         "stone": 360,
         "ore": 150,
         "knowledge": 240,
-        "gold": 140
+        "gold": 0
       },
       "buildWorkUnits": 2130,
       "footprintTiles": [
@@ -1049,7 +1083,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "space_archive",
@@ -1064,7 +1099,7 @@
         "stone": 360,
         "ore": 150,
         "knowledge": 240,
-        "gold": 140
+        "gold": 0
       },
       "buildWorkUnits": 2130,
       "footprintTiles": [
@@ -1079,7 +1114,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "interstellar_memorial",
@@ -1094,7 +1130,7 @@
         "stone": 385,
         "ore": 165,
         "knowledge": 260,
-        "gold": 150
+        "gold": 0
       },
       "buildWorkUnits": 2270,
       "footprintTiles": [
@@ -1109,7 +1145,8 @@
         "cosmeticCue": "memorial"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "interstellar_spectacle",
@@ -1124,7 +1161,7 @@
         "stone": 385,
         "ore": 165,
         "knowledge": 260,
-        "gold": 150
+        "gold": 0
       },
       "buildWorkUnits": 2270,
       "footprintTiles": [
@@ -1139,7 +1176,8 @@
         "cosmeticCue": "spectacle"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     },
     {
       "id": "interstellar_archive",
@@ -1154,7 +1192,7 @@
         "stone": 385,
         "ore": 165,
         "knowledge": 260,
-        "gold": 150
+        "gold": 0
       },
       "buildWorkUnits": 2270,
       "footprintTiles": [
@@ -1169,7 +1207,8 @@
         "cosmeticCue": "archive"
       },
       "maxInstancesPerNation": 1,
-      "requiresOtherStrategic": false
+      "requiresOtherStrategic": false,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
     }
   ],
   "wonders": [
@@ -1177,7 +1216,7 @@
       "id": "wonder_paleolithic",
       "eraIndex": 1,
       "eraId": "paleolithic",
-      "name": "Maravilla del Paleolítico",
+      "name": "El Primer Fuego",
       "globalExclusive": true,
       "buildWorkUnits": 1500,
       "cost": {
@@ -1186,18 +1225,20 @@
         "stone": 195,
         "ore": 0,
         "knowledge": 40,
-        "gold": 140
+        "gold": 0
       },
       "prestigeFirstCompleter": 300,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_paleolithic"
     },
     {
       "id": "wonder_neolithic",
       "eraIndex": 2,
       "eraId": "neolithic",
-      "name": "Maravilla del Neolítico",
+      "name": "El Gran Semillero",
       "globalExclusive": true,
       "buildWorkUnits": 1750,
       "cost": {
@@ -1206,18 +1247,20 @@
         "stone": 240,
         "ore": 0,
         "knowledge": 80,
-        "gold": 180
+        "gold": 0
       },
       "prestigeFirstCompleter": 350,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_neolithic"
     },
     {
       "id": "wonder_copper",
       "eraIndex": 3,
       "eraId": "copper",
-      "name": "Maravilla del Edad del Cobre",
+      "name": "La Forja del Alba",
       "globalExclusive": true,
       "buildWorkUnits": 2000,
       "cost": {
@@ -1226,18 +1269,20 @@
         "stone": 285,
         "ore": 25,
         "knowledge": 120,
-        "gold": 220
+        "gold": 0
       },
       "prestigeFirstCompleter": 400,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_copper"
     },
     {
       "id": "wonder_bronze",
       "eraIndex": 4,
       "eraId": "bronze",
-      "name": "Maravilla del Edad del Bronce",
+      "name": "El Crisol de los Tres",
       "globalExclusive": true,
       "buildWorkUnits": 2250,
       "cost": {
@@ -1246,18 +1291,20 @@
         "stone": 330,
         "ore": 50,
         "knowledge": 160,
-        "gold": 260
+        "gold": 0
       },
       "prestigeFirstCompleter": 450,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_bronze"
     },
     {
       "id": "wonder_iron",
       "eraIndex": 5,
       "eraId": "iron",
-      "name": "Maravilla del Edad del Hierro",
+      "name": "El Bastión de las Chispas",
       "globalExclusive": true,
       "buildWorkUnits": 2500,
       "cost": {
@@ -1266,18 +1313,20 @@
         "stone": 375,
         "ore": 75,
         "knowledge": 200,
-        "gold": 300
+        "gold": 0
       },
       "prestigeFirstCompleter": 500,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_iron"
     },
     {
       "id": "wonder_antiquity",
       "eraIndex": 6,
       "eraId": "antiquity",
-      "name": "Maravilla del Antigüedad",
+      "name": "La Biblioteca del Primer Reino",
       "globalExclusive": true,
       "buildWorkUnits": 2750,
       "cost": {
@@ -1286,18 +1335,20 @@
         "stone": 420,
         "ore": 100,
         "knowledge": 240,
-        "gold": 340
+        "gold": 0
       },
       "prestigeFirstCompleter": 550,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_antiquity"
     },
     {
       "id": "wonder_medieval",
       "eraIndex": 7,
       "eraId": "medieval",
-      "name": "Maravilla del Edad Media",
+      "name": "La Aguja de los Juramentos",
       "globalExclusive": true,
       "buildWorkUnits": 3000,
       "cost": {
@@ -1306,18 +1357,20 @@
         "stone": 465,
         "ore": 125,
         "knowledge": 280,
-        "gold": 380
+        "gold": 0
       },
       "prestigeFirstCompleter": 600,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_medieval"
     },
     {
       "id": "wonder_renaissance",
       "eraIndex": 8,
       "eraId": "renaissance",
-      "name": "Maravilla del Renacimiento",
+      "name": "El Observatorio de las Tres Lunas",
       "globalExclusive": true,
       "buildWorkUnits": 3250,
       "cost": {
@@ -1326,18 +1379,20 @@
         "stone": 510,
         "ore": 150,
         "knowledge": 320,
-        "gold": 420
+        "gold": 0
       },
       "prestigeFirstCompleter": 650,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_renaissance"
     },
     {
       "id": "wonder_industrial",
       "eraIndex": 9,
       "eraId": "industrial",
-      "name": "Maravilla del Era Industrial",
+      "name": "El Corazón de Vapor",
       "globalExclusive": true,
       "buildWorkUnits": 3500,
       "cost": {
@@ -1346,18 +1401,20 @@
         "stone": 555,
         "ore": 175,
         "knowledge": 360,
-        "gold": 460
+        "gold": 0
       },
       "prestigeFirstCompleter": 700,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_industrial"
     },
     {
       "id": "wonder_modern",
       "eraIndex": 10,
       "eraId": "modern",
-      "name": "Maravilla del Era Moderna",
+      "name": "La Torre de Resonancia",
       "globalExclusive": true,
       "buildWorkUnits": 3750,
       "cost": {
@@ -1366,18 +1423,20 @@
         "stone": 600,
         "ore": 200,
         "knowledge": 400,
-        "gold": 500
+        "gold": 0
       },
       "prestigeFirstCompleter": 750,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_modern"
     },
     {
       "id": "wonder_digital",
       "eraIndex": 11,
       "eraId": "digital",
-      "name": "Maravilla del Era Digital",
+      "name": "El Archivo de las Mil Voces",
       "globalExclusive": true,
       "buildWorkUnits": 4000,
       "cost": {
@@ -1386,18 +1445,20 @@
         "stone": 645,
         "ore": 225,
         "knowledge": 440,
-        "gold": 540
+        "gold": 0
       },
       "prestigeFirstCompleter": 800,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_digital"
     },
     {
       "id": "wonder_space",
       "eraIndex": 12,
       "eraId": "space",
-      "name": "Maravilla del Era Espacial",
+      "name": "La Puerta del Horizonte",
       "globalExclusive": true,
       "buildWorkUnits": 4250,
       "cost": {
@@ -1406,18 +1467,20 @@
         "stone": 690,
         "ore": 250,
         "knowledge": 480,
-        "gold": 580
+        "gold": 0
       },
       "prestigeFirstCompleter": 850,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_space"
     },
     {
       "id": "wonder_interstellar",
       "eraIndex": 13,
       "eraId": "interstellar",
-      "name": "Maravilla del Era Interestelar",
+      "name": "El Umbral Interestelar",
       "globalExclusive": true,
       "buildWorkUnits": 4500,
       "cost": {
@@ -1426,13 +1489,16 @@
         "stone": 735,
         "ore": 275,
         "knowledge": 520,
-        "gold": 620
+        "gold": 0
       },
       "prestigeFirstCompleter": 900,
       "economicBonusBp": 0,
       "historicalPoints": 0,
-      "availableOnlyAsSeparateCosmeticEvent": true
+      "availableOnlyAsSeparateCosmeticEvent": true,
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "visualBriefId": "wonder_art_interstellar"
     }
   ],
-  "candidatePool": "three strategic options per era; no gold means no vote; future wonders are separately triggered optional event; current era options must be all individually affordable"
+  "candidatePool": "three strategic options per era; no gold means no vote; future wonders are separately triggered optional event; current era options must be all individually affordable",
+  "goldPolicy": "GOLD_ONLY_FOR_SEPARATE_NONCOMPETITIVE_ACKNOWLEDGEMENT_ITEMS"
 }

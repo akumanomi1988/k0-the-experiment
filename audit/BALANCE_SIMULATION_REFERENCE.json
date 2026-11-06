@@ -207,5 +207,7 @@
       },
       "storageBuilt": 60
     }
-  }
+  },
+  "status": "ARCHIVED_NON_AUTHORITATIVE_COARSE_MODEL_NOT_ERA_MILESTONE_VALIDATION",
+  "warning": "milestonesAchieved=0 even where final era is reached; this model does not verify the five milestones per era; not valid for release certification or v2.2 balance."
 }

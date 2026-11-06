@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "2.2.0",
+  "status": "DESIGN_ONLY_NOT_PROVIDER_ENABLED",
+  "rule": "gold accrues ONLY from verified real contributions and may purchase acknowledgements without competition effects",
+  "globalRequirements": [
+    "moderatedName",
+    "consentToPublicDisplay",
+    "verifiedContribution",
+    "seasonOpen",
+    "noUnpaidGoldDebt"
+  ],
+  "catalog": [
+    {
+      "id": "supporter_badge",
+      "goldCost": 25,
+      "effect": "VISUAL_BADGE_7_LIVE_DAYS",
+      "mayInfluenceGame": false,
+      "maxPerCitizenPerSeason": 1
+    },
+    {
+      "id": "plaque",
+      "goldCost": 100,
+      "effect": "MODERATED_INSCRIPTION_IN_CIVIC_HALL",
+      "mayInfluenceGame": false,
+      "maxPerCitizenPerSeason": 1
+    },
+    {
+      "id": "dedication",
+      "goldCost": 250,
+      "effect": "DEDICATED_NONCOMPETITIVE_CEREMONIAL_ASSET",
+      "mayInfluenceGame": false,
+      "maxPerCitizenPerSeason": 1
+    }
+  ],
+  "absenceOfVerifiedProvider": "ALL_PURCHASES_DISABLED_WITHOUT_EFFECT_ON_VOTES_WONDERS_ERA_OR_NPC",
+  "refundOrReversal": "reverse acknowledgment eligibility and notify; reconcile gold debt without negative stock",
+  "fairness": "sponsorship never changes buildings, wonder races, votes, timers, NPC speed, rankings or win eligibility"
+}

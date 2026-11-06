@@ -1,7 +1,8 @@
-# Identificadores de release v2.0
+# Checksum del diseño v2.2
 
-`rulesetHash`: `c0a8d6fe390507edb6343ab93082216b0656062ee745a8992db678d8dfcc0901`
+**NO es certificación de balance, implementación o conformidad legal.**
 
-`contentHash`: `3981516f94ff29f511e8ce951c9d565d74de7c6d788f5383d89cfe5f344543a4`
-
-**No modificar ningún dato del content set en temporada RUNNING.** Si cambia un solo byte del ruleset o el JSON canonizado del catálogo, se exige release nuevo con hash nuevo.
+- Ruleset SHA-256 (bytes): `120df67e1461aa73204dc86204864d6c6e3d855fe9768ca936286424a5707649`
+- Content hash de lista ordenada `[filename,data]` canonical JSON: `ddf2a6784620a6b1741dc1d0c505d66bf3688d1d6a58a83d1b312a772144ecef`
+- Total de catálogos firmados: 16
+- `audit/BALANCE_SIMULATION_REFERENCE.json` sigue siendo histórica y NO valida v2.2.

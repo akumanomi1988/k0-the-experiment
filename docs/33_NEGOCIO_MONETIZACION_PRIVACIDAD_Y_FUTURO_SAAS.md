@@ -11,7 +11,7 @@
 ## Principios de producto
 
 1. Experiencia competitiva completa con 0 € y 0 espectadores gracias a los NPC.
-2. Compra de reconocimiento visual y proyectos opcionales, nunca poder de victoria.
+2. Compra exclusivamente de reconocimientos visuales opcionales independientes. Desde v2.2, proyectos del Consejo y maravillas son gratuitos en oro; nunca se vende poder de victoria.
 3. No pedir importes individualizados ni forzar que el público pague para desbloquear épocas.
 4. El valor del oro depende de capacidad verificable del proveedor; no fingir conversiones de monetización.
 5. El oro no se retira a dinero real ni se transfiere entre naciones, cuentas o temporadas como moneda funcional.

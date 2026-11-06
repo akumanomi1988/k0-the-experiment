@@ -1,5 +1,5 @@
 {
-  "status": "V2_BASELINE",
+  "status": "V2_2_DESIGN_BASELINE_NOT_LIVE",
   "eventTypes": [
     {
       "id": "catchup_challenge",
@@ -43,6 +43,19 @@
       },
       "requiresAnnouncement": true,
       "maxFrequencyLiveHours": 24
+    },
+    {
+      "id": "automated_defense_tournament",
+      "trigger": "operator_scheduled_and_all_three_nations_live_and_defense_built",
+      "costGold": 0,
+      "effects": {
+        "usesCombatCatalog": "data/combat_units.v2.2.json",
+        "penaltyFamily": "same_as_triangular_rps",
+        "noEconomicVictoryPoints": true
+      },
+      "requiresAnnouncement": true,
+      "maxFrequencyLiveHours": 24,
+      "noAttackOutsideEvent": true
     }
   ],
   "neverUnknownRandomCombat": true,

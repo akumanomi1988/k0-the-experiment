@@ -1,5 +1,5 @@
 {
-  "status": "V2_BASELINE",
+  "status": "V2_2_DESIGN_BASELINE_NOT_TESTED",
   "choices": [
     {
       "id": "expert_gathering",
@@ -52,7 +52,7 @@
       "requiredLevel": 7,
       "tierIndex": 2,
       "name": "Rationing",
-      "description": "Menor consumo colectivo limitado",
+      "description": "Optimización personal de producción alimentaria (+3,5 % al output food); no reduce el mantenimiento colectivo.",
       "effect": {
         "target": "food",
         "additiveBp": 350,
@@ -82,7 +82,7 @@
       "requiredLevel": 12,
       "tierIndex": 3,
       "name": "Preservation",
-      "description": "Menores pérdidas en eventos",
+      "description": "Pericia personal en la producción alimentaria (+3 % al output food); no cancela pérdidas de eventos.",
       "effect": {
         "target": "food",
         "additiveBp": 300,
@@ -172,7 +172,7 @@
       "requiredLevel": 12,
       "tierIndex": 3,
       "name": "Reuse",
-      "description": "Ahorro colectivo de madera limitado",
+      "description": "Reutilización personal que aumenta su output wood (+3,5 %); no reduce costes nacionales.",
       "effect": {
         "target": "wood",
         "additiveBp": 350,
@@ -322,7 +322,7 @@
       "requiredLevel": 7,
       "tierIndex": 2,
       "name": "Restorer",
-      "description": "Mejora reparaciones",
+      "description": "Especialización personal en trabajo de construcción (+3 % a buildWork); no añade una mecánica de reparación.",
       "effect": {
         "target": "buildWork",
         "additiveBp": 300,
@@ -412,7 +412,7 @@
       "requiredLevel": 7,
       "tierIndex": 2,
       "name": "Documentation",
-      "description": "Más XP por investigación",
+      "description": "Documentación personal que incrementa su experiencia de trabajo (+4 % a xp); no multiplica conocimiento.",
       "effect": {
         "target": "xp",
         "additiveBp": 400,
@@ -442,7 +442,7 @@
       "requiredLevel": 12,
       "tierIndex": 3,
       "name": "Innovator",
-      "description": "Mejora acotada de hitos científicos",
+      "description": "Ingenio personal que aumenta su producción de conocimiento (+5 %); no concede hitos extra.",
       "effect": {
         "target": "knowledge",
         "additiveBp": 500,
