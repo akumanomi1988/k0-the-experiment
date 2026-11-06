@@ -1,0 +1,108 @@
+{
+  "status": "V2_BASELINE",
+  "candidates": [
+    {
+      "nationId": "micelios",
+      "type": "economy",
+      "characterId": "micelios_economy_npc",
+      "name": "Morga",
+      "persistsAcrossEras": true,
+      "eraCostumeAutoVaries": true,
+      "governmentBonusBp": 300,
+      "bonusCategory": "food_wood_stone_ore",
+      "hasExecutivePower": false
+    },
+    {
+      "nationId": "micelios",
+      "type": "military",
+      "characterId": "micelios_military_npc",
+      "name": "Bruk",
+      "persistsAcrossEras": true,
+      "eraCostumeAutoVaries": true,
+      "governmentBonusBp": 500,
+      "bonusCategory": "automated_tournament_defense",
+      "hasExecutivePower": false
+    },
+    {
+      "nationId": "micelios",
+      "type": "science",
+      "characterId": "micelios_science_npc",
+      "name": "Espora",
+      "persistsAcrossEras": true,
+      "eraCostumeAutoVaries": true,
+      "governmentBonusBp": 300,
+      "bonusCategory": "knowledge",
+      "hasExecutivePower": false
+    },
+    {
+      "nationId": "runicos",
+      "type": "economy",
+      "characterId": "runicos_economy_npc",
+      "name": "Dorrik",
+      "persistsAcrossEras": true,
+      "eraCostumeAutoVaries": true,
+      "governmentBonusBp": 300,
+      "bonusCategory": "food_wood_stone_ore",
+      "hasExecutivePower": false
+    },
+    {
+      "nationId": "runicos",
+      "type": "military",
+      "characterId": "runicos_military_npc",
+      "name": "Kraag",
+      "persistsAcrossEras": true,
+      "eraCostumeAutoVaries": true,
+      "governmentBonusBp": 500,
+      "bonusCategory": "automated_tournament_defense",
+      "hasExecutivePower": false
+    },
+    {
+      "nationId": "runicos",
+      "type": "science",
+      "characterId": "runicos_science_npc",
+      "name": "Zyn",
+      "persistsAcrossEras": true,
+      "eraCostumeAutoVaries": true,
+      "governmentBonusBp": 300,
+      "bonusCategory": "knowledge",
+      "hasExecutivePower": false
+    },
+    {
+      "nationId": "ferrinos",
+      "type": "economy",
+      "characterId": "ferrinos_economy_npc",
+      "name": "Nera",
+      "persistsAcrossEras": true,
+      "eraCostumeAutoVaries": true,
+      "governmentBonusBp": 300,
+      "bonusCategory": "food_wood_stone_ore",
+      "hasExecutivePower": false
+    },
+    {
+      "nationId": "ferrinos",
+      "type": "military",
+      "characterId": "ferrinos_military_npc",
+      "name": "Rokka",
+      "persistsAcrossEras": true,
+      "eraCostumeAutoVaries": true,
+      "governmentBonusBp": 500,
+      "bonusCategory": "automated_tournament_defense",
+      "hasExecutivePower": false
+    },
+    {
+      "nationId": "ferrinos",
+      "type": "science",
+      "characterId": "ferrinos_science_npc",
+      "name": "Neri",
+      "persistsAcrossEras": true,
+      "eraCostumeAutoVaries": true,
+      "governmentBonusBp": 300,
+      "bonusCategory": "knowledge",
+      "hasExecutivePower": false
+    }
+  ],
+  "oneGovernorPerNationEra": true,
+  "votesMinutes": 60,
+  "runoffMinutes": 3,
+  "fallback": "sha256-counter-uniform among equal votes"
+}

@@ -1,0 +1,27 @@
+# 04 — Reglas numéricas del motor económico
+
+## Unidades y precisión
+Todas las cantidades ordinarias se almacenan como `BIGINT` en **milésimas de recurso**; las tarifas en milésimas por minuto de trabajador. Los porcentajes son puntos básicos (`10000 = 100 %`). Todos los cálculos son enteros y guardan resto por `(nationId,resourceId,workerPoolId)` para que cambiar el tamaño de tick no cambie sistemáticamente la producción. Nunca usar `double`, `float` ni `Math.random()` para estado persistente. El oro se guarda en unidades indivisibles por asiento de ledger. Toda tasa depende del `rulesetHash` fijado al iniciar temporada.
+
+## Producción por grupo y minuto efectivo
+Para cada familia `f`, `EffectiveWorkerMinutes = NPC_count + sum(human_weight)` multiplicado por `deltaEconomySeconds/60`. El trabajador humano recién unido y NPC tienen la misma tasa base; veteranos añaden exclusivamente sus perks individuales. Base por minuto: alimento 2,400; madera 1,800; piedra 1,400; mineral 650; conocimiento 1,200; trabajo de construcción 1,200 (milésimas). Minero divide su capacidad: desde era 3, 75 % en piedra y 25 % en mineral, con reasignación si uno está al máximo o no hay necesidad. Antes de era 3, 100 % piedra.
+
+`OutputMilli = floor((workerSeconds * rateMilliPerMinute * economyBp * eraFacilityBp * governmentBp * priorityBp * starvationBp * penaltyBp) / (60 * 10000^N) + persistedRemainder)`, con cada término calculado en entero y redondeo final único; orden de multiplicadores fijo. La producción de humanos aplica perk de manera individual/por cohortes con mismo conjunto de perks, no a población entera. `facilityBoostBp` se suma para un máximo +3000bp. Bonificaciones de oficio individual con tope +1800bp; el total compuesto final de todos los bonus se recorta a 15000bp. Los NPC no obtienen habilidades.
+
+## Desaceleración de masas
+Cada ciudadano humano activo contribuye al trabajo agregado, pero su eficiencia marginal se atenúa para evitar ventaja lineal de 10.000 espectadores. Primeros 100 activos por oficio al 100%; del 101 al 2500 al 25%; a partir del 2501 solo representación y progreso personal reducido si estaba activo, sin creación adicional de recursos. El orden de asignación de cuotas es `(activeSinceUtc, citizenId)` determinista, reponderado cada tick; se conserva XP conforme a contribución efectiva. Los números no determinan resultados de torneo, que usan una decisión por nación.
+
+## Mantenimiento, hambre y bloqueo
+La población inicial tiene 24 NPC, repartidos 7/5/4/4/4. Mantenimiento alimentario: 150 milésimas por NPC y por unidad de trabajador humano **efectivo** y por minuto de economía, con máximo de 50 unidades humanas imputables al mantenimiento para que un gran chat no produzca inanición por participación visual sin trabajo. Primero se consume alimento; si hay déficit parcial, se aplica productividad colectiva 65 % al segmento posterior. Nunca hay muertes. Las misiones no regalan oro. Los NPC pueden construir todas las obras básicas. Las fuentes naturales siempre permiten producir `food`, `wood`, `stone`, `knowledge` desde el comienzo sin edificios, para evitar el bloqueo circular «no hay edificio para producir materiales necesarios para construir un edificio». `ore` se desbloquea en era 3.
+
+## Capacidad y planificador
+Capacidades base por nación: food/wood/stone/ore = 3500 unidades; knowledge = 15000 unidades. `storage` agrega +1500 unidades en todos los almacenes ordinarios, +350 por era posterior. No se produce un recurso que alcanzó máximo; NPC se reasignan a recurso válido (prioridad comida, materiales necesarios, investigación, construcción); el humano conserva familia y no produce cuando su output está saturado. Nunca se pierde silenciosamente una producción: contabilizar `blockedByCapacity` separado de `produced` y de XP.
+
+## Bootstrap y progresión
+Se empieza con **cero recursos y cero edificios**, pero una zona natural de cada profesión, 24 habitantes NPC y capacidad de almacén base virtual (terreno/capacidad de supervivencia). El `Autoplanner` arranca edificios en cuanto exista material y trabajo; reservas y commit de costes son atómicos. La economía offline al 20 % permite completar la ruta gratuita de cinco hitos por era sin humanos, aunque tardará significativamente más; el cambio de era requiere volver a LIVE.
+
+## Invariantes contables
+`stock >= reserved >= 0`; `stock = initial + sum(verified productive events + mission rewards - consumption - building spends - penalties)`. Cada evento se aplica una sola vez. La falta de suministro no hace stock negativo. `gold` no participa en fórmulas de producción, ejército, progreso ni votaciones ciudadanas. Reversiones generan asiento corrector, jamás eliminación de asientos originales. El subledger oro se reconcilia contra contributions identificadas; la deuda de reversos se almacena aparte cuando ya no hay saldo.
+
+## Balance candidato y ciclo de ajustes
+Era 1 exige producir 6.400 alimento, 4.750 madera, 3.420 piedra y 2.650 conocimiento, además de la tecnología básica, del edificio cívico automático y de una misión colectiva; cada una de las cinco categorías da 20 puntos. Eras sucesivas aumentan umbrales linealmente. Progresión objetivo aproximada de 2,5 días/era es hipótesis de diseño y puede no cumplirse con cualquier reparto: antes de LIVE se ejecutan simulaciones de 7/24, 24/0, 100/0 y 10000/0 humanos/NPC, buffers bajos, hambre, offline al 20 %. Toda nueva calibración versiona `rulesetId`; nunca aplicar ajustes económicos mid-season sin regla de migración públicamente comunicada.

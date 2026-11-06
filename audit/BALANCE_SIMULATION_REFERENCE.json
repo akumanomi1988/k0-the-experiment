@@ -1,0 +1,211 @@
+{
+  "model": "coarse minute step with fixed 24 NPC only; not authoritative engine",
+  "scenarios": {
+    "0h_live_per_day": {
+      "completed": false,
+      "era": 1,
+      "elapsedDays": 90,
+      "transitions": [],
+      "lastStock": {
+        "food": 11000.0,
+        "wood": 11000.0,
+        "stone": 11000.0,
+        "ore": 0.0,
+        "knowledge": 22500.0
+      },
+      "storageBuilt": 5
+    },
+    "1h_live_per_day": {
+      "completed": true,
+      "day": 40.0,
+      "era": 13,
+      "milestonesAchieved": 0,
+      "transitions": [
+        {
+          "enteredEra": 2,
+          "day": 2.0
+        },
+        {
+          "enteredEra": 3,
+          "day": 4.0
+        },
+        {
+          "enteredEra": 4,
+          "day": 7.0
+        },
+        {
+          "enteredEra": 5,
+          "day": 10.0
+        },
+        {
+          "enteredEra": 6,
+          "day": 13.0
+        },
+        {
+          "enteredEra": 7,
+          "day": 16.02
+        },
+        {
+          "enteredEra": 8,
+          "day": 20.0
+        },
+        {
+          "enteredEra": 9,
+          "day": 24.0
+        },
+        {
+          "enteredEra": 10,
+          "day": 28.0
+        },
+        {
+          "enteredEra": 11,
+          "day": 32.0
+        },
+        {
+          "enteredEra": 12,
+          "day": 36.0
+        },
+        {
+          "enteredEra": 13,
+          "day": 40.0
+        }
+      ],
+      "lastStock": {
+        "food": 204962.19199984788,
+        "wood": 129267.8899999596,
+        "stone": 59046.4159999594,
+        "ore": 7842.3599999971275,
+        "knowledge": 66896.20799998006
+      },
+      "storageBuilt": 60
+    },
+    "4h_live_per_day": {
+      "completed": true,
+      "day": 27.0,
+      "era": 13,
+      "milestonesAchieved": 0,
+      "transitions": [
+        {
+          "enteredEra": 2,
+          "day": 1.09
+        },
+        {
+          "enteredEra": 3,
+          "day": 3.0
+        },
+        {
+          "enteredEra": 4,
+          "day": 5.0
+        },
+        {
+          "enteredEra": 5,
+          "day": 7.0
+        },
+        {
+          "enteredEra": 6,
+          "day": 9.03
+        },
+        {
+          "enteredEra": 7,
+          "day": 11.08
+        },
+        {
+          "enteredEra": 8,
+          "day": 13.17
+        },
+        {
+          "enteredEra": 9,
+          "day": 16.0
+        },
+        {
+          "enteredEra": 10,
+          "day": 18.13
+        },
+        {
+          "enteredEra": 11,
+          "day": 21.0
+        },
+        {
+          "enteredEra": 12,
+          "day": 24.0
+        },
+        {
+          "enteredEra": 13,
+          "day": 27.0
+        }
+      ],
+      "lastStock": {
+        "food": 205863.95999989004,
+        "wood": 124140.58999996244,
+        "stone": 56794.66999997512,
+        "ore": 7406.593499999171,
+        "knowledge": 64161.647999979694
+      },
+      "storageBuilt": 60
+    },
+    "24h_live_per_day": {
+      "completed": true,
+      "day": 8.46,
+      "era": 13,
+      "milestonesAchieved": 0,
+      "transitions": [
+        {
+          "enteredEra": 2,
+          "day": 0.42
+        },
+        {
+          "enteredEra": 3,
+          "day": 0.88
+        },
+        {
+          "enteredEra": 4,
+          "day": 1.51
+        },
+        {
+          "enteredEra": 5,
+          "day": 2.17
+        },
+        {
+          "enteredEra": 6,
+          "day": 2.87
+        },
+        {
+          "enteredEra": 7,
+          "day": 3.59
+        },
+        {
+          "enteredEra": 8,
+          "day": 4.34
+        },
+        {
+          "enteredEra": 9,
+          "day": 5.11
+        },
+        {
+          "enteredEra": 10,
+          "day": 5.91
+        },
+        {
+          "enteredEra": 11,
+          "day": 6.73
+        },
+        {
+          "enteredEra": 12,
+          "day": 7.57
+        },
+        {
+          "enteredEra": 13,
+          "day": 8.46
+        }
+      ],
+      "lastStock": {
+        "food": 195974.7199999425,
+        "wood": 115616.14999999327,
+        "stone": 52557.037999997316,
+        "ore": 6911.449500000343,
+        "knowledge": 59615.27999999043
+      },
+      "storageBuilt": 60
+    }
+  }
+}

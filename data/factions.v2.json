@@ -1,0 +1,38 @@
+{
+  "status": "V2_DESIGN_BASELINE_ART_NOT_APPROVED",
+  "factions": [
+    {
+      "id": "micelios",
+      "name": "Micelios",
+      "look": "cuerpos fungoides bípedos, sombreros esporados, bioluminiscencia verde suave",
+      "biome": "bosque micelar",
+      "primaryColor": "#6FAD78",
+      "outlineColor": "#20262C",
+      "heroSilhouette": "capuchón orgánico, dos brazos, piernas cortas",
+      "architecturalLanguage": "raíces, cúpulas fibrosas, esporas y tecnología biofotónica",
+      "forbidden": "Corálidos, coral submarino, ventaja botánica en recursos"
+    },
+    {
+      "id": "runicos",
+      "name": "Rúnicos",
+      "look": "humanoides minerales segmentados, inscripciones luminosas azules",
+      "biome": "meseta cristalina",
+      "primaryColor": "#769BCB",
+      "outlineColor": "#20262C",
+      "heroSilhouette": "cabeza pétrea angular, tronco macizo, brazos cortos",
+      "architecturalLanguage": "mampostería geométrica, prismas, runas y circuitos cristalinos",
+      "forbidden": "beneficio por piedra/minería, colisión mayor que otras especies"
+    },
+    {
+      "id": "ferrinos",
+      "name": "Ferrinos",
+      "look": "seres biológicos inteligentes de exoesqueleto ferruginoso, placas cobrizas y ojos vivos",
+      "biome": "llanura ferruginosa",
+      "primaryColor": "#C17B59",
+      "outlineColor": "#20262C",
+      "heroSilhouette": "cabeza triangular acorazada, torso estrecho, placas articuladas",
+      "architecturalLanguage": "arcos de placas, forja orgánica y metamateriales vivos",
+      "forbidden": "robots completamente mecánicos, corales, bonificación por mineral"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "2.0.0",
+  "status": "TOPOLOGY_EXAMPLE_ONLY_NOT_AUTHORIZED",
+  "seasonId": "season-demo-three_youtube",
+  "bindingMode": "CONFIGURABLE",
+  "assignments": [
+    {
+      "nationId": "micelios",
+      "bindings": [
+        {
+          "bindingId": "three_youtube_b1",
+          "provider": "youtube",
+          "providerChannelId": "PLACEHOLDER_YOUTUBE_CHANNEL_1",
+          "displayAlias": "Canal 1",
+          "roles": [
+            "commands",
+            "live_health"
+          ],
+          "enabled": true,
+          "requiresVerifiedCredentials": true,
+          "monetizationEnabled": false,
+          "isClockAuthority": true
+        }
+      ]
+    },
+    {
+      "nationId": "runicos",
+      "bindings": [
+        {
+          "bindingId": "three_youtube_b2",
+          "provider": "youtube",
+          "providerChannelId": "PLACEHOLDER_YOUTUBE_CHANNEL_2",
+          "displayAlias": "Canal 2",
+          "roles": [
+            "commands",
+            "live_health"
+          ],
+          "enabled": true,
+          "requiresVerifiedCredentials": true,
+          "monetizationEnabled": false,
+          "isClockAuthority": true
+        }
+      ]
+    },
+    {
+      "nationId": "ferrinos",
+      "bindings": [
+        {
+          "bindingId": "three_youtube_b3",
+          "provider": "youtube",
+          "providerChannelId": "PLACEHOLDER_YOUTUBE_CHANNEL_3",
+          "displayAlias": "Canal 3",
+          "roles": [
+            "commands",
+            "live_health"
+          ],
+          "enabled": true,
+          "requiresVerifiedCredentials": true,
+          "monetizationEnabled": false,
+          "isClockAuthority": true
+        }
+      ]
+    }
+  ]
+}

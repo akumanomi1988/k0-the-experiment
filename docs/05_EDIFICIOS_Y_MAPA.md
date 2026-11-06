@@ -1,0 +1,23 @@
+# 05 — Construcciones básicas, proyectos y mapa
+
+## Catálogos
+`data/buildings.v2.json` declara 130 edificios básicos explícitos (10 familias x 13 eras), cada uno con precio por recurso, trabajo, 4 etapas, era de desbloqueo, capacidad, footprint y efecto. `data/strategic_projects.v2.json` declara 39 proyectos optativos (3 x era) más 13 maravillas exclusivas opcionales. Todos los edificios anteriores permanecen y conservan sus efectos con productividad relativa de 80 % al quedar obsoletos; no se destruyen automáticamente.
+
+## Algoritmo de autoconstrucción básico
+Cada 60s de reloj de economía (o cuando se desbloquea nueva era), el planificador inspecciona y añade como máximo dos planes básicos, respetando `maxConcurrentWorks=5` y `maxAutoQueued=2`. Prioridades ordenadas: `food_production` si comida insuficiente/capacidad de trabajo, `storage` si utilización de cualquier stock > 75 %, `housing` si NPC en límite y alimentación sostenible, `extraction/forestry` si faltan materiales para obra pendiente, `research` si conocimiento insuficiente, `workshop` si facility boost bajo, `civic` de era actual si pendiente, `defense` después, `infrastructure` al final. A igual prioridad elegir costo menor y después `buildingId` lexical. Siempre que una obra obligatoria resulte materialmente imposible por su propia dependencia, usar fuente natural gratuita y guardar `WaitingResources` sin crear materiales sintéticos. `civic` de cada era no necesita una tecnología que requiera completar su mismo hito.
+
+El costo ordinario se reserva al planificar y se descuenta **una vez** cuando empieza la obra; producción de construcción separada en `buildWorkUnits`, no compra materiales otra vez. Fallos de arranque cancelan reserva antes del commit; edificios que no encuentran parcela esperan en `WaitingPlot` y generan expansión determinista, nunca se pierden recursos.
+
+## Estrategias
+Cada era ofrece hasta tres alternativas de su familia de proyectos (`memorial/spectacle/archive`). El Consejo **solo abre** si hay tres alternativas distintas sin construir, todas individualmente financiables con saldo *disponible*. La reserva durante voto es el máximo componente a componente de cada vector de coste (`max(costO1[r], costO2[r], costO3[r])`). Si durante la votación no llega papeleta, se selecciona una de las tres de modo uniforme, auditado por RNG y seed; el coste ganador se descuenta de la misma reserva vectorial y el exceso se libera. Votación = 600s LIVE por nación. Nadie puede comprar votos. Si el voto pierde financiación por reverso oro, cierre = `PaymentBlocked` y se cancela sin descontar, con anuncio.
+
+Como se pueden aprobar varias obras en distintos ciclos, hasta cinco obras avanzan simultáneamente si hay trabajadores. Una sola votación estratégica está abierta por nación para evitar dobles reservas. Las maravillas son proyectos separados de festival (no consumen una de las tres alternativas del Consejo) y requieren su propio evento programado; primera nación en completar y reclamar atómicamente obtiene la única maravilla global. Las otras pueden conservar la obra como monumento no exclusivo sin premio de exclusividad y sin reembolso, informado antes de construir.
+
+## Construcción visual
+Cuatro etapas según progreso de trabajo: 0–15 % parcela/cimientos, 15–40 % armazón, 40–70 % obra, 70–100 % remate. En 100 % se añade `BuildingCompleted` y se activa efecto. Se renderiza sin pathfinding por cada NPC, y la animación jamás determina productividad. `BuildingInstance` conserva era de origen, nivel, transform y slot de trama estable.
+
+## Mapa procedural y representación
+Semilla de temporada, mapa inicial 48×48 casillas, proyección de tile 32×16 y altura de capas decorativas. Expansión en un margen de ocho casillas por lado por era, con tope 256×256. Algoritmo reproducible: hash de `(seed,nation,x,y,layer)`, ruido de 2 octavas en celdas, máscara de terreno totalmente edificable en al menos 70 % del mapa; todas las naciones tienen igual **número y disponibilidad de parcelas lógicas**, bioma solo estético. Parcelas y colisiones de servicios son compartidas, efectos de área normalizados por nación. Si no cabe construir, expandir y buscar primera parcela libre `(distanceFromCenter, y, x)`; no bloquear progreso por cosmética.
+
+## Retrocompatibilidad
+La persistencia de edificio histórico no autoriza producir por encima de la capacidad de almacén. Los nuevos edificios hacen más eficiente a cada familia con techo +3000bp, y el antiguo conserva un factor relativo de 80 % para que lo nuevo tenga sentido sin castigar al espectador con destrucciones visuales.

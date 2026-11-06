@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "2.0.0",
+  "contentHashAlgorithm": "sha256(UTF8(JSON sorted keys, compact separators, ordered array [filename,data]))",
+  "rulesetHashAlgorithm": "sha256(raw data/ruleset.v2.json bytes)",
+  "rulesetHash": "c0a8d6fe390507edb6343ab93082216b0656062ee745a8992db678d8dfcc0901",
+  "contentHash": "3981516f94ff29f511e8ce951c9d565d74de7c6d788f5383d89cfe5f344543a4",
+  "contentFiles": [
+    "factions.v2.json",
+    "eras.v2.json",
+    "buildings.v2.json",
+    "strategic_projects.v2.json",
+    "technologies.v2.json",
+    "milestones.v2.json",
+    "professions.v2.json",
+    "skills.v2.json",
+    "governments.v2.json",
+    "missions.v2.json",
+    "tournaments.v2.json",
+    "events.v2.json",
+    "commands.v2.json",
+    "art_spec.v2.json"
+  ],
+  "immutableDuringActiveSeason": true
+}

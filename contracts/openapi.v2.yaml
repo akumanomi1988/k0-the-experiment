@@ -1,0 +1,136 @@
+openapi: 3.1.0
+info:
+  title: Project CHAOS Operator and Read Model API
+  version: 2.0.0
+  description: >-
+    API contract baseline for a modular ASP.NET Core host. Never expose provider IDs
+    or unmoderated chat in public endpoints. Write endpoints require trusted operator.
+servers:
+  - url: https://chaos.example.invalid
+security: []
+tags:
+  - name: public
+  - name: operator
+paths:
+  /api/v2/public/seasons/{seasonId}/nations:
+    get:
+      tags: [public]
+      summary: Three nation summaries
+      parameters: [{name: seasonId, in: path, required: true, schema: {type: string}}]
+      responses:
+        '200': {description: Nation list, content: {application/json: {schema: {type: array, items: {$ref: '#/components/schemas/NationSummary'}}}}}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /api/v2/public/seasons/{seasonId}/nations/{nationId}/snapshot:
+    get:
+      tags: [public]
+      summary: Full public projection for reconnect
+      parameters:
+        - {name: seasonId, in: path, required: true, schema: {type: string}}
+        - {name: nationId, in: path, required: true, schema: {type: string, enum: [micelios,runicos,ferrinos]}}
+      responses:
+        '200': {description: Public snapshot, content: {application/json: {schema: {$ref: '#/components/schemas/NationSummary'}}}}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /api/v2/public/seasons/{seasonId}/nations/{nationId}/deltas:
+    get:
+      tags: [public]
+      summary: Replay buffered public deltas or demand full snapshot
+      parameters:
+        - {name: seasonId, in: path, required: true, schema: {type: string}}
+        - {name: nationId, in: path, required: true, schema: {type: string}}
+        - {name: afterSequence, in: query, required: true, schema: {type: integer, minimum: 0}}
+      responses:
+        '200': {description: Buffered public deltas, content: {application/json: {schema: {type: array, items: {$ref: '#/components/schemas/NationDelta'}}}}}
+        '409': {description: Cursor expired; fetch snapshot}
+  /api/v2/operator/seasons:
+    post:
+      tags: [operator]
+      summary: Create draft season, no LIVE enabled by default
+      security: [{operatorJwt: [owner]}]
+      parameters: [{name: Idempotency-Key, in: header, required: true, schema: {type: string}}]
+      requestBody: {required: true, content: {application/json: {schema: {$ref: '#/components/schemas/CreateSeason'}}}}
+      responses:
+        '201': {description: Draft season created}
+        '409': {$ref: '#/components/responses/Conflict'}
+  /api/v2/operator/seasons/{seasonId}/bindings:
+    put:
+      tags: [operator]
+      summary: Replace draft bindings with optimistic revision; RUNNING requires safe pause+audit
+      security: [{operatorJwt: [owner]}]
+      parameters:
+        - {name: seasonId, in: path, required: true, schema: {type: string}}
+        - {name: If-Match, in: header, required: true, schema: {type: string}}
+      requestBody: {required: true, content: {application/json: {schema: {$ref: '#/components/schemas/Bindings'}}}}
+      responses:
+        '200': {description: Replaced draft assignment}
+        '409': {$ref: '#/components/responses/Conflict'}
+  /api/v2/operator/seasons/{seasonId}/actions:
+    post:
+      tags: [operator]
+      summary: Start, pause, resume, emergency-stop, abort and approved scheduled event actions
+      security: [{operatorJwt: [operator]}]
+      parameters:
+        - {name: seasonId, in: path, required: true, schema: {type: string}}
+        - {name: Idempotency-Key, in: header, required: true, schema: {type: string}}
+      requestBody: {required: true, content: {application/json: {schema: {$ref: '#/components/schemas/OperatorAction'}}}}
+      responses:
+        '202': {description: Action accepted for authoritative worker}
+        '403': {description: Insufficient role}
+        '409': {$ref: '#/components/responses/Conflict'}
+  /health/live:
+    get:
+      responses: {'200': {description: Host responsive}}
+  /health/ready:
+    get:
+      responses: {'200': {description: Database, outbox and writer healthy}, '503': {description: Not ready}}
+components:
+  securitySchemes:
+    operatorJwt:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://identity.example.invalid/oauth2/authorize
+          tokenUrl: https://identity.example.invalid/oauth2/token
+          scopes: {owner: 'Manage bindings and monetization policies', operator: 'Operate sessions and approved events', auditor: 'Read audit'}
+  schemas:
+    NationSummary:
+      type: object
+      required: [schemaVersion, seasonId, nationId, eraIndex, historicalPoints, liveState]
+      properties:
+        schemaVersion: {const: '2.0.0'}
+        seasonId: {type: string}
+        nationId: {type: string, enum: [micelios,runicos,ferrinos]}
+        eraIndex: {type: integer, minimum: 1, maximum: 13}
+        historicalPoints: {type: integer, minimum: 0, maximum: 100}
+        liveState: {type: string, enum: [LIVE_CONFIRMED,OFFLINE_CONFIRMED,UNCERTAIN]}
+    NationDelta:
+      type: object
+      required: [sequence, serverUtc, stateHash, changes]
+      properties:
+        sequence: {type: integer, minimum: 0}
+        serverUtc: {type: string, format: date-time}
+        stateHash: {type: string}
+        changes: {type: object}
+    CreateSeason:
+      type: object
+      required: [campaignId, rulesetHash, contentHash, seed]
+      properties:
+        campaignId: {type: string}
+        rulesetHash: {type: string, pattern: '^[a-f0-9]{64}$'}
+        contentHash: {type: string, pattern: '^[a-f0-9]{64}$'}
+        seed: {type: string, pattern: '^[a-f0-9]{64}$'}
+    Bindings:
+      type: object
+      required: [assignments]
+      properties:
+        assignments: {type: array, minItems: 3, maxItems: 3, items: {type: object}}
+    OperatorAction:
+      type: object
+      required: [kind, reason]
+      properties:
+        kind: {type: string, enum: [START,PAUSE,RESUME,EMERGENCY_STOP,ABORT,SCHEDULE_TOURNAMENT,SCHEDULE_EVENT]}
+        reason: {type: string, minLength: 3}
+  responses:
+    NotFound:
+      description: Unknown season or nation
+    Conflict:
+      description: Invalid state transition or version conflict

@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-chaos.invalid/schemas/normalized_event.v2.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "eventId",
+    "sourceKey",
+    "seasonId",
+    "nationId",
+    "bindingId",
+    "provider",
+    "providerChannelId",
+    "providerUserId",
+    "receivedUtc",
+    "eventType",
+    "authorizationStatus",
+    "payloadDigest"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "2.0.0"
+    },
+    "eventId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceKey": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "seasonId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nationId": {
+      "enum": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    "bindingId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider": {
+      "enum": [
+        "twitch",
+        "youtube",
+        "tiktok",
+        "simulated"
+      ]
+    },
+    "providerChannelId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "providerUserId": {
+      "type": "string"
+    },
+    "receivedUtc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "providerTimestampUtc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "eventType": {
+      "enum": [
+        "chat_command",
+        "stream_state",
+        "monetary_event",
+        "gift_reversal",
+        "operator_event"
+      ]
+    },
+    "authorizationStatus": {
+      "enum": [
+        "AUTHENTICATED",
+        "UNVERIFIED",
+        "REJECTED"
+      ]
+    },
+    "payloadDigest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "command": {
+      "type": "string",
+      "maxLength": 160
+    },
+    "contributionId": {
+      "type": "string"
+    }
+  }
+}

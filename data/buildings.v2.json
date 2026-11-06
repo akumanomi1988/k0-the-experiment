@@ -1,0 +1,5267 @@
+{
+  "status": "V2_BASELINE",
+  "naturalSourceSites": {
+    "food": true,
+    "wood": true,
+    "stone": true,
+    "ore": "from_era_3",
+    "knowledge": true,
+    "buildWork": true
+  },
+  "buildingCatalog": [
+    {
+      "id": "paleolithic_housing",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Habitáculos — Paleolítico",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 50,
+        "stone": 10,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 170,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "paleolithic_food_production",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Centro alimentario — Paleolítico",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 70,
+        "stone": 15,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 190,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "paleolithic_forestry",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Estación de biomasa — Paleolítico",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 65,
+        "stone": 15,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 170,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "paleolithic_extraction",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Cantera y mina — Paleolítico",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 65,
+        "stone": 25,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 220,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "paleolithic_workshop",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Taller de herramientas — Paleolítico",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 100,
+        "stone": 50,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 260,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "paleolithic_research",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Centro de saber — Paleolítico",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 80,
+        "stone": 50,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 250,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "paleolithic_storage",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Almacén regional — Paleolítico",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 90,
+        "stone": 65,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 180,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 1500
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "paleolithic_infrastructure",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Vía logística — Paleolítico",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 30,
+        "stone": 35,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 90,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "paleolithic_civic",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Ágora comunitaria — Paleolítico",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 130,
+        "stone": 80,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 320,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "paleolithic_defense",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Puesto defensivo — Paleolítico",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 100,
+        "stone": 95,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 280,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 14
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "neolithic_housing",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Habitáculos — Neolítico",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 59,
+        "stone": 11,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 195,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "neolithic_food_production",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Centro alimentario — Neolítico",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 82,
+        "stone": 17,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 218,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "neolithic_forestry",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Estación de biomasa — Neolítico",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 76,
+        "stone": 17,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 195,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "neolithic_extraction",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Cantera y mina — Neolítico",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 76,
+        "stone": 29,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 253,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "neolithic_workshop",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Taller de herramientas — Neolítico",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 118,
+        "stone": 59,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 299,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "neolithic_research",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Centro de saber — Neolítico",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 94,
+        "stone": 59,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 287,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "neolithic_storage",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Almacén regional — Neolítico",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 106,
+        "stone": 76,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 207,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 1850
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "neolithic_infrastructure",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Vía logística — Neolítico",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 35,
+        "stone": 41,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 103,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "neolithic_civic",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Ágora comunitaria — Neolítico",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 153,
+        "stone": 94,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 368,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "neolithic_defense",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Puesto defensivo — Neolítico",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 118,
+        "stone": 112,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 322,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 18
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "copper_housing",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Habitáculos — Edad del Cobre",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 68,
+        "stone": 13,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 221,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "copper_food_production",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Centro alimentario — Edad del Cobre",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 95,
+        "stone": 20,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 247,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "copper_forestry",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Estación de biomasa — Edad del Cobre",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 88,
+        "stone": 20,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 221,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "copper_extraction",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Cantera y mina — Edad del Cobre",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 88,
+        "stone": 34,
+        "ore": 6,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 286,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "copper_workshop",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Taller de herramientas — Edad del Cobre",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 136,
+        "stone": 68,
+        "ore": 20,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 338,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "copper_research",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Centro de saber — Edad del Cobre",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 108,
+        "stone": 68,
+        "ore": 27,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 325,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "copper_storage",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Almacén regional — Edad del Cobre",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 122,
+        "stone": 88,
+        "ore": 13,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 234,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 2200
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "copper_infrastructure",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Vía logística — Edad del Cobre",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 40,
+        "stone": 47,
+        "ore": 6,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 117,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "copper_civic",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Ágora comunitaria — Edad del Cobre",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 176,
+        "stone": 108,
+        "ore": 34,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 416,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "copper_defense",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Puesto defensivo — Edad del Cobre",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 136,
+        "stone": 129,
+        "ore": 47,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 364,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 22
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "bronze_housing",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Habitáculos — Edad del Bronce",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 77,
+        "stone": 15,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 246,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "bronze_food_production",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Centro alimentario — Edad del Bronce",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 107,
+        "stone": 23,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 275,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "bronze_forestry",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Estación de biomasa — Edad del Bronce",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 100,
+        "stone": 23,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 246,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "bronze_extraction",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Cantera y mina — Edad del Bronce",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 100,
+        "stone": 38,
+        "ore": 7,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 319,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "bronze_workshop",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Taller de herramientas — Edad del Bronce",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 154,
+        "stone": 77,
+        "ore": 23,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 377,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "bronze_research",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Centro de saber — Edad del Bronce",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 123,
+        "stone": 77,
+        "ore": 30,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 362,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "bronze_storage",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Almacén regional — Edad del Bronce",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 138,
+        "stone": 100,
+        "ore": 15,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 261,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 2550
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "bronze_infrastructure",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Vía logística — Edad del Bronce",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 46,
+        "stone": 53,
+        "ore": 7,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 130,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "bronze_civic",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Ágora comunitaria — Edad del Bronce",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 200,
+        "stone": 123,
+        "ore": 38,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 464,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "bronze_defense",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Puesto defensivo — Edad del Bronce",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 154,
+        "stone": 146,
+        "ore": 53,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 406,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 26
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "iron_housing",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Habitáculos — Edad del Hierro",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 86,
+        "stone": 17,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 272,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "iron_food_production",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Centro alimentario — Edad del Hierro",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 120,
+        "stone": 25,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 304,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "iron_forestry",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Estación de biomasa — Edad del Hierro",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 111,
+        "stone": 25,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 272,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "iron_extraction",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Cantera y mina — Edad del Hierro",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 111,
+        "stone": 43,
+        "ore": 8,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 352,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "iron_workshop",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Taller de herramientas — Edad del Hierro",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 172,
+        "stone": 86,
+        "ore": 25,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 416,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "iron_research",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Centro de saber — Edad del Hierro",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 137,
+        "stone": 86,
+        "ore": 34,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 400,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "iron_storage",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Almacén regional — Edad del Hierro",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 154,
+        "stone": 111,
+        "ore": 17,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 288,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 2900
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "iron_infrastructure",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Vía logística — Edad del Hierro",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 51,
+        "stone": 60,
+        "ore": 8,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 144,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "iron_civic",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Ágora comunitaria — Edad del Hierro",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 223,
+        "stone": 137,
+        "ore": 43,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 512,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "iron_defense",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Puesto defensivo — Edad del Hierro",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 172,
+        "stone": 163,
+        "ore": 60,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 448,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 30
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "antiquity_housing",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Habitáculos — Antigüedad",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 95,
+        "stone": 19,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 297,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "antiquity_food_production",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Centro alimentario — Antigüedad",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 133,
+        "stone": 28,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 332,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "antiquity_forestry",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Estación de biomasa — Antigüedad",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 123,
+        "stone": 28,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 297,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "antiquity_extraction",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Cantera y mina — Antigüedad",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 123,
+        "stone": 47,
+        "ore": 9,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 385,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "antiquity_workshop",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Taller de herramientas — Antigüedad",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 190,
+        "stone": 95,
+        "ore": 28,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 455,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "antiquity_research",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Centro de saber — Antigüedad",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 152,
+        "stone": 95,
+        "ore": 38,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 437,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "antiquity_storage",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Almacén regional — Antigüedad",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 171,
+        "stone": 123,
+        "ore": 19,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 315,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 3250
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "antiquity_infrastructure",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Vía logística — Antigüedad",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 57,
+        "stone": 66,
+        "ore": 9,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 157,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "antiquity_civic",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Ágora comunitaria — Antigüedad",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 247,
+        "stone": 152,
+        "ore": 47,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 560,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "antiquity_defense",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Puesto defensivo — Antigüedad",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 190,
+        "stone": 180,
+        "ore": 66,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 490,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 34
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "medieval_housing",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Habitáculos — Edad Media",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 104,
+        "stone": 20,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 323,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "medieval_food_production",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Centro alimentario — Edad Media",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 145,
+        "stone": 31,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 361,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "medieval_forestry",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Estación de biomasa — Edad Media",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 135,
+        "stone": 31,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 323,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "medieval_extraction",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Cantera y mina — Edad Media",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 135,
+        "stone": 52,
+        "ore": 10,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 418,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "medieval_workshop",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Taller de herramientas — Edad Media",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 208,
+        "stone": 104,
+        "ore": 31,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 494,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "medieval_research",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Centro de saber — Edad Media",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 166,
+        "stone": 104,
+        "ore": 41,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 475,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "medieval_storage",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Almacén regional — Edad Media",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 187,
+        "stone": 135,
+        "ore": 20,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 342,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 3600
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "medieval_infrastructure",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Vía logística — Edad Media",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 62,
+        "stone": 72,
+        "ore": 10,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 171,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "medieval_civic",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Ágora comunitaria — Edad Media",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 270,
+        "stone": 166,
+        "ore": 52,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 608,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "medieval_defense",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Puesto defensivo — Edad Media",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 208,
+        "stone": 197,
+        "ore": 72,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 532,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 38
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "renaissance_housing",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Habitáculos — Renacimiento",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 113,
+        "stone": 22,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 348,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "renaissance_food_production",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Centro alimentario — Renacimiento",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 158,
+        "stone": 33,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 389,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "renaissance_forestry",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Estación de biomasa — Renacimiento",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 146,
+        "stone": 33,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 348,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "renaissance_extraction",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Cantera y mina — Renacimiento",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 146,
+        "stone": 56,
+        "ore": 11,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 451,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "renaissance_workshop",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Taller de herramientas — Renacimiento",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 226,
+        "stone": 113,
+        "ore": 33,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 533,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "renaissance_research",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Centro de saber — Renacimiento",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 180,
+        "stone": 113,
+        "ore": 45,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 512,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "renaissance_storage",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Almacén regional — Renacimiento",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 203,
+        "stone": 146,
+        "ore": 22,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 369,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 3950
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "renaissance_infrastructure",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Vía logística — Renacimiento",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 67,
+        "stone": 79,
+        "ore": 11,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 184,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "renaissance_civic",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Ágora comunitaria — Renacimiento",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 293,
+        "stone": 180,
+        "ore": 56,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 656,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "renaissance_defense",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Puesto defensivo — Renacimiento",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 226,
+        "stone": 214,
+        "ore": 79,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 574,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 42
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "industrial_housing",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Habitáculos — Era Industrial",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 122,
+        "stone": 24,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 374,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "industrial_food_production",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Centro alimentario — Era Industrial",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 170,
+        "stone": 36,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 418,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "industrial_forestry",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Estación de biomasa — Era Industrial",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 158,
+        "stone": 36,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 374,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "industrial_extraction",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Cantera y mina — Era Industrial",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 158,
+        "stone": 61,
+        "ore": 12,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 484,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "industrial_workshop",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Taller de herramientas — Era Industrial",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 244,
+        "stone": 122,
+        "ore": 36,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 572,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "industrial_research",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Centro de saber — Era Industrial",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 195,
+        "stone": 122,
+        "ore": 48,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 550,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "industrial_storage",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Almacén regional — Era Industrial",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 219,
+        "stone": 158,
+        "ore": 24,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 396,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 4300
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "industrial_infrastructure",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Vía logística — Era Industrial",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 73,
+        "stone": 85,
+        "ore": 12,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 198,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "industrial_civic",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Ágora comunitaria — Era Industrial",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 317,
+        "stone": 195,
+        "ore": 61,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 704,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "industrial_defense",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Puesto defensivo — Era Industrial",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 244,
+        "stone": 231,
+        "ore": 85,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 616,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 46
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "modern_housing",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Habitáculos — Era Moderna",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 131,
+        "stone": 26,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 399,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "modern_food_production",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Centro alimentario — Era Moderna",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 183,
+        "stone": 39,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 446,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "modern_forestry",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Estación de biomasa — Era Moderna",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 170,
+        "stone": 39,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 399,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "modern_extraction",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Cantera y mina — Era Moderna",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 170,
+        "stone": 65,
+        "ore": 13,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 517,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "modern_workshop",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Taller de herramientas — Era Moderna",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 262,
+        "stone": 131,
+        "ore": 39,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 611,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "modern_research",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Centro de saber — Era Moderna",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 209,
+        "stone": 131,
+        "ore": 52,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 587,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "modern_storage",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Almacén regional — Era Moderna",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 235,
+        "stone": 170,
+        "ore": 26,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 423,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 4650
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "modern_infrastructure",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Vía logística — Era Moderna",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 78,
+        "stone": 91,
+        "ore": 13,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 211,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "modern_civic",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Ágora comunitaria — Era Moderna",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 340,
+        "stone": 209,
+        "ore": 65,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 752,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "modern_defense",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Puesto defensivo — Era Moderna",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 262,
+        "stone": 248,
+        "ore": 91,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 658,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 50
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "digital_housing",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Habitáculos — Era Digital",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 140,
+        "stone": 28,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 425,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "digital_food_production",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Centro alimentario — Era Digital",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 196,
+        "stone": 42,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 475,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "digital_forestry",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Estación de biomasa — Era Digital",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 182,
+        "stone": 42,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 425,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "digital_extraction",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Cantera y mina — Era Digital",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 182,
+        "stone": 70,
+        "ore": 14,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 550,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "digital_workshop",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Taller de herramientas — Era Digital",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 280,
+        "stone": 140,
+        "ore": 42,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 650,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "digital_research",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Centro de saber — Era Digital",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 224,
+        "stone": 140,
+        "ore": 56,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 625,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "digital_storage",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Almacén regional — Era Digital",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 252,
+        "stone": 182,
+        "ore": 28,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 450,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 5000
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "digital_infrastructure",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Vía logística — Era Digital",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 84,
+        "stone": 98,
+        "ore": 14,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 225,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "digital_civic",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Ágora comunitaria — Era Digital",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 364,
+        "stone": 224,
+        "ore": 70,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 800,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "digital_defense",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Puesto defensivo — Era Digital",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 280,
+        "stone": 266,
+        "ore": 98,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 700,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 54
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "space_housing",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Habitáculos — Era Espacial",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 149,
+        "stone": 29,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 450,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "space_food_production",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Centro alimentario — Era Espacial",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 208,
+        "stone": 44,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 503,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "space_forestry",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Estación de biomasa — Era Espacial",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 193,
+        "stone": 44,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 450,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "space_extraction",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Cantera y mina — Era Espacial",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 193,
+        "stone": 74,
+        "ore": 14,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 583,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "space_workshop",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Taller de herramientas — Era Espacial",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 298,
+        "stone": 149,
+        "ore": 44,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 689,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "space_research",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Centro de saber — Era Espacial",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 238,
+        "stone": 149,
+        "ore": 59,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 662,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "space_storage",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Almacén regional — Era Espacial",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 268,
+        "stone": 193,
+        "ore": 29,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 477,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 5350
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "space_infrastructure",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Vía logística — Era Espacial",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 89,
+        "stone": 104,
+        "ore": 14,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 238,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "space_civic",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Ágora comunitaria — Era Espacial",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 387,
+        "stone": 238,
+        "ore": 74,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 848,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "space_defense",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Puesto defensivo — Era Espacial",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 298,
+        "stone": 283,
+        "ore": 104,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 742,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 58
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "interstellar_housing",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Habitáculos — Era Interestelar",
+      "family": "housing",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 158,
+        "stone": 31,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 476,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "npcCapacity": 8
+      },
+      "stageArtIds": [
+        "housing.stage_foundation",
+        "housing.stage_frame",
+        "housing.stage_works",
+        "housing.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "interstellar_food_production",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Centro alimentario — Era Interestelar",
+      "family": "food_production",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 221,
+        "stone": 47,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 532,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityFood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "food_production.stage_foundation",
+        "food_production.stage_frame",
+        "food_production.stage_works",
+        "food_production.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "interstellar_forestry",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Estación de biomasa — Era Interestelar",
+      "family": "forestry",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 205,
+        "stone": 47,
+        "ore": 0,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 476,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityWood": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "forestry.stage_foundation",
+        "forestry.stage_frame",
+        "forestry.stage_works",
+        "forestry.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "interstellar_extraction",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Cantera y mina — Era Interestelar",
+      "family": "extraction",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 205,
+        "stone": 79,
+        "ore": 15,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 616,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityMine": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "extraction.stage_foundation",
+        "extraction.stage_frame",
+        "extraction.stage_works",
+        "extraction.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "interstellar_workshop",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Taller de herramientas — Era Interestelar",
+      "family": "workshop",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 316,
+        "stone": 158,
+        "ore": 47,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 728,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "workshop.stage_foundation",
+        "workshop.stage_frame",
+        "workshop.stage_works",
+        "workshop.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "interstellar_research",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Centro de saber — Era Interestelar",
+      "family": "research",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 252,
+        "stone": 158,
+        "ore": 63,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 700,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "workerCapacityResearch": 8,
+        "facilityBoostBp": 300
+      },
+      "stageArtIds": [
+        "research.stage_foundation",
+        "research.stage_frame",
+        "research.stage_works",
+        "research.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "interstellar_storage",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Almacén regional — Era Interestelar",
+      "family": "storage",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 284,
+        "stone": 205,
+        "ore": 31,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 504,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "capacityAddEachResource": 5700
+      },
+      "stageArtIds": [
+        "storage.stage_foundation",
+        "storage.stage_frame",
+        "storage.stage_works",
+        "storage.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "interstellar_infrastructure",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Vía logística — Era Interestelar",
+      "family": "infrastructure",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 94,
+        "stone": 110,
+        "ore": 15,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 252,
+      "footprintTiles": [
+        1,
+        2
+      ],
+      "maxInstancesPerNation": 12,
+      "requiresTechId": null,
+      "effects": {
+        "logisticCapacity": 12
+      },
+      "stageArtIds": [
+        "infrastructure.stage_foundation",
+        "infrastructure.stage_frame",
+        "infrastructure.stage_works",
+        "infrastructure.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "interstellar_civic",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Ágora comunitaria — Era Interestelar",
+      "family": "civic",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 410,
+        "stone": 252,
+        "ore": 79,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 896,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "maxInstancesPerNation": 1,
+      "requiresTechId": null,
+      "effects": {
+        "civicCapacity": 1
+      },
+      "stageArtIds": [
+        "civic.stage_foundation",
+        "civic.stage_frame",
+        "civic.stage_works",
+        "civic.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    },
+    {
+      "id": "interstellar_defense",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Puesto defensivo — Era Interestelar",
+      "family": "defense",
+      "type": "BASIC_AUTO",
+      "goldRequired": false,
+      "cost": {
+        "wood": 316,
+        "stone": 300,
+        "ore": 110,
+        "knowledge": 0,
+        "food": 0,
+        "gold": 0
+      },
+      "buildWorkUnits": 784,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "maxInstancesPerNation": 5,
+      "requiresTechId": null,
+      "effects": {
+        "defensePoints": 62
+      },
+      "stageArtIds": [
+        "defense.stage_foundation",
+        "defense.stage_frame",
+        "defense.stage_works",
+        "defense.stage_finished"
+      ],
+      "preservedWhenEraChanges": true,
+      "eraAgeEfficiencyBp": 8000,
+      "artVariants": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
+    }
+  ],
+  "autoplanner": "see docs/05_BUILDINGS for deterministic priorities",
+  "validation": "every era has 10 basic buildings, each with explicit cost/work/footprint/effects"
+}

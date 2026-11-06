@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "2.0.0",
+  "status": "TOPOLOGY_EXAMPLE_ONLY_NOT_AUTHORIZED",
+  "seasonId": "season-demo-mixed",
+  "bindingMode": "CONFIGURABLE",
+  "assignments": [
+    {
+      "nationId": "micelios",
+      "bindings": [
+        {
+          "bindingId": "mixed_b1",
+          "provider": "twitch",
+          "providerChannelId": "PLACEHOLDER_TWITCH_CHANNEL_1",
+          "displayAlias": "Canal 1",
+          "roles": [
+            "commands",
+            "live_health"
+          ],
+          "enabled": false,
+          "requiresVerifiedCredentials": true,
+          "monetizationEnabled": false,
+          "isClockAuthority": true
+        }
+      ]
+    },
+    {
+      "nationId": "runicos",
+      "bindings": [
+        {
+          "bindingId": "mixed_b2",
+          "provider": "youtube",
+          "providerChannelId": "PLACEHOLDER_YOUTUBE_CHANNEL_2",
+          "displayAlias": "Canal 2",
+          "roles": [
+            "commands",
+            "live_health"
+          ],
+          "enabled": false,
+          "requiresVerifiedCredentials": true,
+          "monetizationEnabled": false,
+          "isClockAuthority": true
+        }
+      ]
+    },
+    {
+      "nationId": "ferrinos",
+      "bindings": [
+        {
+          "bindingId": "mixed_b3",
+          "provider": "tiktok",
+          "providerChannelId": "PLACEHOLDER_TIKTOK_CHANNEL_3",
+          "displayAlias": "Canal 3",
+          "roles": [
+            "commands",
+            "live_health"
+          ],
+          "enabled": false,
+          "requiresVerifiedCredentials": true,
+          "monetizationEnabled": false,
+          "isClockAuthority": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "V2_BASELINE_FAIL_CLOSED",
+  "liveMonetizationEnabled": false,
+  "realProviderRules": [],
+  "unapprovedMonetaryEvents": "REJECT_NO_CREDIT",
+  "goldUnit": "in_game_gold_unit_not_cash",
+  "rounding": "floor",
+  "reversalPolicy": "reduce_available_to_zero_then_increase_nonnegative_gold_debt",
+  "crossProviderFxConversions": false,
+  "simulatedRule": {
+    "provider": "simulated",
+    "eventType": "test_contribution",
+    "unit": "DEMO",
+    "numerator": 1,
+    "denominator": 1,
+    "enabledOnlyIn": "LOCAL_SIMULATION",
+    "realMoney": false
+  },
+  "requiredEvidenceForRealConversion": [
+    "verified_broadcaster_permissions",
+    "authenticated_transaction_event",
+    "provider_event_type_version",
+    "approved_currency_or_points_unit",
+    "conversion_numerator_and_denominator",
+    "reversal_test",
+    "legal_policy_review",
+    "operator_and_approval_timestamp"
+  ]
+}

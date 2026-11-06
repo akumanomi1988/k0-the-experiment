@@ -1,0 +1,458 @@
+{
+  "status": "V2_BASELINE",
+  "choices": [
+    {
+      "id": "expert_gathering",
+      "family": "food",
+      "requiredLevel": 3,
+      "tierIndex": 1,
+      "name": "Expert Gathering",
+      "description": "Mayor producción por tarea",
+      "effect": {
+        "target": "food",
+        "additiveBp": 400,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "food_hauling",
+      "family": "food",
+      "requiredLevel": 3,
+      "tierIndex": 1,
+      "name": "Food Hauling",
+      "description": "Más carga por viaje",
+      "effect": {
+        "target": "food",
+        "additiveBp": 250,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "efficient_production",
+      "family": "food",
+      "requiredLevel": 7,
+      "tierIndex": 2,
+      "name": "Efficient Production",
+      "description": "Ciclo de trabajo más rápido",
+      "effect": {
+        "target": "food",
+        "additiveBp": 500,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "rationing",
+      "family": "food",
+      "requiredLevel": 7,
+      "tierIndex": 2,
+      "name": "Rationing",
+      "description": "Menor consumo colectivo limitado",
+      "effect": {
+        "target": "food",
+        "additiveBp": 350,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "master_foodcraft",
+      "family": "food",
+      "requiredLevel": 12,
+      "tierIndex": 3,
+      "name": "Master Foodcraft",
+      "description": "Mejora en instalaciones modernas",
+      "effect": {
+        "target": "food",
+        "additiveBp": 600,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "preservation",
+      "family": "food",
+      "requiredLevel": 12,
+      "tierIndex": 3,
+      "name": "Preservation",
+      "description": "Menores pérdidas en eventos",
+      "effect": {
+        "target": "food",
+        "additiveBp": 300,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "precise_cut",
+      "family": "wood",
+      "requiredLevel": 3,
+      "tierIndex": 1,
+      "name": "Precise Cut",
+      "description": "Más madera por tarea",
+      "effect": {
+        "target": "wood",
+        "additiveBp": 400,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "forest_walker",
+      "family": "wood",
+      "requiredLevel": 3,
+      "tierIndex": 1,
+      "name": "Forest Walker",
+      "description": "Mayor velocidad de transporte",
+      "effect": {
+        "target": "wood",
+        "additiveBp": 250,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "optimized_tools",
+      "family": "wood",
+      "requiredLevel": 7,
+      "tierIndex": 2,
+      "name": "Optimized Tools",
+      "description": "Ciclo más rápido",
+      "effect": {
+        "target": "wood",
+        "additiveBp": 500,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "full_utilization",
+      "family": "wood",
+      "requiredLevel": 7,
+      "tierIndex": 2,
+      "name": "Full Utilization",
+      "description": "Más madera por ciclo",
+      "effect": {
+        "target": "wood",
+        "additiveBp": 450,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "master_forester",
+      "family": "wood",
+      "requiredLevel": 12,
+      "tierIndex": 3,
+      "name": "Master Forester",
+      "description": "Mejora forestal moderna",
+      "effect": {
+        "target": "wood",
+        "additiveBp": 600,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "reuse",
+      "family": "wood",
+      "requiredLevel": 12,
+      "tierIndex": 3,
+      "name": "Reuse",
+      "description": "Ahorro colectivo de madera limitado",
+      "effect": {
+        "target": "wood",
+        "additiveBp": 350,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "expert_stonecutter",
+      "family": "mine",
+      "requiredLevel": 3,
+      "tierIndex": 1,
+      "name": "Expert Stonecutter",
+      "description": "Más piedra",
+      "effect": {
+        "target": "stone",
+        "additiveBp": 400,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "prospector",
+      "family": "mine",
+      "requiredLevel": 3,
+      "tierIndex": 1,
+      "name": "Prospector",
+      "description": "Más mineral desbloqueado",
+      "effect": {
+        "target": "ore",
+        "additiveBp": 450,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "efficient_excavation",
+      "family": "mine",
+      "requiredLevel": 7,
+      "tierIndex": 2,
+      "name": "Efficient Excavation",
+      "description": "Ciclo más rápido",
+      "effect": {
+        "target": "mine",
+        "additiveBp": 500,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "heavy_load",
+      "family": "mine",
+      "requiredLevel": 7,
+      "tierIndex": 2,
+      "name": "Heavy Load",
+      "description": "Más transporte",
+      "effect": {
+        "target": "mine",
+        "additiveBp": 250,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "master_stonecutter",
+      "family": "mine",
+      "requiredLevel": 12,
+      "tierIndex": 3,
+      "name": "Master Stonecutter",
+      "description": "Especialización piedra",
+      "effect": {
+        "target": "stone",
+        "additiveBp": 600,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "master_miner",
+      "family": "mine",
+      "requiredLevel": 12,
+      "tierIndex": 3,
+      "name": "Master Miner",
+      "description": "Especialización mineral",
+      "effect": {
+        "target": "ore",
+        "additiveBp": 600,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "fast_hands",
+      "family": "build",
+      "requiredLevel": 3,
+      "tierIndex": 1,
+      "name": "Fast Hands",
+      "description": "Construcción más rápida",
+      "effect": {
+        "target": "buildWork",
+        "additiveBp": 400,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "site_organizer",
+      "family": "build",
+      "requiredLevel": 3,
+      "tierIndex": 1,
+      "name": "Site Organizer",
+      "description": "Transporte de obra mejorado",
+      "effect": {
+        "target": "buildWork",
+        "additiveBp": 300,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "expert_builder",
+      "family": "build",
+      "requiredLevel": 7,
+      "tierIndex": 2,
+      "name": "Expert Builder",
+      "description": "Mejora en proyectos grandes",
+      "effect": {
+        "target": "buildWork",
+        "additiveBp": 450,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "restorer",
+      "family": "build",
+      "requiredLevel": 7,
+      "tierIndex": 2,
+      "name": "Restorer",
+      "description": "Mejora reparaciones",
+      "effect": {
+        "target": "buildWork",
+        "additiveBp": 300,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "master_architect",
+      "family": "build",
+      "requiredLevel": 12,
+      "tierIndex": 3,
+      "name": "Master Architect",
+      "description": "Obras estratégicas",
+      "effect": {
+        "target": "buildWork",
+        "additiveBp": 600,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "civil_engineer",
+      "family": "build",
+      "requiredLevel": 12,
+      "tierIndex": 3,
+      "name": "Civil Engineer",
+      "description": "Infraestructura y básicos",
+      "effect": {
+        "target": "buildWork",
+        "additiveBp": 450,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "curiosity",
+      "family": "research",
+      "requiredLevel": 3,
+      "tierIndex": 1,
+      "name": "Curiosity",
+      "description": "Más conocimiento por tarea",
+      "effect": {
+        "target": "knowledge",
+        "additiveBp": 400,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "methodical_study",
+      "family": "research",
+      "requiredLevel": 3,
+      "tierIndex": 1,
+      "name": "Methodical Study",
+      "description": "Ciclos más rápidos",
+      "effect": {
+        "target": "knowledge",
+        "additiveBp": 350,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "applied_research",
+      "family": "research",
+      "requiredLevel": 7,
+      "tierIndex": 2,
+      "name": "Applied Research",
+      "description": "Mejora en laboratorios",
+      "effect": {
+        "target": "knowledge",
+        "additiveBp": 500,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "documentation",
+      "family": "research",
+      "requiredLevel": 7,
+      "tierIndex": 2,
+      "name": "Documentation",
+      "description": "Más XP por investigación",
+      "effect": {
+        "target": "xp",
+        "additiveBp": 400,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "grand_researcher",
+      "family": "research",
+      "requiredLevel": 12,
+      "tierIndex": 3,
+      "name": "Grand Researcher",
+      "description": "Mayor producción de conocimiento",
+      "effect": {
+        "target": "knowledge",
+        "additiveBp": 600,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    },
+    {
+      "id": "innovator",
+      "family": "research",
+      "requiredLevel": 12,
+      "tierIndex": 3,
+      "name": "Innovator",
+      "description": "Mejora acotada de hitos científicos",
+      "effect": {
+        "target": "knowledge",
+        "additiveBp": 500,
+        "scope": "INDIVIDUAL_PER_PERSON",
+        "applicableOnlyToChosenProfession": true
+      },
+      "cannotRespecThisSeason": true
+    }
+  ],
+  "sumBpCapPerCitizen": 1800,
+  "nationalAuraEffects": false,
+  "stacking": "sum individual chosen applicable perks, cap 1800 basis points; no direct nation-wide effects or gold or votes"
+}

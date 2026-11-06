@@ -1,0 +1,1438 @@
+{
+  "status": "V2_BASELINE",
+  "projects": [
+    {
+      "id": "paleolithic_memorial",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Memorial de los Fundadores — Paleolítico",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 120,
+        "stone": 85,
+        "ore": 0,
+        "knowledge": 20,
+        "gold": 30
+      },
+      "buildWorkUnits": 590,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 40,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "paleolithic_spectacle",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Plaza del Gran Espectáculo — Paleolítico",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 120,
+        "stone": 85,
+        "ore": 0,
+        "knowledge": 20,
+        "gold": 30
+      },
+      "buildWorkUnits": 590,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 40,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "paleolithic_archive",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Archivo de la Memoria — Paleolítico",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 120,
+        "stone": 85,
+        "ore": 0,
+        "knowledge": 20,
+        "gold": 30
+      },
+      "buildWorkUnits": 590,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 40,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "neolithic_memorial",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Memorial de los Fundadores — Neolítico",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 150,
+        "stone": 110,
+        "ore": 0,
+        "knowledge": 40,
+        "gold": 40
+      },
+      "buildWorkUnits": 730,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 50,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "neolithic_spectacle",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Plaza del Gran Espectáculo — Neolítico",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 150,
+        "stone": 110,
+        "ore": 0,
+        "knowledge": 40,
+        "gold": 40
+      },
+      "buildWorkUnits": 730,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 50,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "neolithic_archive",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Archivo de la Memoria — Neolítico",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 150,
+        "stone": 110,
+        "ore": 0,
+        "knowledge": 40,
+        "gold": 40
+      },
+      "buildWorkUnits": 730,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 50,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "copper_memorial",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Memorial de los Fundadores — Edad del Cobre",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 180,
+        "stone": 135,
+        "ore": 15,
+        "knowledge": 60,
+        "gold": 50
+      },
+      "buildWorkUnits": 870,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 60,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "copper_spectacle",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Plaza del Gran Espectáculo — Edad del Cobre",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 180,
+        "stone": 135,
+        "ore": 15,
+        "knowledge": 60,
+        "gold": 50
+      },
+      "buildWorkUnits": 870,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 60,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "copper_archive",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Archivo de la Memoria — Edad del Cobre",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 180,
+        "stone": 135,
+        "ore": 15,
+        "knowledge": 60,
+        "gold": 50
+      },
+      "buildWorkUnits": 870,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 60,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "bronze_memorial",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Memorial de los Fundadores — Edad del Bronce",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 210,
+        "stone": 160,
+        "ore": 30,
+        "knowledge": 80,
+        "gold": 60
+      },
+      "buildWorkUnits": 1010,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 70,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "bronze_spectacle",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Plaza del Gran Espectáculo — Edad del Bronce",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 210,
+        "stone": 160,
+        "ore": 30,
+        "knowledge": 80,
+        "gold": 60
+      },
+      "buildWorkUnits": 1010,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 70,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "bronze_archive",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Archivo de la Memoria — Edad del Bronce",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 210,
+        "stone": 160,
+        "ore": 30,
+        "knowledge": 80,
+        "gold": 60
+      },
+      "buildWorkUnits": 1010,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 70,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "iron_memorial",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Memorial de los Fundadores — Edad del Hierro",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 240,
+        "stone": 185,
+        "ore": 45,
+        "knowledge": 100,
+        "gold": 70
+      },
+      "buildWorkUnits": 1150,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 80,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "iron_spectacle",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Plaza del Gran Espectáculo — Edad del Hierro",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 240,
+        "stone": 185,
+        "ore": 45,
+        "knowledge": 100,
+        "gold": 70
+      },
+      "buildWorkUnits": 1150,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 80,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "iron_archive",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Archivo de la Memoria — Edad del Hierro",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 240,
+        "stone": 185,
+        "ore": 45,
+        "knowledge": 100,
+        "gold": 70
+      },
+      "buildWorkUnits": 1150,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 80,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "antiquity_memorial",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Memorial de los Fundadores — Antigüedad",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 270,
+        "stone": 210,
+        "ore": 60,
+        "knowledge": 120,
+        "gold": 80
+      },
+      "buildWorkUnits": 1290,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 90,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "antiquity_spectacle",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Plaza del Gran Espectáculo — Antigüedad",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 270,
+        "stone": 210,
+        "ore": 60,
+        "knowledge": 120,
+        "gold": 80
+      },
+      "buildWorkUnits": 1290,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 90,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "antiquity_archive",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Archivo de la Memoria — Antigüedad",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 270,
+        "stone": 210,
+        "ore": 60,
+        "knowledge": 120,
+        "gold": 80
+      },
+      "buildWorkUnits": 1290,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 90,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "medieval_memorial",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Memorial de los Fundadores — Edad Media",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 300,
+        "stone": 235,
+        "ore": 75,
+        "knowledge": 140,
+        "gold": 90
+      },
+      "buildWorkUnits": 1430,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 100,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "medieval_spectacle",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Plaza del Gran Espectáculo — Edad Media",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 300,
+        "stone": 235,
+        "ore": 75,
+        "knowledge": 140,
+        "gold": 90
+      },
+      "buildWorkUnits": 1430,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 100,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "medieval_archive",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Archivo de la Memoria — Edad Media",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 300,
+        "stone": 235,
+        "ore": 75,
+        "knowledge": 140,
+        "gold": 90
+      },
+      "buildWorkUnits": 1430,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 100,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "renaissance_memorial",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Memorial de los Fundadores — Renacimiento",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 330,
+        "stone": 260,
+        "ore": 90,
+        "knowledge": 160,
+        "gold": 100
+      },
+      "buildWorkUnits": 1570,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 110,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "renaissance_spectacle",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Plaza del Gran Espectáculo — Renacimiento",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 330,
+        "stone": 260,
+        "ore": 90,
+        "knowledge": 160,
+        "gold": 100
+      },
+      "buildWorkUnits": 1570,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 110,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "renaissance_archive",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Archivo de la Memoria — Renacimiento",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 330,
+        "stone": 260,
+        "ore": 90,
+        "knowledge": 160,
+        "gold": 100
+      },
+      "buildWorkUnits": 1570,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 110,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "industrial_memorial",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Memorial de los Fundadores — Era Industrial",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 360,
+        "stone": 285,
+        "ore": 105,
+        "knowledge": 180,
+        "gold": 110
+      },
+      "buildWorkUnits": 1710,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 120,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "industrial_spectacle",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Plaza del Gran Espectáculo — Era Industrial",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 360,
+        "stone": 285,
+        "ore": 105,
+        "knowledge": 180,
+        "gold": 110
+      },
+      "buildWorkUnits": 1710,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 120,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "industrial_archive",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Archivo de la Memoria — Era Industrial",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 360,
+        "stone": 285,
+        "ore": 105,
+        "knowledge": 180,
+        "gold": 110
+      },
+      "buildWorkUnits": 1710,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 120,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "modern_memorial",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Memorial de los Fundadores — Era Moderna",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 390,
+        "stone": 310,
+        "ore": 120,
+        "knowledge": 200,
+        "gold": 120
+      },
+      "buildWorkUnits": 1850,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 130,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "modern_spectacle",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Plaza del Gran Espectáculo — Era Moderna",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 390,
+        "stone": 310,
+        "ore": 120,
+        "knowledge": 200,
+        "gold": 120
+      },
+      "buildWorkUnits": 1850,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 130,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "modern_archive",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Archivo de la Memoria — Era Moderna",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 390,
+        "stone": 310,
+        "ore": 120,
+        "knowledge": 200,
+        "gold": 120
+      },
+      "buildWorkUnits": 1850,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 130,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "digital_memorial",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Memorial de los Fundadores — Era Digital",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 420,
+        "stone": 335,
+        "ore": 135,
+        "knowledge": 220,
+        "gold": 130
+      },
+      "buildWorkUnits": 1990,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 140,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "digital_spectacle",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Plaza del Gran Espectáculo — Era Digital",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 420,
+        "stone": 335,
+        "ore": 135,
+        "knowledge": 220,
+        "gold": 130
+      },
+      "buildWorkUnits": 1990,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 140,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "digital_archive",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Archivo de la Memoria — Era Digital",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 420,
+        "stone": 335,
+        "ore": 135,
+        "knowledge": 220,
+        "gold": 130
+      },
+      "buildWorkUnits": 1990,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 140,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "space_memorial",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Memorial de los Fundadores — Era Espacial",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 450,
+        "stone": 360,
+        "ore": 150,
+        "knowledge": 240,
+        "gold": 140
+      },
+      "buildWorkUnits": 2130,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 150,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "space_spectacle",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Plaza del Gran Espectáculo — Era Espacial",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 450,
+        "stone": 360,
+        "ore": 150,
+        "knowledge": 240,
+        "gold": 140
+      },
+      "buildWorkUnits": 2130,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 150,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "space_archive",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Archivo de la Memoria — Era Espacial",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 450,
+        "stone": 360,
+        "ore": 150,
+        "knowledge": 240,
+        "gold": 140
+      },
+      "buildWorkUnits": 2130,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 150,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "interstellar_memorial",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Memorial de los Fundadores — Era Interestelar",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "memorial",
+      "cost": {
+        "food": 0,
+        "wood": 480,
+        "stone": 385,
+        "ore": 165,
+        "knowledge": 260,
+        "gold": 150
+      },
+      "buildWorkUnits": 2270,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 160,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "memorial"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "interstellar_spectacle",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Plaza del Gran Espectáculo — Era Interestelar",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "spectacle",
+      "cost": {
+        "food": 0,
+        "wood": 480,
+        "stone": 385,
+        "ore": 165,
+        "knowledge": 260,
+        "gold": 150
+      },
+      "buildWorkUnits": 2270,
+      "footprintTiles": [
+        4,
+        4
+      ],
+      "effects": {
+        "prestigeOnCompletion": 160,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "spectacle"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    },
+    {
+      "id": "interstellar_archive",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Archivo de la Memoria — Era Interestelar",
+      "type": "STRATEGIC_OPTIONAL",
+      "category": "archive",
+      "cost": {
+        "food": 0,
+        "wood": 480,
+        "stone": 385,
+        "ore": 165,
+        "knowledge": 260,
+        "gold": 150
+      },
+      "buildWorkUnits": 2270,
+      "footprintTiles": [
+        3,
+        3
+      ],
+      "effects": {
+        "prestigeOnCompletion": 160,
+        "visualOnly": true,
+        "economicBonusBp": 0,
+        "historicalPoints": 0,
+        "cosmeticCue": "archive"
+      },
+      "maxInstancesPerNation": 1,
+      "requiresOtherStrategic": false
+    }
+  ],
+  "wonders": [
+    {
+      "id": "wonder_paleolithic",
+      "eraIndex": 1,
+      "eraId": "paleolithic",
+      "name": "Maravilla del Paleolítico",
+      "globalExclusive": true,
+      "buildWorkUnits": 1500,
+      "cost": {
+        "food": 0,
+        "wood": 245,
+        "stone": 195,
+        "ore": 0,
+        "knowledge": 40,
+        "gold": 140
+      },
+      "prestigeFirstCompleter": 300,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_neolithic",
+      "eraIndex": 2,
+      "eraId": "neolithic",
+      "name": "Maravilla del Neolítico",
+      "globalExclusive": true,
+      "buildWorkUnits": 1750,
+      "cost": {
+        "food": 0,
+        "wood": 290,
+        "stone": 240,
+        "ore": 0,
+        "knowledge": 80,
+        "gold": 180
+      },
+      "prestigeFirstCompleter": 350,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_copper",
+      "eraIndex": 3,
+      "eraId": "copper",
+      "name": "Maravilla del Edad del Cobre",
+      "globalExclusive": true,
+      "buildWorkUnits": 2000,
+      "cost": {
+        "food": 0,
+        "wood": 335,
+        "stone": 285,
+        "ore": 25,
+        "knowledge": 120,
+        "gold": 220
+      },
+      "prestigeFirstCompleter": 400,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_bronze",
+      "eraIndex": 4,
+      "eraId": "bronze",
+      "name": "Maravilla del Edad del Bronce",
+      "globalExclusive": true,
+      "buildWorkUnits": 2250,
+      "cost": {
+        "food": 0,
+        "wood": 380,
+        "stone": 330,
+        "ore": 50,
+        "knowledge": 160,
+        "gold": 260
+      },
+      "prestigeFirstCompleter": 450,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_iron",
+      "eraIndex": 5,
+      "eraId": "iron",
+      "name": "Maravilla del Edad del Hierro",
+      "globalExclusive": true,
+      "buildWorkUnits": 2500,
+      "cost": {
+        "food": 0,
+        "wood": 425,
+        "stone": 375,
+        "ore": 75,
+        "knowledge": 200,
+        "gold": 300
+      },
+      "prestigeFirstCompleter": 500,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_antiquity",
+      "eraIndex": 6,
+      "eraId": "antiquity",
+      "name": "Maravilla del Antigüedad",
+      "globalExclusive": true,
+      "buildWorkUnits": 2750,
+      "cost": {
+        "food": 0,
+        "wood": 470,
+        "stone": 420,
+        "ore": 100,
+        "knowledge": 240,
+        "gold": 340
+      },
+      "prestigeFirstCompleter": 550,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_medieval",
+      "eraIndex": 7,
+      "eraId": "medieval",
+      "name": "Maravilla del Edad Media",
+      "globalExclusive": true,
+      "buildWorkUnits": 3000,
+      "cost": {
+        "food": 0,
+        "wood": 515,
+        "stone": 465,
+        "ore": 125,
+        "knowledge": 280,
+        "gold": 380
+      },
+      "prestigeFirstCompleter": 600,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_renaissance",
+      "eraIndex": 8,
+      "eraId": "renaissance",
+      "name": "Maravilla del Renacimiento",
+      "globalExclusive": true,
+      "buildWorkUnits": 3250,
+      "cost": {
+        "food": 0,
+        "wood": 560,
+        "stone": 510,
+        "ore": 150,
+        "knowledge": 320,
+        "gold": 420
+      },
+      "prestigeFirstCompleter": 650,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_industrial",
+      "eraIndex": 9,
+      "eraId": "industrial",
+      "name": "Maravilla del Era Industrial",
+      "globalExclusive": true,
+      "buildWorkUnits": 3500,
+      "cost": {
+        "food": 0,
+        "wood": 605,
+        "stone": 555,
+        "ore": 175,
+        "knowledge": 360,
+        "gold": 460
+      },
+      "prestigeFirstCompleter": 700,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_modern",
+      "eraIndex": 10,
+      "eraId": "modern",
+      "name": "Maravilla del Era Moderna",
+      "globalExclusive": true,
+      "buildWorkUnits": 3750,
+      "cost": {
+        "food": 0,
+        "wood": 650,
+        "stone": 600,
+        "ore": 200,
+        "knowledge": 400,
+        "gold": 500
+      },
+      "prestigeFirstCompleter": 750,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_digital",
+      "eraIndex": 11,
+      "eraId": "digital",
+      "name": "Maravilla del Era Digital",
+      "globalExclusive": true,
+      "buildWorkUnits": 4000,
+      "cost": {
+        "food": 0,
+        "wood": 695,
+        "stone": 645,
+        "ore": 225,
+        "knowledge": 440,
+        "gold": 540
+      },
+      "prestigeFirstCompleter": 800,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_space",
+      "eraIndex": 12,
+      "eraId": "space",
+      "name": "Maravilla del Era Espacial",
+      "globalExclusive": true,
+      "buildWorkUnits": 4250,
+      "cost": {
+        "food": 0,
+        "wood": 740,
+        "stone": 690,
+        "ore": 250,
+        "knowledge": 480,
+        "gold": 580
+      },
+      "prestigeFirstCompleter": 850,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    },
+    {
+      "id": "wonder_interstellar",
+      "eraIndex": 13,
+      "eraId": "interstellar",
+      "name": "Maravilla del Era Interestelar",
+      "globalExclusive": true,
+      "buildWorkUnits": 4500,
+      "cost": {
+        "food": 0,
+        "wood": 785,
+        "stone": 735,
+        "ore": 275,
+        "knowledge": 520,
+        "gold": 620
+      },
+      "prestigeFirstCompleter": 900,
+      "economicBonusBp": 0,
+      "historicalPoints": 0,
+      "availableOnlyAsSeparateCosmeticEvent": true
+    }
+  ],
+  "candidatePool": "three strategic options per era; no gold means no vote; future wonders are separately triggered optional event; current era options must be all individually affordable"
+}

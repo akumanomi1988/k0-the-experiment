@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "2.0.0",
+  "status": "EXAMPLE_NOT_LIVE",
+  "seasonId": "season-demo-001",
+  "bindingMode": "CONFIGURABLE",
+  "assignments": [
+    {
+      "nationId": "micelios",
+      "bindings": [
+        {
+          "bindingId": "b01",
+          "provider": "twitch",
+          "providerChannelId": "twitch-channel-id-A",
+          "displayAlias": "Canal A",
+          "roles": [
+            "commands",
+            "live_health",
+            "contributions"
+          ],
+          "enabled": true,
+          "requiresVerifiedCredentials": true,
+          "monetizationEnabled": false,
+          "isClockAuthority": true
+        }
+      ]
+    },
+    {
+      "nationId": "runicos",
+      "bindings": [
+        {
+          "bindingId": "b02",
+          "provider": "twitch",
+          "providerChannelId": "twitch-channel-id-B",
+          "displayAlias": "Canal B",
+          "roles": [
+            "commands",
+            "live_health"
+          ],
+          "enabled": true,
+          "requiresVerifiedCredentials": true,
+          "monetizationEnabled": false,
+          "isClockAuthority": true
+        }
+      ]
+    },
+    {
+      "nationId": "ferrinos",
+      "bindings": [
+        {
+          "bindingId": "b03",
+          "provider": "twitch",
+          "providerChannelId": "twitch-channel-id-C",
+          "displayAlias": "Canal C",
+          "roles": [
+            "commands",
+            "live_health"
+          ],
+          "enabled": true,
+          "requiresVerifiedCredentials": true,
+          "monetizationEnabled": false,
+          "isClockAuthority": true
+        }
+      ]
+    }
+  ],
+  "otherSupportedConfigurations": [
+    "twitch+tiktok+youtube",
+    "tiktok+ tiktok+tiktok",
+    "youtube+youtube+youtube",
+    "local_simulated+local_simulated+local_simulated"
+  ]
+}

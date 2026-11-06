@@ -1,0 +1,74 @@
+{
+  "status": "V2_BASELINE",
+  "missions": [
+    {
+      "id": "daily_supply",
+      "period": "DAY_UTC",
+      "goal": {
+        "kind": "produce_food",
+        "units": 800
+      },
+      "reward": {
+        "food": 80
+      },
+      "oncePerPeriod": true,
+      "historicalPoints": 0
+    },
+    {
+      "id": "daily_materials",
+      "period": "DAY_UTC",
+      "goal": {
+        "kind": "produce_wood",
+        "units": 550
+      },
+      "reward": {
+        "wood": 60
+      },
+      "oncePerPeriod": true,
+      "historicalPoints": 0
+    },
+    {
+      "id": "daily_discovery",
+      "period": "DAY_UTC",
+      "goal": {
+        "kind": "produce_knowledge",
+        "units": 350
+      },
+      "reward": {
+        "knowledge": 35
+      },
+      "oncePerPeriod": true,
+      "historicalPoints": 0
+    },
+    {
+      "id": "weekly_builder",
+      "period": "WEEK_UTC",
+      "goal": {
+        "kind": "complete_basic_buildings",
+        "count": 2
+      },
+      "reward": {
+        "stone": 150
+      },
+      "oncePerPeriod": true,
+      "historicalPoints": 0
+    },
+    {
+      "id": "weekly_population",
+      "period": "WEEK_UTC",
+      "goal": {
+        "kind": "effective_worker_minutes",
+        "units": 1500
+      },
+      "reward": {
+        "food": 250
+      },
+      "oncePerPeriod": true,
+      "historicalPoints": 0
+    }
+  ],
+  "dailyStart": "00:00:00 UTC",
+  "weeklyStart": "Monday 00:00 UTC",
+  "noRepeatableEraPoints": true,
+  "zeroAudienceAvailableWithNpc": true
+}

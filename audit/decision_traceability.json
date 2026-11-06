@@ -1,0 +1,466 @@
+{
+  "1": {
+    "decision": "La civilización produce sin emisión a ritmo reducido.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "2": {
+    "decision": "Temporada finaliza cuando primera nación alcanza la última época.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "3": {
+    "decision": "Ritmo medio: una época cada pocos días, sujeto a balance.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "4": {
+    "decision": "Las tres civilizaciones empiezan al mismo tiempo desde cero.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "5": {
+    "decision": "Entre temporadas, ciudadanos solo conservan historial, estadísticas y logros.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "6": {
+    "decision": "Naciones rezagadas pueden acceder a eventos especiales de recuperación.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "7": {
+    "decision": "Un personaje por cuenta/plataforma y temporada, sin muerte definitiva.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "8": {
+    "decision": "Tras abandonar directo, ciudadano trabaja unas horas y descansa; especificado luego en 2 horas.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "9": {
+    "decision": "Alimentación y mantenimiento colectivos, no necesidades individuales.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "10": {
+    "decision": "Se elige profesión una vez; cambia automáticamente con la época.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "11": {
+    "decision": "Trabajadores ganan niveles, habilidades y especializaciones.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "12": {
+    "decision": "Personajes visibles caminan, recolectan y transportan recursos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "13": {
+    "decision": "Economía de pocos recursos, no multitud de materias por época.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "14": {
+    "decision": "Sin alimentos disminuye la productividad; no mueren ciudadanos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "15": {
+    "decision": "Los almacenes tienen límite; es necesario construir/ampliar.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "16": {
+    "decision": "Mantenimiento solo para población y edificios especiales.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "17": {
+    "decision": "Oro sin gastar se convierte en prestigio/historia sin ventaja económica.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "18": {
+    "decision": "Donantes reconocidos con monumentos, estatuas o nombres de edificios.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "19": {
+    "decision": "Solo obras estratégicas requieren voto; básicos automáticos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "20": {
+    "decision": "Voto estratégico de 10 min se abre por tecnología o hito.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "21": {
+    "decision": "K-0 selecciona tres opciones por reglas y situación del mundo.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "22": {
+    "decision": "Edificios ganadores se construyen progresivamente por fases visuales.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "23": {
+    "decision": "La nación prioriza economía, ciencia o defensa.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "24": {
+    "decision": "Maravillas únicas para primera nación que las construya.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "25": {
+    "decision": "Ataques entre naciones solo en eventos programados.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "26": {
+    "decision": "Ejército de unidades automáticas producidas por edificios.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "27": {
+    "decision": "Derrota puede penalizar temporalmente producción/territorio, no destruir progreso.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "28": {
+    "decision": "No se permiten alianzas: tres naciones rivales.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "29": {
+    "decision": "Resultados de competición normalizados, más coordinación que número bruto.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "30": {
+    "decision": "Minijuegos combinan estrategia, coordinación y batallas automáticas.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "31": {
+    "decision": "Mapas generados proceduralmente para cada temporada.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "32": {
+    "decision": "Biomas son diferencias visuales sin ventajas económicas.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "33": {
+    "decision": "Fauna decorativa; enemigos solo en eventos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "34": {
+    "decision": "Desastres y peligros solo eventos especiales anunciados por presentador.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "35": {
+    "decision": "NPC mantienen funcionando la civilización sin espectadores activos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "36": {
+    "decision": "Misiones colectivas diarias y semanales con recompensas.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "37": {
+    "decision": "Presentador representa IA/científico que experimenta con las civilizaciones.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "38": {
+    "decision": "Personalidad de presentador sarcástica, provocadora y bromista.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "39": {
+    "decision": "Presentador habla bastante para mantener directo animado.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "40": {
+    "decision": "Puede conversar libremente con moderación.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "41": {
+    "decision": "Presentador es un árbitro imparcial, sin favoritismos reales.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "42": {
+    "decision": "Puede organizar dinámicamente eventos permitidos según actividad/situación.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "43": {
+    "decision": "Arte 2D pixel art retro (después refinado baja resolución/falso isométrico).",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "44": {
+    "decision": "Representación adaptativa del número de ciudadanos visibles.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "45": {
+    "decision": "Edificios de épocas antiguas permanecen al evolucionar.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "46": {
+    "decision": "HUD equilibrado entre mundo, recursos, tecnología y clasificaciones.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "47": {
+    "decision": "Doctor K-0 integrado físicamente en mundo, no webcam superpuesta.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "48": {
+    "decision": "Una interfaz responsive para vertical y horizontal.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "49": {
+    "decision": "Usuario puede tener personaje independiente por cada plataforma.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs",
+    "note": "Platform binding abstracted from nationality by subsequent explicit user request; NPC government remains confirmed."
+  },
+  "50": {
+    "decision": "Antigua elección de líderes espectadores (alcalde/general/científico). Sustituida por gobiernos NPC.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs",
+    "note": "Platform binding abstracted from nationality by subsequent explicit user request; NPC government remains confirmed."
+  },
+  "51": {
+    "decision": "Gobernantes son representantes sin poderes ejecutivos para anular votos; adaptado a NPC.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "52": {
+    "decision": "Elecciones de gobierno en cada nueva época tecnológica.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "53": {
+    "decision": "Todos pueden votar; antiguo requisito para candidatos espectadores sustituido por candidatos NPC.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "54": {
+    "decision": "XP principalmente por trabajo, con bonus por misiones y logros.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "55": {
+    "decision": "Se elige especialización mediante !skill al alcanzar niveles.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "56": {
+    "decision": "NPC y jugadores misma base productiva, humanos mejoran por XP/skills.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "57": {
+    "decision": "Proyecto estratégico sin todos los recursos no aparece en votación.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "58": {
+    "decision": "Con almacén lleno, NPC se reasignan y ciudadanos conservan oficio.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "59": {
+    "decision": "Oro por valores fijos según apoyo/plataforma, revisados periódicamente.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "60": {
+    "decision": "Épocas mediante barra histórica por actividad, investigación y construcción.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "61": {
+    "decision": "Ciudadanos votan prioridad entre economía, ciencia o defensa al comenzar época.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "62": {
+    "decision": "Edificios históricos continúan produciendo menos que modernos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "63": {
+    "decision": "Candidatos son tres NPC, uno por modelo de gobierno, no ciudadanos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs",
+    "note": "Platform binding abstracted from nationality by subsequent explicit user request; NPC government remains confirmed."
+  },
+  "64": {
+    "decision": "Un único gobernante por nación durante cada época.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "65": {
+    "decision": "No hay candidatos ciudadanos ni problema de inactividad de líder; tres NPC candidatos por época.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs",
+    "note": "Platform binding abstracted from nationality by subsequent explicit user request; NPC government remains confirmed."
+  },
+  "66": {
+    "decision": "Ciudadano trabaja 2 horas desde última activación válida.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "67": {
+    "decision": "Sin !skill conserva especialización anterior; no autoelige nueva.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "68": {
+    "decision": "Elecciones de habilidades permanentes hasta fin de temporada.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "69": {
+    "decision": "Almacén de recurso lleno: ciudadano deja de producir pero conserva oficio.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "70": {
+    "decision": "Costes de construcción estratégica se descuentan completamente al aprobar.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "71": {
+    "decision": "Varios proyectos estratégicos simultáneos si hay trabajadores y recursos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "72": {
+    "decision": "Barra histórica recibe puntos fijos por investigación, producción, obras, misiones; luego por hitos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "73": {
+    "decision": "Si sin stream alcanza 100% de era, espera al próximo directo para evolucionar.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "74": {
+    "decision": "Territorio se expande y desbloquea nuevas parcelas para edificios antiguos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "75": {
+    "decision": "Solo un comando válido por ciudadano y ronda de coordinación.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "76": {
+    "decision": "Territorio afectado en torneo deja de producir temporalmente.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "77": {
+    "decision": "Primer torneo es piedra/papel/tijera votado colectivamente.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "78": {
+    "decision": "Tres gobiernos: económico, militar, científico; títulos y estética evolucionan por era.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "79": {
+    "decision": "Gobierno elegido concede bonificación pasiva pequeña en su rama.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "80": {
+    "decision": "Los candidatos NPC son recurrentes y envejecen estilísticamente entre épocas.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "81": {
+    "decision": "Elección de gobierno dura primera hora de nueva época.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "82": {
+    "decision": "Sin votos se selecciona gobierno al azar uniformemente.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "83": {
+    "decision": "Empate electoral: segunda votación de 3 minutos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "84": {
+    "decision": "Solo !active o !work válido reinicia 2 horas; chat normal no.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "85": {
+    "decision": "Experiencia fuera de emisión a velocidad reducida como producción.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "86": {
+    "decision": "Árbol pequeño de habilidades con varias elecciones permanentes por temporada.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "87": {
+    "decision": "Progreso histórico principalmente por hitos productivos, no recursos individuales.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "88": {
+    "decision": "Prioridad economía/ciencia/defensa otorga bonus temporal de productividad, no puntos directos.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "89": {
+    "decision": "Votación estratégica NO comienza sin tres proyectos financiables.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "90": {
+    "decision": "RPS por rondas triangulares simultáneas con sistema de puntuación.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "91": {
+    "decision": "Durante ronda RPS se ve número de votantes, no elección hasta cerrar.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  },
+  "92": {
+    "decision": "Derrota territorial bloquea producción de zona durante 30 min de simulación activa.",
+    "status": "CONFIRMED",
+    "interpretation": "preserved; see CANONICAL_SPEC and 01-20 docs"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "status": "V2_BASELINE",
+  "professions": [
+    {
+      "id": "food",
+      "name": "Alimentación",
+      "output": [
+        "food"
+      ],
+      "assignment": "once_per_season",
+      "autoevolvesLabelWithEra": true,
+      "baseSameAsNpc": true
+    },
+    {
+      "id": "wood",
+      "name": "Naturaleza y biomasa",
+      "output": [
+        "wood"
+      ],
+      "assignment": "once_per_season",
+      "autoevolvesLabelWithEra": true,
+      "baseSameAsNpc": true
+    },
+    {
+      "id": "mine",
+      "name": "Materiales",
+      "output": [
+        "stone",
+        "ore"
+      ],
+      "assignment": "once_per_season",
+      "autoevolvesLabelWithEra": true,
+      "baseSameAsNpc": true
+    },
+    {
+      "id": "build",
+      "name": "Construcción",
+      "output": [
+        "buildWork"
+      ],
+      "assignment": "once_per_season",
+      "autoevolvesLabelWithEra": true,
+      "baseSameAsNpc": true
+    },
+    {
+      "id": "research",
+      "name": "Conocimiento",
+      "output": [
+        "knowledge"
+      ],
+      "assignment": "once_per_season",
+      "autoevolvesLabelWithEra": true,
+      "baseSameAsNpc": true
+    }
+  ],
+  "eraLabelsSource": "eras.v2.json"
+}

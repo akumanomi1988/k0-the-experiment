@@ -1,0 +1,322 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-chaos.invalid/schemas/ruleset.v2.json",
+  "title": "CHAOS ruleset v2",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "rulesetId",
+    "status",
+    "nations",
+    "simulation",
+    "citizens",
+    "resources",
+    "baseOutputMilliPerWorkerMinute",
+    "production",
+    "buildings",
+    "progression",
+    "governments",
+    "strategic",
+    "tournaments",
+    "missions",
+    "presentation",
+    "operator",
+    "season"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "2.0.0"
+    },
+    "rulesetId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "const": "IMPLEMENTATION_BASELINE"
+    },
+    "nations": {
+      "type": "object",
+      "required": [
+        "count",
+        "factionIds",
+        "sameCompetitiveStart",
+        "allowMixedProviders"
+      ],
+      "properties": {
+        "count": {
+          "const": 3
+        },
+        "factionIds": {
+          "const": [
+            "micelios",
+            "runicos",
+            "ferrinos"
+          ]
+        },
+        "sameCompetitiveStart": {
+          "const": true
+        },
+        "allowMixedProviders": {
+          "const": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "simulation": {
+      "type": "object",
+      "required": [
+        "tickSeconds",
+        "resourceScale",
+        "offlineEconomyBp",
+        "activityWindowSeconds",
+        "rng"
+      ],
+      "properties": {
+        "tickSeconds": {
+          "const": 5
+        },
+        "resourceScale": {
+          "const": 1000
+        },
+        "offlineEconomyBp": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9999
+        },
+        "activityWindowSeconds": {
+          "const": 7200
+        },
+        "rng": {
+          "const": "sha256-counter-64-v1"
+        }
+      },
+      "additionalProperties": true
+    },
+    "citizens": {
+      "type": "object",
+      "required": [
+        "startingNpcPopulation",
+        "initialNpcAllocation",
+        "talentLevels"
+      ],
+      "properties": {
+        "startingNpcPopulation": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "initialNpcAllocation": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "talentLevels": {
+          "const": [
+            3,
+            7,
+            12
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "resources": {
+      "type": "object",
+      "required": [
+        "ordinary",
+        "gold",
+        "stockInitial",
+        "capacityInitial",
+        "goldCreditOrigin"
+      ],
+      "additionalProperties": true
+    },
+    "baseOutputMilliPerWorkerMinute": {
+      "type": "object",
+      "required": [
+        "food",
+        "wood",
+        "stone",
+        "ore",
+        "knowledge",
+        "buildWork"
+      ],
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "production": {
+      "type": "object",
+      "required": [
+        "oreAvailableStartingEraIndex",
+        "productionBonusStackCapBp"
+      ],
+      "additionalProperties": true
+    },
+    "buildings": {
+      "type": "object",
+      "required": [
+        "maxConcurrentWorks",
+        "mapInitialWidth",
+        "mapInitialHeight"
+      ],
+      "additionalProperties": true
+    },
+    "progression": {
+      "type": "object",
+      "required": [
+        "eras",
+        "historyPointsPerEra",
+        "milestonesPerEra",
+        "pointsPerMilestone",
+        "finalEraIndex",
+        "seasonWinEvent"
+      ],
+      "properties": {
+        "eras": {
+          "type": "array",
+          "minItems": 13,
+          "maxItems": 13,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "historyPointsPerEra": {
+          "const": 100
+        },
+        "milestonesPerEra": {
+          "const": 5
+        },
+        "pointsPerMilestone": {
+          "const": [
+            20,
+            20,
+            20,
+            20,
+            20
+          ]
+        },
+        "finalEraIndex": {
+          "const": 13
+        },
+        "seasonWinEvent": {
+          "const": "enter_final_era_committed"
+        }
+      },
+      "additionalProperties": true
+    },
+    "governments": {
+      "type": "object",
+      "required": [
+        "electionLiveSeconds",
+        "runoffLiveSeconds",
+        "priorityVoteLiveSeconds"
+      ],
+      "properties": {
+        "electionLiveSeconds": {
+          "const": 3600
+        },
+        "runoffLiveSeconds": {
+          "const": 180
+        },
+        "priorityVoteLiveSeconds": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "strategic": {
+      "type": "object",
+      "required": [
+        "candidateCount",
+        "voteLiveSeconds",
+        "goldEffects"
+      ],
+      "properties": {
+        "candidateCount": {
+          "const": 3
+        },
+        "voteLiveSeconds": {
+          "const": 600
+        },
+        "goldEffects": {
+          "const": "cosmetic_prestige_only"
+        }
+      },
+      "additionalProperties": true
+    },
+    "tournaments": {
+      "type": "object",
+      "required": [
+        "kind",
+        "territoryPenaltyActiveSeconds"
+      ],
+      "properties": {
+        "kind": {
+          "const": "triangular_rps"
+        },
+        "territoryPenaltyActiveSeconds": {
+          "const": 1800
+        }
+      },
+      "additionalProperties": true
+    },
+    "missions": {
+      "type": "object",
+      "required": [
+        "timezone"
+      ],
+      "properties": {
+        "timezone": {
+          "const": "UTC"
+        }
+      },
+      "additionalProperties": true
+    },
+    "presentation": {
+      "type": "object",
+      "required": [
+        "artStyle",
+        "tileWidthPx",
+        "tileHeightPx"
+      ],
+      "additionalProperties": true
+    },
+    "operator": {
+      "type": "object",
+      "required": [
+        "monetizationDefaultEnabled"
+      ],
+      "properties": {
+        "monetizationDefaultEnabled": {
+          "const": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "season": {
+      "type": "object",
+      "required": [
+        "keepAchievements",
+        "keepStats",
+        "keepHistory",
+        "goldToPrestigeNoBonus"
+      ],
+      "additionalProperties": true
+    },
+    "sourcePriority": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,812 @@
+{
+  "status": "V2_BASELINE",
+  "milestones": [
+    {
+      "id": "paleolithic_food_production",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 6400
+    },
+    {
+      "id": "paleolithic_materials_production",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 4750,
+        "stone": 3420
+      }
+    },
+    {
+      "id": "paleolithic_knowledge_production",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 2650,
+      "requiresTechnologyId": "tech_paleolithic"
+    },
+    {
+      "id": "paleolithic_signature_basic_building_completed",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "paleolithic_civic"
+    },
+    {
+      "id": "paleolithic_mission_completed",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "neolithic_food_production",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 7000
+    },
+    {
+      "id": "neolithic_materials_production",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 5200,
+        "stone": 3740
+      }
+    },
+    {
+      "id": "neolithic_knowledge_production",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 2900,
+      "requiresTechnologyId": "tech_neolithic"
+    },
+    {
+      "id": "neolithic_signature_basic_building_completed",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "neolithic_civic"
+    },
+    {
+      "id": "neolithic_mission_completed",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "copper_food_production",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 7600
+    },
+    {
+      "id": "copper_materials_production",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 5650,
+        "stone": 4060
+      }
+    },
+    {
+      "id": "copper_knowledge_production",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 3150,
+      "requiresTechnologyId": "tech_copper"
+    },
+    {
+      "id": "copper_signature_basic_building_completed",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "copper_civic"
+    },
+    {
+      "id": "copper_mission_completed",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "bronze_food_production",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 8200
+    },
+    {
+      "id": "bronze_materials_production",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 6100,
+        "stone": 4380
+      }
+    },
+    {
+      "id": "bronze_knowledge_production",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 3400,
+      "requiresTechnologyId": "tech_bronze"
+    },
+    {
+      "id": "bronze_signature_basic_building_completed",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "bronze_civic"
+    },
+    {
+      "id": "bronze_mission_completed",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "iron_food_production",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 8800
+    },
+    {
+      "id": "iron_materials_production",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 6550,
+        "stone": 4700
+      }
+    },
+    {
+      "id": "iron_knowledge_production",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 3650,
+      "requiresTechnologyId": "tech_iron"
+    },
+    {
+      "id": "iron_signature_basic_building_completed",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "iron_civic"
+    },
+    {
+      "id": "iron_mission_completed",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "antiquity_food_production",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 9400
+    },
+    {
+      "id": "antiquity_materials_production",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 7000,
+        "stone": 5020
+      }
+    },
+    {
+      "id": "antiquity_knowledge_production",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 3900,
+      "requiresTechnologyId": "tech_antiquity"
+    },
+    {
+      "id": "antiquity_signature_basic_building_completed",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "antiquity_civic"
+    },
+    {
+      "id": "antiquity_mission_completed",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "medieval_food_production",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 10000
+    },
+    {
+      "id": "medieval_materials_production",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 7450,
+        "stone": 5340
+      }
+    },
+    {
+      "id": "medieval_knowledge_production",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 4150,
+      "requiresTechnologyId": "tech_medieval"
+    },
+    {
+      "id": "medieval_signature_basic_building_completed",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "medieval_civic"
+    },
+    {
+      "id": "medieval_mission_completed",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "renaissance_food_production",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 10600
+    },
+    {
+      "id": "renaissance_materials_production",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 7900,
+        "stone": 5660
+      }
+    },
+    {
+      "id": "renaissance_knowledge_production",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 4400,
+      "requiresTechnologyId": "tech_renaissance"
+    },
+    {
+      "id": "renaissance_signature_basic_building_completed",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "renaissance_civic"
+    },
+    {
+      "id": "renaissance_mission_completed",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "industrial_food_production",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 11200
+    },
+    {
+      "id": "industrial_materials_production",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 8350,
+        "stone": 5980
+      }
+    },
+    {
+      "id": "industrial_knowledge_production",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 4650,
+      "requiresTechnologyId": "tech_industrial"
+    },
+    {
+      "id": "industrial_signature_basic_building_completed",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "industrial_civic"
+    },
+    {
+      "id": "industrial_mission_completed",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "modern_food_production",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 11800
+    },
+    {
+      "id": "modern_materials_production",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 8800,
+        "stone": 6300
+      }
+    },
+    {
+      "id": "modern_knowledge_production",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 4900,
+      "requiresTechnologyId": "tech_modern"
+    },
+    {
+      "id": "modern_signature_basic_building_completed",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "modern_civic"
+    },
+    {
+      "id": "modern_mission_completed",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "digital_food_production",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 12400
+    },
+    {
+      "id": "digital_materials_production",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 9250,
+        "stone": 6620
+      }
+    },
+    {
+      "id": "digital_knowledge_production",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 5150,
+      "requiresTechnologyId": "tech_digital"
+    },
+    {
+      "id": "digital_signature_basic_building_completed",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "digital_civic"
+    },
+    {
+      "id": "digital_mission_completed",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "space_food_production",
+      "eraId": "space",
+      "eraIndex": 12,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 13000
+    },
+    {
+      "id": "space_materials_production",
+      "eraId": "space",
+      "eraIndex": 12,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 9700,
+        "stone": 6940
+      }
+    },
+    {
+      "id": "space_knowledge_production",
+      "eraId": "space",
+      "eraIndex": 12,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 5400,
+      "requiresTechnologyId": "tech_space"
+    },
+    {
+      "id": "space_signature_basic_building_completed",
+      "eraId": "space",
+      "eraIndex": 12,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "space_civic"
+    },
+    {
+      "id": "space_mission_completed",
+      "eraId": "space",
+      "eraIndex": 12,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    },
+    {
+      "id": "interstellar_food_production",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "triggerKind": "food_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 13600
+    },
+    {
+      "id": "interstellar_materials_production",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "triggerKind": "materials_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionByResourceUnits": {
+        "wood": 10150,
+        "stone": 7260
+      }
+    },
+    {
+      "id": "interstellar_knowledge_production",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "triggerKind": "knowledge_production",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetProductionUnits": 5650,
+      "requiresTechnologyId": "tech_interstellar"
+    },
+    {
+      "id": "interstellar_signature_basic_building_completed",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "triggerKind": "signature_basic_building_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "targetBuildingId": "interstellar_civic"
+    },
+    {
+      "id": "interstellar_mission_completed",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "triggerKind": "mission_completed",
+      "points": 20,
+      "repeatable": false,
+      "requiresGold": false,
+      "targetCount": 1,
+      "eligibleMissionIds": [
+        "daily_supply",
+        "daily_materials",
+        "daily_discovery",
+        "weekly_builder",
+        "weekly_population"
+      ]
+    }
+  ],
+  "definition": "era-lifetime cumulative production accepted; materials requires wood AND stone; research needs current era basic tech; first collective mission each era counts once; building is automatic; no gold points."
+}

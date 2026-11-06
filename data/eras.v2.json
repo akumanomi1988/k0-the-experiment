@@ -1,0 +1,292 @@
+{
+  "status": "V2_BASELINE",
+  "eras": [
+    {
+      "order": 1,
+      "id": "paleolithic",
+      "name": "Paleolítico",
+      "professionLabels": {
+        "food": "Cazador",
+        "wood": "Recolector",
+        "mine": "Tallador",
+        "build": "Constructor tribal",
+        "research": "Explorador"
+      },
+      "eraIndex": 1,
+      "minimumPreviousEraIndex": 0,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 0,
+      "unlockOre": false,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 0,
+      "cosmeticAgeVariant": "age_01",
+      "researchTrackId": "tech_paleolithic",
+      "signatureBuildingId": "paleolithic_civic"
+    },
+    {
+      "order": 2,
+      "id": "neolithic",
+      "name": "Neolítico",
+      "professionLabels": {
+        "food": "Agricultor",
+        "wood": "Leñador",
+        "mine": "Cantero",
+        "build": "Albañil",
+        "research": "Sabio"
+      },
+      "eraIndex": 2,
+      "minimumPreviousEraIndex": 1,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 300,
+      "unlockOre": false,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_02",
+      "researchTrackId": "tech_neolithic",
+      "signatureBuildingId": "neolithic_civic"
+    },
+    {
+      "order": 3,
+      "id": "copper",
+      "name": "Edad del Cobre",
+      "professionLabels": {
+        "food": "Agricultor",
+        "wood": "Silvicultor",
+        "mine": "Minero",
+        "build": "Artesano",
+        "research": "Estudioso"
+      },
+      "eraIndex": 3,
+      "minimumPreviousEraIndex": 2,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 600,
+      "unlockOre": true,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_03",
+      "researchTrackId": "tech_copper",
+      "signatureBuildingId": "copper_civic"
+    },
+    {
+      "order": 4,
+      "id": "bronze",
+      "name": "Edad del Bronce",
+      "professionLabels": {
+        "food": "Granjero",
+        "wood": "Leñador",
+        "mine": "Fundidor",
+        "build": "Maestro de obras",
+        "research": "Escriba"
+      },
+      "eraIndex": 4,
+      "minimumPreviousEraIndex": 3,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 900,
+      "unlockOre": true,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_04",
+      "researchTrackId": "tech_bronze",
+      "signatureBuildingId": "bronze_civic"
+    },
+    {
+      "order": 5,
+      "id": "iron",
+      "name": "Edad del Hierro",
+      "professionLabels": {
+        "food": "Campesino",
+        "wood": "Forestal",
+        "mine": "Herrero",
+        "build": "Constructor",
+        "research": "Investigador"
+      },
+      "eraIndex": 5,
+      "minimumPreviousEraIndex": 4,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 1200,
+      "unlockOre": true,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_05",
+      "researchTrackId": "tech_iron",
+      "signatureBuildingId": "iron_civic"
+    },
+    {
+      "order": 6,
+      "id": "antiquity",
+      "name": "Antigüedad",
+      "professionLabels": {
+        "food": "Labrador",
+        "wood": "Carpintero forestal",
+        "mine": "Minero",
+        "build": "Arquitecto",
+        "research": "Filósofo"
+      },
+      "eraIndex": 6,
+      "minimumPreviousEraIndex": 5,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 1500,
+      "unlockOre": true,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_06",
+      "researchTrackId": "tech_antiquity",
+      "signatureBuildingId": "antiquity_civic"
+    },
+    {
+      "order": 7,
+      "id": "medieval",
+      "name": "Edad Media",
+      "professionLabels": {
+        "food": "Agricultor",
+        "wood": "Leñador",
+        "mine": "Minero",
+        "build": "Maestro de gremio",
+        "research": "Erudito"
+      },
+      "eraIndex": 7,
+      "minimumPreviousEraIndex": 6,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 1800,
+      "unlockOre": true,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_07",
+      "researchTrackId": "tech_medieval",
+      "signatureBuildingId": "medieval_civic"
+    },
+    {
+      "order": 8,
+      "id": "renaissance",
+      "name": "Renacimiento",
+      "professionLabels": {
+        "food": "Agrónomo",
+        "wood": "Guardabosques",
+        "mine": "Metalurgista",
+        "build": "Ingeniero",
+        "research": "Inventor"
+      },
+      "eraIndex": 8,
+      "minimumPreviousEraIndex": 7,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 2100,
+      "unlockOre": true,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_08",
+      "researchTrackId": "tech_renaissance",
+      "signatureBuildingId": "renaissance_civic"
+    },
+    {
+      "order": 9,
+      "id": "industrial",
+      "name": "Era Industrial",
+      "professionLabels": {
+        "food": "Operario agrícola",
+        "wood": "Maderero",
+        "mine": "Minero industrial",
+        "build": "Ingeniero industrial",
+        "research": "Científico"
+      },
+      "eraIndex": 9,
+      "minimumPreviousEraIndex": 8,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 2400,
+      "unlockOre": true,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_09",
+      "researchTrackId": "tech_industrial",
+      "signatureBuildingId": "industrial_civic"
+    },
+    {
+      "order": 10,
+      "id": "modern",
+      "name": "Era Moderna",
+      "professionLabels": {
+        "food": "Técnico agrícola",
+        "wood": "Técnico forestal",
+        "mine": "Operario de extracción",
+        "build": "Técnico de obras",
+        "research": "Investigador"
+      },
+      "eraIndex": 10,
+      "minimumPreviousEraIndex": 9,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 2700,
+      "unlockOre": true,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_10",
+      "researchTrackId": "tech_modern",
+      "signatureBuildingId": "modern_civic"
+    },
+    {
+      "order": 11,
+      "id": "digital",
+      "name": "Era Digital",
+      "professionLabels": {
+        "food": "Tecnólogo alimentario",
+        "wood": "Especialista en biomasa",
+        "mine": "Operador extractivo",
+        "build": "Ingeniero de automatización",
+        "research": "Analista"
+      },
+      "eraIndex": 11,
+      "minimumPreviousEraIndex": 10,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 3000,
+      "unlockOre": true,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_11",
+      "researchTrackId": "tech_digital",
+      "signatureBuildingId": "digital_civic"
+    },
+    {
+      "order": 12,
+      "id": "space",
+      "name": "Era Espacial",
+      "professionLabels": {
+        "food": "Técnico de suministros",
+        "wood": "Cultivador espacial",
+        "mine": "Extractor planetario",
+        "build": "Ingeniero orbital",
+        "research": "Astrocientífico"
+      },
+      "eraIndex": 12,
+      "minimumPreviousEraIndex": 11,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 3000,
+      "unlockOre": true,
+      "historicalPointsRequired": 100,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_12",
+      "researchTrackId": "tech_space",
+      "signatureBuildingId": "space_civic"
+    },
+    {
+      "order": 13,
+      "id": "interstellar",
+      "name": "Era Interestelar",
+      "professionLabels": {
+        "food": "Sintetizador",
+        "wood": "Ingeniero de biomasa",
+        "mine": "Extractor estelar",
+        "build": "Arquitecto interestelar",
+        "research": "Investigador cuántico"
+      },
+      "eraIndex": 13,
+      "minimumPreviousEraIndex": 12,
+      "transition": "live_only_after_all_five_unique_milestones",
+      "productionBonusFromEraBp": 3000,
+      "unlockOre": true,
+      "historicalPointsRequired": 0,
+      "mapExpansionMarginTiles": 8,
+      "cosmeticAgeVariant": "age_13",
+      "researchTrackId": "tech_interstellar",
+      "signatureBuildingId": "interstellar_civic"
+    }
+  ],
+  "ending": "first nation to commit transition into interstellar ends season; no interstellar bar required"
+}

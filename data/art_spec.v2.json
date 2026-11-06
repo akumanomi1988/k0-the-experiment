@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "2.0.0",
+  "status": "SPECIFICATION_ONLY_NO_ASSETS_RENDERED",
+  "tileSize": [
+    32,
+    16
+  ],
+  "baseCitizenFrame": [
+    16,
+    24
+  ],
+  "directionCount": 4,
+  "spriteDirections": [
+    "NE",
+    "SE",
+    "SW",
+    "NW"
+  ],
+  "spriteActions": [
+    "idle",
+    "walk",
+    "gather",
+    "haul",
+    "build",
+    "research",
+    "celebrate",
+    "rest",
+    "react"
+  ],
+  "actionFrames": {
+    "idle": 4,
+    "walk": 6,
+    "gather": 5,
+    "haul": 6,
+    "build": 5,
+    "research": 5,
+    "celebrate": 5,
+    "rest": 2,
+    "react": 4
+  },
+  "actionFps": {
+    "idle": 4,
+    "walk": 8,
+    "gather": 6,
+    "haul": 8,
+    "build": 6,
+    "research": 6,
+    "celebrate": 6,
+    "rest": 1,
+    "react": 6
+  },
+  "maxPaletteColorsPerSprite": 24,
+  "maxVisibleCitizens": {
+    "vertical": 45,
+    "horizontal": 90
+  },
+  "nations": [
+    "micelios",
+    "runicos",
+    "ferrinos"
+  ],
+  "artDeliverables": {
+    "citizens": 195,
+    "npcGovernors": 117,
+    "buildings": 390,
+    "strategicBuildings": 117,
+    "wonders": 39,
+    "k0": "cyborg scientist, metallic limbs and face plate; animated portrait+world sprite"
+  },
+  "camera": {
+    "verticalHudTopPercent": 14,
+    "verticalWorldPercent": 66,
+    "verticalHudBottomPercent": 20,
+    "horizontalWorldPercent": 73,
+    "horizontalSideHudPercent": 27
+  },
+  "frameNaming": "{faction}/{era}/{entity}/{direction}/{action}/{frame:02d}.png",
+  "pixelArtAcceptance": [
+    "no smoothing",
+    "same frame anchors for equivalent roles",
+    "no faction-dependent collision",
+    "no 3D depth advantage",
+    "no stolen Terraria/other proprietary sprites"
+  ]
+}

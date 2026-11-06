@@ -1,0 +1,467 @@
+{
+  "title": "Decision register 1–92",
+  "source": "User selections in conversation",
+  "sourceRule": "Later decisions override earlier ones",
+  "decisions": [
+    {
+      "number": 1,
+      "status": "CONFIRMED",
+      "decision": "La civilización produce sin emisión a ritmo reducido."
+    },
+    {
+      "number": 2,
+      "status": "CONFIRMED",
+      "decision": "Temporada finaliza cuando primera nación alcanza la última época."
+    },
+    {
+      "number": 3,
+      "status": "CONFIRMED",
+      "decision": "Ritmo medio: una época cada pocos días, sujeto a balance."
+    },
+    {
+      "number": 4,
+      "status": "CONFIRMED",
+      "decision": "Las tres civilizaciones empiezan al mismo tiempo desde cero."
+    },
+    {
+      "number": 5,
+      "status": "CONFIRMED",
+      "decision": "Entre temporadas, ciudadanos solo conservan historial, estadísticas y logros."
+    },
+    {
+      "number": 6,
+      "status": "CONFIRMED",
+      "decision": "Naciones rezagadas pueden acceder a eventos especiales de recuperación."
+    },
+    {
+      "number": 7,
+      "status": "CONFIRMED",
+      "decision": "Un personaje por cuenta/plataforma y temporada, sin muerte definitiva."
+    },
+    {
+      "number": 8,
+      "status": "CONFIRMED",
+      "decision": "Tras abandonar directo, ciudadano trabaja unas horas y descansa; especificado luego en 2 horas."
+    },
+    {
+      "number": 9,
+      "status": "CONFIRMED",
+      "decision": "Alimentación y mantenimiento colectivos, no necesidades individuales."
+    },
+    {
+      "number": 10,
+      "status": "CONFIRMED",
+      "decision": "Se elige profesión una vez; cambia automáticamente con la época."
+    },
+    {
+      "number": 11,
+      "status": "CONFIRMED",
+      "decision": "Trabajadores ganan niveles, habilidades y especializaciones."
+    },
+    {
+      "number": 12,
+      "status": "CONFIRMED",
+      "decision": "Personajes visibles caminan, recolectan y transportan recursos."
+    },
+    {
+      "number": 13,
+      "status": "CONFIRMED",
+      "decision": "Economía de pocos recursos, no multitud de materias por época."
+    },
+    {
+      "number": 14,
+      "status": "CONFIRMED",
+      "decision": "Sin alimentos disminuye la productividad; no mueren ciudadanos."
+    },
+    {
+      "number": 15,
+      "status": "CONFIRMED",
+      "decision": "Los almacenes tienen límite; es necesario construir/ampliar."
+    },
+    {
+      "number": 16,
+      "status": "CONFIRMED",
+      "decision": "Mantenimiento solo para población y edificios especiales."
+    },
+    {
+      "number": 17,
+      "status": "CONFIRMED",
+      "decision": "Oro sin gastar se convierte en prestigio/historia sin ventaja económica."
+    },
+    {
+      "number": 18,
+      "status": "CONFIRMED",
+      "decision": "Donantes reconocidos con monumentos, estatuas o nombres de edificios."
+    },
+    {
+      "number": 19,
+      "status": "CONFIRMED",
+      "decision": "Solo obras estratégicas requieren voto; básicos automáticos."
+    },
+    {
+      "number": 20,
+      "status": "CONFIRMED",
+      "decision": "Voto estratégico de 10 min se abre por tecnología o hito."
+    },
+    {
+      "number": 21,
+      "status": "CONFIRMED",
+      "decision": "K-0 selecciona tres opciones por reglas y situación del mundo."
+    },
+    {
+      "number": 22,
+      "status": "CONFIRMED",
+      "decision": "Edificios ganadores se construyen progresivamente por fases visuales."
+    },
+    {
+      "number": 23,
+      "status": "CONFIRMED",
+      "decision": "La nación prioriza economía, ciencia o defensa."
+    },
+    {
+      "number": 24,
+      "status": "CONFIRMED",
+      "decision": "Maravillas únicas para primera nación que las construya."
+    },
+    {
+      "number": 25,
+      "status": "CONFIRMED",
+      "decision": "Ataques entre naciones solo en eventos programados."
+    },
+    {
+      "number": 26,
+      "status": "CONFIRMED",
+      "decision": "Ejército de unidades automáticas producidas por edificios."
+    },
+    {
+      "number": 27,
+      "status": "CONFIRMED",
+      "decision": "Derrota puede penalizar temporalmente producción/territorio, no destruir progreso."
+    },
+    {
+      "number": 28,
+      "status": "CONFIRMED",
+      "decision": "No se permiten alianzas: tres naciones rivales."
+    },
+    {
+      "number": 29,
+      "status": "CONFIRMED",
+      "decision": "Resultados de competición normalizados, más coordinación que número bruto."
+    },
+    {
+      "number": 30,
+      "status": "CONFIRMED",
+      "decision": "Minijuegos combinan estrategia, coordinación y batallas automáticas."
+    },
+    {
+      "number": 31,
+      "status": "CONFIRMED",
+      "decision": "Mapas generados proceduralmente para cada temporada."
+    },
+    {
+      "number": 32,
+      "status": "CONFIRMED",
+      "decision": "Biomas son diferencias visuales sin ventajas económicas."
+    },
+    {
+      "number": 33,
+      "status": "CONFIRMED",
+      "decision": "Fauna decorativa; enemigos solo en eventos."
+    },
+    {
+      "number": 34,
+      "status": "CONFIRMED",
+      "decision": "Desastres y peligros solo eventos especiales anunciados por presentador."
+    },
+    {
+      "number": 35,
+      "status": "CONFIRMED",
+      "decision": "NPC mantienen funcionando la civilización sin espectadores activos."
+    },
+    {
+      "number": 36,
+      "status": "CONFIRMED",
+      "decision": "Misiones colectivas diarias y semanales con recompensas."
+    },
+    {
+      "number": 37,
+      "status": "CONFIRMED",
+      "decision": "Presentador representa IA/científico que experimenta con las civilizaciones."
+    },
+    {
+      "number": 38,
+      "status": "CONFIRMED",
+      "decision": "Personalidad de presentador sarcástica, provocadora y bromista."
+    },
+    {
+      "number": 39,
+      "status": "CONFIRMED",
+      "decision": "Presentador habla bastante para mantener directo animado."
+    },
+    {
+      "number": 40,
+      "status": "CONFIRMED",
+      "decision": "Puede conversar libremente con moderación."
+    },
+    {
+      "number": 41,
+      "status": "CONFIRMED",
+      "decision": "Presentador es un árbitro imparcial, sin favoritismos reales."
+    },
+    {
+      "number": 42,
+      "status": "CONFIRMED",
+      "decision": "Puede organizar dinámicamente eventos permitidos según actividad/situación."
+    },
+    {
+      "number": 43,
+      "status": "CONFIRMED",
+      "decision": "Arte 2D pixel art retro (después refinado baja resolución/falso isométrico)."
+    },
+    {
+      "number": 44,
+      "status": "CONFIRMED",
+      "decision": "Representación adaptativa del número de ciudadanos visibles."
+    },
+    {
+      "number": 45,
+      "status": "CONFIRMED",
+      "decision": "Edificios de épocas antiguas permanecen al evolucionar."
+    },
+    {
+      "number": 46,
+      "status": "CONFIRMED",
+      "decision": "HUD equilibrado entre mundo, recursos, tecnología y clasificaciones."
+    },
+    {
+      "number": 47,
+      "status": "CONFIRMED",
+      "decision": "Doctor K-0 integrado físicamente en mundo, no webcam superpuesta."
+    },
+    {
+      "number": 48,
+      "status": "CONFIRMED",
+      "decision": "Una interfaz responsive para vertical y horizontal."
+    },
+    {
+      "number": 49,
+      "status": "CONFIRMED",
+      "decision": "Usuario puede tener personaje independiente por cada plataforma."
+    },
+    {
+      "number": 50,
+      "status": "REPLACED",
+      "decision": "Antigua elección de líderes espectadores (alcalde/general/científico). Sustituida por gobiernos NPC."
+    },
+    {
+      "number": 51,
+      "status": "CONFIRMED",
+      "decision": "Gobernantes son representantes sin poderes ejecutivos para anular votos; adaptado a NPC."
+    },
+    {
+      "number": 52,
+      "status": "CONFIRMED",
+      "decision": "Elecciones de gobierno en cada nueva época tecnológica."
+    },
+    {
+      "number": 53,
+      "status": "PARTIALLY_REPLACED",
+      "decision": "Todos pueden votar; antiguo requisito para candidatos espectadores sustituido por candidatos NPC."
+    },
+    {
+      "number": 54,
+      "status": "CONFIRMED",
+      "decision": "XP principalmente por trabajo, con bonus por misiones y logros."
+    },
+    {
+      "number": 55,
+      "status": "CONFIRMED",
+      "decision": "Se elige especialización mediante !skill al alcanzar niveles."
+    },
+    {
+      "number": 56,
+      "status": "CONFIRMED",
+      "decision": "NPC y jugadores misma base productiva, humanos mejoran por XP/skills."
+    },
+    {
+      "number": 57,
+      "status": "CONFIRMED",
+      "decision": "Proyecto estratégico sin todos los recursos no aparece en votación."
+    },
+    {
+      "number": 58,
+      "status": "CONFIRMED",
+      "decision": "Con almacén lleno, NPC se reasignan y ciudadanos conservan oficio."
+    },
+    {
+      "number": 59,
+      "status": "CONFIRMED",
+      "decision": "Oro por valores fijos según apoyo/plataforma, revisados periódicamente."
+    },
+    {
+      "number": 60,
+      "status": "CONFIRMED",
+      "decision": "Épocas mediante barra histórica por actividad, investigación y construcción."
+    },
+    {
+      "number": 61,
+      "status": "CONFIRMED",
+      "decision": "Ciudadanos votan prioridad entre economía, ciencia o defensa al comenzar época."
+    },
+    {
+      "number": 62,
+      "status": "CONFIRMED",
+      "decision": "Edificios históricos continúan produciendo menos que modernos."
+    },
+    {
+      "number": 63,
+      "status": "CONFIRMED",
+      "decision": "Candidatos son tres NPC, uno por modelo de gobierno, no ciudadanos."
+    },
+    {
+      "number": 64,
+      "status": "CONFIRMED",
+      "decision": "Un único gobernante por nación durante cada época."
+    },
+    {
+      "number": 65,
+      "status": "CONFIRMED",
+      "decision": "No hay candidatos ciudadanos ni problema de inactividad de líder; tres NPC candidatos por época."
+    },
+    {
+      "number": 66,
+      "status": "CONFIRMED",
+      "decision": "Ciudadano trabaja 2 horas desde última activación válida."
+    },
+    {
+      "number": 67,
+      "status": "CONFIRMED",
+      "decision": "Sin !skill conserva especialización anterior; no autoelige nueva."
+    },
+    {
+      "number": 68,
+      "status": "CONFIRMED",
+      "decision": "Elecciones de habilidades permanentes hasta fin de temporada."
+    },
+    {
+      "number": 69,
+      "status": "CONFIRMED",
+      "decision": "Almacén de recurso lleno: ciudadano deja de producir pero conserva oficio."
+    },
+    {
+      "number": 70,
+      "status": "CONFIRMED",
+      "decision": "Costes de construcción estratégica se descuentan completamente al aprobar."
+    },
+    {
+      "number": 71,
+      "status": "CONFIRMED",
+      "decision": "Varios proyectos estratégicos simultáneos si hay trabajadores y recursos."
+    },
+    {
+      "number": 72,
+      "status": "CONFIRMED",
+      "decision": "Barra histórica recibe puntos fijos por investigación, producción, obras, misiones; luego por hitos."
+    },
+    {
+      "number": 73,
+      "status": "CONFIRMED",
+      "decision": "Si sin stream alcanza 100% de era, espera al próximo directo para evolucionar."
+    },
+    {
+      "number": 74,
+      "status": "CONFIRMED",
+      "decision": "Territorio se expande y desbloquea nuevas parcelas para edificios antiguos."
+    },
+    {
+      "number": 75,
+      "status": "CONFIRMED",
+      "decision": "Solo un comando válido por ciudadano y ronda de coordinación."
+    },
+    {
+      "number": 76,
+      "status": "CONFIRMED",
+      "decision": "Territorio afectado en torneo deja de producir temporalmente."
+    },
+    {
+      "number": 77,
+      "status": "CONFIRMED",
+      "decision": "Primer torneo es piedra/papel/tijera votado colectivamente."
+    },
+    {
+      "number": 78,
+      "status": "CONFIRMED",
+      "decision": "Tres gobiernos: económico, militar, científico; títulos y estética evolucionan por era."
+    },
+    {
+      "number": 79,
+      "status": "CONFIRMED",
+      "decision": "Gobierno elegido concede bonificación pasiva pequeña en su rama."
+    },
+    {
+      "number": 80,
+      "status": "CONFIRMED",
+      "decision": "Los candidatos NPC son recurrentes y envejecen estilísticamente entre épocas."
+    },
+    {
+      "number": 81,
+      "status": "CONFIRMED",
+      "decision": "Elección de gobierno dura primera hora de nueva época."
+    },
+    {
+      "number": 82,
+      "status": "CONFIRMED",
+      "decision": "Sin votos se selecciona gobierno al azar uniformemente."
+    },
+    {
+      "number": 83,
+      "status": "CONFIRMED",
+      "decision": "Empate electoral: segunda votación de 3 minutos."
+    },
+    {
+      "number": 84,
+      "status": "CONFIRMED",
+      "decision": "Solo !active o !work válido reinicia 2 horas; chat normal no."
+    },
+    {
+      "number": 85,
+      "status": "CONFIRMED",
+      "decision": "Experiencia fuera de emisión a velocidad reducida como producción."
+    },
+    {
+      "number": 86,
+      "status": "CONFIRMED",
+      "decision": "Árbol pequeño de habilidades con varias elecciones permanentes por temporada."
+    },
+    {
+      "number": 87,
+      "status": "CONFIRMED",
+      "decision": "Progreso histórico principalmente por hitos productivos, no recursos individuales."
+    },
+    {
+      "number": 88,
+      "status": "CONFIRMED",
+      "decision": "Prioridad economía/ciencia/defensa otorga bonus temporal de productividad, no puntos directos."
+    },
+    {
+      "number": 89,
+      "status": "CONFIRMED",
+      "decision": "Votación estratégica NO comienza sin tres proyectos financiables."
+    },
+    {
+      "number": 90,
+      "status": "CONFIRMED",
+      "decision": "RPS por rondas triangulares simultáneas con sistema de puntuación."
+    },
+    {
+      "number": 91,
+      "status": "CONFIRMED",
+      "decision": "Durante ronda RPS se ve número de votantes, no elección hasta cerrar."
+    },
+    {
+      "number": 92,
+      "status": "CONFIRMED",
+      "decision": "Derrota territorial bloquea producción de zona durante 30 min de simulación activa."
+    }
+  ]
+}

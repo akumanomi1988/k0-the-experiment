@@ -1,0 +1,719 @@
+{
+  "status": "V2_BASELINE",
+  "technologies": [
+    {
+      "id": "tech_paleolithic",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Investigación de Paleolítico",
+      "path": "MANDATORY_FREE",
+      "requires": [],
+      "costKnowledge": 290,
+      "costGold": 0,
+      "unlocks": [
+        "paleolithic_workshop",
+        "paleolithic_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_paleolithic_economy",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Logística de Paleolítico",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_paleolithic"
+      ],
+      "costKnowledge": 170,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_paleolithic_defense",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Protección de Paleolítico",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_paleolithic"
+      ],
+      "costKnowledge": 170,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_neolithic",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Investigación de Neolítico",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_paleolithic"
+      ],
+      "costKnowledge": 380,
+      "costGold": 0,
+      "unlocks": [
+        "neolithic_workshop",
+        "neolithic_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_neolithic_economy",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Logística de Neolítico",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_neolithic"
+      ],
+      "costKnowledge": 220,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_neolithic_defense",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Protección de Neolítico",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_neolithic"
+      ],
+      "costKnowledge": 220,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_copper",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Investigación de Edad del Cobre",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_neolithic"
+      ],
+      "costKnowledge": 470,
+      "costGold": 0,
+      "unlocks": [
+        "copper_workshop",
+        "copper_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_copper_economy",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Logística de Edad del Cobre",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_copper"
+      ],
+      "costKnowledge": 270,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_copper_defense",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Protección de Edad del Cobre",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_copper"
+      ],
+      "costKnowledge": 270,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_bronze",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Investigación de Edad del Bronce",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_copper"
+      ],
+      "costKnowledge": 560,
+      "costGold": 0,
+      "unlocks": [
+        "bronze_workshop",
+        "bronze_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_bronze_economy",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Logística de Edad del Bronce",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_bronze"
+      ],
+      "costKnowledge": 320,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_bronze_defense",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Protección de Edad del Bronce",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_bronze"
+      ],
+      "costKnowledge": 320,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_iron",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Investigación de Edad del Hierro",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_bronze"
+      ],
+      "costKnowledge": 650,
+      "costGold": 0,
+      "unlocks": [
+        "iron_workshop",
+        "iron_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_iron_economy",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Logística de Edad del Hierro",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_iron"
+      ],
+      "costKnowledge": 370,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_iron_defense",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Protección de Edad del Hierro",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_iron"
+      ],
+      "costKnowledge": 370,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_antiquity",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Investigación de Antigüedad",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_iron"
+      ],
+      "costKnowledge": 740,
+      "costGold": 0,
+      "unlocks": [
+        "antiquity_workshop",
+        "antiquity_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_antiquity_economy",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Logística de Antigüedad",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_antiquity"
+      ],
+      "costKnowledge": 420,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_antiquity_defense",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Protección de Antigüedad",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_antiquity"
+      ],
+      "costKnowledge": 420,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_medieval",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Investigación de Edad Media",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_antiquity"
+      ],
+      "costKnowledge": 830,
+      "costGold": 0,
+      "unlocks": [
+        "medieval_workshop",
+        "medieval_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_medieval_economy",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Logística de Edad Media",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_medieval"
+      ],
+      "costKnowledge": 470,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_medieval_defense",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Protección de Edad Media",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_medieval"
+      ],
+      "costKnowledge": 470,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_renaissance",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Investigación de Renacimiento",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_medieval"
+      ],
+      "costKnowledge": 920,
+      "costGold": 0,
+      "unlocks": [
+        "renaissance_workshop",
+        "renaissance_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_renaissance_economy",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Logística de Renacimiento",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_renaissance"
+      ],
+      "costKnowledge": 520,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_renaissance_defense",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Protección de Renacimiento",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_renaissance"
+      ],
+      "costKnowledge": 520,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_industrial",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Investigación de Era Industrial",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_renaissance"
+      ],
+      "costKnowledge": 1010,
+      "costGold": 0,
+      "unlocks": [
+        "industrial_workshop",
+        "industrial_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_industrial_economy",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Logística de Era Industrial",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_industrial"
+      ],
+      "costKnowledge": 570,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_industrial_defense",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Protección de Era Industrial",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_industrial"
+      ],
+      "costKnowledge": 570,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_modern",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Investigación de Era Moderna",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_industrial"
+      ],
+      "costKnowledge": 1100,
+      "costGold": 0,
+      "unlocks": [
+        "modern_workshop",
+        "modern_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_modern_economy",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Logística de Era Moderna",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_modern"
+      ],
+      "costKnowledge": 620,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_modern_defense",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Protección de Era Moderna",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_modern"
+      ],
+      "costKnowledge": 620,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_digital",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Investigación de Era Digital",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_modern"
+      ],
+      "costKnowledge": 1190,
+      "costGold": 0,
+      "unlocks": [
+        "digital_workshop",
+        "digital_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_digital_economy",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Logística de Era Digital",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_digital"
+      ],
+      "costKnowledge": 670,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_digital_defense",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Protección de Era Digital",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_digital"
+      ],
+      "costKnowledge": 670,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_space",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Investigación de Era Espacial",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_digital"
+      ],
+      "costKnowledge": 1280,
+      "costGold": 0,
+      "unlocks": [
+        "space_workshop",
+        "space_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_space_economy",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Logística de Era Espacial",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_space"
+      ],
+      "costKnowledge": 720,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_space_defense",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Protección de Era Espacial",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_space"
+      ],
+      "costKnowledge": 720,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_interstellar",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Investigación de Era Interestelar",
+      "path": "MANDATORY_FREE",
+      "requires": [
+        "tech_space"
+      ],
+      "costKnowledge": 1370,
+      "costGold": 0,
+      "unlocks": [
+        "interstellar_workshop",
+        "interstellar_research"
+      ],
+      "historicalPoints": 0,
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": true
+    },
+    {
+      "id": "tech_interstellar_economy",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Logística de Era Interestelar",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_interstellar"
+      ],
+      "costKnowledge": 770,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "economy",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    },
+    {
+      "id": "tech_interstellar_defense",
+      "eraId": "interstellar",
+      "eraIndex": 13,
+      "name": "Protección de Era Interestelar",
+      "path": "OPTIONAL_FREE",
+      "requires": [
+        "tech_interstellar"
+      ],
+      "costKnowledge": 770,
+      "costGold": 0,
+      "unlocks": [],
+      "historicalPoints": 0,
+      "permanentEraBonusBp": 200,
+      "bonusTarget": "defense",
+      "isRequiredForMilestone": false,
+      "autoprogressWhenKnowledgeSufficient": false
+    }
+  ],
+  "neverRequiresGold": true
+}

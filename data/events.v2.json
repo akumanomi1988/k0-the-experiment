@@ -1,0 +1,50 @@
+{
+  "status": "V2_BASELINE",
+  "eventTypes": [
+    {
+      "id": "catchup_challenge",
+      "trigger": "lagging_by_at_least_two_eras_and_operator_scheduled",
+      "costGold": 0,
+      "effects": {
+        "temporaryNpcProductionBp": 500,
+        "durationLiveSeconds": 1800,
+        "maxPerNationSeason": 2
+      },
+      "historicalPoints": 0,
+      "requiresAnnouncement": true
+    },
+    {
+      "id": "resource_storm",
+      "trigger": "operator_scheduled",
+      "costGold": 0,
+      "effects": {
+        "temporaryWoodProductionBp": -500,
+        "durationLiveSeconds": 600
+      },
+      "requiresAnnouncement": true,
+      "maxFrequencyLiveHours": 12
+    },
+    {
+      "id": "wildlife_parade",
+      "trigger": "director_scheduled",
+      "costGold": 0,
+      "effects": {
+        "visualOnly": true
+      },
+      "requiresAnnouncement": true,
+      "maxFrequencyLiveHours": 4
+    },
+    {
+      "id": "wonder_festival",
+      "trigger": "operator_scheduled_when_three_nations_eligible",
+      "costGold": 0,
+      "effects": {
+        "opensWonderConstructionVote": true
+      },
+      "requiresAnnouncement": true,
+      "maxFrequencyLiveHours": 24
+    }
+  ],
+  "neverUnknownRandomCombat": true,
+  "allEventsWhitelisted": true
+}

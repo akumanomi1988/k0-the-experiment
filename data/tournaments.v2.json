@@ -1,0 +1,22 @@
+{
+  "status": "V2_BASELINE",
+  "rps": {
+    "rounds": 5,
+    "maximumExtraRounds": 2,
+    "roundVotingSeconds": 90,
+    "breakSeconds": 30,
+    "moveChoice": "majority_ballots_per_nation",
+    "noBallots": "pass",
+    "tieMajority": "seeded_uniform_among_tied_choices",
+    "score": "pairwise 2 win/1 tie/0 loss; pass vs valid = 0, valid vs pass = 2, both pass = 0",
+    "rank": "total pairwise points, joint leaders allowed after round 7",
+    "view": "only ballot count before close",
+    "zeroLegitimatePlayers": "no_penalty_if_all_pass",
+    "normalization": "one citizen one choice, nation vote count does not multiply scoring",
+    "penalty": {
+      "activeSimSeconds": 1800,
+      "lossCapPercent": 2,
+      "zoneNationOutputCapBp": 1000
+    }
+  }
+}

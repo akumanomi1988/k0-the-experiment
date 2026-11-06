@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-chaos.invalid/schemas/channel_binding.v2.json",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "seasonId",
+    "bindingMode",
+    "assignments"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "2.0.0"
+    },
+    "status": {
+      "type": "string"
+    },
+    "seasonId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bindingMode": {
+      "const": "CONFIGURABLE"
+    },
+    "otherSupportedConfigurations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "assignments": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "nationId",
+          "bindings"
+        ],
+        "properties": {
+          "nationId": {
+            "enum": [
+              "micelios",
+              "runicos",
+              "ferrinos"
+            ]
+          },
+          "bindings": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": [
+                "bindingId",
+                "provider",
+                "providerChannelId",
+                "roles",
+                "enabled",
+                "monetizationEnabled",
+                "isClockAuthority"
+              ],
+              "properties": {
+                "bindingId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "provider": {
+                  "enum": [
+                    "twitch",
+                    "youtube",
+                    "tiktok",
+                    "simulated"
+                  ]
+                },
+                "providerChannelId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "displayAlias": {
+                  "type": "string"
+                },
+                "roles": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "enum": [
+                      "commands",
+                      "live_health",
+                      "contributions",
+                      "display_feed"
+                    ]
+                  },
+                  "uniqueItems": true
+                },
+                "enabled": {
+                  "type": "boolean"
+                },
+                "requiresVerifiedCredentials": {
+                  "type": "boolean"
+                },
+                "monetizationEnabled": {
+                  "type": "boolean"
+                },
+                "isClockAuthority": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
