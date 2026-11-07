@@ -62,7 +62,7 @@ BEGIN
     WHERE b.season_id = NEW.season_id AND b.nation_id = NEW.nation_id
       AND b.id = NEW.defense_building_id
       AND b.kind = 'BASIC_AUTO' AND b.state = 'COMPLETED'
-      AND b.building_catalog_id LIKE '%_defense';
+      AND right(b.building_catalog_id, 8) = '_defense';
   IF NOT FOUND THEN
     RAISE EXCEPTION 'Garrison requires completed defense building' USING ERRCODE='23514';
   END IF;
