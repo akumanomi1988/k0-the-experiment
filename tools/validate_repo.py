@@ -97,7 +97,22 @@ def verify_schemas():
         for path in paths:
             for problem in validator.iter_errors(load(path)):
                 errors.append(f"{path}: {problem.json_path}: {problem.message}")
+    # Public SignalR event contracts are explicit and deny unknown fields,
+    # including provider identities and unmoderated text.
+    event_schema = load("contracts/signalr_events.v2.2.schema.json")
+    event_validator = jsonschema.Draft202012Validator(
+        event_schema, format_checker=jsonschema.FormatChecker())
+    for example in sorted((ROOT/"contracts/examples").glob("*.json")):
+        event = json.loads(example.read_text(encoding="utf-8"))
+        for problem in event_validator.iter_errors(event):
+            errors.append(f"{example.relative_to(ROOT)}: {problem.message}")
+        leaked = dict(event)
+        leaked["providerUserId"] = "should-not-be-allowed"
+        check(not event_validator.is_valid(leaked),
+              f"SignalR schema exposes provider identity for {example.name}")
     api = yaml.safe_load((ROOT/"contracts/openapi.v2.yaml").read_text(encoding="utf-8"))
+    check(api.get("info", {}).get("version") == "2.2.0",
+          "OpenAPI should advertise its additive 2.2.0 design contract")
     check(str(api.get("openapi", "")).startswith("3.1."), "OpenAPI debe ser 3.1.x")
     check(bool(api.get("paths")), "OpenAPI sin rutas")
     def refs(node):
