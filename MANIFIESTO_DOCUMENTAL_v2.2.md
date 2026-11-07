@@ -2,35 +2,43 @@
 
 **Inventario de bytes; no certificación funcional, visual ni legal.** El manifiesto v2.1 es histórico.
 
-Archivos enumerados (sin este manifiesto): 114. Tipos: {'.json': 31, '.md': 77, '.py': 1, '.sql': 2, '.txt': 1, '.yaml': 1, '.yml': 1}.
+Archivos enumerados (sin este manifiesto): 126. Tipos: {'.json': 36, '.md': 79, '.py': 4, '.sql': 4, '.txt': 1, '.yaml': 1, '.yml': 1}.
 
 | Archivo | Tamaño (bytes) | SHA-256 |
 |---|---:|---|
-| `.github/workflows/documentation-integrity.yml` | 733 | `853380ceebf7a9b0dd9fdbcd905bfb5f25f0f51bd1e913591d683f8ea47c8115` |
-| `AGENTS.md` | 4452 | `ce8e339c67c7067bb0690bacf49b8fb3935da7d8e508249238b0e91531c2b4ec` |
-| `DOCS_INDEX_v2.2.md` | 9143 | `e51355249dec38a04e535be9698b6b9b9399185001f5304ae78c8db05d12db1c` |
+| `.github/workflows/documentation-integrity.yml` | 2886 | `288af84850a1b4eb97ac8dd22618feaeec429740b75e4efe0eccf659aefd5ec8` |
+| `AGENTS.md` | 5404 | `7503755b162452c1ec7571cb6be5773b0506167ff781f532eb16cb569dbdb5e5` |
+| `DOCS_INDEX_v2.2.md` | 9609 | `f182eaa2d7595259a0d1a2801719ae8bc93eb5a81872493effd6aa70f2f7c60a` |
 | `MANIFIESTO_DOCUMENTAL_v2.1.md` | 9724 | `81202048c6f416007482121716b3cad14974f23d0f91a1893fdb770fd81c0a08` |
 | `PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md` | 194767 | `55700409568747422e98684eb062d273e3b6845e47dc07f30c1af188455faef1` |
-| `README.md` | 4994 | `34e837d03be2d0b8275051c3d9c2ecab1ee7d1a870a16f35b24e9fa89c8e96dc` |
-| `architecture/001_schema_v2.sql` | 13750 | `6b38521412cbe55126c4b93035fa547959100a0927204b47cc3ef622a04a1291` |
+| `README.md` | 5720 | `a8a2fb550a33d1beb299e967447299b2bca5739506312fff8d9121b119108a8f` |
+| `architecture/001_schema_v2.sql` | 13748 | `6a8abcd8c588db1351165f58cc34414c60c2f86eb1d89d32b51ea27aa35877e8` |
 | `architecture/002_extensiones_diseno_v2.2.sql` | 3552 | `914050517fd1b93875c9fe9d548948162afb9cb91cab5b734c60adbf734db69e` |
+| `architecture/003_integridad_v2.2.sql` | 4125 | `0233205325b105855bab90bf10aac801ee924f8a514fb07507133c1b0e32188e` |
 | `architecture/02_TRANSACTIONS_Y_INVARIANTES.md` | 4011 | `4e321bccb784423744e0445f68fd5b6438d8ac82ca4131b76d4153187ebe83a3` |
 | `architecture/README.md` | 1988 | `5e884451840e8db2af4917fb4a8c1123f57cc1f7694403dfec9f55c3a6f19bf3` |
+| `audit/ADR_0001_WORKER_CAP_AND_VERSIONS.md` | 2889 | `8eb2e399f508a8723a9c1bfe9576bc99e510f76c2a26e8cdf570f819ea5e6b73` |
 | `audit/AUDITORIA_INDEPENDIENTE_V2_2_2026-11-07.md` | 8531 | `aa5e2f9c93afff654e34a7cfb46e9eccfae87d98475d713db52772709748a11c` |
 | `audit/BALANCE_SIMULATION_REFERENCE.json` | 4376 | `81460b1fd64877a4765d4db1a22fbc01929be38878fdd91b4ed9077176f51532` |
 | `audit/CHANGELOG_v2.0.md` | 1456 | `f907e5fbaf199af345b80e5f0b38735b572ddd209486c59d303f52d5a641383e` |
 | `audit/CONSOLIDACION_D2_2026-11-07.md` | 4600 | `e8d53b248ec631af365af91a834f741ddcbb16bf1338385953a888dbfaf1684d` |
 | `audit/EXTERNAL_GATES.md` | 1887 | `164c8daa0037628b10963c81aec13409ff9ecd127f519b2bcee27c5cf0b8c356` |
+| `audit/REFERENCE_BALANCE_MATRIX_2026-11-07.md` | 3386 | `2187b62ef7334f832eef89c047b72992846fdc1e3ac63b9eb7cdab4b59bda616` |
 | `audit/RULESET_AND_CONTENT_HASHES.md` | 453 | `0691d0b9fc989266ef8754fc2102ca3f3f304408178ef514d9bf6ad7cb4ee0b3` |
 | `audit/decision_traceability.json` | 18819 | `5e274e1615909bbe8c1a2d9b3b523ca631743ed11a5c9ac29f35ca1301cee04f` |
 | `contracts/CONSOLIDATION_GAPS_V2_2.md` | 2792 | `7a136d93434bae994e3e495ca8d0fa8fdcea57590b114764fec7f9ce0a91459a` |
 | `contracts/channel_binding.schema.json` | 2970 | `abded36bab95b2414132a682aa3e421c3940b9a2d8eacf9331fd44456e2488a9` |
+| `contracts/examples/battle.result.json` | 664 | `7a459298bd641b2ffa05426db470f1bcace86e8fe76bb082b72226580b50f6ad` |
+| `contracts/examples/battle.scheduled.json` | 357 | `da2c165cb73ead9d39e4927831a68686435642a4196a1bb9cfd77690e64d550f` |
+| `contracts/examples/cosmetic.acknowledgement.json` | 306 | `4b26a205550eac3c68a46b2e47c67b0f04112c884280b4341711983771ce4323` |
+| `contracts/examples/garrison.changed.json` | 455 | `306556e884ce2e4af8d2269d05dde0579c08f89eb80eba181b666038a3ad6b5e` |
 | `contracts/extensiones_lectura_v2.2.md` | 2491 | `d9a2ec181053338733930eaf39d32fc35d7cb0be420b2ac5ec21676596d7d610` |
 | `contracts/nation_delta.schema.json` | 2106 | `20b18eed94e64ae6f4a609379663789d2efbdaa96ee426ed1516b90d18b7965e` |
 | `contracts/normalized_event.schema.json` | 1876 | `12d4314597b5b964a8b9ee3638186f8302a1b79e9983a2fefe1ab2dd33a74b26` |
 | `contracts/openapi.v2.yaml` | 6193 | `10dc46f27a0004af954340b34c6601fd127e550e3979be042a46d985f13356e5` |
 | `contracts/ruleset.schema.json` | 6745 | `2c3a2893835aa178ec278a36cff1b34deeb4cc344e14f403a522e6011900669c` |
 | `contracts/signalr.v2.md` | 1138 | `7d522f5d212ef869611ec95f66cd79eddfb57ab2248a8859e50f045e1fa8436e` |
+| `contracts/signalr_events.v2.2.schema.json` | 7356 | `8eaa9bc5ba7fa600330b88f7bd5c3b39c2a3bbfba0b1a7cb0e16d294800f4353` |
 | `data/art_spec.v2.json` | 1720 | `5bdbfc16794e68b5e049d372b4f2a5f11bbe2ec40d0167cd4f169b393369bfae` |
 | `data/buildings.v2.json` | 122100 | `7d4aa3aa81a46291478148e0852ea7825da880c8d85df1a0fbd2444cbe4204a1` |
 | `data/channel_bindings.example.json` | 1795 | `feff41d124863b337555c74c912a9fcff9c0fc21f958bdd3ec53c6963b3b1202` |
@@ -118,5 +126,9 @@ Archivos enumerados (sin este manifiesto): 114. Tipos: {'.json': 31, '.md': 77, 
 | `docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md` | 4276 | `f5fa55abd70039777f64e086fa5214c0def0133f078cf78ca763cc5b555dc73b` |
 | `docs/61_CATALOGO_ARTISTICO_DE_EDIFICIOS_Y_MARAVILLAS_v2.2.md` | 15818 | `44c704acd28b91e41a6c8b20035816c0e2f7ab29febbb713570166b7cf1b7d1b` |
 | `docs/62_PERSONAJES_NPC_Y_EVOLUCION_ESTETICA_v2.2.md` | 6231 | `d738df75af99b4420b744154ad74f019104263e44abd7340b5436ec7615076a8` |
+| `tests/sql/integrity_v2.2.sql` | 6241 | `8b4553c2693b698e5362756b13bd59ed60ee8524620f13c55d25910478723aba` |
+| `tests/test_reference_simulation.py` | 2019 | `df73db82a86ecd63b33bcb75f091e915007d3046bd95065a995cb000a6d57834` |
+| `tools/balance_matrix.py` | 2034 | `a26b146062ed69e5e5ceba5a2acebaf93623d62633f8b4ea11e07a22606ca888` |
+| `tools/reference_simulation.py` | 15200 | `3ef4a3899fcacab6ff82af4343902793823279431b0a335e18b26f4d0bcf2e97` |
 | `tools/requirements-validation.txt` | 33 | `3503f1deb095e9a802192990765ec4dc267270b03330ac80fb4b0b619fbf4d8f` |
 | `tools/validate_repo.py` | 11618 | `ddd843c9f88914cad77e7e94cf1eb7e1ae887f7fe9a601c467fefdc43f7ab0e5` |
