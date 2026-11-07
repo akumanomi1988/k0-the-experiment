@@ -85,3 +85,30 @@ def output_milli_for_seconds(
         numerator *= multiplier
     output, new_remainder = divmod(numerator + remainder, denominator)
     return output, new_remainder
+
+
+def work_xp_for_seconds(
+    worker_seconds_bp: int,
+    accepted_work_bp: int = SCALE,
+    economy_bp: int = SCALE,
+    remainder: int = 0,
+) -> tuple[int, int]:
+    """XP por trabajo REAL y aceptado; 6 XP/minuto y resto entero.
+
+    worker_seconds_bp = segundos activos * peso de cuota. accepted_work_bp
+    representa la fracción de trabajo aceptado (cero si tarea inexistente,
+    producción bloqueada por capacidad o fuera de cuota). economy_bp = 2000
+    offline, 10000 LIVE. Resto persistente por ciudadano, con denominador
+    fijo, invariante ante dividir un mismo intervalo en ticks.
+    """
+    denominator = 60 * SCALE * SCALE * SCALE
+    if worker_seconds_bp < 0:
+        raise ValueError("worker_seconds_bp negativo")
+    if not 0 <= accepted_work_bp <= SCALE:
+        raise ValueError("accepted_work_bp fuera de rango")
+    if not 0 <= economy_bp <= SCALE:
+        raise ValueError("economy_bp fuera de rango")
+    if not 0 <= remainder < denominator:
+        raise ValueError("resto XP fuera de rango")
+    numerator = worker_seconds_bp * 6 * accepted_work_bp * economy_bp + remainder
+    return divmod(numerator, denominator)

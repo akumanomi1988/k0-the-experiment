@@ -3,7 +3,7 @@ import unittest
 
 from worker_math import (
     ActiveWorker, assign_human_weights, effective_worker_units_bp,
-    output_milli_for_seconds,
+    output_milli_for_seconds, work_xp_for_seconds,
 )
 
 
@@ -61,6 +61,30 @@ class WorkerMathTests(unittest.TestCase):
     def test_invalid_remainder(self):
         with self.assertRaises(ValueError):
             output_milli_for_seconds(0, 0, remainder=-1)
+
+    def test_xp_zero_without_accepted_work(self):
+        for fraction in (0, 10000):
+            xp, rem = work_xp_for_seconds(0, fraction)
+            self.assertEqual((xp, rem), (0, 0))
+        self.assertEqual(work_xp_for_seconds(60 * 10000, 0), (0, 0))
+
+    def test_xp_quota_and_offline(self):
+        self.assertEqual(work_xp_for_seconds(60 * 10000), (6, 0))
+        partial, remainder = work_xp_for_seconds(60 * 2500)
+        self.assertEqual(partial, 1)
+        second, remainder = work_xp_for_seconds(60 * 2500, remainder=remainder)
+        self.assertEqual((second, remainder), (2, 0))
+        offline, _ = work_xp_for_seconds(60 * 10000, economy_bp=2000)
+        self.assertEqual(offline, 1)
+
+    def test_xp_tick_partition_is_deterministic(self):
+        first = work_xp_for_seconds(60 * 10000, accepted_work_bp=7500)
+        rem, accum = 0, 0
+        for _ in range(12):
+            xp, rem = work_xp_for_seconds(5 * 10000, accepted_work_bp=7500,
+                                          remainder=rem)
+            accum += xp
+        self.assertEqual((accum, rem), first)
 
 
 if __name__ == "__main__":
