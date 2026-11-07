@@ -44,6 +44,9 @@ class ReferenceState:
     completed_milestones: set[str] = field(default_factory=set)
     mission_completed_era: bool = False
     day_index: int = -1
+    week_index: int = -1
+    weekly_buildings_completed: int = 0
+    weekly_effective_worker_numerator: int = 0
     storage_built_by_era: dict[int, int] = field(default_factory=dict)
     total_milestones: int = 0
     era_entered_at: dict[str, int] = field(default_factory=dict)
@@ -103,19 +106,8 @@ def run(
     s.era_entered_at[eras[0]["id"]] = 0
     upkeep_remainder = 0
     current_day = 0
-    daily_claimed = set()
+    current_week = 0
     building_civic = lambda: buildings[eras[s.era_index - 1]["signatureBuildingId"]]
-
-    def produce(name: str, numerator: int, cap: int) -> int:
-        whole, rest = divmod(s.remainder[name] + numerator, DENOMINATOR)
-        s.remainder[name] = rest
-        stock_room = max(0, s.caps[name] - s.stock[name])
-        accepted = min(stock_room, whole)
-        s.blocked_milli += whole - accepted
-        s.stock[name] += accepted
-        s.produced_era[name] += accepted
-        s.produced_day[name] += accepted
-        return accepted
 
     def can_pay(b: dict) -> bool:
         return all(s.stock.get(name, 0) >= val * 1000
@@ -148,11 +140,18 @@ def run(
         if t0 // 86400 != current_day:
             current_day = t0 // 86400
             s.produced_day = dict.fromkeys(RESOURCES, 0)
+        if t0 // (7 * 86400) != current_week:
+            current_week = t0 // (7 * 86400)
+            s.weekly_buildings_completed = 0
+            s.weekly_effective_worker_numerator = 0
+        s.weekly_effective_worker_numerator += (
+            (sum(npc.values()) * 4 + sum(human.values())) * 5 * economy_bp
+        )
 
         # Eat first, and record any shortage before productivity.
         human_quarters = sum(human.values())
         accountable_quarters = min(human_quarters, 4 * rules["resources"]["maxHumanFoodUpkeepEquivalentWorkers"])
-        upkeep_quarters = npc["food"] * 0 + sum(npc.values()) * 4 + accountable_quarters
+        upkeep_quarters = sum(npc.values()) * 4 + accountable_quarters
         upkeep_num = (rules["resources"]["foodConsumedPerNpcUnitPerMinuteMilli"]
                       * upkeep_quarters * 5 * economy_bp)
         upkeep, upkeep_remainder = divmod(upkeep_remainder + upkeep_num, DENOMINATOR)
@@ -227,6 +226,7 @@ def run(
             b = s.active_construction
             if s.work_done >= b["buildWorkUnits"] * 1000:
                 s.complete_buildings.add(b["id"])
+                s.weekly_buildings_completed += 1
                 if b["family"] == "storage":
                     gain = b["effects"]["capacityAddEachResource"] * 1000
                     for name in RESOURCES:
@@ -249,9 +249,9 @@ def run(
                 or (kind == "produce_wood" and s.produced_day["wood"] >= goal["units"] * 1000)
                 or (kind == "produce_knowledge" and s.produced_day["knowledge"] >= goal["units"] * 1000)
                 or (kind == "complete_basic_buildings"
-                    and len(s.complete_buildings) >= goal["count"])
+                    and s.weekly_buildings_completed >= goal["count"])
                 or (kind == "effective_worker_minutes"
-                    and t0 >= goal["units"] * 60)
+                    and s.weekly_effective_worker_numerator >= goal["units"] * DENOMINATOR)
             )
             if met:
                 end_mission(mission, period)
