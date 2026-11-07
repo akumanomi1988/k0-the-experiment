@@ -77,3 +77,13 @@
 - [Auditoría y gates externos](audit/EXTERNAL_GATES.md), [criterio D0–D4](docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md).
 
 **Vigencia:** el compendio `PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md` y el manifiesto v2.1 son archivo histórico; no contienen enmiendas posteriores.
+
+
+## Operación, mantenimiento y cierre de brechas
+
+- [AGENTS.md](AGENTS.md): jerarquía de autoridad y reglas de trabajo para agentes.
+- [Validación declarativa automatizada](tools/validate_repo.py), [dependencias fijadas](tools/requirements-validation.txt) y [workflow CI](.github/workflows/documentation-integrity.yml).
+- [Acta de consolidación y pendientes D2](audit/CONSOLIDACION_D2_2026-11-07.md).
+- [Matriz de contratos v2.2 por consolidar](contracts/CONSOLIDATION_GAPS_V2_2.md).
+
+La existencia de estos instrumentos no cambia los estados de cierre definidos en el capítulo 60.
