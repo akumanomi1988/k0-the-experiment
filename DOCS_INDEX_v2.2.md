@@ -87,3 +87,8 @@
 - [Matriz de contratos v2.2 por consolidar](contracts/CONSOLIDATION_GAPS_V2_2.md).
 
 La existencia de estos instrumentos no cambia los estados de cierre definidos en el capítulo 60.
+
+- [Informe de 20 escenarios con hitos reales y límites del modelo](audit/REFERENCE_BALANCE_MATRIX_2026-11-07.md).
+- [ADR-0001: cuota nacional de trabajadores y versiones](audit/ADR_0001_WORKER_CAP_AND_VERSIONS.md).
+- [Migración de restricciones PostgreSQL 16](architecture/003_integridad_v2.2.sql) y [pruebas ejecutadas](tests/sql/integrity_v2.2.sql).
+- [Eventos SignalR tipados v2.2](contracts/signalr_events.v2.2.schema.json) y [ejemplos](contracts/examples/).
