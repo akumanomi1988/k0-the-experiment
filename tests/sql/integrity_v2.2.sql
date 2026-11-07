@@ -96,6 +96,19 @@ BEGIN
   EXCEPTION WHEN check_violation THEN NULL;
   END;
 
+  -- A literal underscore must delimit a defense building ID, not SQL LIKE wildcard.
+  BEGIN
+    INSERT INTO buildings(season_id,nation_id,building_catalog_id,era_index,
+                          kind,state,work_total,work_done,materials_committed)
+      VALUES(season,nation,'paleolithicXdefense',1,'BASIC_AUTO','COMPLETED',100,100,true)
+      RETURNING id INTO test_building;
+    INSERT INTO garrison_cohorts(season_id,nation_id,defense_building_id,
+                                 unit_catalog_id,units_count)
+      VALUES(season,nation,test_building,'paleolithic_guard',1);
+    RAISE EXCEPTION 'FAIL: noncanonical defense suffix accepted';
+  EXCEPTION WHEN check_violation THEN NULL;
+  END;
+
   -- Synthetic stress fixtures: 20 completed defense sites × 6 units.
   -- This only tests the nation cap, not the gameplay per-era building allowance.
   FOR i IN 1..19 LOOP
