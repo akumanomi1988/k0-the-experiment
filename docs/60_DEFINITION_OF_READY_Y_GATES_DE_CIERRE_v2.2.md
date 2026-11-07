@@ -41,3 +41,10 @@
 ## Política de aprobación
 
 Cada casilla requiere documento, evidencia, responsable, fecha y versión. No «marcar completado» por haber escrito su intención. El propietario puede congelar un baseline **para desarrollo** sin que eso signifique que ya existe producto terminado. Las dependencias externas no son defectos que puedan arreglarse escribiendo más Markdown; deben mostrarse como gates, jamás como supuestos ocultos.
+
+
+## Seguimiento de cierre (auditoría 2026-11-07)
+
+Ver [acta de consolidación](../audit/CONSOLIDACION_D2_2026-11-07.md) y [matriz de contratos](../contracts/CONSOLIDATION_GAPS_V2_2.md). El gate D2 permanece **ABIERTO**: falta definir formalmente el ámbito de `activeHumanWorkersSoftCap` sin cambiar silenciosamente el balance; demostrar una temporada con cinco hitos reales por era; consolidar y probar contratos/migraciones; aprobar muestras de arte y verificar el primer proveedor por cuenta.
+
+La CI de integridad del repositorio solo acredita invariantes **declarativas**. Un PASS no convierte las casillas anteriores en aprobadas.
