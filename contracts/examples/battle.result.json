@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "2.2.0",
+  "seasonId": "00000000-0000-4000-8000-000000000001",
+  "nationId": "micelios",
+  "sequence": 42,
+  "serverUtc": "2026-11-07T12:00:00Z",
+  "kind": "battle.result",
+  "payload": {
+    "battleId": "00000000-0000-4000-8000-000000000002",
+    "resultDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "participants": [
+      {
+        "nationId": "micelios",
+        "strength": 44,
+        "points": 4
+      },
+      {
+        "nationId": "runicos",
+        "strength": 32,
+        "points": 2
+      },
+      {
+        "nationId": "ferrinos",
+        "strength": 20,
+        "points": 0
+      }
+    ]
+  }
+}
