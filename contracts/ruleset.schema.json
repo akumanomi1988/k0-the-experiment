@@ -26,7 +26,7 @@
   "additionalProperties": false,
   "properties": {
     "schemaVersion": {
-      "const": "2.0.0"
+      "const": "2.2.0"
     },
     "rulesetId": {
       "type": "string",
