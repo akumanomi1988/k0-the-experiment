@@ -2,7 +2,7 @@
 
 **Inventario de bytes; no certificación funcional, visual ni legal.** El manifiesto v2.1 queda archivado y no prevalece sobre esta revisión.
 
-Archivos enumerados (sin este manifiesto): 107. Tipos: {'.md': 73, '.sql': 2, '.json': 31, '.yaml': 1}.
+Archivos enumerados (sin este manifiesto): 108. Tipos: {'.md': 74, '.sql': 2, '.json': 31, '.yaml': 1}.
 
 | Archivo | Tamaño (bytes) | SHA-256 |
 |---|---:|---|
@@ -14,6 +14,7 @@ Archivos enumerados (sin este manifiesto): 107. Tipos: {'.md': 73, '.sql': 2, '.
 | `architecture/002_extensiones_diseno_v2.2.sql` | 3552 | `914050517fd1b93875c9fe9d548948162afb9cb91cab5b734c60adbf734db69e` |
 | `architecture/02_TRANSACTIONS_Y_INVARIANTES.md` | 3829 | `5f1fbb1cd68c721e36b9d81f50fb750814b3620af15e96d0bacac6ff83725c60` |
 | `architecture/README.md` | 1988 | `5e884451840e8db2af4917fb4a8c1123f57cc1f7694403dfec9f55c3a6f19bf3` |
+| `audit/AUDITORIA_INDEPENDIENTE_V2_2_2026-11-07.md` | 8531 | `aa5e2f9c93afff654e34a7cfb46e9eccfae87d98475d713db52772709748a11c` |
 | `audit/BALANCE_SIMULATION_REFERENCE.json` | 4376 | `81460b1fd64877a4765d4db1a22fbc01929be38878fdd91b4ed9077176f51532` |
 | `audit/CHANGELOG_v2.0.md` | 1456 | `f907e5fbaf199af345b80e5f0b38735b572ddd209486c59d303f52d5a641383e` |
 | `audit/EXTERNAL_GATES.md` | 1887 | `164c8daa0037628b10963c81aec13409ff9ecd127f519b2bcee27c5cf0b8c356` |
