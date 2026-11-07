@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "2.0.0",
-  "rulesetId": "chaos-default-2026-11",
+  "schemaVersion": "2.2.0",
+  "rulesetId": "chaos-default-2026-11-nation-total-v22",
   "status": "IMPLEMENTATION_BASELINE",
   "sourcePriority": [
     "latest-explicit-user-message",
