@@ -1,5 +1,5 @@
 -- K0: The Experiment v2.2. DESIGN SCHEMA ADDENDUM ONLY.
--- NOT AN EXECUTED MIGRATION. Requires PostgreSQL integration tests and migration review.
+-- Exercised with 001 + 003 in isolated PostgreSQL 16 CI; NOT a deployed production migration.
 -- Run only after 001_schema_v2.sql in isolated development database.
 BEGIN;
 
