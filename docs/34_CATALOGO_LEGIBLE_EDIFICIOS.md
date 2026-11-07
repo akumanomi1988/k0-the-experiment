@@ -4,8 +4,6 @@
 
 Desde v2.2, edificios de familias taller y centro de saber exigen completar `tech_{era}` (tecnología troncal correspondiente); el resto mantiene los prerrequisitos del catálogo.
 
-Desde v2.2, edificios de familias taller y centro de saber exigen completar `tech_{era}` (tecnología troncal correspondiente); el resto mantiene los prerrequisitos del catálogo.
-
 Cada edificio mantiene el mismo efecto lógico para las tres facciones; solo cambia la apariencia. Los edificios de épocas anteriores no se eliminan al avanzar de era: se les aplica el modificador de edificios antiguos previsto por las reglas. La cola automática obedece a límites de capacidad, recursos y emplazamiento; no construye si la operación compromete su propia precondición de coste.
 
 
