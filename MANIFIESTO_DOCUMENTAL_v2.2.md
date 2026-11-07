@@ -136,6 +136,6 @@ Archivos enumerados (sin este manifiesto): 133. Tipos: {'.json': 37, '.md': 81, 
 | `tools/reference_simulation.py` | 15200 | `3ef4a3899fcacab6ff82af4343902793823279431b0a335e18b26f4d0bcf2e97` |
 | `tools/requirements-validation.txt` | 33 | `3503f1deb095e9a802192990765ec4dc267270b03330ac80fb4b0b619fbf4d8f` |
 | `tools/sync_docs.py` | 8880 | `9b3b6eddcd823a134e251bc958e09f22053d6d0121f521d0bfdf05adad31ea65` |
-| `tools/test_worker_math.py` | 2729 | `e776168ecf2b02006befded6a931afca37503b3e4a6f02c480b9374baf70f142` |
+| `tools/test_worker_math.py` | 3839 | `43c55ff431f2eedcb5e653da810a06b67521e5a4df9f6cf579d9df43ef5e99a2` |
 | `tools/validate_repo.py` | 17126 | `69bccc3c88588effbd4e6d43ab33108d52632464edb51d3d73823d91376fc0df` |
-| `tools/worker_math.py` | 3092 | `81486ac071b0c1c99cc604f261f52b21d405c0f18f6deb2f38c938f43911c6a4` |
+| `tools/worker_math.py` | 4239 | `5235e60a5f941341962a84b668e92e0f59ee18bce024ec9d1fcf8b7ec357ae26` |
