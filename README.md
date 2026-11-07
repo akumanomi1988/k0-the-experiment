@@ -58,3 +58,5 @@ python tools/validate_repo.py
 Tras cualquier cambio documental, regenerar inventario y volver a validar con `python tools/validate_repo.py --write-manifest`. La validación declarativa no prueba balance, arte, integraciones, migraciones PostgreSQL ni lanzamiento. **Se mantiene D1 ampliado hasta evidenciar los gates D2.**
 
 Pruebas adicionales: `python -m unittest discover -s tests -p 'test_*.py' -v`, `python tools/balance_matrix.py` y `tests/sql/integrity_v2.2.sql` en el job PostgreSQL 16. Los 20 escenarios de la matriz económica son **modelos conservadores**, no validación del software inexistente.
+
+Resultados reproducibles y riesgos de la matriz de 20 escenarios: [informe de balance de referencia](audit/REFERENCE_BALANCE_MATRIX_2026-11-07.md). El reparto sesgado de oficios puede alargar significativamente las temporadas, incluso si todas las rutas siguen siendo gratuitas.
