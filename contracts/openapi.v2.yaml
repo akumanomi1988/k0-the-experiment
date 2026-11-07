@@ -5,6 +5,9 @@ info:
   description: >-
     Versioned design contract (not a deployed API) for a modular ASP.NET Core host. Never expose provider IDs
     or unmoderated chat in public endpoints. Write endpoints require trusted operator.
+    Public nationId is the faction slug, never the internal UUID nations.nation_id. Resolve by
+    (season_id, faction_id). Core DTOs 2.0.0 and extension events 2.2.0 are distinct contracts.
+    See contracts/IDENTITY_AND_VERSION_POLICY.md.
 servers:
   - url: https://chaos.example.invalid
 security: []

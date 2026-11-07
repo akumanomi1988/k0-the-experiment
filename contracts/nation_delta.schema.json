@@ -30,7 +30,8 @@
         "micelios",
         "runicos",
         "ferrinos"
-      ]
+      ],
+      "description": "Public NationPublicId: faction slug. SQL nations.nation_id is UUID, resolved by (season_id, faction_id)."
     },
     "sequence": {
       "type": "integer",
