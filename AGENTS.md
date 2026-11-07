@@ -36,3 +36,12 @@
 - No iniciar la implementación completa del videojuego al realizar una auditoría documental. Los validadores y pruebas aisladas sí están dentro de alcance.
 
 El objetivo es **reducir ambigüedad y deuda técnica**, no producir más capítulos genéricos.
+
+## Evidencia automatizada añadida (no sustituye D2)
+
+- `python -m unittest discover -s tests -p 'test_*.py' -v`: golden tests de cuotas, cinco hitos, reproducción y LIVE/offline mediante un modelo **conservador**.
+- `python tools/balance_matrix.py`: 20 casos de perfil de audiencia/actividad y salida JSON; las seeds no impactan en el modelo simplificado (el mapa de competición no se modela).
+- `architecture/001_schema_v2.sql` → `002_extensiones_diseno_v2.2.sql` → `003_integridad_v2.2.sql`; los casos `tests/sql/integrity_v2.2.sql` se ejecutan en PostgreSQL 16 de CI.
+- `contracts/openapi.v2.yaml` declara contrato **de diseño** 2.2.0 y `contracts/signalr_events.v2.2.schema.json` tipa eventos públicos. Ningún endpoint está desplegado.
+
+Consultar [ADR-0001](audit/ADR_0001_WORKER_CAP_AND_VERSIONS.md) sobre ámbito nacional y versionado.
