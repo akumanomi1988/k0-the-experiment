@@ -56,6 +56,7 @@
     },
     "maxRegisteredHumans": 100000,
     "activeHumanWorkersSoftCap": 2500,
+    "activeHumanWorkersScope": "nation_total",
     "humanContributionCurve": {
       "first": 100,
       "firstBp": 10000,
