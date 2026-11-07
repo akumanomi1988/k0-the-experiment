@@ -31,3 +31,9 @@ Objetivo narrativo: mediana de 2–3 días por era con horario editorial estánd
 ## Invariantes que deben poder demostrarse
 
 Comida/recursos nunca negativos; ledger suma saldos; evento monetario duplicado no multiplica oro; no existe progreso pagado; todas las etapas de era 1–12 pueden completarse gratis; todas las obras obligatorias tienen ruta material desde zonas naturales; cambios de tick y FPS no alteran resultados; misma entrada ordenada+seed+versión reproduce exactamente estado persistido.
+
+## Ámbito del límite de trabajadores — resolución candidata AUD2-01
+
+La revisión actual del `ruleset` añade `activeHumanWorkersScope=nation_total`: los primeros 100 activos **de toda la nación**, por orden estable `(activeSinceUtc,citizenId)`, pesan 100 %, los siguientes 2.400 pesan 25 % y el resto cero en producción nacional. Las cinco profesiones comparten los mismos 2.500 puestos; el límite no se multiplica por cinco. Esta elección ha sido introducida en rama mediante delegación de completar el diseño y está sujeta a revisión del propietario en el PR; antes de D2 deben validarse perfiles extremos y cerrar el XP residual.
+
+El modelo conservador `tools/reference_simulation.py` ejercita la ruta gratuita con cinco hitos **reales** por era, trabajo cívico, investigación, UTC y economía LIVE/offline; no implementa votos, estrategia opcional, guarniciones, mapa, experiencia ni mutaciones DB. Sus resultados no representan una certificación del motor.
