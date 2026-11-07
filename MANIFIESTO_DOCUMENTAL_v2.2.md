@@ -2,11 +2,11 @@
 
 **Inventario de bytes; no certificación funcional, visual ni legal.** El manifiesto v2.1 es histórico.
 
-Archivos enumerados (sin este manifiesto): 126. Tipos: {'.json': 36, '.md': 79, '.py': 4, '.sql': 4, '.txt': 1, '.yaml': 1, '.yml': 1}.
+Archivos enumerados (sin este manifiesto): 128. Tipos: {'.json': 36, '.md': 79, '.py': 6, '.sql': 4, '.txt': 1, '.yaml': 1, '.yml': 1}.
 
 | Archivo | Tamaño (bytes) | SHA-256 |
 |---|---:|---|
-| `.github/workflows/documentation-integrity.yml` | 2886 | `288af84850a1b4eb97ac8dd22618feaeec429740b75e4efe0eccf659aefd5ec8` |
+| `.github/workflows/documentation-integrity.yml` | 3005 | `c95b21a3d061cf6aae3f33e058925f2a69203f53c2db7e4b47f1365be1bb356f` |
 | `AGENTS.md` | 5404 | `7503755b162452c1ec7571cb6be5773b0506167ff781f532eb16cb569dbdb5e5` |
 | `DOCS_INDEX_v2.2.md` | 9609 | `f182eaa2d7595259a0d1a2801719ae8bc93eb5a81872493effd6aa70f2f7c60a` |
 | `MANIFIESTO_DOCUMENTAL_v2.1.md` | 9724 | `81202048c6f416007482121716b3cad14974f23d0f91a1893fdb770fd81c0a08` |
@@ -131,4 +131,6 @@ Archivos enumerados (sin este manifiesto): 126. Tipos: {'.json': 36, '.md': 79, 
 | `tools/balance_matrix.py` | 2034 | `a26b146062ed69e5e5ceba5a2acebaf93623d62633f8b4ea11e07a22606ca888` |
 | `tools/reference_simulation.py` | 15200 | `3ef4a3899fcacab6ff82af4343902793823279431b0a335e18b26f4d0bcf2e97` |
 | `tools/requirements-validation.txt` | 33 | `3503f1deb095e9a802192990765ec4dc267270b03330ac80fb4b0b619fbf4d8f` |
+| `tools/test_worker_math.py` | 2725 | `4448830988331ded5a6639956bc30b2c43899938584c5132157bf13d174e49a1` |
 | `tools/validate_repo.py` | 12559 | `c9361e8617eae0e9df8e1fba688341b73f3dcb21f9dab09ab0634f07073ee3bc` |
+| `tools/worker_math.py` | 3256 | `559e03fed0436fa658db8ee3c3d49aa7fa82648968ca76ab03aaf803f3f47cfa` |
