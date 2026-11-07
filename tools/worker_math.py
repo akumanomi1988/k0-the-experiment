@@ -1,6 +1,6 @@
 """Cálculo determinista de contribución humana, sin dependencia del motor.
 
-Los límites son por oficio según docs/04. No modifica reglas ni temporadas.
+Los límites son nacionales según ADR-0001 y ruleset v2.2. No modifica temporadas.
 """
 from __future__ import annotations
 
@@ -30,35 +30,31 @@ class WeightedWorker:
 
 
 def assign_human_weights(workers: Iterable[ActiveWorker]) -> tuple[WeightedWorker, ...]:
-    """Devuelve cuotas estables por oficio, ordenadas por antigüedad e ID.
+    """Devuelve cuotas nacionales estables, ordenadas por antigüedad e ID.
 
     La entrada debe contener solo ciudadanos cuya actividad sigue vigente.
-    La identidad es (profession, citizen_id) y duplicados se rechazan.
+    La identidad es citizen_id por nación y duplicados se rechazan.
     """
-    buckets: dict[str, list[ActiveWorker]] = {p: [] for p in PROFESSIONS}
-    seen: set[tuple[str, str]] = set()
+    seen: set[str] = set()
+    active: list[ActiveWorker] = []
     for worker in workers:
-        if worker.profession not in buckets:
+        if worker.profession not in PROFESSIONS:
             raise ValueError(f"Profesión desconocida: {worker.profession}")
         if not worker.citizen_id:
             raise ValueError("citizen_id vacío")
-        key = (worker.profession, worker.citizen_id)
-        if key in seen:
-            raise ValueError(f"Ciudadano duplicado: {key}")
-        seen.add(key)
-        buckets[worker.profession].append(worker)
+        if worker.citizen_id in seen:
+            raise ValueError(f"Ciudadano duplicado: {worker.citizen_id}")
+        seen.add(worker.citizen_id)
+        active.append(worker)
 
+    ordered = sorted(active, key=lambda x: (x.active_since_utc, x.citizen_id))
     result: list[WeightedWorker] = []
-    for profession in PROFESSIONS:
-        ordered = sorted(buckets[profession],
-                         key=lambda x: (x.active_since_utc, x.citizen_id))
-        for rank, worker in enumerate(ordered):
-            weight = FULL_BP if rank < FIRST_FULL else (
-                MARGINAL_BP if rank < LAST_COUNTED else 0
-            )
-            result.append(WeightedWorker(worker.citizen_id, profession, weight))
+    for rank, worker in enumerate(ordered):
+        weight = FULL_BP if rank < FIRST_FULL else (
+            MARGINAL_BP if rank < LAST_COUNTED else 0
+        )
+        result.append(WeightedWorker(worker.citizen_id, worker.profession, weight))
     return tuple(result)
-
 
 def effective_worker_units_bp(weights: Iterable[WeightedWorker]) -> int:
     """Suma exacta en basis points; no redondea trabajadores equivalentes."""
