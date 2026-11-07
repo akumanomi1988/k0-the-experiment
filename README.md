@@ -39,3 +39,20 @@ Mensaje explícito posterior del propietario → 92 decisiones originales confir
 ## Repositorio público y derechos
 
 No subir tokens, credenciales, emails de espectadores, conversaciones privadas, material de terceros sin derechos ni datos de pago. La denominación **K0: The Experiment** está pendiente de comprobación registral; publicar documentación no garantiza exclusividad comercial. No existe licencia explícita para uso por terceros: decidirla antes de invitar contribuciones externas.
+
+
+## Mantenimiento documental y contribuciones
+
+- [Guía para agentes de IA y desarrolladores](AGENTS.md).
+- [Acta de consolidación y bloqueantes D2 (2026-11-07)](audit/CONSOLIDACION_D2_2026-11-07.md).
+- [Matriz de contratos pendientes de consolidación](contracts/CONSOLIDATION_GAPS_V2_2.md).
+- [Workflow de integridad](.github/workflows/documentation-integrity.yml): verifica sintaxis JSON, esquemas, OpenAPI interno, enlaces, recuentos, dependencias e inventario de SHA-256.
+
+Para validar localmente:
+
+```bash
+python -m pip install -r tools/requirements-validation.txt
+python tools/validate_repo.py
+```
+
+Tras cualquier cambio documental, regenerar inventario y volver a validar con `python tools/validate_repo.py --write-manifest`. La validación declarativa no prueba balance, arte, integraciones, migraciones PostgreSQL ni lanzamiento. **Se mantiene D1 ampliado hasta evidenciar los gates D2.**
