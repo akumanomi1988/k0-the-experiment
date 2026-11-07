@@ -200,6 +200,13 @@ def verify_catalogs():
     check(manifest["rulesetHash"] == digest(ROOT/"data/ruleset.v2.json"), "Hash ruleset desincronizado")
     for path in manifest["contentFiles"]:
         check((ROOT/"data"/path).is_file(), f"Falta archivo de contenido {path}")
+    # Contrato: SHA-256 de pares ordenados [filename, objeto JSON], con claves
+    # ordenadas recursivamente y JSON compacto UTF-8. No ordenar arrays.
+    payload = [[name, load("data/" + name)] for name in manifest["contentFiles"]]
+    canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False,
+                           separators=(",", ":")).encode("utf-8")
+    check(hashlib.sha256(canonical).hexdigest() == manifest["contentHash"],
+          "data/content_manifest: contentHash no coincide con 16 catálogos canónicos")
 
 def verify_regressions():
     forbidden = {
