@@ -1,4 +1,4 @@
-# Inventario documental activo — K0 v2.2| `tools/worker_math.py` | 3092 | `81486ac071b0c1c99cc604f261f52b21d405c0f18f6deb2f38c938f43911c6a4` || `tools/test_worker_math.py` | 2729 | `e776168ecf2b02006befded6a931afca37503b3e4a6f02c480b9374baf70f142` |
+# Inventario documental activo — K0 v2.2
 
 **Inventario de bytes; no certificación funcional, visual ni legal.** El manifiesto v2.1 es histórico.
 
@@ -131,6 +131,6 @@ Archivos enumerados (sin este manifiesto): 128. Tipos: {'.json': 36, '.md': 79, 
 | `tools/balance_matrix.py` | 2034 | `a26b146062ed69e5e5ceba5a2acebaf93623d62633f8b4ea11e07a22606ca888` |
 | `tools/reference_simulation.py` | 15200 | `3ef4a3899fcacab6ff82af4343902793823279431b0a335e18b26f4d0bcf2e97` |
 | `tools/requirements-validation.txt` | 33 | `3503f1deb095e9a802192990765ec4dc267270b03330ac80fb4b0b619fbf4d8f` |
-| `tools/test_worker_math.py` | 2725 | `4448830988331ded5a6639956bc30b2c43899938584c5132157bf13d174e49a1` |
+| `tools/test_worker_math.py` | 2729 | `e776168ecf2b02006befded6a931afca37503b3e4a6f02c480b9374baf70f142` |
 | `tools/validate_repo.py` | 12559 | `c9361e8617eae0e9df8e1fba688341b73f3dcb21f9dab09ab0634f07073ee3bc` |
-| `tools/worker_math.py` | 3256 | `559e03fed0436fa658db8ee3c3d49aa7fa82648968ca76ab03aaf803f3f47cfa` |
+| `tools/worker_math.py` | 3092 | `81486ac071b0c1c99cc604f261f52b21d405c0f18f6deb2f38c938f43911c6a4` |
