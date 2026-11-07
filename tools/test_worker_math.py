@@ -9,7 +9,7 @@ from worker_math import (
 
 class WorkerMathTests(unittest.TestCase):
     def workers(self, count, profession="food"):
-        return [ActiveWorker(f"citizen-{i:05d}", profession, i) for i in range(count)]
+        return [ActiveWorker(f"{profession}-citizen-{i:05d}", profession, i) for i in range(count)]
 
     def test_quota_boundaries(self):
         for n, expected in [(0, 0), (10, 10_0000), (100, 100_0000),
@@ -19,11 +19,11 @@ class WorkerMathTests(unittest.TestCase):
                 weighted = assign_human_weights(self.workers(n))
                 self.assertEqual(effective_worker_units_bp(weighted), expected)
 
-    def test_independent_profession_caps(self):
+    def test_shared_national_cap(self):
         weighted = assign_human_weights(self.workers(2501, "food")
                                         + self.workers(2501, "research"))
-        self.assertEqual(effective_worker_units_bp(weighted), 14_000_000)
-        self.assertEqual(sum(x.weight_bp > 0 for x in weighted), 5000)
+        self.assertEqual(effective_worker_units_bp(weighted), 7_000_000)
+        self.assertEqual(sum(x.weight_bp > 0 for x in weighted), 2500)
 
     def test_stable_order(self):
         workers = [ActiveWorker("z", "food", 1), ActiveWorker("a", "food", 1)]
