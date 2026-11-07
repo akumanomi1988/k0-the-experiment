@@ -25,8 +25,8 @@ Ninguna corrección C-01..C-05 demuestra D2 por sí sola. Las 92 decisiones orig
 | ID | Severidad | Estado | Responsable propuesto | Criterio de cierre / evidencia |
 |---|---|---|---|---|
 | AUD2-01 | P0 | **DESIGN_CANDIDATE — `nation_total`** | Propietario + diseñador de balance | En rama se concreta `nation_total` y el orden `(activeSinceUtc,citizenId)` para 100 puestos completos y 2.400 al 25 %. Revisar esta propuesta en PR, ejecutar simulación y cerrar XP residual antes de marcar D2. |
-| AUD2-02 | P0 | **NOT_RUN** | Desarrollador motor | Simulador semánticamente equivalente que complete los cinco hitos reales de eras 1–12 con 0/10/100/1000/10000 espectadores, varias seeds, cero oro y sin bloqueos. Archivo de balance histórico NO es evidencia suficiente. |
-| AUD2-03 | P1 | **NOT_RUN** | Arquitecto backend | Consolidar anexos SQL y API v2.2; ejecutar migraciones, FKs, concurrencia e idempotencia en PostgreSQL aislado, con resultados fechados. |
+| AUD2-02 | P0 | **REFERENCE_PASS / ENGINE_NOT_RUN** | Desarrollador motor | Modelo conservador de cinco hitos probado en CI; falta un simulador autoritativo semánticamente equivalente que complete los cinco hitos reales de eras 1–12 con 0/10/100/1000/10000 espectadores, varias seeds, cero oro y sin bloqueos. Archivo de balance histórico NO es evidencia suficiente. |
+| AUD2-03 | P1 | **DDL_SMOKE_PASS / APP_NOT_RUN** | Arquitecto backend | SQL 001–003 y restricciones de oro y guarnición han pasado en PostgreSQL 16 aislado; aún faltan migración de una base con datos, aplicación, transacciones reales y fencing. |
 | AUD2-04 | P1 | **OPEN** | Arquitecto + propietario | Definir versión de esquema distinta de ruleset/content hash. Acreditar compatibilidad de snapshots y temporadas. |
 | AUD2-05 | P1 | **NOT_RUN** | Dirección artística | Aprobar sprites de tres especies y K-0, un edificio/facción y eras 1/9/12, con escalas 1×, vertical/horizontal, HUD y subtítulos. |
 | AUD2-06 | P1 | **EXTERNAL_GATE** | Operador de cuentas | Verificar por cuenta permisos LIVE, cuotas, términos, presencia e idempotencia; TikTok bloqueado hasta evidencia. |
@@ -40,8 +40,17 @@ Una era, tres naciones aisladas, cinco profesiones, 24 NPC/nación, motores por 
 ## Evidencia vs intención
 
 - **PASS documental:** archivos y referencias enumerables; correcciones específicas hechas; validaciones que lleguen a ejecutarse con salida trazable.
-- **NOT_RUN:** pruebas de migraciones, seguridad real, partidas completas y proveedores.
+- **PASS en CI:** aplicación de DDL 001–003 y constraints aisladas; pruebas del modelo de ruta gratuita. **NOT_RUN:** migraciones sobre datos reales, seguridad real, partidas del motor final y proveedores.
 - **VISUAL_BRIEF:** estilos, listas de sprites, HUD, audio y K-0 sin aprobación de arte.
 - **CANDIDATE_BALANCE:** cifras de economía hasta disponer de motor de referencia y escenarios reproducibles.
 
 **Estado tras esta consolidación:** D1 ampliado con controles automatizables; **no declarar D2/D3/D4** sin evidencias definidas en `docs/60`.
+
+## Evidencia nueva de esta consolidación
+
+- `tests/sql/integrity_v2.2.sql`: constraints ejecutadas en PostgreSQL 16 aislado, incluyendo prohibición de oro en Consejo, gasto cosmético, y guarniciones máximas 6/120.
+- `tools/reference_simulation.py`, `tests/test_reference_simulation.py` y `tools/balance_matrix.py`: prueban la ruta gratuita **de un modelo de referencia**, con 60 hitos efectivos (5×12) y conclusión sin oro, distinguiendo claramente omisiones del motor.
+- `contracts/openapi.v2.yaml` v2.2.0 y `contracts/signalr_events.v2.2.schema.json`: contratos de diseño ampliados, no endpoints desplegados.
+- `audit/ADR_0001_WORKER_CAP_AND_VERSIONS.md`: decisión propuesta de cuota nacional y versión del esquema, a revisar con el propietario.
+
+**Permanecen gates para D2:** XP residual, balance competitivo completo con eventos reales y pruebas por seed, contratos implementados y probados de extremo a extremo, imágenes y UX aprobadas, proveedor elegido y permisos reales por cuenta.
