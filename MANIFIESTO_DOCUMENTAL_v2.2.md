@@ -14,7 +14,7 @@ Archivos enumerados (sin este manifiesto): 126. Tipos: {'.json': 36, '.md': 79, 
 | `README.md` | 5720 | `a8a2fb550a33d1beb299e967447299b2bca5739506312fff8d9121b119108a8f` |
 | `architecture/001_schema_v2.sql` | 13748 | `6a8abcd8c588db1351165f58cc34414c60c2f86eb1d89d32b51ea27aa35877e8` |
 | `architecture/002_extensiones_diseno_v2.2.sql` | 3557 | `11088438594649a8a37cceaa1f3ec881c5f77b6b27fa67ffa96735df39102235` |
-| `architecture/003_integridad_v2.2.sql` | 4125 | `0233205325b105855bab90bf10aac801ee924f8a514fb07507133c1b0e32188e` |
+| `architecture/003_integridad_v2.2.sql` | 4131 | `4c4b5c7e5c9ada0187de020a6322efef74a764abcc8dd817de0d8b1aaa5e7257` |
 | `architecture/02_TRANSACTIONS_Y_INVARIANTES.md` | 4011 | `4e321bccb784423744e0445f68fd5b6438d8ac82ca4131b76d4153187ebe83a3` |
 | `architecture/README.md` | 2653 | `a1f32632261c7b41fe97b0175ecc031977a356581339a426dade7909eeb919b7` |
 | `audit/ADR_0001_WORKER_CAP_AND_VERSIONS.md` | 2889 | `8eb2e399f508a8723a9c1bfe9576bc99e510f76c2a26e8cdf570f819ea5e6b73` |
@@ -126,7 +126,7 @@ Archivos enumerados (sin este manifiesto): 126. Tipos: {'.json': 36, '.md': 79, 
 | `docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md` | 4819 | `6af7815ca5f788843136a045a2cdd734b5afad97747d34f5e499e3756a156a0e` |
 | `docs/61_CATALOGO_ARTISTICO_DE_EDIFICIOS_Y_MARAVILLAS_v2.2.md` | 15818 | `44c704acd28b91e41a6c8b20035816c0e2f7ab29febbb713570166b7cf1b7d1b` |
 | `docs/62_PERSONAJES_NPC_Y_EVOLUCION_ESTETICA_v2.2.md` | 6231 | `d738df75af99b4420b744154ad74f019104263e44abd7340b5436ec7615076a8` |
-| `tests/sql/integrity_v2.2.sql` | 6241 | `8b4553c2693b698e5362756b13bd59ed60ee8524620f13c55d25910478723aba` |
+| `tests/sql/integrity_v2.2.sql` | 6938 | `af698bce1913f0337ca16cecb83329eccba638d632ce6cd4a1bd39efc707b61d` |
 | `tests/test_reference_simulation.py` | 2019 | `df73db82a86ecd63b33bcb75f091e915007d3046bd95065a995cb000a6d57834` |
 | `tools/balance_matrix.py` | 2034 | `a26b146062ed69e5e5ceba5a2acebaf93623d62633f8b4ea11e07a22606ca888` |
 | `tools/reference_simulation.py` | 15200 | `3ef4a3899fcacab6ff82af4343902793823279431b0a335e18b26f4d0bcf2e97` |
