@@ -1,5 +1,5 @@
 -- Project CHAOS v2.0: schema DDL reference; PostgreSQL >= 16.
--- This script defines persistence topology and integrity constraints; not tested against a live PostgreSQL instance.
+-- Persistence baseline now smoke-tested with 002 + 003 in isolated PostgreSQL 16 CI; never migrated in production.
 -- Economy writes MUST use transactional application code/stored procedures respecting ledger and holds.
 BEGIN;
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
