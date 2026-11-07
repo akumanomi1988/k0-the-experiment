@@ -1,9 +1,9 @@
 openapi: 3.1.0
 info:
   title: Project CHAOS Operator and Read Model API
-  version: 2.0.0
+  version: 2.2.0
   description: >-
-    API contract baseline for a modular ASP.NET Core host. Never expose provider IDs
+    Versioned design contract (not a deployed API) for a modular ASP.NET Core host. Never expose provider IDs
     or unmoderated chat in public endpoints. Write endpoints require trusted operator.
 servers:
   - url: https://chaos.example.invalid
@@ -82,6 +82,53 @@ paths:
   /health/ready:
     get:
       responses: {'200': {description: Database, outbox and writer healthy}, '503': {description: Not ready}}
+  /api/v2/public/seasons/{seasonId}/nations/{nationId}/garrison:
+    get:
+      tags: [public]
+      summary: Public aggregate garrison; never expose user or raw provider identities
+      parameters:
+        - {name: seasonId, in: path, required: true, schema: {type: string, format: uuid}}
+        - {name: nationId, in: path, required: true, schema: {type: string, enum: [micelios, runicos, ferrinos]}}
+      responses:
+        '200': {description: Public garrison snapshot, content: {application/json: {schema: {$ref: '#/components/schemas/GarrisonRead'}}}}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /api/v2/public/seasons/{seasonId}/battles/{battleId}:
+    get:
+      tags: [public]
+      summary: Battle read model; unpublished scores withheld before RESOLVED
+      parameters:
+        - {name: seasonId, in: path, required: true, schema: {type: string, format: uuid}}
+        - {name: battleId, in: path, required: true, schema: {type: string, format: uuid}}
+      responses:
+        '200': {description: Sanitized battle state, content: {application/json: {schema: {$ref: '#/components/schemas/BattleRead'}}}}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /api/v2/operator/seasons/{seasonId}/battles:
+    post:
+      tags: [operator]
+      summary: Schedule a non-monetary automatic battle via authoritative worker
+      security: [{operatorJwt: [operator]}]
+      parameters:
+        - {name: seasonId, in: path, required: true, schema: {type: string, format: uuid}}
+        - {name: Idempotency-Key, in: header, required: true, schema: {type: string, minLength: 12, maxLength: 128}}
+      requestBody: {required: true, content: {application/json: {schema: {$ref: '#/components/schemas/ScheduleBattle'}}}}
+      responses:
+        '202': {description: Accepted only for authoritative validation; not a resolved battle}
+        '403': {description: Operator lacks permission}
+        '409': {$ref: '#/components/responses/Conflict'}
+  /api/v2/operator/seasons/{seasonId}/sponsorships/{sponsorshipId}/moderation:
+    post:
+      tags: [operator]
+      summary: Moderate a previously verified cosmetic record; never create gold
+      security: [{operatorJwt: [operator]}]
+      parameters:
+        - {name: seasonId, in: path, required: true, schema: {type: string, format: uuid}}
+        - {name: sponsorshipId, in: path, required: true, schema: {type: string, format: uuid}}
+        - {name: Idempotency-Key, in: header, required: true, schema: {type: string, minLength: 12, maxLength: 128}}
+      requestBody: {required: true, content: {application/json: {schema: {$ref: '#/components/schemas/ModerateSponsorship'}}}}
+      responses:
+        '202': {description: Accepted for policy and consent validation}
+        '403': {description: Insufficient role or provider evidence}
+        '409': {$ref: '#/components/responses/Conflict'}
 components:
   securitySchemes:
     operatorJwt:
@@ -129,6 +176,84 @@ components:
       properties:
         kind: {type: string, enum: [START,PAUSE,RESUME,EMERGENCY_STOP,ABORT,SCHEDULE_TOURNAMENT,SCHEDULE_EVENT]}
         reason: {type: string, minLength: 3}
+    GarrisonRead:
+      type: object
+      additionalProperties: false
+      required: [schemaVersion, seasonId, nationId, eraIndex, aggregateUnitCount, roleCounts, combatReadiness, generatedAtUtc, sequence]
+      properties:
+        schemaVersion: {const: '2.2.0'}
+        seasonId: {type: string, format: uuid}
+        nationId: {type: string, enum: [micelios, runicos, ferrinos]}
+        eraIndex: {type: integer, minimum: 1, maximum: 13}
+        aggregateUnitCount: {type: integer, minimum: 0, maximum: 120}
+        roleCounts:
+          type: array
+          minItems: 3
+          maxItems: 3
+          items:
+            type: object
+            additionalProperties: false
+            required: [role, count]
+            properties:
+              role: {type: string, enum: [guard, scout, heavy]}
+              count: {type: integer, minimum: 0, maximum: 120}
+        combatReadiness: {type: string, enum: [READY, WAITING_LIVE, NOT_READY]}
+        generatedAtUtc: {type: string, format: date-time}
+        sequence: {type: integer, minimum: 0}
+    BattleRead:
+      type: object
+      additionalProperties: false
+      required: [schemaVersion, battleId, seasonId, state, eventSequence]
+      properties:
+        schemaVersion: {const: '2.2.0'}
+        seasonId: {type: string, format: uuid}
+        battleId: {type: string, format: uuid}
+        state: {type: string, enum: [SCHEDULED, WAITING_LIVE, RUNNING, RESOLVED, CANCELLED]}
+        startedAtUtc: {type: [string, 'null'], format: date-time}
+        resolvedAtUtc: {type: [string, 'null'], format: date-time}
+        participants:
+          type: array
+          maxItems: 3
+          items:
+            type: object
+            additionalProperties: false
+            required: [nationId, strength, points]
+            properties:
+              nationId: {type: string, enum: [micelios, runicos, ferrinos]}
+              strength: {type: integer, minimum: 0}
+              points: {type: integer, minimum: 0, maximum: 4}
+        jointWinners:
+          type: array
+          uniqueItems: true
+          maxItems: 3
+          items: {type: string, enum: [micelios, runicos, ferrinos]}
+        penalties:
+          type: array
+          maxItems: 3
+          items:
+            type: object
+            additionalProperties: false
+            required: [nationId, kind, amount]
+            properties:
+              nationId: {type: string, enum: [micelios, runicos, ferrinos]}
+              kind: {type: string, enum: [MATERIAL_LOSS_MILLI, TERRITORY_LIVE_SECONDS]}
+              amount: {type: integer, minimum: 0}
+        eventSequence: {type: integer, minimum: 0}
+    ScheduleBattle:
+      type: object
+      additionalProperties: false
+      required: [scheduledForUtc, reason]
+      properties:
+        scheduledForUtc: {type: string, format: date-time}
+        reason: {type: string, minLength: 3, maxLength: 400}
+    ModerateSponsorship:
+      type: object
+      additionalProperties: false
+      required: [decision, reason]
+      properties:
+        decision: {type: string, enum: [APPROVED, REJECTED, REVOKED]}
+        reason: {type: string, minLength: 3, maxLength: 400}
+        approvedDisplayText: {type: string, maxLength: 160}
   responses:
     NotFound:
       description: Unknown season or nation
