@@ -1,4 +1,4 @@
-# Inventario documental activo — K0 v2.2
+# Inventario documental activo — K0 v2.2| `tools/worker_math.py` | 3092 | `81486ac071b0c1c99cc604f261f52b21d405c0f18f6deb2f38c938f43911c6a4` || `tools/test_worker_math.py` | 2729 | `e776168ecf2b02006befded6a931afca37503b3e4a6f02c480b9374baf70f142` |
 
 **Inventario de bytes; no certificación funcional, visual ni legal.** El manifiesto v2.1 es histórico.
 
