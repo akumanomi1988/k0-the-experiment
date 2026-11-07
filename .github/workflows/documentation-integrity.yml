@@ -27,3 +27,37 @@ jobs:
         run: python -m compileall -q tools
       - name: Validate documentation, contracts and manifest
         run: python tools/validate_repo.py
+
+  postgres-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: chaos_ci
+          POSTGRES_PASSWORD: local_test_password
+          POSTGRES_DB: chaos_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U chaos_ci -d chaos_ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      PGPASSWORD: local_test_password
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Install PostgreSQL client
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client
+      - name: Apply full baseline and integrity migration
+        run: |
+          psql -v ON_ERROR_STOP=1 -h localhost -U chaos_ci -d chaos_ci -f architecture/001_schema_v2.sql
+          psql -v ON_ERROR_STOP=1 -h localhost -U chaos_ci -d chaos_ci -f architecture/002_extensiones_diseno_v2.2.sql
+          psql -v ON_ERROR_STOP=1 -h localhost -U chaos_ci -d chaos_ci -f architecture/003_integridad_v2.2.sql
+      - name: Test transactional database constraints
+        run: psql -v ON_ERROR_STOP=1 -h localhost -U chaos_ci -d chaos_ci -f tests/sql/integrity_v2.2.sql
