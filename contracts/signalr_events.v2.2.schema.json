@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:k0:signalr-events:v2.2",
+  "title": "K0 public SignalR events v2.2 (design, not deployed)",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/garrison_changed"
+    },
+    {
+      "$ref": "#/$defs/battle_scheduled"
+    },
+    {
+      "$ref": "#/$defs/battle_result"
+    },
+    {
+      "$ref": "#/$defs/cosmetic_acknowledgement"
+    }
+  ],
+  "$defs": {
+    "garrison_changed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "kind",
+        "seasonId",
+        "nationId",
+        "sequence",
+        "serverUtc",
+        "payload"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.2.0"
+        },
+        "kind": {
+          "const": "garrison.changed"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nationId": {
+          "enum": [
+            "micelios",
+            "runicos",
+            "ferrinos"
+          ]
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "serverUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "roleCounts",
+            "aggregateUnitCount"
+          ],
+          "properties": {
+            "roleCounts": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "role",
+                  "count"
+                ],
+                "properties": {
+                  "role": {
+                    "enum": [
+                      "guard",
+                      "scout",
+                      "heavy"
+                    ]
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 120
+                  }
+                }
+              }
+            },
+            "aggregateUnitCount": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 120
+            }
+          }
+        }
+      }
+    },
+    "battle_scheduled": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "kind",
+        "seasonId",
+        "nationId",
+        "sequence",
+        "serverUtc",
+        "payload"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.2.0"
+        },
+        "kind": {
+          "const": "battle.scheduled"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nationId": {
+          "enum": [
+            "micelios",
+            "runicos",
+            "ferrinos"
+          ]
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "serverUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "battleId",
+            "sourceNationIds"
+          ],
+          "properties": {
+            "battleId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "sourceNationIds": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "micelios",
+                  "runicos",
+                  "ferrinos"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "battle_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "kind",
+        "seasonId",
+        "nationId",
+        "sequence",
+        "serverUtc",
+        "payload"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.2.0"
+        },
+        "kind": {
+          "const": "battle.result"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nationId": {
+          "enum": [
+            "micelios",
+            "runicos",
+            "ferrinos"
+          ]
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "serverUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "battleId",
+            "resultDigest",
+            "participants"
+          ],
+          "properties": {
+            "battleId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "resultDigest": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "participants": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "nationId",
+                  "strength",
+                  "points"
+                ],
+                "properties": {
+                  "nationId": {
+                    "enum": [
+                      "micelios",
+                      "runicos",
+                      "ferrinos"
+                    ]
+                  },
+                  "strength": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 4
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cosmetic_acknowledgement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "kind",
+        "seasonId",
+        "nationId",
+        "sequence",
+        "serverUtc",
+        "payload"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.2.0"
+        },
+        "kind": {
+          "const": "cosmetic.acknowledgement"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nationId": {
+          "enum": [
+            "micelios",
+            "runicos",
+            "ferrinos"
+          ]
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "serverUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "itemId",
+            "moderatedText"
+          ],
+          "properties": {
+            "itemId": {
+              "type": "string"
+            },
+            "moderatedText": {
+              "type": "string",
+              "maxLength": 160
+            }
+          }
+        }
+      }
+    }
+  }
+}
