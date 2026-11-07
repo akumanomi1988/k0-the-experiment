@@ -119,4 +119,4 @@ Archivos enumerados (sin este manifiesto): 114. Tipos: {'.json': 31, '.md': 77, 
 | `docs/61_CATALOGO_ARTISTICO_DE_EDIFICIOS_Y_MARAVILLAS_v2.2.md` | 15818 | `44c704acd28b91e41a6c8b20035816c0e2f7ab29febbb713570166b7cf1b7d1b` |
 | `docs/62_PERSONAJES_NPC_Y_EVOLUCION_ESTETICA_v2.2.md` | 6231 | `d738df75af99b4420b744154ad74f019104263e44abd7340b5436ec7615076a8` |
 | `tools/requirements-validation.txt` | 33 | `3503f1deb095e9a802192990765ec4dc267270b03330ac80fb4b0b619fbf4d8f` |
-| `tools/validate_repo.py` | 11081 | `307bb3bb9f81498efc971f7a55080af0d34eb2ccd8e92446023e4b5457c0b2ec` |
+| `tools/validate_repo.py` | 11618 | `ddd843c9f88914cad77e7e94cf1eb7e1ae887f7fe9a601c467fefdc43f7ab0e5` |
