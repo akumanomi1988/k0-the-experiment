@@ -41,4 +41,4 @@ Una mecánica se considera documentada cuando identifica sujeto, disparador, ent
 
 ## Fuera de alcance de esta fase
 
-No crear repositorios, backend, cliente, scripts Python, tests ejecutables, Docker Compose, CI/CD ni configuraciones con secretos. Es válido conservar SQL como **modelo de datos propuesto** y JSON/YAML de contratos y catálogos como **definición declarativa**, sin ejecutar ninguno. La documentación no se debe confundir con una aplicación funcional.
+**Contexto histórico v2.1:** en la fase documental inicial se excluyeron backend, cliente, scripts Python, CI y ejecución de SQL. **Enmienda de alcance de la consolidación v2.2:** el propietario ha solicitado pasar a validación técnica; están autorizados validadores, tests automatizados, PostgreSQL aislado y simulaciones conservadoras de referencia, **sin desarrollar el juego completo ni afirmar D2–D4**. La documentación no se debe confundir con una aplicación funcional.
