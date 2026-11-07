@@ -77,7 +77,10 @@
       12
     ],
     "talentPointsPerTier": 1,
-    "highestIndividualProductivityBp": 11800
+    "highestIndividualProductivityBp": 11800,
+    "humanWorkWeightOrdering": "activeSinceUtc_then_citizenId",
+    "humanWorkQuotaRotation": "none",
+    "humanWorkXpEligibility": "accepted_effective_work_only"
   },
   "resources": {
     "ordinary": [

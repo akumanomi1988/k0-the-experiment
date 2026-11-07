@@ -100,7 +100,10 @@
         "initialNpcAllocation",
         "talentLevels",
         "activeHumanWorkersScope",
-        "activeHumanWorkersSoftCap"
+        "activeHumanWorkersSoftCap",
+        "humanWorkWeightOrdering",
+        "humanWorkQuotaRotation",
+        "humanWorkXpEligibility"
       ],
       "properties": {
         "startingNpcPopulation": {
@@ -127,6 +130,15 @@
         "activeHumanWorkersSoftCap": {
           "type": "integer",
           "const": 2500
+        },
+        "humanWorkWeightOrdering": {
+          "const": "activeSinceUtc_then_citizenId"
+        },
+        "humanWorkQuotaRotation": {
+          "const": "none"
+        },
+        "humanWorkXpEligibility": {
+          "const": "accepted_effective_work_only"
         }
       },
       "additionalProperties": true

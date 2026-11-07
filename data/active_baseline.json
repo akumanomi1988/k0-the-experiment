@@ -1,0 +1,14 @@
+{
+  "status": "DESIGN_BASELINE_NOT_DEPLOYED",
+  "ruleset": "data/ruleset.v2.json",
+  "contentManifest": "data/content_manifest.v2.json",
+  "openapi": "contracts/openapi.v2.yaml",
+  "docsIndex": "DOCS_INDEX_v2.2.md",
+  "coreDeltaSchema": "contracts/nation_delta.schema.json",
+  "coreEventSchema": "contracts/normalized_event.schema.json",
+  "coreChannelSchema": "contracts/channel_binding.schema.json",
+  "extensionEventSchema": "contracts/signalr_events.v2.2.schema.json",
+  "identityPolicy": "contracts/IDENTITY_AND_VERSION_POLICY.md",
+  "canonicalDecisions": "data/legacy_user_decisions_1_92.json",
+  "readiness": "docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md"
+}

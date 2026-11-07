@@ -2,7 +2,7 @@
   "schemaVersion": "2.2.0",
   "contentHashAlgorithm": "sha256(UTF8(JSON sorted keys, compact separators, ordered array [filename,data]))",
   "rulesetHashAlgorithm": "sha256(raw data/ruleset.v2.json bytes)",
-  "rulesetHash": "4e0a0a10feb90f0e0b8bade5840fa16b2e950b96db9ae2f2d8fd874464e51ad4",
+  "rulesetHash": "754678d52e97bc7fc64a63cb2a2d5ca98a3817885e1f945ce04942315c1f0ec0",
   "contentHash": "af28ddf63f9681a0565a8ac7d2d3421f8777a06d2b29f462a1bc0fba0844d255",
   "contentFiles": [
     "factions.v2.json",
