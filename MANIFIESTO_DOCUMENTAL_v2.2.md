@@ -6,7 +6,7 @@ Archivos enumerados (sin este manifiesto): 114. Tipos: {'.json': 31, '.md': 77, 
 
 | Archivo | Tamaño (bytes) | SHA-256 |
 |---|---:|---|
-| `.github/workflows/documentation-integrity.yml` | 682 | `3486591b780e03e060432cdf8e4ffaf799f18aa8275dfda569831b9120272568` |
+| `.github/workflows/documentation-integrity.yml` | 733 | `853380ceebf7a9b0dd9fdbcd905bfb5f25f0f51bd1e913591d683f8ea47c8115` |
 | `AGENTS.md` | 4452 | `ce8e339c67c7067bb0690bacf49b8fb3935da7d8e508249238b0e91531c2b4ec` |
 | `DOCS_INDEX_v2.2.md` | 9143 | `e51355249dec38a04e535be9698b6b9b9399185001f5304ae78c8db05d12db1c` |
 | `MANIFIESTO_DOCUMENTAL_v2.1.md` | 9724 | `81202048c6f416007482121716b3cad14974f23d0f91a1893fdb770fd81c0a08` |
