@@ -14,3 +14,9 @@ Que el estado de una elección sea legal, que un evento de proveedor esté realm
 
 ## Clave compuesta
 Toda entidad de nación contiene `(season_id,nation_id)` y referencia con FK compuesta para impedir mover por UUID una construcción o papeleta entre naciones. `channel_bindings` da resolución inequívoca `(season_id,provider,provider_channel_id)`. Al iniciar temporada una DB CHECK no puede exigir exactamente 3 naciones; implementar ese gate antes de `RUNNING`.
+
+## Integridad v2.2 ensayada
+
+El orden de ejecución para una base **vacía aislada** es `001_schema_v2.sql` → `002_extensiones_diseno_v2.2.sql` → `003_integridad_v2.2.sql`. El tercer script restringe oro a contribución/patrocinio, prohíbe reservas de oro del Consejo y añade controles transaccionales de guarnición (6 por edificio, 120 por nación). La batería `tests/sql/integrity_v2.2.sql` se ejecuta en PostgreSQL 16 desde GitHub Actions.
+
+Que la DDL pase en una base vacía **no** constituye plan de migración de una base con datos reales: falta estrategia de despliegue, rollback, restauración y concurrencia del worker. La app todavía no existe.
