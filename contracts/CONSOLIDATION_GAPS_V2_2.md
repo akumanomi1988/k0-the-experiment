@@ -11,8 +11,8 @@
 | Relojes/recuperación | Capítulo 42, 29, SQL 001 | Representación persistente de subrelojes, límites, fencing y fuentes de autoridad | Desconexión/replay obtiene mismos hashes |
 | Ingresos | SQL 001, transacciones y capítulo 10 | Ledger separado de holds ordinarios; deuda de oro y reversos únicamente cosméticos | Reverso no cancela Consejo ni crea stock negativo |
 | Migraciones | DDL 001 y anexo 002 | Convertir diseño a migraciones ordenadas y reversibles, con validación en PostgreSQL real | Aplicación inicial y recuperación en entorno aislado |
-| Seguridad/API | OpenAPI 2.0 y capítulo 54 | Autorización detallada por acción y audiencia; contrato completo de errores | Pruebas 401/403, aislamiento de canales, secretos nunca en DTOs |
-| Versiones | content_manifest 2.2 / ruleset schema 2.0 | Distinguir esquema, contenido y versión de ejecución congelados por temporada | Hash reproducible, handshake y lectura de snapshots antiguos |
+| Seguridad/API | OpenAPI de diseño 2.2.0 y capítulo 54 | Autorización detallada por acción y audiencia; contrato completo de errores | Pruebas 401/403, aislamiento de canales, secretos nunca en DTOs |
+| Versiones | content_manifest 2.2 / ruleset schema 2.2, DTO troncales 2.0 y eventos extendidos 2.2 | Distinguir esquema, contenido y versión de ejecución congelados por temporada | Hash reproducible, handshake y lectura de snapshots antiguos |
 
 **Regla:** el contrato activo del juego no queda completo por escribir esta matriz. Una ruta mencionada en el anexo continúa siendo **propuesta** hasta incorporarse a OpenAPI versionado y contar con tests. No habilitar una capacidad LIVE o monetaria sin pruebas y permisos de la cuenta real.
 
@@ -20,4 +20,4 @@
 
 ## Estado parcial de esta revisión
 
-El contrato declarativo OpenAPI 2.2 y el esquema de cuatro eventos SignalR públicos están presentes y sus referencias/ejemplos se comprueban por CI. El SQL base más anexos y migración de integridad pasan smoke tests de PostgreSQL 16 en una base **vacía**. Los gates del cuadro relacionados con concurrencia real, migración de bases existentes, aplicación, DTO ejecutados, identidad, seguridad y proveedores continúan **NOT_RUN**. No confundir especificación de ruta con endpoint en servicio.
+El contrato declarativo OpenAPI 2.2 y el esquema de cuatro eventos SignalR públicos están presentes; la compatibilidad por mensaje está descrita en `IDENTITY_AND_VERSION_POLICY.md` y sus referencias/ejemplos se comprueban por CI. El SQL base más anexos y migración de integridad pasan smoke tests de PostgreSQL 16 en una base **vacía**. Los gates del cuadro relacionados con concurrencia real, migración de bases existentes, aplicación, DTO ejecutados, identidad, seguridad y proveedores continúan **NOT_RUN**. No confundir especificación de ruta con endpoint en servicio.

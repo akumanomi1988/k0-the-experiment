@@ -30,7 +30,7 @@
 
 ## Decisiones abiertas y gates
 
-- **AUD2-01:** se adopta `nation_total` como decisión de diseño propuesta en esta consolidación, documentada y versionada, con revisión de propietario mediante PR. Los 2.500 trabajadores son un límite por nación, nunca por oficio; aún exige revisión de balance y política explícita de XP residual.
+- **AUD2-01:** se adopta `nation_total` como decisión de diseño propuesta en esta consolidación, documentada y versionada, con revisión de propietario mediante PR. Los 2.500 trabajadores son un límite por nación, nunca por oficio; XP por trabajo sin cuota, sin tarea o bloqueada = cero, sin rotación por hash; aún exige revisión de balance del motor y ratificación de PR.
 - La simulación histórica `audit/BALANCE_SIMULATION_REFERENCE.json` no prueba los cinco hitos por era; los contratos REST/SQL v2.2 son propuestas pendientes de consolidación y ejecución.
 - Arte de facciones y K-0, integraciones LIVE, jurisdicción, licencias y pruebas de carga siguen pendientes; consultar `docs/41`, `docs/57`, `docs/60` y `audit/EXTERNAL_GATES.md`.
 - No iniciar la implementación completa del videojuego al realizar una auditoría documental. Los validadores y pruebas aisladas sí están dentro de alcance.

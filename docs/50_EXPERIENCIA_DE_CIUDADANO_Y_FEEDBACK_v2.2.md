@@ -12,7 +12,7 @@ Un espectador debe entender en 30 segundos tres cosas: qué nación ve, qué pue
 
 | Entrada | Aceptado cuando | Feedback positivo | Rechazo visible |
 |---|---|---|---|
-| `!join` | Cuenta de proveedor reconocida y canal autorizado | Ciudadano creado o ya registrado | Fuente sin permisos o evento ilegítimo |
+| `!join` | Identidad de proveedor autenticada y canal autorizado, sin ciudadanía previa | Ciudadano creado o ya registrado | Fuente sin permisos o evento ilegítimo |
 | `!work` | Ciudadano registrado, profesión válida y no bloqueada | Oficio y actividad 2h | Profesión distinta ya elegida; código inválido |
 | `!active` | Profesión fijada, cooldown terminado | Actividad hasta hora UTC | Sin oficio; cooldown |
 | `!skill` | Nivel/tier permitido y sin elección previa | Habilidad seleccionada | Habilidad de otra profesión o tramo consumido |

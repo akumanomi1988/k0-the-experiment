@@ -12,7 +12,7 @@
 
 `activeHumanWorkersScope = nation_total`. Cada nación considera todos sus humanos activos con profesión, ordenados por `(activeSinceUtc, citizenId)` ascendente, de forma estable en cada frontera de actividad. Puestos 1–100: 100 %; puestos 101–2500: 25 %; posteriores: 0 % de output. Los NPC quedan fuera de la cuota. La productividad y los cuidados se calculan en enteros; los 50 equivalentes máximos imputables a mantenimiento se aplican DESPUÉS de la ponderación. La profesión nunca cambia por salir de cuota.
 
-**Trade-off:** algunas profesiones podrían quedar infrarrepresentadas en cuotas tras entrar tarde; la ruta autónoma NPC debe funcionar de todas maneras. Un algoritmo futuro de cuotas por profesión sería otro diseño y requeriría nuevo hash y balance. El XP residual de participantes sin productividad requiere una decisión complementaria antes de motor autoritativo.
+**Trade-off:** algunas profesiones podrían quedar infrarrepresentadas en cuotas tras entrar tarde; la ruta autónoma NPC debe funcionar de todas maneras. No se utiliza la rotación histórica por hash cada diez minutos. Cualquier rotación o cupo por profesión debe versionar ruleset y superar pruebas de equidad y balance. **XP de trabajo cerrada para el baseline de ingeniería:** cero XP si el peso efectivo es cero, no hay tarea o la capacidad bloquea producción. Con peso positivo se aplican minutos efectivos y resto entero. La ciudadanía conserva voto, visualización y logros no productivos; no existe XP ficticia.
 
 ## Versiones
 
@@ -28,4 +28,4 @@
 
 Comparar perfiles 0, 10, 100, 1000, 10000, reparto equilibrado/sesgado y 4/24h LIVE mediante `tools/reference_simulation.py`. Verificar compilación semántica del motor real, orden de actividad, XP, sesgos y reproducibilidad antes de cerrar D2.
 
-**Revisión requerida:** el propietario debe revisar este ADR junto al PR; no declarar D2 a partir de la propuesta únicamente.
+**Revisión requerida:** la cuota nacional y la XP están definidas por ingeniería delegada y exigen aceptación del PR, no se atribuyen a ninguna de las 92 decisiones originales. Sigue faltando evidencia de motor completo para D2.

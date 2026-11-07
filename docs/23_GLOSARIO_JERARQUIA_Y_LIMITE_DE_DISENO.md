@@ -1,6 +1,6 @@
 # 23 — Glosario, jerarquía de decisiones y alcance documental
 
-**Estado:** definición documental v2.1. No se propone código ni una nueva mecánica. Fuente principal: reglas históricas 1–92, documentos 01–22 de v2.0 y catálogos de `data/`.
+**Estado:** glosario normativo actualizado para el baseline v2.2. Fuentes actuales en [CURRENT](CURRENT.md) y [política de contratos](../contracts/IDENTITY_AND_VERSION_POLICY.md); las reglas v2.0/v2.1 permanecen como referencias históricas cuando estén sustituidas.
 
 ## Diccionario obligatorio
 
@@ -28,10 +28,10 @@
 
 1. Última instrucción explícita del propietario del proyecto.
 2. Decisiones originales registradas (92) que no hayan sido sustituidas expresamente.
-3. Reglas canónicas de v2.0 y correcciones registradas en `docs/18`.
-4. Datos estructurados con valores numéricos (`data/ruleset.v2.json` y catálogos canónicos).
-5. Ampliaciones documentales de v2.1, exclusivamente cuando aclaren el diseño sin cambiar su semántica.
-6. Ejemplos ilustrativos y propuestas futuras (no prevalecen).
+3. Enmiendas aceptadas y ADR aprobadas v2.2; las propuestas en PR aún no equivalen a decisiones históricas del propietario.
+4. Reglas, catálogos y contratos de `data/` y `contracts/`, salvo contradicción con una decisión superior.
+5. Capítulos 01–62 como explicación vigente únicamente cuando concuerdan con el baseline activo.
+6. Compendios y ejemplos antiguos v2.0/v2.1 solo para trazabilidad, no para restaurar una regla sustituida.
 
 Si una tabla descriptiva y el JSON canónico difieren en una cifra, **no se improvisa**: se registra una discrepancia, se congela el cambio y se adopta una revisión consistente. No existe una jerarquía en la que un documento de estética autorice a conceder recursos, oro, votos o puntos.
 

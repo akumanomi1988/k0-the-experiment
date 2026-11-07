@@ -45,7 +45,7 @@ Cada casilla requiere documento, evidencia, responsable, fecha y versión. No «
 
 ## Seguimiento de cierre (auditoría 2026-11-07)
 
-Ver [acta de consolidación](../audit/CONSOLIDACION_D2_2026-11-07.md) y [matriz de contratos](../contracts/CONSOLIDATION_GAPS_V2_2.md). El gate D2 permanece **ABIERTO**: se propone el ámbito por nación de `activeHumanWorkersSoftCap` en esta rama, pendiente de revisión del propietario y de balance; demostrar una temporada con cinco hitos reales por era; consolidar y probar contratos/migraciones; aprobar muestras de arte y verificar el primer proveedor por cuenta.
+Ver [acta de consolidación](../audit/CONSOLIDACION_D2_2026-11-07.md) y [matriz de contratos](../contracts/CONSOLIDATION_GAPS_V2_2.md). El gate D2 permanece **ABIERTO**: se propone el ámbito por nación de `activeHumanWorkersSoftCap` en esta rama, pendiente de revisión del propietario y de balance del motor (XP residual cerrada en cero); demostrar una temporada con cinco hitos reales por era; consolidar y probar contratos/migraciones; aprobar muestras de arte y verificar el primer proveedor por cuenta.
 
 La CI de integridad del repositorio solo acredita invariantes **declarativas**. Un PASS no convierte las casillas anteriores en aprobadas.
 

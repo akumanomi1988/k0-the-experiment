@@ -13,21 +13,21 @@
 | `CompetitionEngine` | RPS y batallas programadas | Activar ataque espontáneo |
 | `ContributionLedger` | Aportaciones verificadas, devoluciones y deuda | Confiar en texto de chat |
 | `ShowDirector` | Cues autorizados y modulación narrativa | Elegir ganador o cambiar balance |
-| `ProjectionAPI` | DTO público/versionado y snapshots | Exponer identificadores y secretos de proveedor |
+| `ProjectionAPI` | DTO público/versionado y snapshots; slug público distinto del UUID SQL | Exponer identificadores y secretos de proveedor |
 | `OverlayClient` | Render 2D/LOD, animación y subtítulos | Autorizar gastos/posiciones económicas |
 | `OperatorConsole` | Control auditado/pausas/escena segura | Saltarse restricciones del motor |
 
 ## Consistencia y concurrencia
 
-Escritor único lógico por nación, más arbitraje global por temporada para primera maravilla y ganador. Inbox y Outbox permiten idempotencia y entrega eventual; los deltas de HUD son proyección, no verdad. Todas las mutaciones económicas usan ledger, locks/versiones y commit atómico. Baseline: PostgreSQL 16+ como referencia del SQL propuesto; no hay todavía pruebas de migración. Cada entrada lleva secuencia para replay; el RNG estable depende de seed y contador, no de reloj ni entorno.
+Escritor único lógico por nación, más arbitraje global por temporada para primera maravilla y ganador. Inbox y Outbox permiten idempotencia y entrega eventual; los deltas de HUD son proyección, no verdad. Todas las mutaciones económicas usan ledger, locks/versiones y commit atómico. Baseline: PostgreSQL 16+ como referencia del SQL propuesto; hay smoke tests de DDL 001–003 en CI, pero no upgrade de datos históricos ni recuperación del motor. Cada entrada lleva secuencia para replay; el RNG estable depende de seed y contador, no de reloj ni entorno.
 
 ## Entidades clave
 
-`Campaign`, `Season`, `Nation`, `ChannelBinding`, `ProviderIdentity`, `Citizen`, `CitizenSkill`, `ResourceBalance`, `ResourceLedger`, `GoldDebt`, `Building`, `TechnologyProgress`, `MilestoneProgress`, `MissionPeriod`, `GovernmentElection`, `StrategicBallot`, `RpsRound`, `CompetitionEvent`, `WonderClaim`, `NarrationCue`, `AuditLog`, `Snapshot`, `Inbox`, `Outbox`. V2.2 introduce además estados conceptuales `GarrisonUnit`, `AutomatedBattle`, `CosmeticSponsorship`; **el DDL base se acompaña del anexo de diseño `architecture/002_extensiones_diseno_v2.2.sql`, todavía no ensayado ni integrado en migraciones**. Ninguna nueva entidad necesita un microservicio propio en fase 1.
+`Campaign`, `Season`, `Nation`, `ChannelBinding`, `ProviderIdentity`, `Citizen`, `CitizenSkill`, `ResourceBalance`, `ResourceLedger`, `GoldDebt`, `Building`, `TechnologyProgress`, `MilestoneProgress`, `MissionPeriod`, `GovernmentElection`, `StrategicBallot`, `RpsRound`, `CompetitionEvent`, `WonderClaim`, `NarrationCue`, `AuditLog`, `Snapshot`, `Inbox`, `Outbox`. V2.2 introduce además estados conceptuales `GarrisonUnit`, `AutomatedBattle`, `CosmeticSponsorship`; **el DDL base y los anexos `architecture/002_extensiones_diseno_v2.2.sql` y `architecture/003_integridad_v2.2.sql` superaron smoke tests en PostgreSQL 16 vacío; no existe migración ejecutada sobre datos preexistentes ni motor integrado**. Ninguna nueva entidad necesita un microservicio propio en fase 1.
 
 ## API y presencia
 
-El cliente OBS solo consume snapshots y deltas con secuencia; en reconexión solicita snapshot base y reanuda del último confirmado, nunca inventa recursos. Eventos de chat no se envían desde frontend como autoridad. API admin se protege de forma distinta de API overlay; los endpoints declarados en `contracts/openapi.v2.yaml` aún no incluyen todos los módulos de v2.2 y no deben tratarse como contrato final. El backend no publica directamente tokens de proveedor al cliente.
+El cliente OBS solo consume snapshots y deltas con secuencia; en reconexión solicita snapshot base y reanuda del último confirmado, nunca inventa recursos. Eventos de chat no se envían desde frontend como autoridad. API admin se protege de forma distinta de API overlay; los endpoints declarados en `contracts/openapi.v2.yaml` incluyen lecturas de guarniciones, batallas y patrocinios, pero siguen siendo contratos de diseño sin endpoints ejecutados; módulos pendientes en `contracts/CONSOLIDATION_GAPS_V2_2.md`. El backend no publica directamente tokens de proveedor al cliente.
 
 ## Despliegue de referencia (no ejecutado)
 
