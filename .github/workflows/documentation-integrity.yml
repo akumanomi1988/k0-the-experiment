@@ -90,6 +90,8 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+      - name: Install schema validation dependencies
+        run: python -m pip install -r tools/requirements-validation.txt
       - name: Run conservative reference-model scenarios
         run: python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Cross 0/10/100/1000/10000 players, balanced/skewed and 4/24h LIVE

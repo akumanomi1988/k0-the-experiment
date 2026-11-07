@@ -30,7 +30,7 @@
 - **D-07 — Alta:** no existían wireframes pixel-precisos aprobados ni un pase de accesibilidad. Capítulos 46–50 concretan contratos visuales, pero **no sustituyen un art test físico**.
 - **D-08 — Media:** `Project CHAOS` y `K0: The Experiment` se mezclaban. Se declara K0 como marca de trabajo visible; nombres de archivo y contratos CHAOS quedan por compatibilidad hasta migración futura, no como dos marcas de producto.
 - **D-09 — Alta:** el producto requiere tres canales únicos, no un chat único para tres naciones. Este límite se mantiene explícito. No prometemos asignación multi-nación de un solo chat.
-- **D-10 — Alta:** el SQL es un esquema propuesto y puede no soportar aún los nuevos catálogos de ejército/patrocinio. Se ha redactado el anexo `architecture/002_extensiones_diseno_v2.2.sql` y contratos conceptuales, pero deben integrarse como **migraciones y APIs versionadas** antes de desarrollo, sin declarar compatibilidad automática.
+- **D-10 — Alta:** el SQL es un esquema propuesto y puede no soportar aún los nuevos catálogos de ejército/patrocinio. Los anexos SQL 002–003 y las restricciones se han probado en una **base vacía PostgreSQL 16 mediante CI**, sin demostrar upgrade de datos existentes, concurrencia del motor ni despliegue. OpenAPI declara endpoints de diseño v2.2, pero todavía no hay implementación ni pruebas extremo a extremo; antes de producción son obligatorias migraciones versionadas y contratos ejecutables.
 
 ## Autoridad cuando hay contradicción
 

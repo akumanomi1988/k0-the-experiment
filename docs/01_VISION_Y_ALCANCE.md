@@ -14,7 +14,7 @@ K0: The Experiment (título público de trabajo; antes Project CHAOS) es un jueg
 - Torneos solo programados: primer minijuego RPS triangular con elección oculta; penaltis territoriales de 30 minutos **activos en directo**; cero transferencia de oro.
 - Oro solo desde aportaciones económicas verificadas; jamás por NPC, misiones, chat ni operaciones de explotación. Permanencia solo de historial, estadísticas, logros y prestigio visual entre temporadas.
 
-## Cierre de definición de v2.0 y revisión v2.2 y revisión v2.2
+## Cierre de definición v2.0 y revisión vigente v2.2
 Valores desconocidos de balance y reglas ambiguas pasan a convertirse en **defaults de producto v2.0**. Son decisiones técnicas/de producto tomadas en virtud de la autorización del usuario de este turno, *no respuestas históricas atribuidas al usuario*. Se pueden versionar antes de abrir una temporada; nunca alterarse a mitad de temporada sin migración explícita y auditoría.
 
 No existe en este documento ninguna autorización implícita para extraer datos con APIs no oficiales ni para simular un beneficio monetario. Tampoco confundir especificación de sprites con haberlos creado; `art_spec.v2.json` es especificación, y las integraciones LIVE reales se mantienen bloqueadas hasta pruebas verificables.

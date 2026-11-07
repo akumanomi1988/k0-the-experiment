@@ -24,7 +24,7 @@ Ninguna corrección C-01..C-05 demuestra D2 por sí sola. Las 92 decisiones orig
 
 | ID | Severidad | Estado | Responsable propuesto | Criterio de cierre / evidencia |
 |---|---|---|---|---|
-| AUD2-01 | P0 | **DESIGN_CANDIDATE — `nation_total`** | Propietario + diseñador de balance | En rama se concreta `nation_total` y el orden `(activeSinceUtc,citizenId)` para 100 puestos completos y 2.400 al 25 %. Revisar esta propuesta en PR, ejecutar simulación y cerrar XP residual antes de marcar D2. |
+| AUD2-01 | P0 | **DESIGN_CANDIDATE — `nation_total`** | Propietario + diseñador de balance | En rama se concreta `nation_total` y el orden `(activeSinceUtc,citizenId)` para 100 puestos completos y 2.400 al 25 %. Revisar la propuesta de cuota nacional en PR, ejecutar el motor completo y verificar XP sobre trabajo aceptado. La regla de XP residual quedó fijada a cero para trabajo inexistente, bloqueado o fuera de cupo; no equivale a validación de motor. |
 | AUD2-02 | P0 | **REFERENCE_PASS / ENGINE_NOT_RUN** | Desarrollador motor | Modelo conservador de cinco hitos probado en CI; falta un simulador autoritativo semánticamente equivalente que complete los cinco hitos reales de eras 1–12 con 0/10/100/1000/10000 espectadores, varias seeds, cero oro y sin bloqueos. Archivo de balance histórico NO es evidencia suficiente. |
 | AUD2-03 | P1 | **DDL_SMOKE_PASS / APP_NOT_RUN** | Arquitecto backend | SQL 001–003 y restricciones de oro y guarnición han pasado en PostgreSQL 16 aislado; aún faltan migración de una base con datos, aplicación, transacciones reales y fencing. |
 | AUD2-04 | P1 | **OPEN** | Arquitecto + propietario | Definir versión de esquema distinta de ruleset/content hash. Acreditar compatibilidad de snapshots y temporadas. |
@@ -54,3 +54,8 @@ Una era, tres naciones aisladas, cinco profesiones, 24 NPC/nación, motores por 
 - `audit/ADR_0001_WORKER_CAP_AND_VERSIONS.md`: decisión propuesta de cuota nacional y versión del esquema, a revisar con el propietario.
 
 **Permanecen gates para D2:** XP residual, balance competitivo completo con eventos reales y pruebas por seed, contratos implementados y probados de extremo a extremo, imágenes y UX aprobadas, proveedor elegido y permisos reales por cuenta.
+
+
+## Actualización de coherencia normativa
+
+La revisión posterior centraliza versiones y hashes en [CURRENT](../docs/CURRENT.md), distingue `NationPublicId` de `NationDbId` y exige verificación semántica automatizada. Se ha corregido además el episodio del Consejo en `docs/17`, que todavía relacionaba un cierre con insuficiencia de oro. Las reglas aprobadas de ingeniería siguen sujetas a revisión del propietario antes de fusionarse.
