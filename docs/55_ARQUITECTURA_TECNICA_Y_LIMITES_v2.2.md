@@ -36,3 +36,9 @@ Un backend .NET modular + worker de simulación + PostgreSQL gestionado + UI ove
 ## SLO propuestos, no logrados
 
 Tick de 5s con CPU interna objetivo de 50 ms por nación a carga de referencia; P95 de Inbox→aplicación <1s; P95 delta visible <2s; escena 30 FPS; RPO/RTO solo se fijan tras ensayar backups y recuperación. La alta disponibilidad de un proveedor no se presume. Meter 100k ciudadanos en DB no implica 100k entidades renderizadas.
+
+## Contratos de diseño ampliados y prueba de DDL
+
+El fichero `contracts/openapi.v2.yaml` se ha ampliado con recursos de lectura de guarnición y batalla, agenda de combate y moderación de patrocinios (**info.version 2.2.0, contrato de diseño, no rutas desplegadas**). El protocolo público de eventos está tipado en `contracts/signalr_events.v2.2.schema.json` con fixtures en `contracts/examples/`.
+
+Los tres scripts SQL de `architecture/` cuentan con una prueba en PostgreSQL 16 aislado que protege los holds ordinarios y guarniciones; **no** demuestra idempotencia del motor, idempotencia concurrente de todas las transacciones, recuperación real ni una migración sobre datos históricos. Consultar `contracts/CONSOLIDATION_GAPS_V2_2.md`.
