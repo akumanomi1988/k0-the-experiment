@@ -32,6 +32,18 @@ jobs:
       - name: Validate documentation, contracts and manifest
         run: python tools/validate_repo.py
 
+      - name: Print regenerated manifest for integrity failures
+        if: failure()
+        run: |
+          python - <<'PY'
+          import sys
+          sys.path.insert(0, "tools")
+          from validate_repo import manifest_text
+          print("EXPECTED_MANIFEST_START")
+          print(manifest_text(), end="")
+          print("EXPECTED_MANIFEST_END")
+          PY
+
   postgres-contracts:
     runs-on: ubuntu-latest
     timeout-minutes: 10
