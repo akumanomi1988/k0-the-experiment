@@ -1,5 +1,7 @@
 # Índice documental activo — K0 v2.2
 
+**Consulta primero [CURRENT: estado y versión canónicos generados](docs/CURRENT.md).** Para identificar las últimas reglas no se debe extrapolar el número de versión del nombre de un documento histórico. La CI detecta divergencias de baseline, enlaces y reglas semánticas.
+
 Índice de **62 capítulos** de documentación de diseño; `data/` contiene valores numéricos declarativos; `docs/41` y `docs/60` distinguen definición de validación.
 
 | Nº | Documento |
@@ -81,6 +83,7 @@
 
 ## Operación, mantenimiento y cierre de brechas
 
+- [Identidad y compatibilidad de versiones](contracts/IDENTITY_AND_VERSION_POLICY.md).
 - [AGENTS.md](AGENTS.md): jerarquía de autoridad y reglas de trabajo para agentes.
 - [Validación declarativa automatizada](tools/validate_repo.py), [dependencias fijadas](tools/requirements-validation.txt) y [workflow CI](.github/workflows/documentation-integrity.yml).
 - [Acta de consolidación y pendientes D2](audit/CONSOLIDACION_D2_2026-11-07.md).

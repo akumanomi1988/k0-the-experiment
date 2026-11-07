@@ -43,6 +43,8 @@ No subir tokens, credenciales, emails de espectadores, conversaciones privadas, 
 
 ## Mantenimiento documental y contribuciones
 
+**Inicio recomendado: [CURRENT — versión canónica generada](docs/CURRENT.md).** Es la única página que identifica la versión y los hashes vigentes a partir de fuentes estructuradas. Los archivos v2.0/v2.1 quedan como antecedentes y no prevalecen sobre el baseline activo.
+
 - [Guía para agentes de IA y desarrolladores](AGENTS.md).
 - [Acta de consolidación y bloqueantes D2 (2026-11-07)](audit/CONSOLIDACION_D2_2026-11-07.md).
 - [Matriz de contratos pendientes de consolidación](contracts/CONSOLIDATION_GAPS_V2_2.md).
@@ -55,7 +57,7 @@ python -m pip install -r tools/requirements-validation.txt
 python tools/validate_repo.py
 ```
 
-Tras cualquier cambio documental, regenerar inventario y volver a validar con `python tools/validate_repo.py --write-manifest`. La validación declarativa no prueba balance, arte, integraciones, migraciones PostgreSQL ni lanzamiento. **Se mantiene D1 ampliado hasta evidenciar los gates D2.**
+Tras cambios en ruleset, catálogos o contratos: `python tools/sync_docs.py --write`, después `python tools/validate_repo.py --write-manifest`, y validar con `python tools/sync_docs.py --check` y `python tools/validate_repo.py`. Tras cualquier cambio editorial, regenerar inventario y volver a validar con `python tools/validate_repo.py --write-manifest`. La validación declarativa no prueba balance, arte, integraciones, migraciones PostgreSQL ni lanzamiento. **Se mantiene D1 ampliado hasta evidenciar los gates D2.**
 
 Pruebas adicionales: `python -m unittest discover -s tests -p 'test_*.py' -v`, `python tools/balance_matrix.py` y `tests/sql/integrity_v2.2.sql` en el job PostgreSQL 16. Los 20 escenarios de la matriz económica son **modelos conservadores**, no validación del software inexistente.
 

@@ -234,6 +234,84 @@ def verify_regressions():
         check(phrase not in (ROOT/path).read_text(encoding="utf-8"),
               f"Regla histórica obsoleta: {path}")
 
+
+def verify_semantic_contracts():
+    """Guardrails against recurring *semantic* contradictions outside JSON Schemas."""
+    import yaml
+    rule = load("data/ruleset.v2.json")
+    citizens = rule["citizens"]
+    check(citizens["activeHumanWorkersScope"] == "nation_total",
+          "Regresión: cuota humana deja de ser nacional")
+    check(citizens["activeHumanWorkersSoftCap"] == 2500,
+          "Regresión: límite humano debe versionarse y aprobarse expresamente")
+    check(citizens["humanWorkWeightOrdering"] == "activeSinceUtc_then_citizenId",
+          "Regresión: orden de cuotas no coincide con ADR-0001")
+    check(citizens["humanWorkQuotaRotation"] == "none",
+          "Regresión: rotación de cuota nacional no autorizada")
+    check(citizens["humanWorkXpEligibility"] == "accepted_effective_work_only",
+          "Regresión: XP por trabajo no efectivo")
+
+    commands = {x["id"]: x for x in load("data/commands.v2.json")["commands"]}
+    check(commands["join"]["precondition"] == "authenticated_provider_identity",
+          "Regresión: !join no debe exigir ciudadano previamente registrado")
+    check(commands["work"]["precondition"] == "registered_citizen",
+          "Regresión: !work sí requiere ciudadano registrado")
+
+    d04 = (ROOT/"docs/04_ECONOMIA_Y_BALANCE.md").read_text(encoding="utf-8")
+    d06 = (ROOT/"docs/06_PROFESIONES_HABILIDADES_Y_XP.md").read_text(encoding="utf-8")
+    check("global por nación" in d04, "docs/04 ha perdido ámbito nacional")
+    check("por nación" in d06 and "cuota" in d06.lower(),
+          "docs/06 ha perdido la descripción del cupo nacional")
+    check("XP de trabajo" in d06 and "cero" in d06,
+          "docs/06 ha perdido la política de XP efectiva")
+    for path in tracked():
+        if not path.startswith("docs/") or not path.endswith(".md"):
+            continue
+        content = (ROOT/path).read_text(encoding="utf-8")
+        forbidden_patterns = [
+            r"100 plazas de contribución plena por profesión",
+            r"rotación por bloques de 10 minutos de LIVE",
+            r"XP residual.*requiere fijación explícita",
+            r"Si el voto pierde financiación por reverso oro",
+            r"RESOLVED\\s*→\\s*PAYMENT_BLOCKED",
+        ]
+        for pattern in forbidden_patterns:
+            check(not re.search(pattern, content, re.IGNORECASE),
+                  f"{path}: contradicción semántica obsoleta: {pattern}")
+
+    api = yaml.safe_load((ROOT/"contracts/openapi.v2.yaml").read_text(encoding="utf-8"))
+    slugs = {"micelios", "runicos", "ferrinos"}
+    for path, spec in api["paths"].items():
+        for operation in spec.values():
+            if not isinstance(operation, dict):
+                continue
+            for parameter in operation.get("parameters", []):
+                if isinstance(parameter, dict) and parameter.get("name") == "nationId":
+                    check(set(parameter["schema"].get("enum", [])) == slugs,
+                          f"OpenAPI {path}: nationId público debe ser slug de facción")
+    check(set(api["components"]["schemas"]["NationSummary"]["properties"]["nationId"]["enum"]) == slugs,
+          "OpenAPI NationSummary: nationId no es slug de facción")
+    for schema_path in ["contracts/nation_delta.schema.json",
+                        "contracts/normalized_event.schema.json",
+                        "contracts/channel_binding.schema.json"]:
+        data = load(schema_path)
+        if "nationId" in data.get("properties", {}):
+            check(set(data["properties"]["nationId"].get("enum", [])) == slugs,
+                  f"{schema_path}: nationId público no es slug")
+        if schema_path.endswith("channel_binding.schema.json"):
+            item = data["properties"]["assignments"]["items"]["properties"]["nationId"]
+            check(set(item.get("enum", [])) == slugs,
+                  "Bindings: nationId público no es slug")
+    ext = load("contracts/signalr_events.v2.2.schema.json")
+    for name, definition in ext["$defs"].items():
+        check(set(definition["properties"]["nationId"].get("enum", [])) == slugs,
+              f"SignalR {name}: nationId debe ser slug")
+    sql = (ROOT/"architecture/001_schema_v2.sql").read_text(encoding="utf-8")
+    check("nation_id uuid NOT NULL" in sql and "UNIQUE(season_id,faction_id)" in sql,
+          "SQL: no se puede resolver public slug a nation_id UUID de forma unívoca")
+    check((ROOT/"contracts/IDENTITY_AND_VERSION_POLICY.md").is_file(),
+          "Falta política canónica de identidad y versiones")
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--write-manifest", action="store_true")
@@ -241,7 +319,7 @@ def main():
     if args.write_manifest:
         (ROOT/MANIFEST).write_text(manifest_text(), encoding="utf-8")
         print("Manifiesto actualizado")
-    for phase in (verify_links, verify_schemas, verify_catalogs, verify_regressions, verify_manifest):
+    for phase in (verify_links, verify_schemas, verify_catalogs, verify_semantic_contracts, verify_regressions, verify_manifest):
         try:
             phase()
         except Exception as exc:

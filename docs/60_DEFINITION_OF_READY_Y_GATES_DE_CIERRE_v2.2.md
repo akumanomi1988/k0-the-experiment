@@ -50,3 +50,6 @@ Ver [acta de consolidación](../audit/CONSOLIDACION_D2_2026-11-07.md) y [matriz 
 La CI de integridad del repositorio solo acredita invariantes **declarativas**. Un PASS no convierte las casillas anteriores en aprobadas.
 
 **Evidencia parcial posterior al baseline:** la migración de integridad SQL 001–003 pasa en PostgreSQL 16 aislado y 20 escenarios de `tools/reference_simulation.py` llegan a Interestelar con 60 hitos; consultar [informe](../audit/REFERENCE_BALANCE_MATRIX_2026-11-07.md). No representan una partida completa del motor real. La prueba de balance final continúa pendiente; los parámetros de trabajadores por nación son propuesta bajo [ADR-0001](../audit/ADR_0001_WORKER_CAP_AND_VERSIONS.md), a revisar antes de D2.
+
+
+**Fuente única de versión y hashes:** [CURRENT generado](CURRENT.md); [política de tipos de nación y compatibilidad](../contracts/IDENTITY_AND_VERSION_POLICY.md). Un PASS de sincronización confirma documentación coherente, no condiciones externas ni D2–D4.

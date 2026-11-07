@@ -4,7 +4,7 @@
 
 ## Entrada rápida y fuentes autoritativas
 
-1. Leer [README.md](README.md), [índice](DOCS_INDEX_v2.2.md) y [gates](docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md).
+1. Leer [CURRENT — baseline activo](docs/CURRENT.md), [política de identidad/versiones](contracts/IDENTITY_AND_VERSION_POLICY.md), [README.md](README.md), [índice](DOCS_INDEX_v2.2.md) y [gates](docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md).
 2. Para las decisiones funcionales, consultar [las 92 respuestas originales](data/legacy_user_decisions_1_92.json), [enmiendas v2.2](docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA_v2.2.md) y [trazabilidad](audit/decision_traceability.json).
 3. Prioridad: **última decisión explícita del propietario** > 92 decisiones confirmadas no sustituidas > enmiendas trazadas v2.2 > datos canónicos de `data/` y contratos coherentes > texto histórico 01–40 cuando no esté enmendado > compendios/manifiestos v2.1. Ante conflicto NO escoger por azar ni presentar una suposición como aprobación; registrar un hallazgo y bloquear la mutación conflictiva.
 4. Los números provienen de `data/ruleset.v2.json` y catálogos JSON; los textos legibles no son otra fuente editable de cifras. Las temporadas fijan `rulesetHash` y `contentHash`.
@@ -25,13 +25,13 @@
 3. Cambios de balance requieren justificación, revisión de efectos, nueva huella de reglas/contenidos y pruebas; jamás mutar una temporada RUNNING.
 4. Cambios de catálogos requieren IDs únicos, eras, dependencias válidas, coste gratuito y coherencia con los catálogos legibles. Cambios de contrato requieren migración/versionado y pruebas de compatibilidad.
 5. Ejecutar `python -m pip install -r tools/requirements-validation.txt` y `python tools/validate_repo.py` antes de presentar una PR. La CI valida estructura y contratos **declarativos**; no sustituye una simulación completa ni test de PostgreSQL.
-6. Si se cambian archivos, regenerar el manifiesto mediante `python tools/validate_repo.py --write-manifest` y volver a ejecutar el validador. Mantener históricos etiquetados, no eliminarlos.
+6. Tras cambios de reglas, catálogos o contratos, ejecutar primero `python tools/sync_docs.py --write`, después `python tools/validate_repo.py --write-manifest`, y comprobar con `python tools/sync_docs.py --check` y `python tools/validate_repo.py`. El CI falla si la página CURRENT, checksums o invariantes semánticas no coinciden; no se actualizan documentos históricos no normativos. Mantener históricos etiquetados, no eliminarlos.
 7. Documentar evidencia real con comando, salida, commit, fecha y entorno. Marcar cualquier trabajo no ejecutado como `NOT_RUN` y no como `PASS`.
 
 ## Decisiones abiertas y gates
 
 - **AUD2-01:** se adopta `nation_total` como decisión de diseño propuesta en esta consolidación, documentada y versionada, con revisión de propietario mediante PR. Los 2.500 trabajadores son un límite por nación, nunca por oficio; XP por trabajo sin cuota, sin tarea o bloqueada = cero, sin rotación por hash; aún exige revisión de balance del motor y ratificación de PR.
-- La simulación histórica `audit/BALANCE_SIMULATION_REFERENCE.json` no prueba los cinco hitos por era; los contratos REST/SQL v2.2 son propuestas pendientes de consolidación y ejecución.
+- El baseline activo y el alcance exacto de las pruebas se encuentran en [CURRENT](docs/CURRENT.md). La simulación conservadora no es el motor. SQL 001–003 está probado solo en PostgreSQL aislado; REST está especificado pero no desplegado.
 - Arte de facciones y K-0, integraciones LIVE, jurisdicción, licencias y pruebas de carga siguen pendientes; consultar `docs/41`, `docs/57`, `docs/60` y `audit/EXTERNAL_GATES.md`.
 - No iniciar la implementación completa del videojuego al realizar una auditoría documental. Los validadores y pruebas aisladas sí están dentro de alcance.
 
