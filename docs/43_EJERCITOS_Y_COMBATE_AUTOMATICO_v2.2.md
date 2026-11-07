@@ -8,15 +8,15 @@ El ejército es una capacidad automática de defensa territorial construida por 
 
 ## Unidades y escala
 
-Cada una de las 13 eras tiene tres tipos de unidad equivalentes entre facciones: guardia (multiplicador 100 %), explorador (85 %) y especialista (115 %). Se generan 39 definiciones de rol/era; cada una tiene tres variantes visuales con siluetas y herramientas específicas de Micelios, Rúnicos y Ferrinos. **No son 117 estadísticas distintas:** el combate es simétrico entre especies. Fuerza base por unidad de era `e`: `10 + 2e` puntos enteros. Fuerza individual efectiva: `floor(base * rolePowerBp/10000)`.
+Cada una de las 13 eras tiene tres tipos de unidad equivalentes entre facciones: guardia (multiplicador 100 %), explorador (85 %) y unidad pesada (`heavy`, 115 %). Se generan 39 definiciones de rol/era; cada una tiene tres variantes visuales con siluetas y herramientas específicas de Micelios, Rúnicos y Ferrinos. **No son 117 estadísticas distintas:** el combate es simétrico entre especies. Fuerza base por unidad de era `e`: `10 + 2e` puntos enteros. Fuerza individual efectiva: `floor(base * rolePowerBp/10000)`.
 
-Cada edificio defensivo completado puede sostener hasta seis unidades y genera **como máximo una cada 1.200 segundos LIVE**, alternando guardia→explorador→especialista. Límite total de nación: 120 unidades. No crecen offline. Una unidad cuesta materiales ordinarios descritos por era en el JSON, siempre después de proteger las reservas para alimento NPC y la siguiente obra cívica obligatoria. Nunca se gasta oro. Si el saldo es insuficiente, la producción militar espera; ningún NPC se ve obligado a abandonar comida/obras/hitos para reclutar. Las unidades permanecen al cambiar era; su ID y fuerza no se reescriben retroactivamente.
+Cada edificio defensivo completado puede sostener hasta seis unidades y genera **como máximo una cada 1.200 segundos LIVE**, alternando guardia→explorador→pesada. Límite total de nación: 120 unidades. No crecen offline. Una unidad cuesta materiales ordinarios descritos por era en el JSON, siempre después de proteger las reservas para alimento NPC y la siguiente obra cívica obligatoria. Nunca se gasta oro. Si el saldo es insuficiente, la producción militar espera; ningún NPC se ve obligado a abandonar comida/obras/hitos para reclutar. Las unidades permanecen al cambiar era; su ID y fuerza no se reescriben retroactivamente.
 
 ## Cálculo por encuentro
 
 El operador programa el evento como máximo una vez cada 24 horas LIVE de campaña. Todos deben estar ONLINE/LIVE y disponer de edificio defensivo; si alguna nación está más de dos eras por detrás, se pospone para no convertir la sesión en paliza estructural. Tres encuentros A-B, B-C y C-A, uno por pareja. Para cada pareja se usa la suma de fuerzas de sus guarniciones: la defensa aplica el bono de gobierno militar (+500bp) y, si corresponde en el `NationLiveClock`, prioridad defensiva (+800bp), respetando el tope general de bonificaciones. Sin factores aleatorios de daño; si ambas fuerzas son iguales, empate. Victoria/empate/derrota por pareja = 2/1/0 puntos; tablas públicas muestran fuerza numérica sin revelar IDs privados de espectadores.
 
-**Ejemplo:** dos guardias de era 1 dan `2 × floor(12 × 10000/10000)=24` puntos. Frente a una unidad especialista de era 1 (`floor(12 × 11500/10000)=13`), gana la fuerza 24 antes de aplicar bonificación defensiva. Es un ejemplo aritmético, no un resultado de balance completo.
+**Ejemplo:** dos guardias de era 1 dan `2 × floor(12 × 10000/10000)=24` puntos. Frente a una unidad pesada de era 1 (`floor(12 × 11500/10000)=13`), gana la fuerza 24 antes de aplicar bonificación defensiva. Es un ejemplo aritmético, no un resultado de balance completo.
 
 ## Consecuencias y límites
 
