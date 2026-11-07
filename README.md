@@ -1,6 +1,6 @@
 # K0: The Experiment — Game Design & Technical Specification
 
-> **Estado: DISEÑO DOCUMENTAL v2.2 / SIN JUEGO IMPLEMENTADO.** Repositorio canónico público. Google Drive queda como respaldo histórico. No hay código de aplicación, scripts, CI/CD ni infraestructura desplegada.
+> **Estado: DISEÑO DOCUMENTAL v2.2 / SIN JUEGO IMPLEMENTADO.** Repositorio canónico público. Google Drive queda como respaldo histórico. No hay código de aplicación ni infraestructura de juego desplegada. Sí existen scripts de validación, una simulación económica de referencia y GitHub Actions; no son el motor del juego.
 
 Tres civilizaciones no humanas — **Micelios, Rúnicos y Ferrinos** — evolucionan desde el Paleolítico hasta la Era Interestelar en un espectáculo interactivo presentado por **Doctor K-0**, científico cyborg neutral. Los espectadores participan desde tres fuentes de chat diferenciadas (mismo proveedor o varios, cuando existan permisos). Estilo propuesto: pixel art retro 2D de baja resolución, proyección oblicua 2:1.
 
@@ -18,7 +18,7 @@ Tres civilizaciones no humanas — **Micelios, Rúnicos y Ferrinos** — evoluci
 |---|---|
 | [`docs/`](docs/) | 62 capítulos Markdown (01–40 históricos vigentes salvo enmiendas; 41–62 nuevos y normativos donde se indique) |
 | [`data/`](data/) | Catálogos declarativos JSON, no lógica ejecutable |
-| [`architecture/`](architecture/) | Modelo SQL base y anexo v2.2 de diseño **sin ejecutar**; transacciones conceptuales |
+| [`architecture/`](architecture/) | DDL de referencia 001–003 ejecutada en PostgreSQL 16 aislado por CI; faltan migraciones de producción y transacciones del motor |
 | [`contracts/`](contracts/) | JSON Schema/OpenAPI/SignalR de diseño y anexo v2.2, aún no consolidados en versión API operativa |
 | [`audit/`](audit/) | Registro histórico, riesgos, checksums y simulación simplificada no autoritativa |
 | [`PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md`](PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md) | Compendio **histórico v2.1**, no prevalece sobre correcciones v2.2 |
@@ -56,3 +56,5 @@ python tools/validate_repo.py
 ```
 
 Tras cualquier cambio documental, regenerar inventario y volver a validar con `python tools/validate_repo.py --write-manifest`. La validación declarativa no prueba balance, arte, integraciones, migraciones PostgreSQL ni lanzamiento. **Se mantiene D1 ampliado hasta evidenciar los gates D2.**
+
+Pruebas adicionales: `python -m unittest discover -s tests -p 'test_*.py' -v`, `python tools/balance_matrix.py` y `tests/sql/integrity_v2.2.sql` en el job PostgreSQL 16. Los 20 escenarios de la matriz económica son **modelos conservadores**, no validación del software inexistente.
