@@ -98,7 +98,9 @@
       "required": [
         "startingNpcPopulation",
         "initialNpcAllocation",
-        "talentLevels"
+        "talentLevels",
+        "activeHumanWorkersScope",
+        "activeHumanWorkersSoftCap"
       ],
       "properties": {
         "startingNpcPopulation": {
@@ -118,6 +120,13 @@
             7,
             12
           ]
+        },
+        "activeHumanWorkersScope": {
+          "const": "nation_total"
+        },
+        "activeHumanWorkersSoftCap": {
+          "type": "integer",
+          "const": 2500
         }
       },
       "additionalProperties": true
