@@ -17,3 +17,7 @@
 **Regla:** el contrato activo del juego no queda completo por escribir esta matriz. Una ruta mencionada en el anexo continúa siendo **propuesta** hasta incorporarse a OpenAPI versionado y contar con tests. No habilitar una capacidad LIVE o monetaria sin pruebas y permisos de la cuenta real.
 
 **Prioridad técnica:** cerrar AUD2-01 (ámbito de workers) antes de balance; consolidar modelos y pruebas del vertical slice antes de generar API pública completa.
+
+## Estado parcial de esta revisión
+
+El contrato declarativo OpenAPI 2.2 y el esquema de cuatro eventos SignalR públicos están presentes y sus referencias/ejemplos se comprueban por CI. El SQL base más anexos y migración de integridad pasan smoke tests de PostgreSQL 16 en una base **vacía**. Los gates del cuadro relacionados con concurrencia real, migración de bases existentes, aplicación, DTO ejecutados, identidad, seguridad y proveedores continúan **NOT_RUN**. No confundir especificación de ruta con endpoint en servicio.
