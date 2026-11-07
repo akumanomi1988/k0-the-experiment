@@ -76,3 +76,11 @@ jobs:
           python-version: "3.12"
       - name: Run conservative reference-model scenarios
         run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Cross 0/10/100/1000/10000 players, balanced/skewed and 4/24h LIVE
+        run: python tools/balance_matrix.py --output evidence/reference_matrix_v2.2.json
+      - name: Preserve reference-only evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: reference-matrix-v2.2
+          path: evidence/reference_matrix_v2.2.json
+          retention-days: 30
