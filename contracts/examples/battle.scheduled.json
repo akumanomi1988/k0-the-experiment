@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "2.2.0",
+  "seasonId": "00000000-0000-4000-8000-000000000001",
+  "nationId": "micelios",
+  "sequence": 42,
+  "serverUtc": "2026-11-07T12:00:00Z",
+  "kind": "battle.scheduled",
+  "payload": {
+    "battleId": "00000000-0000-4000-8000-000000000002",
+    "sourceNationIds": [
+      "micelios",
+      "runicos",
+      "ferrinos"
+    ]
+  }
+}
