@@ -61,3 +61,18 @@ jobs:
           psql -v ON_ERROR_STOP=1 -h localhost -U chaos_ci -d chaos_ci -f architecture/003_integridad_v2.2.sql
       - name: Test transactional database constraints
         run: psql -v ON_ERROR_STOP=1 -h localhost -U chaos_ci -d chaos_ci -f tests/sql/integrity_v2.2.sql
+
+  reference-simulation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Configure Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Run conservative reference-model scenarios
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
