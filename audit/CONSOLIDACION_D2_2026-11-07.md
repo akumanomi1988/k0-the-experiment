@@ -24,7 +24,7 @@ Ninguna corrección C-01..C-05 demuestra D2 por sí sola. Las 92 decisiones orig
 
 | ID | Severidad | Estado | Responsable propuesto | Criterio de cierre / evidencia |
 |---|---|---|---|---|
-| AUD2-01 | P0 | **OPEN — decisión de producto** | Propietario + diseñador de balance | Especificar si `activeHumanWorkersSoftCap=2500` aplica por nación o por oficio, orden de cuota y redondeos; registrar en JSON, docs, hash y simulación. El texto 04 dice por oficio, el JSON no codifica ámbito. No escoger sin aprobación. |
+| AUD2-01 | P0 | **DESIGN_CANDIDATE — `nation_total`** | Propietario + diseñador de balance | En rama se concreta `nation_total` y el orden `(activeSinceUtc,citizenId)` para 100 puestos completos y 2.400 al 25 %. Revisar esta propuesta en PR, ejecutar simulación y cerrar XP residual antes de marcar D2. |
 | AUD2-02 | P0 | **NOT_RUN** | Desarrollador motor | Simulador semánticamente equivalente que complete los cinco hitos reales de eras 1–12 con 0/10/100/1000/10000 espectadores, varias seeds, cero oro y sin bloqueos. Archivo de balance histórico NO es evidencia suficiente. |
 | AUD2-03 | P1 | **NOT_RUN** | Arquitecto backend | Consolidar anexos SQL y API v2.2; ejecutar migraciones, FKs, concurrencia e idempotencia en PostgreSQL aislado, con resultados fechados. |
 | AUD2-04 | P1 | **OPEN** | Arquitecto + propietario | Definir versión de esquema distinta de ruleset/content hash. Acreditar compatibilidad de snapshots y temporadas. |
