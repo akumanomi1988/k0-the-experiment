@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 43 — Ejército, guarniciones y batallas automáticas
 
 **Estado: regla de diseño v2.2, balance no simulado.** Resuelve las decisiones históricas 25, 26, 27 y 30 sin añadir ataques libres ni micromanagement de guerra. Fuente estructurada: `data/combat_units.v2.2.json`.

@@ -1,4 +1,6 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** cada output remoto puede usar NATION_FOCUS, SHARED_WORLD o EVENT_STAGE (solo si policy lo permite). Tres clientes renderizan el mismo estado, con clocks y secuencias de servidor; sus FPS no cambian el motor. [Especificación vigente](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda normativa v2.3 (multistreamer distribuido):** cada output remoto puede usar NATION_FOCUS, SHARED_WORLD o EVENT_STAGE (solo si policy lo permite). Tres clientes renderizan el mismo estado, con clocks y secuencias de servidor; sus FPS no cambian el motor. [Especificación vigente](../ESPECIFICACION_MAESTRA.md).
 
 # 47 — Wireframes textuales, HUD y comportamiento de pantalla
 

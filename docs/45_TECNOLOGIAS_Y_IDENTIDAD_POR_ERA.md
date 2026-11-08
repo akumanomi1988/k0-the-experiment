@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 45 — Matriz de identidad tecnológica de las 13 eras
 
 **Estado:** dirección de contenido normativa, beneficios numéricos todavía candidatos. `data/technologies.v2.json` contiene tres tecnologías por era y conserva sus identificadores; este capítulo les da intención temática y lenguaje audiovisual para que las 39 no parezcan la misma tecnología renombrada. No se inventan nuevas bonificaciones económicas.

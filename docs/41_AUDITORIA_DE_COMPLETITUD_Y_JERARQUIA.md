@@ -1,4 +1,6 @@
-> **Nota de vigencia:** auditoría histórica de revisión v2.2. Las enmiendas posteriores y el diseño multistreamer están registrados en [CURRENT_SPEC v2.3](CURRENT_SPEC.md), [arquitectura distribuida](63_ARQUITECTURA_MULTISTREAMER_v2.3.md) y [blueprint QA](67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS_v2.3.md). No asumir que los gates se han validado.
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Nota de vigencia:** auditoría histórica de revisión v2.2. Las enmiendas posteriores y el diseño multistreamer están registrados en [CURRENT_SPEC v2.3](../ESPECIFICACION_MAESTRA.md), [arquitectura distribuida](63_ARQUITECTURA_MULTISTREAMER.md) y [blueprint QA](67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS.md). No asumir que los gates se han validado.
 
 # 41 — Auditoría de completitud, decisiones y jerarquía v2.2
 

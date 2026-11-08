@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 42 — Contratos temporales, prioridades y semántica determinista
 
 **Normativo para diseño.** Concreta escenarios de frontera y orden de eventos; no implementa el motor.
@@ -17,7 +19,7 @@ La señal de proveedor incierta NO se interpreta como LIVE. Los temporizadores d
 
 ## Orden lógico de un tick de 5 segundos (enmienda v2.3)
 
-Prevalece el orden exacto de [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md): entrada LIVE/Inbox idempotente → comandos y papeletas válidos → cierres de votos/torneos → comida/economía/XP → obras/investigación/misiones → hitos/era → ganador/maravillas → commit y deltas. El tick se particiona por fronteras reales; recibidos exactamente en el límite LIVE de cierre son rechazados. Una elección pausada **no** tiene deadline UTC absoluto fijo; computar su tiempo restante en NationLiveClock.
+Prevalece el orden exacto de [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS.md): entrada LIVE/Inbox idempotente → comandos y papeletas válidos → cierres de votos/torneos → comida/economía/XP → obras/investigación/misiones → hitos/era → ganador/maravillas → commit y deltas. El tick se particiona por fronteras reales; recibidos exactamente en el límite LIVE de cierre son rechazados. Una elección pausada **no** tiene deadline UTC absoluto fijo; computar su tiempo restante en NationLiveClock.
 
 Se deriva una sola vez economyDelta a partir del intervalo real y el multiplicador 100 %/20 %. En RPS/batalla, CompetitionLiveClock avanza solo cuando las tres naciones están LIVE; pérdida de una congela tiempo y resultado global, sin votos ni sanciones ficticios.
 

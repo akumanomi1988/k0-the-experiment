@@ -1,4 +1,6 @@
-> **Enmienda v2.3:** la terna ofrece **un único Consejo ordinario por nación/era jugable**; mantener decisiones históricas sobre coste oro=0. Ver [CURRENT_SPEC](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda v2.3:** la terna ofrece **un único Consejo ordinario por nación/era jugable**; mantener decisiones históricas sobre coste oro=0. Ver [CURRENT_SPEC](../ESPECIFICACION_MAESTRA.md).
 
 # 44 — Consejo gratuito, maravillas y patronazgo cosmético
 

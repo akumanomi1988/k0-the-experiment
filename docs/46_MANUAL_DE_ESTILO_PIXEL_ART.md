@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 46 — Manual de estilo visual y control de consistencia
 
 **Estado: contrato de diseño pixel art, no assets aprobados.** Define restricciones reproductibles para artistas y futuras herramientas. No debe copiar sprites, paletas ni animaciones ajenas; Terraria es referencia de densidad/lectura, no un catálogo reutilizable.

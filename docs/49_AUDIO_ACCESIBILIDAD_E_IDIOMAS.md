@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 49 — Audio, música, accesibilidad y localización
 
 **Estado: especificación editorial, no bandas sonoras ni locuciones producidas.** El juego no debe depender de voz o música para que las reglas se entiendan.
