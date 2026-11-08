@@ -1,3 +1,5 @@
+> **Enmienda normativa v2.3 (multistreamer distribuido):** cada output remoto puede usar NATION_FOCUS, SHARED_WORLD o EVENT_STAGE (solo si policy lo permite). Tres clientes renderizan el mismo estado, con clocks y secuencias de servidor; sus FPS no cambian el motor. [Especificación vigente](CURRENT_SPEC.md).
+
 # 47 — Wireframes textuales, HUD y comportamiento de pantalla
 
 **Estado: design token de layout, pendiente de test visual.** Las medidas son píxeles lógicos; la UI debe soportar 360×640 vertical y 640×360 horizontal, escalables enteros a 1080×1920 y 1920×1080.
