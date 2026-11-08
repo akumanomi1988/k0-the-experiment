@@ -58,11 +58,11 @@ def main() -> int:
         "contracts/normalized_event.schema.json",
         "contracts/channel_binding.schema.json",
         "contracts/nation_delta.schema.json",
-        "contracts/multistreamer.v2.3.schema.json",
+        "contracts/multistreamer.schema.json",
     ):
         doc = load(p)
         check(bool(doc.get("$schema")), f"{p}: must declare $schema")
-        if p != "contracts/multistreamer.v2.3.schema.json":
+        if p != "contracts/multistreamer.schema.json":
             check((doc.get("properties", {}).get("nationId", {}).get("format") == "uuid" or
                    doc.get("properties", {}).get("assignments", {}).get("items", {}).get("properties", {}).get("nationId", {}).get("format") == "uuid"),
                   f"{p}: nationId must be uuid")
