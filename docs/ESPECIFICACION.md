@@ -1,20 +1,19 @@
-# K0: The Experiment / Project CHAOS — Especificación maestra unificada v2.5
+# K0: The Experiment — Especificación maestra
 
-**Fecha de consolidación:** 2026-11-08.  
 **Clase:** diseño normativo consolidado para implementar el videojuego y producir su arte.  
 **Estado verificable:** DESIGN_BASELINE / NO IMPLEMENTADO / NO CERTIFICADO PARA LIVE PÚBLICO.  
 **Alcance:** reglas de juego, identidad, arte, UX, contenido, operadores, multistreamer, integraciones, motor, datos, seguridad, negocio y validación.
 
-> Esta versión **no abre una nueva ronda de decisiones ni incorpora mecánicas arbitrarias**. Concilia decisiones de usuario 1–92, las correcciones v2.0–v2.2, la arquitectura multistreamer v2.3 y los catálogos existentes. Cuando una decisión histórica fue sustituida, **la v2.5 identifica expresamente su reemplazo**. Las propuestas de balance y los requisitos externos se mantienen como tales; documentar no significa ejecutar o aprobar.
+> Esta especificación reúne las decisiones confirmadas y sus enmiendas. Concilia decisiones de usuario 1–92, las correcciones v2.0–v2.2, la arquitectura multistreamer v2.3 y los catálogos existentes. Cuando una decisión histórica fue sustituida, **la v2.5 identifica expresamente su reemplazo**. Las propuestas de balance y los requisitos externos se mantienen como tales; documentar no significa ejecutar o aprobar.
 
-## 0. Cómo leer y desarrollar a partir de v2.5
+## 0. Cómo leer esta especificación
 
-Esta es la **única entrada normativa**. Los archivos del directorio [fuentes](fuentes/) reproducen **íntegros** los 67 capítulos anteriores y las 92 decisiones para preservar toda la información. Son trazabilidad histórica, no 67 autoridades simultáneas. Las tablas numéricas, definiciones exactas de edificios, tecnologías, profesiones, hitos, misiones, NPC, unidades, sprites y eventos permanecen en los JSON de [data](../data/); sus identificadores y números son autoridad estructurada mientras no contradigan una enmienda documentada en este archivo. API/SQL de [contracts](../contracts/) y [architecture](../architecture/) son **diseños**, no contratos compilados o migraciones ejecutadas.
+Este archivo es la **única entrada normativa**. Los archivos del directorio [documentos por materia](INDICE.md) reproducen **íntegros** los 67 capítulos anteriores y las 92 decisiones para preservar toda la información. Son trazabilidad histórica, no 67 autoridades simultáneas. Las tablas numéricas, definiciones exactas de edificios, tecnologías, profesiones, hitos, misiones, NPC, unidades, sprites y eventos permanecen en los JSON de [data](../data/); sus identificadores y números son autoridad estructurada mientras no contradigan una enmienda documentada en este archivo. API/SQL de [contracts](../contracts/) y [architecture](../architecture/) son **diseños**, no contratos compilados o migraciones ejecutadas.
 
 **Orden de prevalencia:**
 
 1. Instrucciones explícitas posteriores del propietario, trazadas en revisión versionada.
-2. Esta especificación v2.5 en los conflictos que resuelve expresamente y sus [enmiendas](REGISTRO_DE_CONSOLIDACION_v2.5.md).
+2. Esta especificación y las decisiones de consolidación recogidas en su anexo.
 3. Decisiones confirmadas 1–92 que no estén expresamente sustituidas.
 4. Catálogos estructurados activos (costes, IDs, valores, cantidades) y contratos asociados, validados por versión.
 5. Capítulos 01–67 preservados como fuente histórica y de detalle artístico/técnico no contradicho.
@@ -60,7 +59,7 @@ Existe **una partida central compartida** (Campaign→Season→tres Nation), no 
 
 **Flujo de alta:** campaña DRAFT → tres Nation → invitaciones de un solo uso con caducidad → aceptación por cada streamer → autorización de su canal mediante proveedor → prueba de permisos CHAT_READ y LIVE_PRESENCE independientes → seleccionar overlay vertical/horizontal y copiar URL revocable → preflight → PREPARED/RUNNING. La cuenta OAuth no se entrega a OBS.
 
-[Diseño de referencia de entidades, fallos y sesiones](../docs/63_ARQUITECTURA_MULTISTREAMER_v2.3.md); [semántica distribuida](../docs/64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md).
+[Diseño de referencia de entidades, fallos y sesiones](../docs/63_ARQUITECTURA_MULTISTREAMER.md); [semántica distribuida](../docs/64_RELOJES_EVENTOS_Y_CONTRATOS.md).
 
 ## 3. Temporadas, historia y condición de victoria
 
@@ -70,7 +69,7 @@ Cada temporada comienza con **cero recursos, cero edificios y 24 NPC por nación
 
 Cada era 1–12 se completa por **cinco hitos distintos de 20 puntos cada uno**: producción acumulada de alimento, producción de madera Y piedra, conocimiento con tecnología troncal completada, edificio cívico representativo completado y **misión colectiva de esa era**. Todos suman 100, se registran una sola vez, y el oro nunca concede puntos. Si se llega a 100 mientras no existe LIVE confirmado, se marca EraReadyPending; el cambio de era espera próximo LIVE. No desbloquear por una barra repetible, misión diaria duplicada o aportación económica.
 
-**Tecnologías:** 39 definiciones (troncal + opción económica + opción defensiva por era conceptual). Los talleres y centros de investigación de una era requieren la tecnología troncal de su era; conocimiento empieza en fuente natural para evitar ciclo. Las opcionales son gratuitas en oro y tienen pequeños bonuses acotados definidos en catálogo. Identificadores numéricos y prerrequisitos exactos: [tecnologías](../data/technologies.v2.json), [hitos](../data/milestones.v2.json), [eras](../data/eras.v2.json).
+**Tecnologías:** 39 definiciones (troncal + opción económica + opción defensiva por era conceptual). Los talleres y centros de investigación de una era requieren la tecnología troncal de su era; conocimiento empieza en fuente natural para evitar ciclo. Las opcionales son gratuitas en oro y tienen pequeños bonuses acotados definidos en catálogo. Identificadores numéricos y prerrequisitos exactos: [tecnologías](../data/technologies.json), [hitos](../data/milestones.json), [eras](../data/eras.json).
 
 **Misiones:** tres tipos diarios y dos semanales siguen en ciclos UTC para recompensas ordinarias; no vuelven a dar puntos históricos por repetición. Para cada era 1–12 hay una **misión propia** (12 instancias posibles), completada por trabajo productivo real de NPC/humanos en esa era, independiente del corte diario; diseñada para que cero espectadores no bloquee el progreso. Objetivos del catálogo de misiones son **candidatos de balance**, no resultados simulados.
 
@@ -94,7 +93,7 @@ Los 24 NPC iniciales se distribuyen 7 comida, 5 madera, 4 minería, 4 obras y 4 
 
 Es **balance candidato**; no asegurar equidad a gran escala sin simulaciones. LOD de sprites desacoplado de población: que haya 10k ciudadanos no implica 10k agentes visuales.
 
-Comandos de ciudadano y política exacta: [capítulo 06](../docs/06_PROFESIONES_HABILIDADES_Y_XP.md), [catálogos](../data/professions.v2.json) y [skills](../data/skills.v2.json).
+Comandos de ciudadano y política exacta: [capítulo 06](../docs/06_PROFESIONES_HABILIDADES_Y_XP.md), [catálogos](../data/professions.json) y [skills](../data/skills.json).
 
 ## 5. Relojes, simulación determinista y orden
 
@@ -127,19 +126,19 @@ Gobiernos, prioridades, habilidades y edificios dan bonuses sobre fórmulas en b
 
 El resource ledger es auditable y causa-idempotente. Producción, comida, obras, misiones, daños y correcciones generan entradas atómicas; retención/compensación no borra historia. Oro no entra en fórmulas de recursos, ciencia, defensa, progreso, votos ni prioridad.
 
-[Reglas numéricas](../data/ruleset.v2.json), [economía de referencia](../docs/04_ECONOMIA_Y_BALANCE.md) y [evaluación del balance](../docs/56_MODELO_DE_BALANCE_Y_PRUEBAS_NUMERICAS_v2.2.md).
+[Reglas numéricas](../data/ruleset.json), [economía de referencia](../docs/04_ECONOMIA_Y_BALANCE.md) y [evaluación del balance](../docs/56_MODELO_DE_BALANCE_Y_PRUEBAS_NUMERICAS.md).
 
 ## 7. Mapas, edificios y Consejo
 
 **Mundo procedural estable por nación**: semilla versionada, mapa inicial 48×48 tiles lógicos, proyección visual 32×16, margen de expansión 8 tiles por era, máximo 256×256; al menos 70 % de terreno utilizable, fuentes naturales obligatorias garantizadas y ninguna ventaja estadística de bioma. Orden de parcela determinista por cercanía al núcleo, coordenadas y desempate estable. Animación y pathfinding gráfico jamás deciden producción. Persisten edificios antiguos, reduciendo eficiencia relativa a 80 % cuando corresponde.
 
-**130 edificios básicos** = 10 familias×13 eras conceptuales: housing, food_production, forestry, extraction, workshop, research, storage, infrastructure, civic, defense. Los edificios de era 13 son catálogo ceremonial no jugable. Coste ordinario y trabajo propios, footprint, cuatro fases de obra, tope de instancias y efectos declarados por ID en [data/buildings.v2.json](../data/buildings.v2.json). Básicos se planifican automáticamente cada 60 s de economía o por avance de era: como máximo 2 autoqueued, 5 obras concurrentes y orden de necesidades alimento→almacén→vivienda→materias→ciencia→taller→cívico→defensa→infraestructura. Los bloqueos por falta de materiales/parcela se mantienen como estados visibles sin recursos sintéticos ni doble pago.
+**130 edificios básicos** = 10 familias×13 eras conceptuales: housing, food_production, forestry, extraction, workshop, research, storage, infrastructure, civic, defense. Los edificios de era 13 son catálogo ceremonial no jugable. Coste ordinario y trabajo propios, footprint, cuatro fases de obra, tope de instancias y efectos declarados por ID en [data/buildings.json](../data/buildings.json). Básicos se planifican automáticamente cada 60 s de economía o por avance de era: como máximo 2 autoqueued, 5 obras concurrentes y orden de necesidades alimento→almacén→vivienda→materias→ciencia→taller→cívico→defensa→infraestructura. Los bloqueos por falta de materiales/parcela se mantienen como estados visibles sin recursos sintéticos ni doble pago.
 
-**Consejo Estratégico**: 39 proyectos = tres por era conceptual, 12 ternas jugables. **Un Consejo por nación y era jugable** cuando las tres alternativas actuales no construidas y desbloqueadas son cada una costeable con recursos ordinarios; si no, esperar recursos. Voto público !build projectId por 600 segundos LIVE, última papeleta válida por ciudadano; empate/sin votos resuelto por RNG determinista auditado. Durante votación se reserva **componente a componente el máximo** de los tres vectores de coste, nunca la suma de los tres; al cerrar solo se consume el coste del ganador, una vez, y se libera sobrante. Las alternativas perdedoras no se reofertan en el mismo Consejo/era. **Oro=0** para todos estos proyectos desde revisión v2.2. Nunca bloquear participación a quien no dona.
+**Consejo Estratégico**: 39 proyectos = tres por era conceptual, 12 ternas jugables. **Un Consejo por nación y era jugable** cuando las tres alternativas actuales no construidas y desbloqueadas son cada una costeable con recursos ordinarios; si no, esperar recursos. Voto público !build projectId por 600 segundos LIVE, última papeleta válida por ciudadano; empate/sin votos resuelto por RNG determinista auditado. Durante votación se reserva **componente a componente el máximo** de los tres vectores de coste, nunca la suma de los tres; al cerrar solo se consume el coste del ganador, una vez, y se libera sobrante. Las alternativas perdedoras no se reofertan en el mismo Consejo/era. **Oro=0** para todos estos proyectos según las reglas vigentes. Nunca bloquear participación a quien no dona.
 
 **Maravillas**: 13 definiciones conceptuales, una por era, con primera finalización global única y reconocimiento prestigioso. Coste ordinario oro=0, festival programado/condición válida, sin acelerar por donación; la maravilla interestelar es epílogo. Un único commit obtiene claim; rivales pueden mantener su construcción como monumento si la regla lo permite, sin premio exclusivo. Entre temporadas historial del récord se conserva, no ventaja competitiva.
 
-[Obras y sus valores](../data/strategic_projects.v2.json), [reglas gratuitas](../docs/44_CONSEJO_GRATUITO_PATROCINIO_Y_ECONOMIA_v2.2.md).
+[Obras y sus valores](../data/strategic_projects.json), [reglas gratuitas](../docs/44_CONSEJO_GRATUITO_PATROCINIO_Y_ECONOMIA.md).
 
 ## 8. Gobierno, elecciones, prioridades y torneos
 
@@ -157,7 +156,7 @@ Tras elección, votación separada de prioridad !priority economy|science|defens
 
 **Otros eventos permitidos:** desafío de remontada (retraso≥2 eras, máximo 2/temporada, NPC +5 % durante 30 min LIVE), tormenta moderada de recursos, desfile de fauna cosmético y festival de maravillas. Requieren whitelist, anuncio y cooldown; no hay depredadores permanentes ni desastres espontáneos fuera de director autorizado. Sin alianzas entre naciones.
 
-[Gobiernos](../data/governments.v2.json), [eventos](../data/events.v2.json), [combate](../data/combat_units.v2.2.json).
+[Gobiernos](../data/governments.json), [eventos](../data/events.json), [combate](../data/combat_units.json).
 
 ## 9. Oro, aportaciones y monetización
 
@@ -171,7 +170,7 @@ El ingreso para el creador/empresa es distinto al oro del juego. Una futura lice
 
 **Estilo obligatorio:** low-res retro 2D pixel art, suelo oblicuo 2:1, tile 32×16, sprite ciudadano base 16×24, 4 direcciones NE/SE/SW/NW, escalado entero sin smoothing, paleta ideal máxima de 24 colores por sprite. Terreno y objetos usan profundidad/pivote compartido; efectos, luces y alturas decorativas sin colisión económica. La referencia a Terraria define legibilidad/densidad retro, **no copiar sus sprites**.
 
-**Nueve acciones por personaje**: idle, walk, gather, haul, build, research, celebrate, rest, react; cantidad de frames y FPS por acción definidos en [art_spec](../data/art_spec.v2.json). Roles equivalentes conservan anclajes y huellas, sin ventaja perceptiva por facción. Paletas y materiales se diversifican para Micelios/Rúnicos/Ferrinos a lo largo de 13 eras; el lenguaje de cada época no necesita imitar literalmente historia humana.
+**Nueve acciones por personaje**: idle, walk, gather, haul, build, research, celebrate, rest, react; cantidad de frames y FPS por acción definidos en [art_spec](../data/art_spec.json). Roles equivalentes conservan anclajes y huellas, sin ventaja perceptiva por facción. Paletas y materiales se diversifican para Micelios/Rúnicos/Ferrinos a lo largo de 13 eras; el lenguaje de cada época no necesita imitar literalmente historia humana.
 
 **Inventario artístico conceptual:** 3×13×5 = 195 combinaciones visuales de ciudadanos, 9 gobernantes×13 atuendos=117, 130 edificios×3 facciones=390 skins, 39 estratégicos×3=117, 13 maravillas×3=39, 39 tipos/era/rol×3 skins=117 guerreros, más Doctor K-0, terrenos, partículas, iconos, retratos y sonido. Son **combinaciones de dirección artística**, no archivos producidos ni sprites aprobados. Reutilizar atlas, herramientas, paletas y rigs para controlar coste.
 
@@ -183,7 +182,7 @@ El ingreso para el creador/empresa es distinto al oro del juego. Una futura lice
 
 **Accesibilidad y derechos:** interfaz entendible sin chat ni audio; subtítulos y estado real LIVE/UNCERTAIN/OFFLINE; contraste y siluetas no dependen solo de color; glifos ES/EN, textos largos, tamaños móviles, licencias comerciales y control de duplicación de nombres de espectador. Capturas y style frames reales siguen pendientes de producir/aprobar.
 
-[Manual pixel art](../docs/46_MANUAL_DE_ESTILO_PIXEL_ART_v2.2.md), [visual por eras](../docs/26_BIBLIA_VISUAL_FACCIONES_EPOCAS_Y_SILUETAS.md), [K-0](../docs/48_DOCTOR_K0_PERSONAJE_VOZ_Y_NARRACION_v2.2.md), [catálogo artístico](../docs/61_CATALOGO_ARTISTICO_DE_EDIFICIOS_Y_MARAVILLAS_v2.2.md), [NPC vestuario](../docs/62_PERSONAJES_NPC_Y_EVOLUCION_ESTETICA_v2.2.md).
+[Manual pixel art](../docs/46_MANUAL_DE_ESTILO_PIXEL_ART.md), [visual por eras](../docs/26_BIBLIA_VISUAL_FACCIONES_EPOCAS_Y_SILUETAS.md), [K-0](../docs/48_DOCTOR_K0_PERSONAJE_VOZ_Y_NARRACION.md), [catálogo artístico](../docs/61_CATALOGO_ARTISTICO_DE_EDIFICIOS_Y_MARAVILLAS.md), [NPC vestuario](../docs/62_PERSONAJES_NPC_Y_EVOLUCION_ESTETICA.md).
 
 ## 11. Narración, audio, idiomas y ShowDirector
 
@@ -242,12 +241,46 @@ KPIs del juego: visitante→!join, !join→oficio, activos 1/7/30 días, votos v
 7. P6 — Ensayo público con rendimiento OBS real, backups restaurados, derechos de arte/audio/voz, privacidad, normas del proveedor, costes, telemetría y autorización explícita.
 8. P7 — SaaS/licencias para otros creadores solo tras validar necesidad comercial/ROI, sin arrastrar multi-tenant y billing al primer producto.
 
-**Estado actual no mejorado por esta fusión:** documentación D1 ampliada, no implementación D3 ni lanzamiento D4. El paso a D2/D3/D4 requiere evidencias de software, arte y proveedor. [Gates externos](../audit/EXTERNAL_GATES.md) y [criterios de aceptación](../docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md).
+**Estado actual no mejorado por esta fusión:** documentación D1 ampliada, no implementación D3 ni lanzamiento D4. El paso a D2/D3/D4 requiere evidencias de software, arte y proveedor. [Gates externos](../audit/EXTERNAL_GATES.md) y [criterios de aceptación](../docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE.md).
 
 ## 17. Inventario documental, archivos fuente y reglas de versión
 
-La carpeta [fuentes](fuentes/) contiene las **transcripciones completas** de los 67 capítulos de diseño y el registro de 92 decisiones históricas. No deben editarse como nuevas fuentes de verdad. Los 15 archivos del [content_manifest v2.3](../data/content_manifest.v2.3.json) y el catálogo de gobiernos, misiones, eventos, arte y contratos existentes siguen siendo datos de lectura y código generado; ninguna copia markdown invalida sus IDs. Un catálogo 13.ª era que exista para arte no autoriza activarlo tras SeasonCompleted. Para facilitar handoff sin omisiones, este archivo declara todas las áreas y su conexión con fuentes/JSON; los detalles artísticos y tablas grandes se leen en anexos íntegros y catálogos directamente.
+La carpeta [documentos por materia](INDICE.md) contiene las **transcripciones completas** de los 67 capítulos de diseño y el registro de 92 decisiones históricas. No deben editarse como nuevas fuentes de verdad. Los 15 archivos del [content_manifest v2.3](../data/content_manifest.json) y el catálogo de gobiernos, misiones, eventos, arte y contratos existentes siguen siendo datos de lectura y código generado; ninguna copia markdown invalida sus IDs. Un catálogo 13.ª era que exista para arte no autoriza activarlo tras SeasonCompleted. Para facilitar handoff sin omisiones, este archivo declara todas las áreas y su conexión con fuentes/JSON; los detalles artísticos y tablas grandes se leen en anexos íntegros y catálogos directamente.
 
 **Versionado v2.5:** el presente merge publica la versión documental consolidada. No renombra migraciones históricas como si estuvieran ejecutadas, no fabrica endpoints oficiales, no genera assets y no modifica saldos/partidas reales. El nuevo baseline de referencia para desarrolladores será este archivo, seguido del registro de enmiendas y los catálogos JSON existentes. Los archivos anteriores permanecen para trazabilidad, pero su jerarquía es inferior.
 
 **Completitud documental:** se preservan todas las fuentes localizadas en GitHub y sus decisiones históricas. **Completitud implementada o artística:** no acreditada. El alcance técnico, el diseño y los criterios de verificación están descritos, pero la inexistencia de un motor funcional o permisos LIVE impide calificar al producto como terminado.
+
+
+## Anexo: decisiones de consolidación
+
+Estas decisiones sustituyen descripciones anteriores que permanecen únicamente en el historial Git. Si una fila contradice una regla estructurada, debe revisarse la discrepancia antes de implementar; no crear otra copia de la especificación.
+
+| ID | Situación anterior | Regla consolidada | Impacto | Prueba necesaria |
+|---|---|---|---|---|
+| V25-01 | v0.8 fija TikTok/Micelios, Twitch/Rúnicos, YouTube/Ferrinos; docs 02/31 y v2.3 generalizan | Facción independiente de proveedor; tres bindings distintos; canales del mismo proveedor o mixtos si autorizados | Modelar Season/Nation separadas de Account/Binding | 3 channels same provider + mixed |
+| V25-02 | v0.8 concibe juego distribuido no claramente remoto | Backend central .NET/PG; 3 streamers pueden vivir en PCs/redes distintas; OBS read-only | Identity, StreamerSeat, OAuth, OverlayOutput, invitations | 3-PC remote E2E |
+| V25-03 | 3 naciones por un único chat parecía admisible en algunas explicaciones | No soportado: un canal pertenece a una nación/temporada | Enforce UNIQUE binding; mensajes sin nación se rechazan | Error routing test |
+| V25-04 | Concepto de operador propietario de tres canales vs tres streamers | Season.broadcastMode SINGLE_OPERATOR o MULTI_STREAMER; segundo exige 3 cuentas K0 primarias distintas aceptadas | Preflight y RBAC por seat | No iniciar 2 accounts duplicate |
+| V25-05 | v0.8 y antiguas decisiones asignaban oro a proyectos estratégicos | Consejo y maravillas: gold=0, todos accesibles con recursos ordinarios; oro solo cosméticos no competitivos | Eliminar GOLD en holds; ledgers separados | zero-donations full era |
+| V25-06 | Varios Consejos posibles con solo 3 candidatos/era | Un único Consejo ordinario por nación/era; perdedores de terna no se reofertan ese ciclo | Idempotencia (nation,era), scheduler | Rechazar segundo Consejo |
+| V25-07 | Hitos de misión ligados a rewards diarios/semanales y UTC | 12 misiones específicas de era; daily/weekly independientes | MissionEngine y catálogo v2.3 | 2 eras consecutivas en mismo día |
+| V25-08 | En data/technologies isRequiredForMilestone=false para todas; milestones exige troncal | Flag true únicamente troncales eras 1–12; era 13 ceremonial | Catalog consistency / schema | 12 required IDs sin contradicción |
+| V25-09 | Antiguos textos interpretan Interestelar como ciclo jugable | Era 13 terminal/epílogo; solo entrar en ella proclama ganador | Runtime postseason read-only | No obras/votos post-win |
+| V25-10 | Docs 03/42 ordenan cierre de votos y economía de modo divergente | Secuencia única de fronteras: evento/commands→cierres→economía→obras/tech/misiones→hitos/era→global arbiter→commit/outbox | Deterministic engine | Test boundary replay hash |
+| V25-11 | Fórmulas podían multiplicar 0.2 dos veces (4 % en vez de 20 %) | Factor OFFLINE 0.2 se aplica **solo** al delta temporal efectivo para economía/XP/comida | Integer accumulator | offline 60s=12s econ |
+| V25-12 | RPS de tres streams podía avanzar con tres NationLiveClock diferentes | CompetitionLiveClock global único, avanza solo con 3 LIVE; cae una, se congela todo evento | Event clock + operator pause | 50 s restantes en A/B/C |
+| V25-13 | OBS conectado equiparado implícitamente con LIVE | Fuente OBS independiente del estado proveedor; UI puede fallar sin alterar partida | ProviderHealth vs OverlayHealth | OBS crash isolation |
+| V25-14 | IDs públicos NationId usaban nombre de facción, SQL usa UUID | NationId UUID interno/público de DTO, FactionId string separada | Contract validation, migrations | DB→API round-trip |
+| V25-15 | Docs 19 state votes.PAUSED vs SQL CHECK sin PAUSED | PAUSED adoptado en diseño, solo tras migración real | DDL/DTO/updater | DB integration state transitions |
+| V25-16 | P95 entrada→aplicación <1s vs tick económico 5s | P95 <1s como objetivo de ACK, no aplicación del tick; economía hasta siguiente tick | Separate ingress vs worker | Latency metrics |
+| V25-17 | v0.8 proponía SQLite local como primera DB | PostgreSQL 16+ desde primer slice (con workers e Inbox/Outbox centrales) | Central ACID DB | Real SQL migrations |
+| V25-18 | Público 10000 humanos y 24 NPC sin calibración | Control marginal de trabajo por profesión/nación según ruleset, todavía balance candidato | Cohort simulator | P10/P50/P90 by audience |
+| V25-19 | Históricos menciones de gobierno elegible por espectadores | 3 NPC por nación/era, 1 cargo, 60m LIVE, 3m segunda vuelta; elección ciudadanos para NPC | Politics module | Ballot/tie deterministic |
+| V25-20 | Personaje alien / coral y Doctor K-0 poco cyborg | Solo Micelios/Rúnicos/Ferrinos; K-0 claramente cyborg con ojo óptico y brazo mecánico | Art direction | Silhouette real test |
+| V25-21 | Guerra continua, ataques o PvP libre no se especificaron consistentemente | Solo RPS triangular y batalla automática programados, 3 LIVE, daños acotados y sin muerte permanente | Competition Engine | Match+penalty tests |
+| V25-22 | Monetización y políticas de plataformas tratadas como garantías | Cada capability + cuenta tiene evidence; TikTok no se presume accesible; monetización default OFF | Account security/platforms | Real platform gate |
+| V25-23 | Catálogo de era 13 incluye edificios, misiones y tecnologías | Conservación íntegra como exposición/arte, NO acciones tras SeasonCompleted | Content availability filter | Terminal gating |
+| V25-24 | "Implementado" en flags de diseño mientras sin código | Cambiar a design candidate; PASS solo con evidencia (commit, entorno, inputs, outputs, fecha) | Documentation gating | CI and engine test |
+| V25-25 | Antiguas referencias de gold BUILD_COST en DDL | COSMETIC_SPEND es único consumo monetario habilitable en futuro, no BUILD_COST estratégico | DDL ledger upgrade | DB ledger tests |
+| V25-26 | Narrador LLM aparentemente capaz de organizar y decidir reglas | ShowDirector whitelist+cooldown, LLM solo texto, resultados exclusivamente desde backend | Security boundary | Prompt injection and mutation rejection |

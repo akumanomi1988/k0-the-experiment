@@ -1,11 +1,7 @@
-# Instrucciones de trabajo para K0
+# Instrucciones para agentes de Project CHAOS
 
-Autoridad documental: [CURRENT](CURRENT.md) y [especificación normativa v2.5](v2.5/ESPECIFICACION_MAESTRA_v2.5.md). Fuente de versión: data/active_documentation.json. El registro histórico de 67 capítulos y 92 decisiones NO debe reescribirse como si fuera la norma activa.
-
-Antes de cada PR: verificar autoridad con python3 tools/check_active_spec.py --check, y validar catálogos y archivo histórico con python3 tools/validate_design_catalogs.py y python3 tools/validate_v25_consolidation.py. Si cambia la versión documental, primero actualizar el puntero activo y luego regenerar CURRENT.md con --write.
-
-Requisitos de identidad: nationId público = UUID y factionId = slug. Tres naciones distintas, un backend central. Cupo humano por profesión y nación, rotación hash reproducible por ventana de 600s LIVE, XP de trabajo solo por actividad efectiva aceptada. !join requiere identidad del proveedor autenticada, NO ciudadano anterior; !work sí necesita ciudadano registrado. Economía offline al 20% una sola vez. Consejo y maravillas sin consumo de oro.
-
-No fusionar el PR #1 obsoleto de v2.2 sobre la especificación v2.5: introduce otro ámbito de cuota y otro significado de nationId. No tocar temporadas RUNNING. No inventar permisos LIVE, resultados de simulación, migraciones productivas, assets, licencias o software construido.
-
-La CI comprueba consistencia documental dentro de su alcance, pero no sustituye pruebas de aplicación ni protege por sí misma main si se omiten las verificaciones.
+1. **Fuente normativa única:** [docs/ESPECIFICACION.md](docs/ESPECIFICACION.md). Los [67 documentos por tema](docs/INDICE.md) la desarrollan. La decisión explícita más reciente del propietario prevalece; no restaurar reglas de commits anteriores sin autorización.
+2. **Versiones:** editar siempre un archivo existente; nunca crear documentación `_vN.md`, `vN/`, índices o manifiestos históricos duplicados. Git ya preserva el historial. Conservar `schemaVersion` de API/JSON y el orden de scripts SQL por compatibilidad técnica.
+3. **Datos:** [catálogo activo](data/content_manifest.json) y contratos de `contracts/`. Cada cambio de regla exige actualización simultánea de especificación, catálogo, referencias y pruebas; las temporadas RUNNING conservan su contenido congelado.
+4. **Reglas críticas:** `!join` requiere autenticación de proveedor, sin ciudadanía previa; `!work` sí exige ciudadano. `nationId` es UUID, `factionId` es slug. Límite humano **por profesión y nación**, con rotación determinista cada 600 s LIVE y XP únicamente por trabajo aceptado. Consejo y maravillas no consumen oro.
+5. **Pruebas:** ejecutar los tres validadores del README y revisar los checks de PR. No afirmar que el motor, migraciones productivas, proveedores, balance, OBS ni arte están aprobados por haber pasado la CI de diseño.

@@ -1,6 +1,6 @@
-# Persistencia, invariantes y arquitectura v2.0
+# Persistencia, invariantes y arquitectura
 
-`001_schema_v2.sql` es el **modelo relacional de referencia**, no una migración ya ejecutada ni probada en un PostgreSQL real. La implementación debe convertirlo a migraciones versionadas y ejecutar tests de FKs compuestas y concurrencia con PostgreSQL 16+ antes de LIVE.
+`001_schema.sql` es el **modelo relacional de referencia**, no una migración ya ejecutada ni probada en un PostgreSQL real. La implementación debe convertirlo a migraciones versionadas y ejecutar tests de FKs compuestas y concurrencia con PostgreSQL 16+ antes de LIVE.
 
 ## Límites de transacción
 - `Citizen` + `Inbox` y `Ballot` bajo transacción por evento con `source_key` único.

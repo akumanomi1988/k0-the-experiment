@@ -4,11 +4,10 @@
   "status": "DESIGN_BASELINE_CANDIDATE_NOT_IMPLEMENTED",
   "sourcePriority": [
     "latest-explicit-user-message",
-    "v2.5-master-and-consolidation-amendments",
+    "docs/ESPECIFICACION.md",
     "confirmed-user-decisions-1-92-except-traced-overrides",
-    "v2.3-scoped-amendments-included-in-v2.5",
-    "v2.2-catalogs-unless-explicitly-amended",
-    "v1-historical-reference"
+    "active-structured-catalogs",
+    "historical-git-commits"
   ],
   "nations": {
     "count": 3,

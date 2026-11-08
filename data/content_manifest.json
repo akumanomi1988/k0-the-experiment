@@ -13,91 +13,91 @@
   },
   "files": [
     {
-      "path": "data/ruleset.v2.json",
+      "path": "data/ruleset.json",
       "kind": "rules",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/eras.v2.json",
+      "path": "data/eras.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/factions.v2.json",
+      "path": "data/factions.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/professions.v2.json",
+      "path": "data/professions.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/skills.v2.json",
+      "path": "data/skills.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/buildings.v2.json",
+      "path": "data/buildings.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/technologies.v2.json",
+      "path": "data/technologies.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/milestones.v2.json",
+      "path": "data/milestones.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/era_missions.v2.3.json",
+      "path": "data/era_missions.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/missions.v2.json",
+      "path": "data/missions.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/strategic_projects.v2.json",
+      "path": "data/strategic_projects.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/combat_units.v2.2.json",
+      "path": "data/combat_units.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/events.v2.json",
+      "path": "data/events.json",
       "kind": "gameplay",
       "scope": "season",
       "required": true
     },
     {
-      "path": "data/cosmetic_sponsorship.v2.2.json",
+      "path": "data/cosmetic_sponsorship.json",
       "kind": "cosmetic",
       "scope": "future_gated",
       "required": true
     },
     {
-      "path": "data/art_spec.v2.json",
+      "path": "data/art_spec.json",
       "kind": "visual",
       "scope": "release",
       "required": true
@@ -110,5 +110,5 @@
     "OBS_cross_device_test",
     "provider_authorization_per_channel"
   ],
-  "notes": "ContentHash in Season is emitted only after validated build artifact is frozen. Never change contents of a RUNNING season without migration and explicit audit."
+  "notes": "Season content hash is frozen only during a validated build; this design manifest is not a released game. Git stores document history. Never change RUNNING season content without migration and audit."
 }

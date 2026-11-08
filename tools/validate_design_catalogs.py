@@ -28,7 +28,7 @@ def load(path: str):
 
 
 def main() -> int:
-    manifest = load("data/content_manifest.v2.3.json")
+    manifest = load("data/content_manifest.json")
     catalog_paths = [item.get("path", "") for item in manifest.get("files", [])]
     check(manifest.get("status") == "DESIGN_CANDIDATE_NOT_HASHED_OR_RELEASED",
           "Manifest must not pretend it has been released")
@@ -37,23 +37,23 @@ def main() -> int:
     for entry in manifest.get("files", []):
         check((ROOT / entry.get("path", "")).is_file(),
               f"Manifest references missing file {entry.get('path')}")
-    check("data/era_missions.v2.3.json" in catalog_paths,
+    check("data/era_missions.json" in catalog_paths,
           "Manifest missing era mission catalog")
-    rules = load("data/ruleset.v2.json")
+    rules = load("data/ruleset.json")
     rules_schema = load("contracts/ruleset.schema.json")
     check(rules.get("schemaVersion") == rules_schema.get("properties", {}).get("schemaVersion", {}).get("const"),
           "Ruleset schemaVersion does not match schema")
     check(rules.get("status") == rules_schema.get("properties", {}).get("status", {}).get("const"),
           "Ruleset status does not match schema")
-    eras = load("data/eras.v2.json").get("eras", [])
-    milestones = load("data/milestones.v2.json").get("milestones", [])
-    techs = load("data/technologies.v2.json").get("technologies", [])
-    buildings = load("data/buildings.v2.json").get("buildingCatalog", [])
-    strategic = load("data/strategic_projects.v2.json")
-    era_missions = load("data/era_missions.v2.3.json").get("missions", [])
-    skills = load("data/skills.v2.json").get("choices", [])
-    professions = load("data/professions.v2.json").get("professions", [])
-    units = load("data/combat_units.v2.2.json").get("units", [])
+    eras = load("data/eras.json").get("eras", [])
+    milestones = load("data/milestones.json").get("milestones", [])
+    techs = load("data/technologies.json").get("technologies", [])
+    buildings = load("data/buildings.json").get("buildingCatalog", [])
+    strategic = load("data/strategic_projects.json")
+    era_missions = load("data/era_missions.json").get("missions", [])
+    skills = load("data/skills.json").get("choices", [])
+    professions = load("data/professions.json").get("professions", [])
+    units = load("data/combat_units.json").get("units", [])
     for p in (
         "contracts/normalized_event.schema.json",
         "contracts/channel_binding.schema.json",
@@ -142,15 +142,15 @@ def main() -> int:
     check(rules.get("citizens", {}).get("activeHumanWorkersSoftCapScope") ==
           "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE", "Human cap scope is ambiguous")
 
-    sql = (ROOT / "architecture/001_schema_v2.sql").read_text(encoding="utf-8")
+    sql = (ROOT / "architecture/001_schema.sql").read_text(encoding="utf-8")
     check("'PAUSED'" in sql and "'COSMETIC_SPEND'" in sql,
           "Design DDL lacks paused votes / cosmetic gold entry")
-    for p in ("docs/CURRENT_SPEC.md",
-              "docs/63_ARQUITECTURA_MULTISTREAMER_v2.3.md",
-              "docs/64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md",
-              "docs/65_DISENO_STREAMER_OVERLAYS_Y_ARTE_v2.3.md",
-              "docs/66_INTEGRACIONES_SEGURIDAD_Y_OPERACION_v2.3.md",
-              "docs/67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS_v2.3.md"):
+    for p in ("docs/ESPECIFICACION.md",
+              "docs/63_ARQUITECTURA_MULTISTREAMER.md",
+              "docs/64_RELOJES_EVENTOS_Y_CONTRATOS.md",
+              "docs/65_DISENO_STREAMER_OVERLAYS_Y_ARTE.md",
+              "docs/66_INTEGRACIONES_SEGURIDAD_Y_OPERACION.md",
+              "docs/67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS.md"):
         check((ROOT / p).is_file(), f"Missing spec {p}")
 
     if FAILURES:
@@ -158,7 +158,7 @@ def main() -> int:
         for error in FAILURES:
             print(" -", error)
         return 1
-    print("PASS: static K0 v2.3 catalogs/contracts design consistency")
+    print("PASS: static active K0 catalog and contract design consistency")
     print("NOTE: no runtime, balance, migrations, OBS, legal or LIVE provider tests executed.")
     return 0
 
