@@ -1,7 +1,9 @@
+> **Enmienda normativa v2.3 (multistreamer distribuido):** backend .NET compartido en hosting central; tres Browser Sources en PCs diferentes, un escritor por nación, Inbox/Outbox y global SeasonArbiter. No servidores locales ni P2P. [Especificación vigente](CURRENT_SPEC.md).
+
 # 13 — Arquitectura modular, dominio y APIs
 
 ## Despliegue de referencia
-Monolito modular en .NET 10 con tres procesos lógicos `ApiHost`, `SimulationWorker` y `ConnectorWorker` (en MVP pueden ser un ejecutable con HostedServices), PostgreSQL, SignalR, React/TypeScript y Phaser 4 sujeto a prueba de OBS CEF. No usar Kafka, RabbitMQ, Redis, Kubernetes ni event sourcing completo hasta demostrarse necesidad. Inbox/Outbox PostgreSQL permite idempotencia y recuperación.
+Monolito modular en .NET 10 con tres procesos lógicos `ApiHost`, `SimulationWorker` y `ConnectorWorker` (en MVP pueden ser un ejecutable con HostedServices), PostgreSQL, SignalR, React/TypeScript y Phaser (versión sujeta a prueba de OBS CEF). No usar Kafka, RabbitMQ, Redis, Kubernetes ni event sourcing completo hasta demostrarse necesidad. Inbox/Outbox PostgreSQL permite idempotencia y recuperación.
 
 ## Módulos y dependencias
 `IdentityAndBindings` (asignación canal y cuentas), `Citizens` (usuarios/oficios/XP), `Simulation` (scheduler, clocks, work aggregation), `Economy` (balances/consumo/ledger), `Buildings` (autoplanner y construcción), `History` (hitos/eras), `Politics` (elección y prioridad), `StrategicCouncil` (holds/votos), `Competitions` (RPS/sanciones), `MissionEngine`, `ShowDirector`, `PlatformAdapters`, `ReadModels` y `Operator`. Cada módulo expone comandos y eventos, no acceso directo a repositorio de otro módulo. Core no importa Phaser ni SDK de plataforma. IDs UUID y referencia a `season_id + nation_id` en cualquier agregado perteneciente a nación.
