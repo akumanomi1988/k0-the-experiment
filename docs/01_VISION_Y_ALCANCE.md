@@ -1,4 +1,6 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** tres streamers pueden competir desde tres equipos/redes distintos; servidor K0 central y overlays OBS independientes; un canal por nación, mismas reglas sin instalación del motor local. [Especificación vigente](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda normativa v2.3 (multistreamer distribuido):** tres streamers pueden competir desde tres equipos/redes distintos; servidor K0 central y overlays OBS independientes; un canal por nación, mismas reglas sin instalación del motor local. [Especificación vigente](../ESPECIFICACION_MAESTRA.md).
 
 # 01 — Producto, alcance y principios no negociables (v2.0)
 

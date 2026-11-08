@@ -1,4 +1,6 @@
-> **Enmienda v2.3:** el límite de 2500 trabajadores humanos de diseño aplica **por profesión y nación** hasta revisar el balance; la XP usa deltaEconomy efectivo una sola vez. Ver [CURRENT_SPEC](CURRENT_SPEC.md) y [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda v2.3:** el límite de 2500 trabajadores humanos de diseño aplica **por profesión y nación** hasta revisar el balance; la XP usa deltaEconomy efectivo una sola vez. Ver [CURRENT_SPEC](../ESPECIFICACION_MAESTRA.md) y [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
 
 # 06 — Ciudadanos, profesión única, XP y especializaciones
 

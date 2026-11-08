@@ -1,4 +1,6 @@
-> **Enmienda v2.3:** torneos triangulares requieren CompetitionLiveClock global que se congela si deja de estar LIVE cualquiera de las tres naciones. Consultar [64](64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda v2.3:** torneos triangulares requieren CompetitionLiveClock global que se congela si deja de estar LIVE cualquiera de las tres naciones. Consultar [64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
 
 # 09 — Torneos, sanciones, eventos y misiones
 
@@ -19,4 +21,4 @@ Tres tipos diarios y dos semanales definidos en `missions.v2.json`; aparte, una 
 
 ## Segunda modalidad de evento definida en v2.2
 
-Además de RPS existe un **torneo automático de guarniciones** exclusivamente programado y con las tres naciones LIVE. Su catálogo de 39 roles/era, formación, costes ordinarios, combate sin azar y penalización no acumulativa se detalla en [`docs/43_EJERCITOS_Y_COMBATE_AUTOMATICO_v2.2.md`](43_EJERCITOS_Y_COMBATE_AUTOMATICO_v2.2.md). La simulación de esa modalidad todavía no está ejecutada.
+Además de RPS existe un **torneo automático de guarniciones** exclusivamente programado y con las tres naciones LIVE. Su catálogo de 39 roles/era, formación, costes ordinarios, combate sin azar y penalización no acumulativa se detalla en [`docs/43_EJERCITOS_Y_COMBATE_AUTOMATICO.md`](43_EJERCITOS_Y_COMBATE_AUTOMATICO.md). La simulación de esa modalidad todavía no está ejecutada.

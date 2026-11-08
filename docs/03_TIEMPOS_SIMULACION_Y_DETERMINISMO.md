@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 03 — Relojes, scheduler, replay y estados
 
 ## Relojes tipados
@@ -11,7 +13,7 @@ No sumar segundos a ciegas: cada segmento `[lastProcessedUtc, nowUtc)` se partic
 
 ## Orden canónico por tick (enmienda v2.3)
 
-**Fuente normativa:** [64 — Relojes y eventos](64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md). Durante cada subsegmento se procesan: (1) eventos autenticados con ingestSeq y cambios LIVE; (2) comandos/papeletas recibidos antes del límite del reloj LIVE; (3) cierres de voto/competición vencidos; (4) alimentación, economía, XP; (5) edificios, investigación, misiones; (6) hitos y transición de era; (7) arbitraje global de ganador/maravillas; (8) commit de estado/ledger/outbox, y publicación posterior. Las subfronteras temporales se preservan para un replay exacto.
+**Fuente normativa:** [64 — Relojes y eventos](64_RELOJES_EVENTOS_Y_CONTRATOS.md). Durante cada subsegmento se procesan: (1) eventos autenticados con ingestSeq y cambios LIVE; (2) comandos/papeletas recibidos antes del límite del reloj LIVE; (3) cierres de voto/competición vencidos; (4) alimentación, economía, XP; (5) edificios, investigación, misiones; (6) hitos y transición de era; (7) arbitraje global de ganador/maravillas; (8) commit de estado/ledger/outbox, y publicación posterior. Las subfronteras temporales se preservan para un replay exacto.
 
 **Economía:** el delta efectivo es tiempo UTC segmentado × factor LIVE 100 % u OFFLINE/UNCERTAIN 20 % una sola vez. No se vuelve a multiplicar al calcular output ni XP. La aceptación de un comando (ACK) puede preceder al siguiente tick productivo; la mutación de economía no promete latencia inferior al tick de 5 s.
 

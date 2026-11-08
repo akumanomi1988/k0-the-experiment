@@ -1,4 +1,6 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** StreamerSeat, ProviderConnection, BroadcastOutput y ProviderLiveSession son entidades distintas; cada streamer autentica y autoriza su propio canal. La señal OBS no acredita LIVE; ver capítulo 63. [Especificación vigente](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda normativa v2.3 (multistreamer distribuido):** StreamerSeat, ProviderConnection, BroadcastOutput y ProviderLiveSession son entidades distintas; cada streamer autentica y autoriza su propio canal. La señal OBS no acredita LIVE; ver capítulo 63. [Especificación vigente](../ESPECIFICACION_MAESTRA.md).
 
 # 02 — Topología configurable de canales y ciudadanía
 

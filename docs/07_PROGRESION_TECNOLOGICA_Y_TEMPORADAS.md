@@ -1,4 +1,6 @@
-> **Enmienda v2.3:** 12 eras jugables con misión propia; era 13 epílogo sin ciclo ni autoplanner. Ver [CURRENT_SPEC](CURRENT_SPEC.md) y [misiones de era](../data/era_missions.v2.3.json).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda v2.3:** 12 eras jugables con misión propia; era 13 epílogo sin ciclo ni autoplanner. Ver [CURRENT_SPEC](../ESPECIFICACION_MAESTRA.md) y [misiones de era](../data/era_missions.v2.3.json).
 
 # 07 — Progresión histórica, investigación y temporadas
 

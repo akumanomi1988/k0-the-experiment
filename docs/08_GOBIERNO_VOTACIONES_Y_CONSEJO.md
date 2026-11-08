@@ -1,4 +1,6 @@
-> **Enmienda v2.3:** los plazos de voto se miden con reloj LIVE acumulado, no UTC fijo; el Consejo es uno por era y se cierra tras elegir un proyecto. Ver [64](64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda v2.3:** los plazos de voto se miden con reloj LIVE acumulado, no UTC fijo; el Consejo es uno por era y se cierra tras elegir un proyecto. Ver [64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
 
 # 08 — Elecciones NPC, prioridades y Consejo de Construcción
 

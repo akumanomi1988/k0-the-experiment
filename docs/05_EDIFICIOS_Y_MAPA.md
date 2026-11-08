@@ -1,4 +1,6 @@
-> **Enmienda v2.3:** un Consejo por nación y era jugable, tres alternativas financiables sin oro; las dos no elegidas se descartan para esa era. Las obras ordinarias siguen siendo automáticas. [Norma actual](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda v2.3:** un Consejo por nación y era jugable, tres alternativas financiables sin oro; las dos no elegidas se descartan para esa era. Las obras ordinarias siguen siendo automáticas. [Norma actual](../ESPECIFICACION_MAESTRA.md).
 
 # 05 — Construcciones básicas, proyectos y mapa
 

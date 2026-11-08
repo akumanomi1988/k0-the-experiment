@@ -1,4 +1,6 @@
-> **Enmienda v2.3:** evitar doble ralentización offline; [semántica de reloj única](64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda v2.3:** evitar doble ralentización offline; [semántica de reloj única](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
 
 # 04 — Reglas numéricas del motor económico
 
