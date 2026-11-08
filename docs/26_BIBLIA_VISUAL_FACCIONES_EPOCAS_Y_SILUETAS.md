@@ -1,6 +1,6 @@
 # 26 — Biblia visual: legibilidad, tres culturas y 13 eras
 
-**Estado:** especificación conceptual cerrada para orientar la producción artística; no implica que los assets estén dibujados o aprobados. Fuentes cuantitativas: `data/art_spec.v2.json`, `data/factions.v2.json` y `docs/12`.
+**Estado:** especificación conceptual cerrada para orientar la producción artística; no implica que los assets estén dibujados o aprobados. Fuentes cuantitativas: `data/art_spec.json`, `data/factions.json` y `docs/12`.
 
 ## Gramática gráfica común
 

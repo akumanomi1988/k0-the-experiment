@@ -1,4 +1,4 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** las tres cuentas pueden pertenecer a tres personas distintas y ejecutarse desde PCs/OBS diferentes. Cada broadcaster dispone de asiento, auth, Browser Source y estado de emisión propios; ningún PC aloja el motor. [Especificación vigente](CURRENT_SPEC.md).
+> **Regla vigente:**** las tres cuentas pueden pertenecer a tres personas distintas y ejecutarse desde PCs/OBS diferentes. Cada broadcaster dispone de asiento, auth, Browser Source y estado de emisión propios; ningún PC aloja el motor. [Especificación vigente](ESPECIFICACION.md).
 
 # 31 — Diseño de emisión con una, dos o tres plataformas
 
