@@ -155,6 +155,47 @@ def validate() -> list[str]:
         for phrase in forbidden:
             require(phrase.lower() not in doc,
                     f"{file} still contains superseded semantics: {phrase}")
+
+    # Real provider fixtures are topology examples, NOT permissions or API sessions.
+    from uuid import UUID
+    binding_schema = load("contracts/channel_binding.schema.json")
+    for fixture in [
+        "data/channel_bindings.example.json",
+        "data/channel_presets/mixed.json",
+        "data/channel_presets/three_youtube.json",
+        "data/channel_presets/three_tiktok.json",
+        "data/channel_presets/three_simulated.json",
+    ]:
+        preset = load(fixture)
+        require(preset["schemaVersion"] ==
+                binding_schema["properties"]["schemaVersion"]["const"],
+                f"{fixture}: fixture and schema version disagree")
+        try:
+            UUID(preset["seasonId"])
+        except (ValueError, TypeError):
+            ERRORS.append(f"{fixture}: seasonId must be UUID")
+        require(preset["status"] == "TOPOLOGY_EXAMPLE_ONLY_NOT_AUTHORIZED",
+                f"{fixture}: must not represent authorized platform accounts")
+        require(len(preset["assignments"]) == 3,
+                f"{fixture}: exactly three distinct nations required")
+        ids = set()
+        slugs = set()
+        for assignment in preset["assignments"]:
+            try:
+                UUID(assignment["nationId"])
+            except (ValueError, TypeError):
+                ERRORS.append(f"{fixture}: nationId must be UUID")
+            ids.add(assignment["nationId"])
+            slugs.add(assignment.get("factionId"))
+            for binding in assignment["bindings"]:
+                require(binding["monetizationEnabled"] is False,
+                        f"{fixture}: fixture must not monetize")
+                if binding["provider"] != "simulated":
+                    require(binding["enabled"] is False,
+                            f"{fixture}: real provider capability cannot be pre-authorized")
+        require(len(ids) == 3 and slugs == {"micelios","runicos","ferrinos"},
+                f"{fixture}: 3 unique nations and faction slugs required")
+
     return ERRORS
 
 
