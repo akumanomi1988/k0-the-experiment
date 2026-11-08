@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 18 — Correcciones estructurales realizadas en v2.0
 
 ## Ajustes deliberados y por qué
@@ -19,11 +21,11 @@
 
 ## Enmienda v2.2
 
-Esta tabla guarda la historia; para Consejo/Maravillas y dependencia tecnológica prevalecen las decisiones D-01/D-02 de `docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA_v2.2.md`. No aplicar retrospectivamente a temporadas ya iniciadas.
+Esta tabla guarda la historia; para Consejo/Maravillas y dependencia tecnológica prevalecen las decisiones D-01/D-02 de `docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA.md`. No aplicar retrospectivamente a temporadas ya iniciadas.
 
 ## Enmienda v2.2
 
-Esta tabla guarda la historia; para Consejo/Maravillas y dependencia tecnológica prevalecen las decisiones D-01/D-02 de `docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA_v2.2.md`. No aplicar retrospectivamente a temporadas ya iniciadas.
+Esta tabla guarda la historia; para Consejo/Maravillas y dependencia tecnológica prevalecen las decisiones D-01/D-02 de `docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA.md`. No aplicar retrospectivamente a temporadas ya iniciadas.
 
 ## Jerarquía
 Las 92 decisiones originales se preservan literalmente en `data/legacy_user_decisions_1_92.json` y se relacionan en `audit/decision_traceability.json`. La **nueva instrucción expresa del usuario** modifica la asignación rígida plataformas→naciones (antiguos supuestos); no reemplaza el número de naciones, las tres facciones, las reglas sociales ni la independencia de los mundos. Ninguna otra regla original se cambia sin registrar su motivo.

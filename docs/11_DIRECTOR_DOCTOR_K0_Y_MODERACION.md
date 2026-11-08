@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 11 — Doctor K-0, narrativa y control de actos
 
 Doctor K-0 es un cyborg científico físico dentro de las tres representaciones del mundo, con rostro mecánico, un ojo óptico, extremidades de ingeniería y cápsula de voz, nunca mascota blanda o Corálido. Su voz es sarcástica/provocadora, neutra respecto a las facciones y nunca utiliza insultos discriminatorios, burlas a donantes por no pagar ni afirmaciones falsas sobre apoyo económico.

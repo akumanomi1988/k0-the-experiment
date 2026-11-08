@@ -1,4 +1,6 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** la conexión OAuth y evidencia de cada capacidad corresponde a cada streamer/canal. Twitch/YouTube solo bajo scopes propios y TikTok no se afirma disponible; consulta 66 para onboarding, seguridad y permisos. [Especificación vigente](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda normativa v2.3 (multistreamer distribuido):** la conexión OAuth y evidencia de cada capacidad corresponde a cada streamer/canal. Twitch/YouTube solo bajo scopes propios y TikTok no se afirma disponible; consulta 66 para onboarding, seguridad y permisos. [Especificación vigente](../ESPECIFICACION_MAESTRA.md).
 
 # 16 — Capacidades LIVE verificables y políticas
 
