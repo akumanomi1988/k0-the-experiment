@@ -105,6 +105,9 @@ CREATE TABLE provider_live_sessions (
   UNIQUE(binding_id,provider_session_id)
 );
 CREATE INDEX ix_live_session_health ON provider_live_sessions(binding_id,health_state);
+CREATE UNIQUE INDEX ux_active_provider_live_session
+  ON provider_live_sessions(binding_id)
+  WHERE health_state='LIVE_CONFIRMED' AND ended_at IS NULL;
 
 CREATE TABLE broadcast_outputs (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -118,6 +121,7 @@ CREATE TABLE broadcast_outputs (
   revision integer NOT NULL DEFAULT 1 CHECK(revision >= 1),
   overlay_policy_version text NOT NULL,
   created_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE (id,season_id),
   FOREIGN KEY (season_id,primary_nation_id) REFERENCES nations(season_id,nation_id)
 );
 CREATE TABLE broadcast_output_permissions (
@@ -125,10 +129,9 @@ CREATE TABLE broadcast_output_permissions (
   season_id uuid NOT NULL,
   nation_id uuid NOT NULL,
   PRIMARY KEY(output_id,season_id,nation_id),
-  FOREIGN KEY (season_id,nation_id) REFERENCES nations(season_id,nation_id)
+  FOREIGN KEY (season_id,nation_id) REFERENCES nations(season_id,nation_id),
+  FOREIGN KEY (output_id,season_id) REFERENCES broadcast_outputs(id,season_id)
 );
--- Enforce output belongs to same season in domain transaction or via composite FK
--- after adding UNIQUE(outputs.id, outputs.season_id) in actual migration.
 
 CREATE TABLE broadcast_output_secrets (
   output_id uuid NOT NULL REFERENCES broadcast_outputs(id),
@@ -173,10 +176,9 @@ CREATE TABLE presentation_cues (
   created_at timestamptz NOT NULL DEFAULT now(),
   FOREIGN KEY (season_id,nation_id) REFERENCES nations(season_id,nation_id),
   CHECK(expires_at > presentation_at),
-  UNIQUE(season_id,source_event_id,audience_scope,nation_id,output_id,scene)
+  UNIQUE NULLS NOT DISTINCT (season_id,source_event_id,audience_scope,nation_id,output_id,scene)
 );
--- Note: NULLs do not conflict under ordinary UNIQUE. Production migrations
--- must use NULLS NOT DISTINCT (PG15+) or explicit partial indexes for idempotence.
+-- NULLS NOT DISTINCT requires PostgreSQL 15+; reference uses PostgreSQL 16+.
 
 CREATE TABLE era_mission_instances (
   season_id uuid NOT NULL,
@@ -196,5 +198,4 @@ COMMIT;
 -- REQUIRED BEFORE PRODUCTION: state migration votes.OPEN↔PAUSED,
 -- event clocks and global dedup, contribution ledger COSMETIC_SPEND,
 -- generate contract DTO NationId UUID / FactionId string,
--- make output permission FK enforce season, nullable cue uniqueness,
 -- run true clean install, schema diff, concurrency and rollback tests.
