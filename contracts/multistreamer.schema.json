@@ -30,6 +30,9 @@
     },
     {
       "$ref": "#/$defs/ProviderCapabilityEvidence"
+    },
+    {
+      "$ref": "#/$defs/ViewerAccountAllegiance"
     }
   ],
   "$defs": {
@@ -688,8 +691,69 @@
         "requiresDistinctPrimaryAccounts": {
           "type": "boolean",
           "description": "True if MULTI_STREAMER; preflight enforced transactionally."
+        },
+        "requiresSimultaneousLiveAtStart": {
+          "const": false
+        },
+        "requiresAuthorizedThreeChannelsAtStart": {
+          "const": true
+        },
+        "primaryDeliveryMode": {
+          "const": "SINGLE_OPERATOR"
+        },
+        "abandonmentCancelAfterDays": {
+          "const": 7
+        },
+        "abandonmentPausesAllClocks": {
+          "const": true
+        },
+        "tournamentPausedCancelAfterHours": {
+          "const": 72
         }
       }
+    },
+    "ViewerAccountAllegiance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "seasonId",
+        "accountId",
+        "nationId",
+        "createdFrom",
+        "verifiedProviderIdentity",
+        "publicAliasConsent"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.4.0"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "accountId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nationId": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Only one nation per (seasonId,accountId)."
+        },
+        "createdFrom": {
+          "const": "authenticated_provider_chat"
+        },
+        "verifiedProviderIdentity": {
+          "type": "boolean",
+          "const": true
+        },
+        "publicAliasConsent": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "description": "Internal viewer mapping; one nation per K0 account and season. Cross-provider identity merging requires explicit verification; never match by alias."
     }
   }
 }

@@ -5,6 +5,11 @@ info:
   description: >-
     API contract baseline for a modular ASP.NET Core host. Never expose provider IDs
     or unmoderated chat in public endpoints. Write endpoints require trusted operator.
+    Owner-confirmed rules: a K0 viewer account is bound to one nation per season.
+    Viewer !join uses verified provider chat identity and auto-provisions K0 account.
+    First real platform is YouTube Live after permissions; initial release is SINGLE_OPERATOR.
+    12 playable eras precede real provider integration, and monetary ingestion is disabled.
+    This is design-only; account identity linking is not an implemented public API.
 servers:
   - url: https://chaos.example.invalid
 security: []

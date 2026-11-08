@@ -1,6 +1,6 @@
--- K0 / Project CHAOS v2.3 — DISTRIBUTED MULTISTREAMER DESIGN ADDENDUM.
+-- K0 / Project CHAOS — DISTRIBUTED MULTISTREAMER DESIGN ADDENDUM.
 -- NOT A PRODUCTION MIGRATION. Not run against PostgreSQL.
--- Requires architecture/001_schema_v2.sql and design/002; review conflicts,
+-- Requires architecture/001_schema.sql and architecture/002_extensiones_diseno.sql; review conflicts,
 -- migrate CHECK votes.state for PAUSED, NationId DTO and resource_ledger gold kind.
 -- No provider OAuth access tokens or overlay secrets in clear text in database.
 BEGIN;

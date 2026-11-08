@@ -19,3 +19,7 @@ python3 tools/check_active_spec.py --check
 python3 tools/validate_design_catalogs.py
 python3 tools/validate_documentation.py
 ```
+
+## Alcance decidido por el propietario
+
+Las **20 decisiones de producto confirmadas el 8 de noviembre de 2026** están integradas en la [especificación única](docs/ESPECIFICACION.md): 12 eras completas antes de proveedores, primer piloto como operador único, YouTube Live prioritario, duración 45–90 días, cuota nacional 2.500, identidad por cuenta K0 sin fricción de chat, arte completo, narración dinámica y presupuesto de infraestructura de 100 €/mes. Son decisiones normativas, no software ni autorizaciones ya acreditados.
