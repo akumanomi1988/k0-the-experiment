@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Project CHAOS Operator and Read Model API
-  version: 2.0.0
+  version: 2.3.0
   description: >-
     API contract baseline for a modular ASP.NET Core host. Never expose provider IDs
     or unmoderated chat in public endpoints. Write endpoints require trusted operator.
@@ -26,7 +26,7 @@ paths:
       summary: Full public projection for reconnect
       parameters:
         - {name: seasonId, in: path, required: true, schema: {type: string}}
-        - {name: nationId, in: path, required: true, schema: {type: string, enum: [micelios,runicos,ferrinos]}}
+        - {name: nationId, in: path, required: true, schema: {type: string, format: uuid}}
       responses:
         '200': {description: Public snapshot, content: {application/json: {schema: {$ref: '#/components/schemas/NationSummary'}}}}
         '404': {$ref: '#/components/responses/NotFound'}
@@ -94,11 +94,12 @@ components:
   schemas:
     NationSummary:
       type: object
-      required: [schemaVersion, seasonId, nationId, eraIndex, historicalPoints, liveState]
+      required: [schemaVersion, seasonId, nationId, factionId, eraIndex, historicalPoints, liveState]
       properties:
-        schemaVersion: {const: '2.0.0'}
+        schemaVersion: {const: '2.3.0'}
         seasonId: {type: string}
-        nationId: {type: string, enum: [micelios,runicos,ferrinos]}
+        nationId: {type: string, format: uuid}
+        factionId: {type: string, enum: [micelios,runicos,ferrinos]}
         eraIndex: {type: integer, minimum: 1, maximum: 13}
         historicalPoints: {type: integer, minimum: 0, maximum: 100}
         liveState: {type: string, enum: [LIVE_CONFIRMED,OFFLINE_CONFIRMED,UNCERTAIN]}
