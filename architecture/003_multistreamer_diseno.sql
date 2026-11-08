@@ -158,11 +158,17 @@ CREATE TABLE competition_clock_states (
   state text NOT NULL CHECK(state IN ('SCHEDULED','WAITING_FOR_ALL_LIVE','RUNNING','PAUSED','RESOLVED','CANCELLED')),
   elapsed_live_ms bigint NOT NULL DEFAULT 0 CHECK(elapsed_live_ms>=0),
   last_integrated_at timestamptz,
+  paused_at_utc timestamptz,
+  cancel_at_utc timestamptz,
+  CHECK (cancel_at_utc IS NULL OR (paused_at_utc IS NOT NULL AND cancel_at_utc = paused_at_utc + interval '72 hours')),
   ruleset_hash char(64) NOT NULL,
   version bigint NOT NULL DEFAULT 0,
   PRIMARY KEY (season_id,competition_event_id)
 );
 -- Aggregate global CompetitionLiveClock increments only if 3 LIVE_CONFIRMED.
+-- On continuous PAUSED due to any provider LIVE loss, store paused_at_utc and
+-- cancel_at_utc (+72h UTC); resume clears these fields. Deadline cancel is
+-- idempotent, has zero penalties and cannot debit resources.
 
 CREATE TABLE season_global_sequences (
   season_id uuid PRIMARY KEY REFERENCES seasons(id),
@@ -213,11 +219,12 @@ CREATE TABLE viewer_provider_account_links (
   verified_at timestamptz NOT NULL DEFAULT now(),
   PRIMARY KEY(provider, provider_user_subject_hash)
 );
-ALTER TABLE citizens ADD COLUMN account_id uuid REFERENCES k0_accounts(id);
--- New citizen creation MUST supply account_id, in a locked transaction.
--- Existing rows need a backfill and conflict reconciliation before NOT NULL.
+-- Fresh design requires the account FK on EVERY citizen row, not just new ones.
+-- An upgrade from pre-existing rows must backfill and reconcile identities
+-- BEFORE applying this DDL; this file is not an in-place production migration.
+ALTER TABLE citizens ADD COLUMN account_id uuid NOT NULL REFERENCES k0_accounts(id);
 CREATE UNIQUE INDEX ux_citizen_one_nation_per_k0_account_season
- ON citizens(season_id,account_id) WHERE account_id IS NOT NULL;
+ ON citizens(season_id,account_id);
 
 CREATE TABLE viewer_display_consents (
   season_id uuid NOT NULL,
@@ -246,6 +253,8 @@ CREATE TABLE season_primary_departures (
   FOREIGN KEY(season_id,nation_id) REFERENCES nations(season_id,nation_id),
   CHECK (cancel_after = confirmed_at + interval '7 days')
 );
+ALTER TABLE seasons ADD CONSTRAINT ck_abort_has_no_winner
+ CHECK (state <> 'ABORTED' OR winner_nation_id IS NULL);
 -- Transactional invariant: confirmed departure moves Season to PAUSED; all
 -- economy, votes and competitive clocks pause. At cancel_after (UTC wall time)
 -- it moves to ABORTED without winner/reward. No automatic seat replacement.
