@@ -83,24 +83,26 @@ Los SQL 001 (base), 002 (ejércitos/patrocinio) y 003 (multistreamer) documentan
 |---|---|---|
 | C-01 | Orden canónico doc 64 | Test frontera y cambiar docs 03/42/SQL |
 | C-02 | Un solo economyDelta offline 0.2 | Quitar doble factor de código y XP, test 60s |
-| C-03 | Referencias de hitos son autoridad de tech | Generar propiedad derivada o eliminar campo contradictorio |
-| C-04 | Votes PAUSED | Migración SQL y contratos |
+| C-03 | Hitos son autoridad de tech | Flags de tecnologías v2.3 ya alineados en JSON; generar desde referencias en build y probar |
+| C-04 | Votes PAUSED | DDL de diseño 001 ya admite PAUSED; falta migración SQL real y test |
 | C-05 | ACK rápido, economía cada 5s | SLO separado y prueba de latencia |
-| C-06 | Un Consejo por era/nación | Scheduler y rechazo al repetir |
-| C-07 | NationId UUID, FactionId slug | Actualizar contratos/DTO/DB |
-| C-08 | CompetitionLiveClock global | Integración y desconexión real |
+| C-06 | Un Consejo por era/nación | Catálogo/reglas y docs 05/08/44 alineados; falta scheduler y rechazo al repetir |
+| C-07 | NationId UUID, FactionId slug | JSON Schema/OpenAPI actualizados; falta DTO C#/TS generado y prueba real |
+| C-08 | CompetitionLiveClock global | Docs 03/09/42/64 y SQL003 de diseño; falta motor y desconexión real |
 | C-09 | Proyectos y maravillas gratuitos | Trace histórica y tests zero-gold |
-| C-10 | Interestelar epílogo | Gating de contenido y eventos terminales |
-| C-11 | EraMission propia | Catálogos, scheduler, prueba de dos eras mismo día |
-| C-12 | Balance de humanos candidato | Simular perfiles y decidir límites después |
-| C-13 | Texto viejo sobre oro inválido | Limpiar docs y JSON con CI |
+| C-10 | Interestelar epílogo | Flags de catálogo v2.3 y docs 34/35/36; falta bloquear runtime tras terminal |
+| C-11 | EraMission propia | 12 misiones, hitos y doc 36 ya generados; falta scheduler y test dos eras mismo día |
+| C-12 | Balance humano candidato, cap por profesión | Alcance explícito en ruleset/docs; falta simulación por perfiles y calibración |
+| C-13 | Texto viejo sobre oro inválido | candidatePool y docs 05/44 ya alineados; extender limpieza de archivos legados y ejecutar CI |
 | C-14 | SQL 001/002/003 no migrado | Migrations y test transaccional |
 | C-15 | Constructor XP ocioso | Instrumentación y ajuste tras simulación |
-| C-16 | IMPLEMENTATION_BASELINE engañoso | Renombrar status a design candidate |
+| C-16 | IMPLEMENTATION_BASELINE engañoso | Status del ruleset corregido a candidato; ningún test de implementación se presume |
 | C-17 | Tres canales distintos | Pruebas de proveedor y modo simulado |
 | C-18 | Gate de prototipo ≠ gate público | Gates separados y evidencias |
 
 Las decisiones de diseño quedan explícitas; **no marcar como corrección IMPLEMENTED** hasta que se modifiquen catálogos y código y pase su prueba. Los hallazgos y los gates están en [audit/](../audit/).
+
+**Actualización de catálogos (2026-11-08):** doc 36 regenerado desde datos; tecnologías, hitos, misiones por era, eras, proyectos, ruleset y schemas v2.3 editados en GitHub; validador estático y workflow añadidos. Los cambios documentales no constituyen implementación, balance probado ni CI ejecutada.
 
 ## 8. Matriz de pruebas concretas
 
