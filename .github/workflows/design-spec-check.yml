@@ -7,7 +7,11 @@ on:
       - 'contracts/**'
       - 'architecture/**'
       - 'docs/**'
+      - 'v2.5/**'
+      - 'README.md'
+      - 'DOCS_INDEX_v2.5.md'
       - 'tools/validate_design_catalogs.py'
+      - 'tools/validate_v25_consolidation.py'
       - '.github/workflows/design-spec-check.yml'
   pull_request:
     paths:
@@ -15,7 +19,11 @@ on:
       - 'contracts/**'
       - 'architecture/**'
       - 'docs/**'
+      - 'v2.5/**'
+      - 'README.md'
+      - 'DOCS_INDEX_v2.5.md'
       - 'tools/validate_design_catalogs.py'
+      - 'tools/validate_v25_consolidation.py'
       - '.github/workflows/design-spec-check.yml'
 jobs:
   validate-design:
@@ -26,3 +34,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate static catalogs, IDs and contracts
         run: python3 tools/validate_design_catalogs.py
+      - name: Validate complete v2.5 archive, lineage and documentation links
+        run: python3 tools/validate_v25_consolidation.py
