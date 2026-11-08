@@ -4,10 +4,10 @@
   "status": "DESIGN_BASELINE_CANDIDATE_NOT_IMPLEMENTED",
   "sourcePriority": [
     "latest-explicit-user-message",
-    "v2.3-normative-scoped-amendments-in-docs-CURRENT_SPEC",
+    "v2.5-master-and-consolidation-amendments",
     "confirmed-user-decisions-1-92-except-traced-overrides",
-    "v2.2-amendments-and-catalogs",
-    "v2-canonical-data-unless-amended",
+    "v2.3-scoped-amendments-included-in-v2.5",
+    "v2.2-catalogs-unless-explicitly-amended",
     "v1-historical-reference"
   ],
   "nations": {
