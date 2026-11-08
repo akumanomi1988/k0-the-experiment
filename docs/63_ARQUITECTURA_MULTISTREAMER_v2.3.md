@@ -11,6 +11,8 @@
 - **Varias campañas:** cada Campaign/Season tiene namespace, hashes, seed, roles, canales y base de datos lógica aislada. No se unen temporadas distintas por coincidir streamer, plataforma o alias.
 - **No soportado v2.3:** tres naciones votando desde un solo chat sin asignación verificable; servidor autoritativo instalado por cada streamer; P2P con consenso entre OBS; traducción automática de regalos a oro.
 
+**Modo de temporada obligatorio:** Season.broadcastMode = SINGLE_OPERATOR o MULTI_STREAMER. SINGLE_OPERATOR admite una cuenta K0 como responsable de los tres canales; MULTI_STREAMER exige tres cuentas K0 **distintas** como broadcaster primario, cada una con un asiento aceptado en una nación diferente. Co-streamers no sustituyen el primario. El sistema valida esta invariante en DRAFT→PREPARED dentro de transacción antes de habilitar una temporada pública.
+
 ## 2. Arquitectura lógica y despliegue
 
 Diagrama de flujo:
