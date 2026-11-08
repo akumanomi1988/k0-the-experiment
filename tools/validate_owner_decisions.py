@@ -44,7 +44,7 @@ def validate() -> list[str]:
             "Master is not the single current source of truth")
 
     # Every owner decision is a row in the SAME master file.
-    owner_rows = re.findall(r"^\\| (\\d{2}) \\|", master, re.MULTILINE)
+    owner_rows = re.findall(r"^\| (\d{2}) \|", master, re.MULTILINE)
     require(sorted(set(owner_rows)) == [f"{i:02d}" for i in range(1, 21)],
             "Master must contain decisions 01..20 exactly")
     require(len(owner_rows) == 20, "Missing or duplicated owner decision row")

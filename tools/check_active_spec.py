@@ -61,7 +61,7 @@ def main() -> int:
           "!join requiere identidad autenticada, no ciudadano previo")
     check(command["work"]["precondition"] == "registered_citizen",
           "!work requiere ciudadanía")
-    check("cupo de 2.500" in txt and "600 segundos" in txt and "XP laboral" in txt,
+    check("2.500 activos efectivos" in txt and "600 segundos" in txt and "XP laboral" in txt,
           "Reglas de cuota nacional y XP no sincronizadas con la especificación")
     delta = load("contracts/nation_delta.schema.json")
     check(delta["properties"]["nationId"].get("format") == "uuid",
