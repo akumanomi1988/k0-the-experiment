@@ -1,5 +1,6 @@
 -- K0 / Project CHAOS — DISTRIBUTED MULTISTREAMER DESIGN ADDENDUM.
--- NOT A PRODUCTION MIGRATION. Not run against PostgreSQL.
+-- NOT A PRODUCTION MIGRATION. DDL tested in CI on empty PostgreSQL 16;
+-- no upgrade of existing seasons, OAuth runtime or concurrency demonstrated.
 -- Requires architecture/001_schema.sql and architecture/002_extensiones_diseno.sql; review conflicts,
 -- migrate CHECK votes.state for PAUSED, NationId DTO and resource_ledger gold kind.
 -- No provider OAuth access tokens or overlay secrets in clear text in database.
@@ -209,6 +210,9 @@ CREATE TABLE era_mission_instances (
 -- repeat daily/weekly rewards. Mission content catalog still to be authored.
 
 -- Owner decisions: a viewer can belong to exactly one nation in a season.
+-- Restriction applies to ViewerCitizen, NOT OWNER/OPERATOR/BROADCASTER roles:
+-- SINGLE_OPERATOR account can operate all 3 channels, but can play only one nation.
+-- MULTI_STREAMER broadcaster who plays must join own seat nation (application gate).
 -- !join verifies provider identity and auto-provisions a K0 account; no interactive
 -- K0 login is needed. Cross-provider linkage requires explicit verified ownership.
 CREATE TABLE viewer_provider_account_links (

@@ -89,7 +89,8 @@
     "accountAllegiance": "ONE_K0_ACCOUNT_ONE_NATION_PER_SEASON",
     "chatIdentityFlow": "AUTO_PROVISION_K0_ACCOUNT_FROM_VERIFIED_PROVIDER_IDENTITY",
     "crossProviderUniqueness": "REQUIRES_EXPLICIT_VERIFIED_ACCOUNT_LINK",
-    "displayIdentityPolicy": "GENERATED_PSEUDONYM_ALIAS_OPT_IN"
+    "displayIdentityPolicy": "GENERATED_PSEUDONYM_ALIAS_OPT_IN",
+    "accountAllegianceAppliesTo": "VIEWER_CITIZEN_ONLY_NOT_STREAMER_OR_OWNER_ROLES"
   },
   "resources": {
     "ordinary": [

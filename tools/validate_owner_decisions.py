@@ -94,6 +94,8 @@ def validate() -> list[str]:
     rule("citizens", "activeHumanWorkersSoftCapScope", "PER_NATION_TOTAL")
     rule("citizens", "humanQuotaAssignment", "deterministic_hash_rotation_nation_live_600s")
     rule("citizens", "accountAllegiance", "ONE_K0_ACCOUNT_ONE_NATION_PER_SEASON")
+    rule("citizens", "accountAllegianceAppliesTo",
+         "VIEWER_CITIZEN_ONLY_NOT_STREAMER_OR_OWNER_ROLES")
     rule("citizens", "chatIdentityFlow",
          "AUTO_PROVISION_K0_ACCOUNT_FROM_VERIFIED_PROVIDER_IDENTITY")
     rule("citizens", "crossProviderUniqueness",

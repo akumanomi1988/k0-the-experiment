@@ -66,7 +66,7 @@ No equiparar BroadcastOutput, ChannelBinding y ProviderLiveSession: una fuente d
 6. Cada broadcaster genera su URL de overlay con un secreto de solo lectura, lo configura como Browser Source en OBS local y puede revocarlo.
 7. OWNER controla start/pause/abort; BROADCASTER controla su propia escena y puede informar incidente, nunca asignar ganador ni regalar recursos. MODERATOR filtra contenidos. AUDITOR solo consulta.
 
-**Invariantes:** una cuenta/canal no aparece en dos bindings activos de naciones diferentes en una temporada; una nación tiene exactamente una fuente autorizada de LIVE activa o queda OFFLINE/UNCERTAIN; cada nación tiene al menos un broadcaster primario en modo multistreamer; en modo solo el propietario puede ocupar las tres plazas. Una persona no obtiene control ADMIN por ser streamer.
+**Invariantes:** **un mismo canal de proveedor** no aparece en dos bindings activos de naciones diferentes en una temporada, aunque una cuenta OWNER pueda operar los tres canales en `SINGLE_OPERATOR`. **La exclusividad de una nación por cuenta K0 aplica únicamente a `ViewerCitizen` (producción y voto)**, no a `CampaignMembership` o `StreamerSeat` de operador. Un broadcaster primario de `MULTI_STREAMER` que sea también ciudadano juega solo en la nación de su asiento. Una nación tiene exactamente una fuente autorizada de LIVE activa o queda OFFLINE/UNCERTAIN; cada nación tiene al menos un broadcaster primario en modo multistreamer; en modo solo el propietario puede ocupar las tres plazas. Una persona no obtiene control ADMIN por ser streamer.
 
 ## 5. Autonomía de tres ordenadores
 

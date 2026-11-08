@@ -135,7 +135,8 @@
         "accountAllegiance",
         "chatIdentityFlow",
         "crossProviderUniqueness",
-        "displayIdentityPolicy"
+        "displayIdentityPolicy",
+        "accountAllegianceAppliesTo"
       ],
       "properties": {
         "startingNpcPopulation": {
@@ -176,6 +177,9 @@
         },
         "displayIdentityPolicy": {
           "const": "GENERATED_PSEUDONYM_ALIAS_OPT_IN"
+        },
+        "accountAllegianceAppliesTo": {
+          "const": "VIEWER_CITIZEN_ONLY_NOT_STREAMER_OR_OWNER_ROLES"
         }
       },
       "additionalProperties": true
