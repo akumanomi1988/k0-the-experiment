@@ -1,44 +1,40 @@
-# K0: The Experiment — especificación de juego multistreamer
+# K0: The Experiment — Project CHAOS
 
-> **Estado real: DISEÑO DOCUMENTAL v2.3; SIN JUEGO IMPLEMENTADO NI APIS LIVE AUTORIZADAS.** Este repositorio contiene el baseline técnico/narrativo y catálogos de contenido, no un servicio desplegado. Los gates de pruebas y licencias siguen abiertos.
+> **Documentación consolidada v2.5 — diseño de producto y desarrollo.** No existe todavía motor de videojuego funcional ni despliegue público certificado. Ni los permisos LIVE por cuenta ni el arte final ni el balance integral están validados. El repositorio es especificación y contenido, no el ejecutable de K0.
 
-**K0: The Experiment** (Project CHAOS, nombre de trabajo histórico) es una competición narrativa entre tres civilizaciones no humanas — **Micelios, Rúnicos y Ferrinos** — a través de 12 eras jugables hasta entrar en la 13.ª, Interestelar, que cierra la temporada. El científico cyborg **Doctor K-0** presenta el espectáculo; espectadores eligen oficios, trabajan, votan y participan mediante el chat de su nación.
+## Fuente de verdad: v2.5
 
-## Nueva decisión clave v2.3: tres streamers, tres equipos, un mundo
+**[Leer la ESPECIFICACIÓN MAESTRA v2.5](v2.5/ESPECIFICACION_MAESTRA_v2.5.md)** — toda la definición vigente del producto, reglas, mecánicas, UX, diseño, personajes, estilo, infraestructura, integración y operación.
 
-K0 está diseñado para **tres streamers independientes**, con cuentas propias en la misma plataforma o en plataformas distintas, cada uno con su PC, su OBS y su Browser Source. Las tres naciones conviven en **un servidor .NET central autoritativo con PostgreSQL**: los PCs solo reciben overlays y envían participación a través de APIs oficiales de proveedor, nunca calculan recursos ni ganadores. Puede funcionar además con un único operador y tres canales distintos, o tres fuentes simuladas.
+Complementos de la versión:
 
-- **Twitch A + Twitch B + Twitch C** (tres streamers, mismo proveedor): diseño soportado, sujeto a autorización real de cada cuenta.
-- **Twitch + YouTube + proveedor C**: diseño soportado solo cuando todas las capacidades necesarias están verificadas.
-- **Tres cuentas TikTok:** topología compatible, **no** equivale a disponibilidad/permiso de una API LIVE de chat/regalos.
-- **Un solo chat para tres naciones**: no es un modo admitido por las reglas actuales. Un canal se asigna a una única nación.
+- [Registro de consolidación y conflictos resueltos](v2.5/REGISTRO_DE_CONSOLIDACION_v2.5.md) — cada enmienda, antes/después, estado y prueba.
+- [Índice de cobertura integral](v2.5/INDICE_DE_COBERTURA_v2.5.md) — los 67 capítulos completos, las 92 decisiones y catálogos/contratos estructurados.
+- [Índice original y navegable de las 67 fuentes](DOCS_INDEX_v2.5.md).
+- [Registro histórico de decisiones 1–92](v2.5/fuentes/DECISIONES_1_92.md).
+- [Compendio original v2.1 preservado íntegramente](v2.5/fuentes/COMPENDIO_HISTORICO_INTEGRO_v2.1.md).
+- [Catálogos declarativos vigentes](data/content_manifest.v2.3.json); [validador estático](tools/validate_design_catalogs.py) y [validador de consolidación](tools/validate_v25_consolidation.py).
 
-Que se cierre OBS en uno de los equipos no detiene los demás; que falle el LIVE de una nación cambia solo su economía/ventanas y congela los eventos competitivos globales cuando se requieren las tres transmisiones.
+**Regla de interpretación:** solamente la especificación maestra v2.5 actúa como autoridad textual para los conflictos corregidos; para valores y listas detalladas se usa el catálogo JSON activo. Los 67 capítulos y el compendio anterior son fuentes íntegras y quedan conservados por trazabilidad, no como otra fuente paralela que pueda reactivar cambios antiguos. El esquema de reglas/catálogos sigue usando identificadores v2/v2.3 hasta existir cambio real de ruleset, contrato y migración. No confundir versión **documental v2.5** con versión **del motor** ni **de API**.
 
-## Empieza aquí (fuente de verdad)
+## Producto y arquitectura
 
-1. **[CURRENT_SPEC v2.3](docs/CURRENT_SPEC.md)**: precedencia y decisiones de producto vigentes, con indicación expresa de lo no validado.
-2. **[Índice completo de 67 capítulos](DOCS_INDEX_v2.3.md)**: diseño histórico más enmiendas normativas.
-3. **[Arquitectura de tres streamers remotos](docs/63_ARQUITECTURA_MULTISTREAMER_v2.3.md)** y **[relojes, sincronía y contratos](docs/64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md)**.
-4. **[Diseño de portal, overlays y pixel art](docs/65_DISENO_STREAMER_OVERLAYS_Y_ARTE_v2.3.md)** y **[integraciones, seguridad y operación](docs/66_INTEGRACIONES_SEGURIDAD_Y_OPERACION_v2.3.md)**.
-5. **[Blueprint de implementación y QA](docs/67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS_v2.3.md)**; [auditoría histórica de incoherencias](audit/AUDITORIA_K0_PROJECT_CHAOS_V2_2.md) y [gates D0–D4](docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md).
+Tres civilizaciones no humanas: **Micelios, Rúnicos y Ferrinos**, con estadísticas simétricas y estética pixel art 2D retro, vista oblicua 2:1; Doctor K-0 es un presentador científico **cyborg** y neutral. Las naciones progresan desde Paleolítico hasta la entrada en Interestelar; la primera entrada confirmada gana la temporada. Cinco profesiones, NPC autónomos, edificios básicos automáticos, Consejos gratuitos por voto, gobiernos NPC, misiones por era, RPS y batallas automáticas programadas.
 
-## Inventario existente
+El producto admite **tres streamers distintos en tres ordenadores/redes diferentes**: cada uno emite con su cuenta de proveedor y OBS Browser Source, sin motor instalado. Las tres naciones existen en un **backend autoritativo único** (diseño ASP.NET Core .NET 10, PostgreSQL 16+, SignalR, React/TypeScript + Phaser). También puede existir modo de operador único con tres cuentas de canal. La nación no se asigna permanentemente a Twitch, YouTube o TikTok; cada canal tiene binding exclusivo y autorización por cuenta.
 
-- **docs/**: 67 capítulos de visión, economía, roles, edificios, 13 eras, gobiernos, eventos, narración, pixel art, UX, redes, emisión e ingeniería; nuevos 63–67 sobre multistreamer.
-- **data/**: reglas y catálogos declarativos. 130 básicos, 39 proyectos, 13 maravillas, 39 unidades, cinco oficios, 30 opciones de habilidad, tecnologías, hitos, misiones de era, misiones diarias/semanales. **Todos son diseño, no contenido ejecutado**.
-- **contracts/**: JSON Schema/OpenAPI históricos ajustados y contrato de diseño multistreamer v2.3; falta generar/verificar contratos runtime contra implementación.
-- **architecture/**: SQL de diseño 001/002/003. **No son migraciones de producción probadas**.
-- **data/content_manifest.v2.3.json**: lista versionada de catálogos que se congelarán por temporada; hashes calculados durante la compilación, todavía no generados.
-- **tools/validate_design_catalogs.py** + **.github/workflows/design-spec-check.yml**: control estático de coherencia de catálogos; pasar este control no implica balance simulado ni código funcional.
-- **audit/**: riesgos, trazabilidad y dependencias externas pendientes.
+El backend conserva el estado aunque caiga OBS; sus relojes LIVE se basan en evidencia real del proveedor, no en que la ventana del streamer esté abierta. Un torneo global se congela cuando no están confirmados los tres LIVE. Se evita P2P, motores locales y microservicios por emisor durante el MVP.
 
-## Arquitectura recomendada
+## Qué existe y qué falta
 
-.NET 10, ASP.NET Core, PostgreSQL 16+, Inbox/Outbox, sim worker lógico único por nación y arbitraje global de ganador/maravillas, React/TypeScript + Phaser en Browser Source OBS, SignalR para snapshots/deltas y adaptadores LIVE oficiales por canal autorizado. Monolito modular y despliegue único al principio: **no microservicios ni servidor instalado por streamer**. Tres overlays pueden mostrar perspectivas diferentes del mismo estado sin cambiarlo.
+**Existe:** 67 capítulos históricos completos, 92 decisiones trazadas, especificación maestra v2.5, reglas y catálogos declarativos (130 básicos, 39 proyectos, 13 maravillas, 39 roles de unidad, 13 eras conceptuales, 5 oficios, habilidades, misiones e hitos), contratos JSON/OpenAPI propuestos, DDL de diseño, validadores textuales y roadmap de ingeniería.
 
-## Qué NO está cerrado como hecho comprobado
+**NO existe acreditado:** simulador funcionando, migraciones reales de PostgreSQL y sus pruebas, overlays OBS terminados, arte/audio/voz final, pruebas de rendimiento con tres streamers, certificados de acceso a APIs LIVE, equilibrio total de temporada, política legal aprobada y software comercial. Los catálogos son **candidatos de balance**, las APIs sujetas a pruebas por cuenta, y la monetización real permanece apagada. Especialmente TikTok LIVE no se presume autorizado.
 
-Sin implementación del motor o de interfaces, sin sprites finales aprobados, sin migraciones SQL ejecutadas, sin simulaciones completas de balance y concurrencia, sin tres cuentas LIVE autorizadas, sin prueba de OBS 30 FPS en tres PCs, sin respaldo/restore ensayado ni revisión legal/comercial de marca y contenido. El estado documental continúa **D1 ampliado; no D2, D3 ni D4**. Estas dependencias no se pueden resolver añadiendo adjetivos a README: requieren evidencia trazable.
+El criterio de avanzar de diseño a implementación y lanzamiento continúa explicitado en [DoR/gates](docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md) y [registro v2.5](v2.5/REGISTRO_DE_CONSOLIDACION_v2.5.md).
 
-**Derechos y seguridad:** repositorio público, sin licencia explícita de reutilización de terceros; no incluir tokens, emails, chat privado, nombres no consentidos, contenidos ajenos sin derechos o datos financieros. El nombre comercial K0 está pendiente de comprobación registral.
+## Desarrollo recomendado
+
+Primero núcleo determinista/DB y una era plenamente funcional con tres naciones sintéticas; después overlays y tres emisores en tres PCs; seguidamente las 12 eras jugables, contenido, política, torneos, balance y proveedor autorizado; por último piloto público y eventual monetización/licencias. El código deberá consumir el manifiesto de contenido y cumplir invariantes de ledger/idempotencia. Nunca asumir que redactar una especificación equivale a pasar QA.
+
+**Seguridad/derechos:** repositorio público. No publicar tokens de plataforma, secretos OBS, PII de espectadores, chat privado, material de terceros sin licencia, voces o música no autorizadas. La marca K0 y las obligaciones comerciales/jurídicas siguen sujetas a comprobación externa.
