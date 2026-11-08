@@ -1,3 +1,5 @@
+> **Enmienda normativa v2.3 (multistreamer distribuido):** tres streamers pueden competir desde tres equipos/redes distintos; servidor K0 central y overlays OBS independientes; un canal por nación, mismas reglas sin instalación del motor local. [Especificación vigente](CURRENT_SPEC.md).
+
 # 01 — Producto, alcance y principios no negociables (v2.0)
 
 ## Identidad y promesa al espectador
