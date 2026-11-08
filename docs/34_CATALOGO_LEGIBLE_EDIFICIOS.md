@@ -1,3 +1,5 @@
+> **Enmienda v2.3:** los 10 edificios de Interestelar son fichas de epílogo visual; ningún edificio se construye después de SeasonCompleted. Las eras 1–12 siguen según catálogo. [CURRENT_SPEC](CURRENT_SPEC.md).
+
 # 34 — Catálogo legible de los 130 edificios básicos
 
 **Estado:** transcripción documental del catálogo canónico `data/buildings.v2.json`; los números no son recomendaciones nuevas. **Unidad:** recursos ordinarios; `gold` no se usa en la construcción básica. Cualquier ajuste exige revisar el JSON fuente y registrar la revisión.
