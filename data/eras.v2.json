@@ -1,5 +1,5 @@
 {
-  "status": "V2_BASELINE",
+  "status": "V2_3_DESIGN_CANDIDATE_NOT_BALANCED",
   "eras": [
     {
       "order": 1,
@@ -21,7 +21,8 @@
       "mapExpansionMarginTiles": 0,
       "cosmeticAgeVariant": "age_01",
       "researchTrackId": "tech_paleolithic",
-      "signatureBuildingId": "paleolithic_civic"
+      "signatureBuildingId": "paleolithic_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 2,
@@ -43,7 +44,8 @@
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_02",
       "researchTrackId": "tech_neolithic",
-      "signatureBuildingId": "neolithic_civic"
+      "signatureBuildingId": "neolithic_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 3,
@@ -65,7 +67,8 @@
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_03",
       "researchTrackId": "tech_copper",
-      "signatureBuildingId": "copper_civic"
+      "signatureBuildingId": "copper_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 4,
@@ -87,7 +90,8 @@
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_04",
       "researchTrackId": "tech_bronze",
-      "signatureBuildingId": "bronze_civic"
+      "signatureBuildingId": "bronze_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 5,
@@ -109,7 +113,8 @@
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_05",
       "researchTrackId": "tech_iron",
-      "signatureBuildingId": "iron_civic"
+      "signatureBuildingId": "iron_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 6,
@@ -131,7 +136,8 @@
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_06",
       "researchTrackId": "tech_antiquity",
-      "signatureBuildingId": "antiquity_civic"
+      "signatureBuildingId": "antiquity_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 7,
@@ -153,7 +159,8 @@
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_07",
       "researchTrackId": "tech_medieval",
-      "signatureBuildingId": "medieval_civic"
+      "signatureBuildingId": "medieval_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 8,
@@ -175,7 +182,8 @@
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_08",
       "researchTrackId": "tech_renaissance",
-      "signatureBuildingId": "renaissance_civic"
+      "signatureBuildingId": "renaissance_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 9,
@@ -197,7 +205,8 @@
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_09",
       "researchTrackId": "tech_industrial",
-      "signatureBuildingId": "industrial_civic"
+      "signatureBuildingId": "industrial_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 10,
@@ -219,7 +228,8 @@
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_10",
       "researchTrackId": "tech_modern",
-      "signatureBuildingId": "modern_civic"
+      "signatureBuildingId": "modern_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 11,
@@ -241,7 +251,8 @@
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_11",
       "researchTrackId": "tech_digital",
-      "signatureBuildingId": "digital_civic"
+      "signatureBuildingId": "digital_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 12,
@@ -263,7 +274,8 @@
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_12",
       "researchTrackId": "tech_space",
-      "signatureBuildingId": "space_civic"
+      "signatureBuildingId": "space_civic",
+      "gameplayAvailable": true
     },
     {
       "order": 13,
@@ -278,14 +290,15 @@
       },
       "eraIndex": 13,
       "minimumPreviousEraIndex": 12,
-      "transition": "live_only_after_all_five_unique_milestones",
+      "transition": "epilogue_terminal_no_new_gameplay",
       "productionBonusFromEraBp": 3000,
       "unlockOre": true,
       "historicalPointsRequired": 0,
       "mapExpansionMarginTiles": 8,
       "cosmeticAgeVariant": "age_13",
       "researchTrackId": "tech_interstellar",
-      "signatureBuildingId": "interstellar_civic"
+      "signatureBuildingId": "interstellar_civic",
+      "gameplayAvailable": false
     }
   ],
   "ending": "first nation to commit transition into interstellar ends season; no interstellar bar required"
