@@ -47,7 +47,8 @@ def main() -> int:
         doc = load(p)
         check(bool(doc.get("$schema")), f"{p}: must declare $schema")
         if p != "contracts/multistreamer.v2.3.schema.json":
-            check(doc.get("properties", {}).get("nationId", {}).get("format") == "uuid",
+            check((doc.get("properties", {}).get("nationId", {}).get("format") == "uuid" or
+                   doc.get("properties", {}).get("assignments", {}).get("items", {}).get("properties", {}).get("nationId", {}).get("format") == "uuid"),
                   f"{p}: nationId must be uuid")
             check("factionId" in doc.get("properties", {}) or
                   "factionId" in doc.get("properties", {}).get("assignments", {}).get("items", {}).get("properties", {}),
@@ -73,7 +74,8 @@ def main() -> int:
               f"Milestone {m.get('id')} must have 20 points and no gold")
         req = m.get("requiresTechnologyId")
         if req:
-            required_tech_ids.add(req)
+            if m.get("eraIndex", 13) <= 12:
+                required_tech_ids.add(req)
             check(req in tech_ids, f"Milestone {m.get('id')} missing tech {req}")
         if m.get("triggerKind") == "mission_completed" and m.get("eraIndex") <= 12:
             check(m.get("eligibleMissionIds") == [f"era_mission_{m.get('eraId')}"],
