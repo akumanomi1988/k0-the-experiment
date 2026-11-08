@@ -18,7 +18,8 @@
     },
     "seasonId": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "format": "uuid"
     },
     "bindingMode": {
       "const": "CONFIGURABLE"
@@ -43,7 +44,8 @@
         "properties": {
           "nationId": {
             "type": "string",
-            "format": "uuid"
+            "format": "uuid",
+            "description": "Internal UUID per season, distinct from factionId slug"
           },
           "bindings": {
             "type": "array",
@@ -114,7 +116,8 @@
               "micelios",
               "runicos",
               "ferrinos"
-            ]
+            ],
+            "description": "Stable faction slug, separate from nationId UUID"
           }
         },
         "additionalProperties": false

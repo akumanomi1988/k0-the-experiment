@@ -1,11 +1,11 @@
 {
-  "schemaVersion": "2.0.0",
+  "schemaVersion": "2.3.0",
   "status": "TOPOLOGY_EXAMPLE_ONLY_NOT_AUTHORIZED",
-  "seasonId": "season-demo-mixed",
+  "seasonId": "00000000-0000-4000-8000-000000000002",
   "bindingMode": "CONFIGURABLE",
   "assignments": [
     {
-      "nationId": "micelios",
+      "nationId": "10000000-0000-4000-8000-000000000021",
       "bindings": [
         {
           "bindingId": "mixed_b1",
@@ -21,10 +21,11 @@
           "monetizationEnabled": false,
           "isClockAuthority": true
         }
-      ]
+      ],
+      "factionId": "micelios"
     },
     {
-      "nationId": "runicos",
+      "nationId": "10000000-0000-4000-8000-000000000022",
       "bindings": [
         {
           "bindingId": "mixed_b2",
@@ -40,10 +41,11 @@
           "monetizationEnabled": false,
           "isClockAuthority": true
         }
-      ]
+      ],
+      "factionId": "runicos"
     },
     {
-      "nationId": "ferrinos",
+      "nationId": "10000000-0000-4000-8000-000000000023",
       "bindings": [
         {
           "bindingId": "mixed_b3",
@@ -59,7 +61,8 @@
           "monetizationEnabled": false,
           "isClockAuthority": true
         }
-      ]
+      ],
+      "factionId": "ferrinos"
     }
   ]
 }

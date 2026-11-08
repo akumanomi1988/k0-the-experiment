@@ -1,11 +1,11 @@
 {
-  "schemaVersion": "2.0.0",
+  "schemaVersion": "2.3.0",
   "status": "TOPOLOGY_EXAMPLE_ONLY_NOT_AUTHORIZED",
-  "seasonId": "season-demo-three_simulated",
+  "seasonId": "00000000-0000-4000-8000-000000000003",
   "bindingMode": "CONFIGURABLE",
   "assignments": [
     {
-      "nationId": "micelios",
+      "nationId": "10000000-0000-4000-8000-000000000031",
       "bindings": [
         {
           "bindingId": "three_simulated_b1",
@@ -22,10 +22,11 @@
           "monetizationEnabled": false,
           "isClockAuthority": true
         }
-      ]
+      ],
+      "factionId": "micelios"
     },
     {
-      "nationId": "runicos",
+      "nationId": "10000000-0000-4000-8000-000000000032",
       "bindings": [
         {
           "bindingId": "three_simulated_b2",
@@ -42,10 +43,11 @@
           "monetizationEnabled": false,
           "isClockAuthority": true
         }
-      ]
+      ],
+      "factionId": "runicos"
     },
     {
-      "nationId": "ferrinos",
+      "nationId": "10000000-0000-4000-8000-000000000033",
       "bindings": [
         {
           "bindingId": "three_simulated_b3",
@@ -62,7 +64,8 @@
           "monetizationEnabled": false,
           "isClockAuthority": true
         }
-      ]
+      ],
+      "factionId": "ferrinos"
     }
   ]
 }

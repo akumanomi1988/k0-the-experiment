@@ -1,11 +1,11 @@
 {
-  "schemaVersion": "2.0.0",
-  "status": "EXAMPLE_NOT_LIVE",
-  "seasonId": "season-demo-001",
+  "schemaVersion": "2.3.0",
+  "status": "TOPOLOGY_EXAMPLE_ONLY_NOT_AUTHORIZED",
+  "seasonId": "00000000-0000-4000-8000-000000000001",
   "bindingMode": "CONFIGURABLE",
   "assignments": [
     {
-      "nationId": "micelios",
+      "nationId": "10000000-0000-4000-8000-000000000011",
       "bindings": [
         {
           "bindingId": "b01",
@@ -17,15 +17,16 @@
             "live_health",
             "contributions"
           ],
-          "enabled": true,
+          "enabled": false,
           "requiresVerifiedCredentials": true,
           "monetizationEnabled": false,
           "isClockAuthority": true
         }
-      ]
+      ],
+      "factionId": "micelios"
     },
     {
-      "nationId": "runicos",
+      "nationId": "10000000-0000-4000-8000-000000000012",
       "bindings": [
         {
           "bindingId": "b02",
@@ -36,15 +37,16 @@
             "commands",
             "live_health"
           ],
-          "enabled": true,
+          "enabled": false,
           "requiresVerifiedCredentials": true,
           "monetizationEnabled": false,
           "isClockAuthority": true
         }
-      ]
+      ],
+      "factionId": "runicos"
     },
     {
-      "nationId": "ferrinos",
+      "nationId": "10000000-0000-4000-8000-000000000013",
       "bindings": [
         {
           "bindingId": "b03",
@@ -55,12 +57,13 @@
             "commands",
             "live_health"
           ],
-          "enabled": true,
+          "enabled": false,
           "requiresVerifiedCredentials": true,
           "monetizationEnabled": false,
           "isClockAuthority": true
         }
-      ]
+      ],
+      "factionId": "ferrinos"
     }
   ],
   "otherSupportedConfigurations": [
