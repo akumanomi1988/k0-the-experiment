@@ -1,3 +1,4 @@
+-- Design alignment v2.3: votes.PAUSED and cosmetic-only gold spending (NOT EXECUTED).
 -- Project CHAOS v2.0: schema DDL reference; PostgreSQL >= 16.
 -- This script defines persistence topology and integrity constraints; not tested against a live PostgreSQL instance.
 -- Economy writes MUST use transactional application code/stored procedures respecting ledger and holds.
@@ -88,11 +89,11 @@ CREATE TABLE nation_resource_balances (
 CREATE TABLE resource_ledger (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(), season_id uuid NOT NULL, nation_id uuid NOT NULL,
   resource_id text NOT NULL, delta bigint NOT NULL CHECK(delta <> 0),
-  entry_kind text NOT NULL CHECK(entry_kind IN ('PRODUCE','UPKEEP','BUILD_COST','MISSION_REWARD','TOURNAMENT_PENALTY','CONTRIBUTION_CREDIT','CONTRIBUTION_REVERSAL','ADJUSTMENT_AUDITED','SEASON_CLOSE')),
+  entry_kind text NOT NULL CHECK(entry_kind IN ('PRODUCE','UPKEEP','BUILD_COST','MISSION_REWARD','TOURNAMENT_PENALTY','CONTRIBUTION_CREDIT','CONTRIBUTION_REVERSAL','COSMETIC_SPEND','ADJUSTMENT_AUDITED','SEASON_CLOSE')),
   cause_id uuid NOT NULL, correlation_id uuid NOT NULL, created_at timestamptz NOT NULL,
   FOREIGN KEY(season_id,nation_id,resource_id) REFERENCES nation_resource_balances(season_id,nation_id,resource_id),
   UNIQUE(season_id,nation_id,resource_id,entry_kind,cause_id),
-  CHECK(resource_id<>'gold' OR (entry_kind='CONTRIBUTION_CREDIT' AND delta>0) OR (entry_kind IN ('CONTRIBUTION_REVERSAL','BUILD_COST','SEASON_CLOSE') AND delta<0))
+  CHECK(resource_id<>'gold' OR (entry_kind='CONTRIBUTION_CREDIT' AND delta>0) OR (entry_kind IN ('CONTRIBUTION_REVERSAL','COSMETIC_SPEND','SEASON_CLOSE') AND delta<0))
 );
 CREATE TABLE gold_debt (
   season_id uuid NOT NULL, nation_id uuid NOT NULL, debt_units bigint NOT NULL DEFAULT 0 CHECK(debt_units>=0),
@@ -150,7 +151,7 @@ CREATE TABLE technologies_completed (
 CREATE TABLE votes (
   season_id uuid NOT NULL, nation_id uuid NOT NULL, id uuid NOT NULL DEFAULT gen_random_uuid(),
   vote_kind text NOT NULL CHECK(vote_kind IN ('GOVERNMENT','GOVERNMENT_RUNOFF','PRIORITY','STRATEGIC','RPS')),
-  scope_id text NOT NULL, state text NOT NULL CHECK(state IN ('QUEUED','OPEN','RESOLVED','CANCELLED','PAYMENT_BLOCKED')),
+  scope_id text NOT NULL, state text NOT NULL CHECK(state IN ('QUEUED','OPEN','PAUSED','RESOLVED','CANCELLED','PAYMENT_BLOCKED')),
   opened_utc timestamptz, closed_utc timestamptz, live_clock_start bigint NOT NULL DEFAULT 0,
   duration_seconds bigint NOT NULL CHECK(duration_seconds>0),
   option_ids text[] NOT NULL, winner_option text, result_digest char(64),
