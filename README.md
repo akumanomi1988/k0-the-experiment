@@ -29,6 +29,7 @@ Que se cierre OBS en uno de los equipos no detiene los demás; que falle el LIVE
 - **data/**: reglas y catálogos declarativos. 130 básicos, 39 proyectos, 13 maravillas, 39 unidades, cinco oficios, 30 opciones de habilidad, tecnologías, hitos, misiones de era, misiones diarias/semanales. **Todos son diseño, no contenido ejecutado**.
 - **contracts/**: JSON Schema/OpenAPI históricos ajustados y contrato de diseño multistreamer v2.3; falta generar/verificar contratos runtime contra implementación.
 - **architecture/**: SQL de diseño 001/002/003. **No son migraciones de producción probadas**.
+- **data/content_manifest.v2.3.json**: lista versionada de catálogos que se congelarán por temporada; hashes calculados durante la compilación, todavía no generados.
 - **tools/validate_design_catalogs.py** + **.github/workflows/design-spec-check.yml**: control estático de coherencia de catálogos; pasar este control no implica balance simulado ni código funcional.
 - **audit/**: riesgos, trazabilidad y dependencias externas pendientes.
 
