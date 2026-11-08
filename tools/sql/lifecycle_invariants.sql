@@ -7,6 +7,7 @@ DECLARE
   season uuid;
   nation_a uuid := gen_random_uuid();
   nation_b uuid := gen_random_uuid();
+  nation_c uuid := gen_random_uuid();
   primary_acc uuid;
   owner_acc uuid;
   second_acc uuid;
@@ -20,7 +21,8 @@ BEGIN
     VALUES (campaign, 1, 'PAUSED', repeat('a',64), repeat('b',64),
             repeat('c',64), 'design-test') RETURNING id INTO season;
   INSERT INTO nations(season_id,nation_id,faction_id)
-    VALUES (season,nation_a,'micelios'), (season,nation_b,'runicos');
+    VALUES (season,nation_a,'micelios'), (season,nation_b,'runicos'),
+           (season,nation_c,'ferrinos');
   INSERT INTO k0_accounts(issuer,subject_hash,status)
     VALUES ('test',repeat('1',64),'ACTIVE') RETURNING id INTO primary_acc;
   INSERT INTO k0_accounts(issuer,subject_hash,status)
@@ -29,6 +31,13 @@ BEGIN
     VALUES ('test',repeat('3',64),'ACTIVE') RETURNING id INTO second_acc;
   INSERT INTO campaign_memberships(campaign_id,account_id,role,state)
     VALUES(campaign,owner_acc,'OWNER','ACTIVE');
+  -- A single owner CAN broadcast three different nations in SINGLE_OPERATOR;
+  -- this is not three viewer citizenships.
+  INSERT INTO streamer_seats(season_id,nation_id,account_id,role,seat_state,
+                             is_primary,accepted_at)
+    VALUES (season,nation_a,owner_acc,'BROADCASTER','ACCEPTED',true,baseline),
+           (season,nation_b,owner_acc,'BROADCASTER','ACCEPTED',true,baseline),
+           (season,nation_c,owner_acc,'BROADCASTER','ACCEPTED',true,baseline);
   INSERT INTO season_primary_departures
     (season_id,primary_account_id,nation_id,confirmed_at,cancel_after,state,confirmed_by_account_id)
     VALUES(season,primary_acc,nation_a,baseline,baseline + interval '7 days',
@@ -125,7 +134,7 @@ BEGIN
   EXCEPTION WHEN unique_violation THEN
     NULL;
   END;
-  RAISE NOTICE 'PASS: strict deadline, same primary, repeat departure, unique K0 account, abort/no winner, no Council gold block';
+  RAISE NOTICE 'PASS: same owner 3 streamer seats but only 1 viewer allegiance; strict return/abort; no Council gold block';
 END;
 $$;
 ROLLBACK;
