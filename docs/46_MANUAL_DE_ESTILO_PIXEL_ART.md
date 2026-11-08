@@ -29,7 +29,7 @@ Los 130 edificios mantienen 10 familias reconocibles (vivienda, alimentación, b
 
 ## Especificación de animación
 
-Frames y FPS exactos en `data/art_spec.v2.json`: idle 4@4FPS, walk 6@8, gather 5@6, haul 6@8, build 5@6, research 5@6, celebrate 5@6, rest 2@1, react 4@6. Animación de trabajo visible siempre es derivada del estado lógico, sin añadir output económico. Cuatro direcciones en todas las acciones. Evitar clonación robótica: variación cosmética por fase/semilla, sin mover hitbox ni alterar tick.
+Frames y FPS exactos en `data/art_spec.json`: idle 4@4FPS, walk 6@8, gather 5@6, haul 6@8, build 5@6, research 5@6, celebrate 5@6, rest 2@1, react 4@6. Animación de trabajo visible siempre es derivada del estado lógico, sin añadir output económico. Cuatro direcciones en todas las acciones. Evitar clonación robótica: variación cosmética por fase/semilla, sin mover hitbox ni alterar tick.
 
 ## Criterios de aceptación de arte
 

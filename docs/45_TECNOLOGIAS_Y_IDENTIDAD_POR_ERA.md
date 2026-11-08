@@ -1,6 +1,6 @@
 # 45 — Matriz de identidad tecnológica de las 13 eras
 
-**Estado:** dirección de contenido normativa, beneficios numéricos todavía candidatos. `data/technologies.v2.json` contiene tres tecnologías por era y conserva sus identificadores; este capítulo les da intención temática y lenguaje audiovisual para que las 39 no parezcan la misma tecnología renombrada. No se inventan nuevas bonificaciones económicas.
+**Estado:** dirección de contenido normativa, beneficios numéricos todavía candidatos. `data/technologies.json` contiene tres tecnologías por era y conserva sus identificadores; este capítulo les da intención temática y lenguaje audiovisual para que las 39 no parezcan la misma tecnología renombrada. No se inventan nuevas bonificaciones económicas.
 
 ## Cadena y desbloqueos
 

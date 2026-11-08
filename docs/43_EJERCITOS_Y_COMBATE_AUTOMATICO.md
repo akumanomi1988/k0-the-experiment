@@ -1,6 +1,6 @@
 # 43 — Ejército, guarniciones y batallas automáticas
 
-**Estado: regla de diseño v2.2, balance no simulado.** Resuelve las decisiones históricas 25, 26, 27 y 30 sin añadir ataques libres ni micromanagement de guerra. Fuente estructurada: `data/combat_units.v2.2.json`.
+**Estado: regla de diseño v2.2, balance no simulado.** Resuelve las decisiones históricas 25, 26, 27 y 30 sin añadir ataques libres ni micromanagement de guerra. Fuente estructurada: `data/combat_units.json`.
 
 ## Rol del ejército
 
@@ -23,7 +23,7 @@ El operador programa el evento como máximo una vez cada 24 horas LIVE de campa�
 - Un ganador único puede infligir **la misma penalización máxima del sistema RPS**, únicamente a naciones que terminen por debajo: hasta 2 % de madera/piedra disponibles y sector secundario sin producción durante 30 minutos LIVE. Se aplica una vez por evento, sin sumarla dos veces cuando exista otra penalización territorial; si hay penalización activa se conserva la fecha de fin más tardía y nunca se bloquea producción básica esencial.
 - Empate en primer lugar: ganadores compartidos sin sanción. No hay robo de oro, vidas, edificios, progreso tecnológico ni XP; no hay muertes permanentes de unidades.
 - Ningún espectador elige golpes ni gasta oro para aumentar fuerza. La estrategia está en priorizar infraestructuras y economía de manera indirecta; el tamaño bruto del chat no determina por sí solo el resultado.
-- Este tipo de evento ya está declarado en `data/events.v2.json` (revisión v2.2), **sin afirmar que exista un motor capaz de ejecutarlo**. Antes del desarrollo hay que versionar ese catálogo y ampliar SQL/contratos conforme a esta especificación.
+- Este tipo de evento ya está declarado en `data/events.json` (revisión v2.2), **sin afirmar que exista un motor capaz de ejecutarlo**. Antes del desarrollo hay que versionar ese catálogo y ampliar SQL/contratos conforme a esta especificación.
 
 ## Presentación y accesibilidad
 

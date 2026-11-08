@@ -1,4 +1,4 @@
-> **Enmienda v2.3:** la terna ofrece **un único Consejo ordinario por nación/era jugable**; mantener decisiones históricas sobre coste oro=0. Ver [CURRENT_SPEC](CURRENT_SPEC.md).
+> **Regla vigente:**** la terna ofrece **un único Consejo ordinario por nación/era jugable**; mantener decisiones históricas sobre coste oro=0. Ver [CURRENT_SPEC](ESPECIFICACION.md).
 
 # 44 — Consejo gratuito, maravillas y patronazgo cosmético
 
@@ -18,7 +18,7 @@ Una maravilla por era es exclusiva globalmente: la primera construcción **compl
 
 ## Oro y reconocimientos
 
-El oro solo nace de aportaciones verificadas permitidas por proveedor, nunca de mensajes, likes ni NPC. Los artículos definidos en `data/cosmetic_sponsorship.v2.2.json` son: insignia de apoyo (25 unidades), placa moderada (100) y dedicación ceremonial no competitiva (250). **Precios de diseño en oro interno**, no en euros ni en monedas reales. Se exige consentimiento para nombre público; nadie queda excluido del Consejo ni de los torneos por no adquirirlos. Las placas se moderan y retiran si se revierte el evento económico, sin reescribir el ledger histórico. El reconocimiento nunca incrementa la fuerza, producción, prestigio competitivo de victoria ni probabilidad de ser seleccionado como personaje visible.
+El oro solo nace de aportaciones verificadas permitidas por proveedor, nunca de mensajes, likes ni NPC. Los artículos definidos en `data/cosmetic_sponsorship.json` son: insignia de apoyo (25 unidades), placa moderada (100) y dedicación ceremonial no competitiva (250). **Precios de diseño en oro interno**, no en euros ni en monedas reales. Se exige consentimiento para nombre público; nadie queda excluido del Consejo ni de los torneos por no adquirirlos. Las placas se moderan y retiran si se revierte el evento económico, sin reescribir el ledger histórico. El reconocimiento nunca incrementa la fuerza, producción, prestigio competitivo de victoria ni probabilidad de ser seleccionado como personaje visible.
 
 ## Monetización desconectada
 
