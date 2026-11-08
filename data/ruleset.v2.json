@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2.0.0",
   "rulesetId": "chaos-default-2026-11",
-  "status": "IMPLEMENTATION_BASELINE",
+  "status": "DESIGN_BASELINE_CANDIDATE_NOT_IMPLEMENTED",
   "sourcePriority": [
     "latest-explicit-user-message",
     "confirmed-user-decisions-1-92",
@@ -41,8 +41,10 @@
     "clockZone": "UTC",
     "activeSimPenaltyOnlyOnLive": true,
     "rng": "sha256-counter-64-v1",
-    "partitionOrder": "sequence_then_provider_timestamp_then_event_key",
-    "rounding": "floor_with_persistent_integer_remainders"
+    "partitionOrder": "persisted_ingest_seq_then_partitioned_time_boundaries",
+    "rounding": "floor_with_persistent_integer_remainders",
+    "economyFactorAppliedOnce": true,
+    "competitionLiveClock": "global_three_nations_live_confirmed"
   },
   "citizens": {
     "startingNpcPopulation": 24,
@@ -76,7 +78,8 @@
       12
     ],
     "talentPointsPerTier": 1,
-    "highestIndividualProductivityBp": 11800
+    "highestIndividualProductivityBp": 11800,
+    "activeHumanWorkersSoftCapScope": "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE"
   },
   "resources": {
     "ordinary": [
@@ -200,7 +203,9 @@
     "finalEraIndex": 13,
     "allowEraAdvanceOnlyLiveNation": true,
     "averageEraTargetDays": 2.5,
-    "raceNoGoldInfluence": true
+    "raceNoGoldInfluence": true,
+    "eraMissionCatalog": "era_missions.v2.3.json",
+    "finalEraGameplayEnabled": false
   },
   "governments": {
     "electionLiveSeconds": 3600,
@@ -229,7 +234,8 @@
     "wonderClaim": "global_atomic_first_completed",
     "requiresGoldForCouncilOrWonders": false,
     "goldPrestigeOnlyAndSeparateCosmeticSponsorship": true,
-    "cosmeticSponsorshipCatalog": "cosmetic_sponsorship.v2.2.json"
+    "cosmeticSponsorshipCatalog": "cosmetic_sponsorship.v2.2.json",
+    "oneCouncilPerNationPerPlayableEra": true
   },
   "tournaments": {
     "kind": "triangular_rps",
