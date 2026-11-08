@@ -5,6 +5,9 @@
   "description": "Design-only typed contract. Not deployed or guaranteed supported by real platform accounts.",
   "oneOf": [
     {
+      "$ref": "#/$defs/SeasonBroadcastConfig"
+    },
+    {
       "$ref": "#/$defs/StreamerSeat"
     },
     {
@@ -652,6 +655,39 @@
         "notes": {
           "type": "string",
           "maxLength": 300
+        }
+      }
+    },
+    "SeasonBroadcastConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "seasonId",
+        "broadcastMode",
+        "expectedNations",
+        "requiresDistinctPrimaryAccounts"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.3.0"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "broadcastMode": {
+          "enum": [
+            "SINGLE_OPERATOR",
+            "MULTI_STREAMER"
+          ]
+        },
+        "expectedNations": {
+          "const": 3
+        },
+        "requiresDistinctPrimaryAccounts": {
+          "type": "boolean",
+          "description": "True if MULTI_STREAMER; preflight enforced transactionally."
         }
       }
     }
