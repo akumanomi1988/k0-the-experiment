@@ -1,0 +1,661 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://k0.example.invalid/contracts/multistreamer.v2.3.schema.json",
+  "title": "K0 Multistreamer Contract — design baseline v2.3",
+  "description": "Design-only typed contract. Not deployed or guaranteed supported by real platform accounts.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/StreamerSeat"
+    },
+    {
+      "$ref": "#/$defs/ChannelBinding"
+    },
+    {
+      "$ref": "#/$defs/BroadcastOutput"
+    },
+    {
+      "$ref": "#/$defs/LiveHealth"
+    },
+    {
+      "$ref": "#/$defs/ProjectionEnvelope"
+    },
+    {
+      "$ref": "#/$defs/PresentationCue"
+    },
+    {
+      "$ref": "#/$defs/StreamerInvite"
+    },
+    {
+      "$ref": "#/$defs/ProviderCapabilityEvidence"
+    }
+  ],
+  "$defs": {
+    "StreamerSeat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "seatId",
+        "seasonId",
+        "nationId",
+        "factionId",
+        "userId",
+        "role",
+        "seatState",
+        "isPrimary"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.3.0"
+        },
+        "seatId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "factionId": {
+          "type": "string",
+          "enum": [
+            "micelios",
+            "runicos",
+            "ferrinos"
+          ]
+        },
+        "userId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "role": {
+          "enum": [
+            "OWNER",
+            "BROADCASTER",
+            "COHOST",
+            "MODERATOR",
+            "AUDITOR"
+          ]
+        },
+        "seatState": {
+          "enum": [
+            "INVITED",
+            "ACCEPTED",
+            "REVOKED",
+            "LEFT"
+          ]
+        },
+        "isPrimary": {
+          "type": "boolean"
+        },
+        "acceptedAtUtc": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "ChannelBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "bindingId",
+        "seasonId",
+        "nationId",
+        "provider",
+        "providerChannelId",
+        "providerConnectionId",
+        "roles",
+        "revision",
+        "enabled",
+        "isClockAuthority",
+        "monetizationEnabled"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.3.0"
+        },
+        "bindingId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "provider": {
+          "type": "string",
+          "enum": [
+            "twitch",
+            "youtube",
+            "tiktok",
+            "simulated"
+          ]
+        },
+        "providerChannelId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "providerConnectionId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "roles": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "commands",
+              "live_health",
+              "contributions",
+              "display_feed"
+            ]
+          }
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "isClockAuthority": {
+          "type": "boolean"
+        },
+        "monetizationEnabled": {
+          "const": false,
+          "description": "Monetization remains disabled in design baseline; later gated version may change."
+        },
+        "capabilityEvidenceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      }
+    },
+    "BroadcastOutput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "outputId",
+        "seasonId",
+        "primaryNationId",
+        "ownerUserId",
+        "layoutMode",
+        "viewMode",
+        "allowedNationIds",
+        "state",
+        "outputRevision"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.3.0"
+        },
+        "outputId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "primaryNationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "ownerUserId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "layoutMode": {
+          "enum": [
+            "VERTICAL_360_640",
+            "HORIZONTAL_640_360"
+          ]
+        },
+        "viewMode": {
+          "enum": [
+            "NATION_FOCUS",
+            "SHARED_WORLD",
+            "EVENT_STAGE",
+            "SAFE_SCENE"
+          ]
+        },
+        "allowedNationIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "state": {
+          "enum": [
+            "ACTIVE",
+            "REVOKED",
+            "DISABLED"
+          ]
+        },
+        "outputRevision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "locale": {
+          "enum": [
+            "es",
+            "en"
+          ]
+        },
+        "overlayPolicyVersion": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "LiveHealth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "seasonId",
+        "nationId",
+        "providerState",
+        "overlayState",
+        "lastProviderEvidenceUtc",
+        "clockAuthorityBindingId",
+        "nationLiveSeconds"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.3.0"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "providerState": {
+          "enum": [
+            "LIVE_CONFIRMED",
+            "OFFLINE_CONFIRMED",
+            "UNCERTAIN"
+          ]
+        },
+        "overlayState": {
+          "enum": [
+            "CONNECTED",
+            "DISCONNECTED",
+            "UNKNOWN"
+          ]
+        },
+        "lastProviderEvidenceUtc": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "clockAuthorityBindingId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "nationLiveSeconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "statusReason": {
+          "type": "string",
+          "maxLength": 200
+        }
+      }
+    },
+    "ProjectionEnvelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "seasonId",
+        "scope",
+        "globalSequence",
+        "nationSequence",
+        "eventId",
+        "emittedAtUtc",
+        "type",
+        "payload",
+        "stateHash",
+        "rulesetHash",
+        "contentHash"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.3.0"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "scope": {
+          "enum": [
+            "NATION",
+            "GLOBAL",
+            "OUTPUT"
+          ]
+        },
+        "nationId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "globalSequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "nationSequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "eventId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "emittedAtUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "enum": [
+            "SNAPSHOT",
+            "STATE_DELTA",
+            "RESULT",
+            "HEALTH",
+            "PRESENTATION_CUE"
+          ]
+        },
+        "payload": {
+          "type": "object"
+        },
+        "stateHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "rulesetHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "contentHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "PresentationCue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "seasonId",
+        "cueId",
+        "authoritativeEventSequence",
+        "scene",
+        "audienceScope",
+        "presentationAtUtc",
+        "expiresAtUtc"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.3.0"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "cueId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "authoritativeEventSequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "scene": {
+          "enum": [
+            "BOOT_CHECK",
+            "WORLD",
+            "GOV_VOTE",
+            "PRIORITY_VOTE",
+            "COUNCIL_VOTE",
+            "TOURNAMENT",
+            "ERA_TRANSITION",
+            "SEASON_END",
+            "GLOBAL_EVENT_PAUSED",
+            "SAFE_SCENE"
+          ]
+        },
+        "audienceScope": {
+          "enum": [
+            "GLOBAL",
+            "NATION",
+            "OUTPUT"
+          ]
+        },
+        "nationId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "outputId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "presentationAtUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expiresAtUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "subtitle": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "audioCueId": {
+          "type": "string",
+          "maxLength": 128
+        }
+      }
+    },
+    "StreamerInvite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "inviteId",
+        "campaignId",
+        "seasonId",
+        "nationId",
+        "role",
+        "createdAtUtc",
+        "expiresAtUtc",
+        "state"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.3.0"
+        },
+        "inviteId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "campaignId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "role": {
+          "enum": [
+            "BROADCASTER",
+            "COHOST",
+            "MODERATOR"
+          ]
+        },
+        "createdAtUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expiresAtUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "state": {
+          "enum": [
+            "PENDING",
+            "ACCEPTED",
+            "REVOKED",
+            "EXPIRED"
+          ]
+        },
+        "acceptedByUserId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "ProviderCapabilityEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "connectionId",
+        "provider",
+        "providerChannelId",
+        "capability",
+        "status",
+        "checkedAtUtc",
+        "checkedByUserId"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "2.3.0"
+        },
+        "connectionId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "provider": {
+          "type": "string",
+          "enum": [
+            "twitch",
+            "youtube",
+            "tiktok",
+            "simulated"
+          ]
+        },
+        "providerChannelId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capability": {
+          "enum": [
+            "CHAT_READ",
+            "LIVE_PRESENCE",
+            "CHAT_WRITE",
+            "EVENTS_MONETARY",
+            "EVENTS_REVERSAL",
+            "CURSOR_RESUME",
+            "ACCOUNT_IDENTITY",
+            "OUTPUT_DISTRIBUTION_POLICY"
+          ]
+        },
+        "status": {
+          "enum": [
+            "DISABLED",
+            "PENDING_VERIFICATION",
+            "VERIFIED",
+            "REVOKED",
+            "NOT_AVAILABLE"
+          ]
+        },
+        "checkedAtUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "checkedByUserId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    }
+  }
+}
