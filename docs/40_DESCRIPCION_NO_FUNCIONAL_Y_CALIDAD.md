@@ -1,5 +1,7 @@
 # 40 — Requisitos no funcionales y calidad de producto
 
+**Criterios de entrega acordados:** motor de **12 eras jugables completo** antes de plataformas reales, arte de todas esas eras y epílogo antes del piloto, overlays español vertical/horizontal, y narración LLM/TTS con fallback seguro; los tests deben demostrarlo, no solo describirlo. Aceptación pública: mercado España/UE general con controles para menores y retención operativa 30 días salvo obligaciones legales. Techo objetivo 100 €/mes, a verificar bajo carga.
+
 **Estado:** criterios de diseño y validación futura. No se incluyen Docker, YAML de CI/CD ni scripts. Los números de rendimiento de `docs/22` son objetivos de diseño, no resultados de medición.
 
 ## Invariantes de experiencia

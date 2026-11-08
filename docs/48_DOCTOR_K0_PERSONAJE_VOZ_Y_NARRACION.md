@@ -37,7 +37,7 @@ Cabeza asimétrica con un ojo óptico dominante (puede usar el cero de K0 como m
 
 ## Generación lingüística segura
 
-Plantillas validadas y variables escapadas antes que lenguaje libre. El LLM, si se activa, solo reescribe forma y humor; recibe hechos agregados y acciones ya confirmadas, nunca credenciales ni mensajes crudos. Límite editorial sugerido: una intervención prioritaria cada 20s y cola de 20; cambios de estado críticos tienen preferencia y subtítulo directo si voz falla. Nunca leer nombres de menores, datos personales, insultos o contenido recibido como instrucciones. Idioma de campaña configurable (inicial `es-ES`, alternativa `en-US`) y TTS con derechos comerciales verificados.
+**Modo de lanzamiento: LLM generativo + TTS dinámico por defecto**, sujeto a hechos confirmados, moderación y presupuesto de máximo 100 €/mes de infraestructura. Plantillas aprobadas y subtítulos son **fallback** ante fallo, riesgo o límites de coste; el LLM nunca genera hechos de juego ni controla el backend. recibe hechos agregados y acciones ya confirmadas, nunca credenciales ni mensajes crudos. Límite editorial sugerido: una intervención prioritaria cada 20s y cola de 20; cambios de estado críticos tienen preferencia y subtítulo directo si voz falla. Nunca leer nombres de menores, datos personales, insultos o contenido recibido como instrucciones. Idioma de campaña configurable (inicial `es-ES`, alternativa `en-US`) y TTS con derechos comerciales verificados.
 
 ## Qué todavía se debe aprobar
 

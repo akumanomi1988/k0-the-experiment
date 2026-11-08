@@ -1,5 +1,7 @@
 # 11 — Doctor K-0, narrativa y control de actos
 
+**Decisión de lanzamiento:** Doctor K-0 utilizará **LLM generativo y TTS dinámico** con hechos autoritativos ya confirmados, moderación de texto y coste, sin llamadas a herramientas del motor. Fallo, contenido no seguro o límite de 100 €/mes de infraestructura → plantillas aprobadas y subtítulos; no bloquear ticks o votos. Nunca pasar chat bruto/PII al LLM.
+
 Doctor K-0 es un cyborg científico físico dentro de las tres representaciones del mundo, con rostro mecánico, un ojo óptico, extremidades de ingeniería y cápsula de voz, nunca mascota blanda o Corálido. Su voz es sarcástica/provocadora, neutra respecto a las facciones y nunca utiliza insultos discriminatorios, burlas a donantes por no pagar ni afirmaciones falsas sobre apoyo económico.
 
 ## Arquitectura del show

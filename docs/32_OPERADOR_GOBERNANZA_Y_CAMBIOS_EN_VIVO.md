@@ -1,5 +1,7 @@
 > **Regla vigente:**** OWNER controla la campaña, BROADCASTER controla exclusivamente su propia emisión, MODERATOR modera y OPERATOR opera eventos auditados. Invitaciones y revocaciones por temporada, sin permisos económicos para el broadcaster. [Especificación vigente](ESPECIFICACION.md).
 
+**Incidentes confirmados:** salida definitiva del broadcaster primario **validada por OWNER** → temporada `PAUSED` global y `ABORTED` siete días UTC después, sin ganador; OFFLINE normal y OBS desconectado no son abandono. Torneo bloqueado por un LIVE perdido → cancelación a las **72 h UTC** sin penalización. El operador solo documenta y ejecuta reglas, no cambia resultados.
+
 # 32 — Responsabilidades del operador y gobierno del experimento
 
 **Objetivo:** que el directo sea administrable sin controles capaces de alterar resultados arbitrariamente. No es una especificación de interfaz implementada.

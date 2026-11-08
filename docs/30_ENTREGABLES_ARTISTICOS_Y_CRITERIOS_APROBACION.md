@@ -1,5 +1,7 @@
 # 30 — Lista de entregables de arte, animación, mapa y audio
 
+**Criterio de aceptación obligatorio del primer piloto:** arte de **las doce eras jugables completas para las tres facciones**, todas las variantes requeridas para personajes/edificios/combate y el **epílogo terminal Interestelar**; composición vertical/horizontal en español. No se reduce a una demo de una era. La reutilización de componentes es válida, pero cada era jugable debe tener assets verificables y licencias comerciales.
+
 **Estado:** encargo artístico completo en intención; no se entregan sprites, voces ni música. El arte es un producto futuro y debe pasar revisión humana antes de considerarse aprobado.
 
 ## Matriz de sprites requerida

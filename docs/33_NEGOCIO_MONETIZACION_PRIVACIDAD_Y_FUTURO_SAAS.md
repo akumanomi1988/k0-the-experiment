@@ -1,5 +1,7 @@
 # 33 — Modelo de negocio y límites de monetización
 
+**Estrategia comercial confirmada:** primero el **espectáculo propio**, monetización del juego inicialmente OFF hasta validación funcional/legal/plataformas y sin ventajas de pago. La eventual licencia o SaaS se revisan después de medir demanda y ROI. Techo objetivo de infraestructura **100 €/mes**, incluyendo servicios de narración; no es presupuesto certificado ni justifica saltarse controles.
+
 **Estado:** especificación de producto y riesgos. No constituye un dictamen fiscal ni garantiza acceso a ingresos externos.
 
 ## Dos modelos diferentes
