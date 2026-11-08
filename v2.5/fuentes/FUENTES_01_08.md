@@ -1,6 +1,6 @@
 # Fuentes íntegras v2.5 — capítulos 1–8
 
-> **Anexo de preservación literal**, no nuevo conjunto de reglas. Cada texto es copia íntegra del original en GitHub al consolidar v2.5; puede contener expresiones históricas sustituidas. En caso de conflicto prevalece [norma unificada](../ESPECIFICACION_MAESTRA_v2.5.md). Los valores ejecutables se consultan en los JSON canónicos.
+ > **Archivo de preservación de contenido completo (encabezados reindentados).** No es una segunda autoridad: la [especificación maestra](../ESPECIFICACION_MAESTRA_v2.5.md) resuelve reglas sustituidas. Los enlaces relativos del texto interno pertenecen al documento original citado, por lo que debe abrirse ese archivo para navegar sus enlaces.
 
 
 ---
