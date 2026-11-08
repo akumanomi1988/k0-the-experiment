@@ -1,4 +1,4 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** arquitectura autoritativa central .NET/PostgreSQL, tres streamers en equipos/redes diferentes y overlays OBS read-only; detalles de identidad, sincronía y falla en capítulos 63/64. SLO distingue ACK de mutación económica. [Especificación vigente](CURRENT_SPEC.md).
+> **Regla vigente:**** arquitectura autoritativa central .NET/PostgreSQL, tres streamers en equipos/redes diferentes y overlays OBS read-only; detalles de identidad, sincronía y falla en capítulos 63/64. SLO distingue ACK de mutación económica. [Especificación vigente](ESPECIFICACION.md).
 
 # 55 — Arquitectura técnica de producción propuesta
 
@@ -25,11 +25,11 @@ Escritor único lógico por nación, más arbitraje global por temporada para pr
 
 ## Entidades clave
 
-`Campaign`, `Season`, `Nation`, `ChannelBinding`, `ProviderIdentity`, `Citizen`, `CitizenSkill`, `ResourceBalance`, `ResourceLedger`, `GoldDebt`, `Building`, `TechnologyProgress`, `MilestoneProgress`, `MissionPeriod`, `GovernmentElection`, `StrategicBallot`, `RpsRound`, `CompetitionEvent`, `WonderClaim`, `NarrationCue`, `AuditLog`, `Snapshot`, `Inbox`, `Outbox`. V2.2 introduce además estados conceptuales `GarrisonUnit`, `AutomatedBattle`, `CosmeticSponsorship`; **el DDL base se acompaña del anexo de diseño `architecture/002_extensiones_diseno_v2.2.sql`, todavía no ensayado ni integrado en migraciones**. Ninguna nueva entidad necesita un microservicio propio en fase 1.
+`Campaign`, `Season`, `Nation`, `ChannelBinding`, `ProviderIdentity`, `Citizen`, `CitizenSkill`, `ResourceBalance`, `ResourceLedger`, `GoldDebt`, `Building`, `TechnologyProgress`, `MilestoneProgress`, `MissionPeriod`, `GovernmentElection`, `StrategicBallot`, `RpsRound`, `CompetitionEvent`, `WonderClaim`, `NarrationCue`, `AuditLog`, `Snapshot`, `Inbox`, `Outbox`. V2.2 introduce además estados conceptuales `GarrisonUnit`, `AutomatedBattle`, `CosmeticSponsorship`; **el DDL base se acompaña del anexo de diseño `architecture/002_extensiones_diseno.sql`, todavía no ensayado ni integrado en migraciones**. Ninguna nueva entidad necesita un microservicio propio en fase 1.
 
 ## API y presencia
 
-El cliente OBS solo consume snapshots y deltas con secuencia; en reconexión solicita snapshot base y reanuda del último confirmado, nunca inventa recursos. Eventos de chat no se envían desde frontend como autoridad. API admin se protege de forma distinta de API overlay; los endpoints declarados en `contracts/openapi.v2.yaml` aún no incluyen todos los módulos de v2.2 y no deben tratarse como contrato final. El backend no publica directamente tokens de proveedor al cliente.
+El cliente OBS solo consume snapshots y deltas con secuencia; en reconexión solicita snapshot base y reanuda del último confirmado, nunca inventa recursos. Eventos de chat no se envían desde frontend como autoridad. API admin se protege de forma distinta de API overlay; los endpoints declarados en `contracts/openapi.yaml` aún no incluyen todos los módulos de v2.2 y no deben tratarse como contrato final. El backend no publica directamente tokens de proveedor al cliente.
 
 ## Despliegue de referencia (no ejecutado)
 

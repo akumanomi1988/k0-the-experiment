@@ -1,6 +1,6 @@
 # 56 — Modelo económico, cálculos y metodología de balance
 
-**Estado: CANDIDATE_BALANCE, NO VALIDADO.** Esta hoja de cálculo mental y reglas reproducibles no sustituyen un motor de simulación. Las cifras canónicas están en `data/ruleset.v2.json` y catálogos v2.2.
+**Estado: CANDIDATE_BALANCE, NO VALIDADO.** Esta hoja de cálculo mental y reglas reproducibles no sustituyen un motor de simulación. Las cifras canónicas están en `data/ruleset.json` y catálogos v2.2.
 
 ## Parámetros fijados
 
