@@ -77,6 +77,16 @@ def validate() -> list[str]:
     rule("season", "streamerAbandonmentPolicy",
          "CONFIRMED_EXIT_GLOBAL_PAUSE_ABORT_AFTER_7_WALL_DAYS")
     rule("season", "streamerAbandonmentCancelAfterDays", 7)
+    rule("season", "streamerReturnPolicy",
+         "SAME_PRIMARY_REVERIFIED_OWNER_APPROVED_BEFORE_DEADLINE")
+    rule("season", "streamerReturnDeadline",
+         "STRICT_BEFORE_7_DAY_UTC_DEADLINE_ABORT_AT_EQUALITY")
+    rule("season", "streamerReturnPauseClockPolicy",
+         "NO_RETROACTIVE_ECONOMY_OR_LIVE_CATCHUP")
+    rule("season", "streamerReturnCancelledCompetitionPolicy",
+         "NEVER_REOPEN_CANCELLED")
+    rule("season", "streamerReturnMultipleIncidents",
+         "AUDIT_EACH_INCIDENT_ONE_ACTIVE_PER_SEASON")
     rule("tournaments", "maxPausedTournamentWallHours", 72)
     rule("tournaments", "pausedTournamentTimeoutPolicy", "CANCEL_WITHOUT_PENALTY")
 
@@ -127,6 +137,30 @@ def validate() -> list[str]:
     rule("privacy", "publicNamePolicy", "PSEUDONYM_BY_DEFAULT_ALIAS_ONLY_WITH_CONSENT")
     rule("privacy", "minorProtection",
          "EU_GENERAL_AUDIENCE_MINIMIZATION_NO_TARGETED_MONETIZATION")
+    # The old v2.2 worker scope and Council payment state are forbidden in
+    # active normative/SQL artifacts, not merely discouraged in prose.
+    blueprint = read("docs/67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS.md")
+    require("cap por profesión" not in blueprint,
+            "Implementation blueprint still assumes per-profession human cap")
+    require("Twitch/YouTube (los que demuestren permisos)" not in blueprint,
+            "Implementation blueprint has not prioritised YouTube")
+    base_sql = read("architecture/001_schema.sql")
+    require("'PAYMENT_BLOCKED'" not in base_sql,
+            "SQL still allows a Council state that implies gold blocking")
+    return_schema = identity["$defs"].get("PrimaryBroadcasterReturn")
+    require(return_schema is not None and
+            "ownerApprovalUtc" in return_schema["required"] and
+            "verifiedCapabilities" in return_schema["required"],
+            "Broadcaster return DTO requires verified same-primary OWNER approval")
+    api = read("contracts/openapi.yaml")
+    require("/api/v2/operator/seasons/{seasonId}/primary-return:" in api and
+            "operatorJwt: [owner]" in api,
+            "Missing OWNER-only primary-return API")
+    require("ux_one_active_primary_departure_per_season" in
+            read("architecture/003_multistreamer_diseno.sql"),
+            "Repeated departure audit needs one-active-incident partial unique index")
+    require("ck_departure_resolution" in read("architecture/003_multistreamer_diseno.sql"),
+            "SQL must check return-before-deadline, same primary and abort time")
     check_sql = read("architecture/003_multistreamer_diseno.sql")
     require("UNIQUE" in check_sql and "ux_citizen_one_nation_per_k0_account_season" in check_sql
             and "viewer_provider_account_links" in check_sql

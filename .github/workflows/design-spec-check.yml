@@ -84,6 +84,8 @@ jobs:
           psql -v ON_ERROR_STOP=1 -f architecture/001_schema.sql
           psql -v ON_ERROR_STOP=1 -f architecture/002_extensiones_diseno.sql
           psql -v ON_ERROR_STOP=1 -f architecture/003_multistreamer_diseno.sql
+      - name: Verify lifecycle invariants with positive and negative PostgreSQL 16 cases
+        run: psql -v ON_ERROR_STOP=1 -f tools/sql/lifecycle_invariants.sql
       - name: Verify owner-decision integrity constraints exist
         run: |
           psql -v ON_ERROR_STOP=1 <<'SQL'
