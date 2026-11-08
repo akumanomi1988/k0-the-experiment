@@ -12,7 +12,7 @@ Tres naciones independientes de plataforma; 92 respuestas históricas preservada
 
 ## Hipótesis numéricas, no certezas
 
-Las tasas, costes, puntos y límites definidos por `ruleset.v2.json` son un diseño candidato. No han pasado una batería de temporadas reales. Deben calibrarse **antes de abrir una temporada pública** con evidencia cuantitativa y datos de audiencia reales; una vez abierta, los valores permanecen congelados para evitar una carrera injusta.
+Las tasas, costes, puntos y límites definidos por `ruleset.json` son un diseño candidato. No han pasado una batería de temporadas reales. Deben calibrarse **antes de abrir una temporada pública** con evidencia cuantitativa y datos de audiencia reales; una vez abierta, los valores permanecen congelados para evitar una carrera injusta.
 
 ## Limitaciones del sistema de tres naciones
 
