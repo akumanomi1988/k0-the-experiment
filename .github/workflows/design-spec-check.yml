@@ -1,38 +1,19 @@
-name: K0 design baseline consistency
+name: K0 canonical documentation and design integrity
+
 on:
   push:
     branches: [main]
-    paths:
-      - 'data/**'
-      - 'contracts/**'
-      - 'architecture/**'
-      - 'docs/**'
-      - 'v2.5/**'
-      - 'README.md'
-      - 'DOCS_INDEX_v2.5.md'
-      - 'tools/validate_design_catalogs.py'
-      - 'tools/validate_v25_consolidation.py'
-      - '.github/workflows/design-spec-check.yml'
   pull_request:
-    paths:
-      - 'data/**'
-      - 'contracts/**'
-      - 'architecture/**'
-      - 'docs/**'
-      - 'v2.5/**'
-      - 'README.md'
-      - 'DOCS_INDEX_v2.5.md'
-      - 'tools/validate_design_catalogs.py'
-      - 'tools/validate_v25_consolidation.py'
-      - '.github/workflows/design-spec-check.yml'
+
+permissions:
+  contents: read
+
 jobs:
   validate-design:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
       - uses: actions/checkout@v4
-      - name: Validate static catalogs, IDs and contracts
+      - name: Verify single canonical Markdown documentation and all local links
+        run: python3 tools/validate_documentation.py
+      - name: Verify structured catalogs, IDs, rules and design contracts
         run: python3 tools/validate_design_catalogs.py
-      - name: Validate complete v2.5 archive, lineage and documentation links
-        run: python3 tools/validate_v25_consolidation.py

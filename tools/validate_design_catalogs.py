@@ -145,12 +145,12 @@ def main() -> int:
     sql = (ROOT / "architecture/001_schema_v2.sql").read_text(encoding="utf-8")
     check("'PAUSED'" in sql and "'COSMETIC_SPEND'" in sql,
           "Design DDL lacks paused votes / cosmetic gold entry")
-    for p in ("docs/CURRENT_SPEC.md",
-              "docs/63_ARQUITECTURA_MULTISTREAMER_v2.3.md",
-              "docs/64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md",
-              "docs/65_DISENO_STREAMER_OVERLAYS_Y_ARTE_v2.3.md",
-              "docs/66_INTEGRACIONES_SEGURIDAD_Y_OPERACION_v2.3.md",
-              "docs/67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS_v2.3.md"):
+    for p in ("ESPECIFICACION_MAESTRA.md",
+              "docs/63_ARQUITECTURA_MULTISTREAMER.md",
+              "docs/64_RELOJES_EVENTOS_Y_CONTRATOS.md",
+              "docs/65_DISENO_STREAMER_OVERLAYS_Y_ARTE.md",
+              "docs/66_INTEGRACIONES_SEGURIDAD_Y_OPERACION.md",
+              "docs/67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS.md"):
         check((ROOT / p).is_file(), f"Missing spec {p}")
 
     if FAILURES:

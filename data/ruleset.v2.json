@@ -4,11 +4,11 @@
   "status": "DESIGN_BASELINE_CANDIDATE_NOT_IMPLEMENTED",
   "sourcePriority": [
     "latest-explicit-user-message",
-    "v2.3-normative-scoped-amendments-in-docs-CURRENT_SPEC",
+    "ESPECIFICACION_MAESTRA.md",
     "confirmed-user-decisions-1-92-except-traced-overrides",
-    "v2.2-amendments-and-catalogs",
-    "v2-canonical-data-unless-amended",
-    "v1-historical-reference"
+    "active-catalogs-and-contracts",
+    "details-in-docs-unless-superseded",
+    "Git-history-for-previous-revisions"
   ],
   "nations": {
     "count": 3,
