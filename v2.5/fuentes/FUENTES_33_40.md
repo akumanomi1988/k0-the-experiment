@@ -1,6 +1,6 @@
 # Fuentes íntegras v2.5 — capítulos 33–40
 
-> **Anexo histórico de preservación íntegra.** Puede contener tablas legibles y reglas anteriores a las correcciones v2.2/v2.3; norma unificada: [v2.5](../ESPECIFICACION_MAESTRA_v2.5.md). Datos machine-readable solo desde catálogos activos.
+ > **Archivo de preservación de contenido completo (encabezados reindentados).** No es una segunda autoridad: la [especificación maestra](../ESPECIFICACION_MAESTRA_v2.5.md) resuelve reglas sustituidas. Los enlaces relativos del texto interno pertenecen al documento original citado, por lo que debe abrirse ese archivo para navegar sus enlaces.
 
 ---
 
