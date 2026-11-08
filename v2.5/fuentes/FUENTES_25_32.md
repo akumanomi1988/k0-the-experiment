@@ -1,6 +1,6 @@
 # Fuentes íntegras v2.5 — capítulos 25–32
 
-> **Anexo de preservación literal** para cobertura integral. Los textos se mantienen íntegros, incluyendo decisiones históricas superadas. [Norma v2.5](../ESPECIFICACION_MAESTRA_v2.5.md) resuelve sus conflictos; este anexo no los reactiva.
+ > **Archivo de preservación de contenido completo (encabezados reindentados).** No es una segunda autoridad: la [especificación maestra](../ESPECIFICACION_MAESTRA_v2.5.md) resuelve reglas sustituidas. Los enlaces relativos del texto interno pertenecen al documento original citado, por lo que debe abrirse ese archivo para navegar sus enlaces.
 
 ---
 
