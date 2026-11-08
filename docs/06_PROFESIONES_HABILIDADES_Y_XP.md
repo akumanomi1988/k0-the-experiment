@@ -1,4 +1,4 @@
-> **Regla vigente:**** el límite de 2500 trabajadores humanos de diseño aplica **por profesión y nación** hasta revisar el balance; la XP usa deltaEconomy efectivo una sola vez. Ver [CURRENT_SPEC](ESPECIFICACION.md) y [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
+> **Regla vigente:**** el límite de 2500 trabajadores humanos efectivos aplica **a toda la nación**, entre todas las profesiones hasta revisar el balance; la XP usa deltaEconomy efectivo una sola vez. Ver [CURRENT_SPEC](ESPECIFICACION.md) y [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
 
 # 06 — Ciudadanos, profesión única, XP y especializaciones
 
@@ -18,7 +18,7 @@ Tres elecciones irreversibles en niveles 3, 7 y 12; dos opciones exactas por bif
 - research: genera conocimiento con acumulación y desbloqueos automatizados gratuitos de tecnología.
 
 ## Control de audiencia masiva
-Cada identidad puede tener un ciudadano por nación/temporada dentro de reglas de asignación de canales. Para trabajo agregado hay 100 plazas de contribución plena por profesión y 2400 plazas marginales al 25 %. Un humano fuera del tope sigue apareciendo, votando y alcanzando logros sin crear recursos ficticios; para evitar falsos mensajes de progreso se le muestra explícitamente el estado «turno visual / lista de trabajo saturada» y no se le abona XP de trabajo inexistente. El algoritmo de cuotas deterministic permite rotación por bloques de 10 minutos de LIVE para que los últimos usuarios no queden siempre sin producción; orden de rotación `(hash(citizenId,rotationIndex),citizenId)`.
+**Una cuenta K0 tiene exactamente un ciudadano y una nación por temporada.** `!join` crea internamente su cuenta desde identidad de proveedor verificada; otro canal/nación devuelve `NATION_LOCKED`. Si se usan proveedores distintos, solo una vinculación de identidad voluntaria y verificada permite imponer la unicidad cruzada. **El cupo de trabajo es nacional**, de 100 puestos plenos más 2.400 al 25 % para todas las profesiones sumadas; fuera de 2.500 no se produce ni se gana XP laboral. Rotación cada 600 s LIVE de la nación por ranking `(SHA256(seasonSeed,nationId,rotationIndex,citizenId),citizenId)`; `professionId` no participa en la selección. Al ciudadano sin cupo se le muestra actividad visual sin falso progreso. Pseudónimo generado por defecto; alias de plataforma solo con opt-in explícito revocable.
 
 ## Trabajo y sueño
 El ciudadano descansa exactamente al caducar `activeUntilUtc`. Un evento de plataforma retrasado no vuelve a activar una ventana del pasado más allá del límite de tolerancia. No hay muerte permanente ni barras de hambre individuales. El nombre visual es moderado; se registra ID interno separadamente del displayName público.

@@ -1,5 +1,7 @@
 # 50 — Ciclo de usuario: comandos, tutorial, errores y fidelización
 
+**Política vigente:** una cuenta K0 está adscrita a una sola nación por temporada. El chat autentica y autoaprovisiona; nunca exige crear contraseña K0. El jugador se muestra por pseudónimo generado, salvo consentimiento expreso revocable para alias de proveedor. Otros proveedores solo se vinculan tras acreditación, sin inferir identidad por alias.
+
 ## Principio
 
 Un espectador debe entender en 30 segundos tres cosas: qué nación ve, qué puede escribir y qué cambiará. La participación debe dar feedback aunque la cámara no muestre su sprite por límites de LOD. No exigir una web, registro adicional ni pago para entrar al juego.

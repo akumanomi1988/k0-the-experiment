@@ -52,7 +52,7 @@ Diagrama de flujo:
 | ProviderLiveSession | (bindingId,providerSessionId) | Evidencia LIVE, lastSeen, health, TTL y revisión |
 | BroadcastOutput | (outputId,seasonId,viewerScope) | Vista OBS, escena, formato, permisos y token revocable |
 | PresentationCue | (seasonId,sequence,cueId) | Presentación global o específica sin efectos de economía |
-| ViewerCitizen | (seasonId,nationId,provider,userId) | Identidad del jugador por canal/nación, no el streamer |
+| ViewerCitizen | (seasonId,accountId) con nación inmutable y provider identities vinculadas | Identidad del jugador por canal/nación, no el streamer |
 
 No equiparar BroadcastOutput, ChannelBinding y ProviderLiveSession: una fuente de chat puede alimentar varios overlays autorizados; un overlay no acredita que la plataforma esté LIVE.
 
@@ -81,9 +81,11 @@ Cada PC debe poder:
 
 ## 6. Independencia de directos y política de equidad
 
-Una temporada puede tener A LIVE, B OFFLINE, C LIVE. Se aplica a cada nación su NationEconomyClock original (100 % LIVE; 20 % offline). Los votos de B y su avance de era esperan su LIVE confirmado. La carrera puede favorecer al streamer que emite más horas: **es una consecuencia explícita del diseño histórico, no un bug oculto**. Se publicará tiempo LIVE acumulado por nación y advertencia al crear campaña. Modalidades con paridad estricta por horas o caps diarios serían un ADR distinto, no un valor implícito.
+Una temporada puede tener A LIVE, B OFFLINE, C LIVE y **puede arrancar con los tres canales autorizados aunque ninguno emita simultáneamente**. Cada nación usa 100 % LIVE/20 % OFFLINE, sin compensación ni cap competitivo horario, de manera que quien emite más puede progresar más. Publicar las horas LIVE acumuladas por nación y aviso preflight. Es una decisión confirmada, no una propuesta de mecanismo corrector.
 
 RPS y batallas programadas se activan exclusivamente con los tres LIVE confirmados y su **CompetitionLiveClock global**. Si uno cae, se congelan las tres ventanas y el operador puede cancelar sin penalización tras un plazo de incidencia; ninguna nación queda castigada por la caída. El evento se reanuda con los mismos votos y tiempo pendiente si la evidencia vuelve y aún está dentro de la política de sesión.
+
+**Abandono definitivo:** cuando el OWNER confirma salida del broadcaster primario, la temporada global entra en PAUSED, con reloj de siete días UTC desde la confirmación. Expirado ese plazo se cancela (`ABORTED`), sin ganador; no sustituir automáticamente el primario. No equiparar una emisión OFFLINE o fallo de OBS a abandono. **RPS o torneo congelado** durante 72 h UTC desde la pausa inicial expira en CANCELLED sin penalización, siempre que la temporada no esté ya abortada.
 
 ## 7. Control de espectadores multicanal
 

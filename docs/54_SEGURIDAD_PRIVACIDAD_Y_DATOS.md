@@ -20,9 +20,9 @@
 | Robo de claves | Secret store fuera de repo, rotación, scopes mínimos | No hay tokens en logs/snapshots/overlays |
 | Saturación o bots | Rate limit por cuenta/canal/tipo + IP/gateway cuando proceda | 10k emisores no colapsan orden de votos |
 
-## Retención propuesta pendiente de revisión legal
+## Retención inicial confirmada, condicionada a revisión legal
 
-Separar `identity` (IDs de proveedor), `ledger` (integridad económica), `publicProfile` (nombre moderado), `contentTelemetry` y `rawMessage`. Valor inicial de diseño: **no persistir mensaje bruto en sistema de negocio**; mantener digest del evento y referencia durante ventana de diagnóstico mínima. Guardar perfiles de temporada solo hasta que exista una política formal de conservación/borrado. No prometer una tabla definitiva de retención en días sin definir jurisdicción, responsabilidades y contratos de plataforma. Anonimizar exportaciones históricas al ejercerse derechos aplicables, preservando asientos contables que legalmente deban retenerse mediante seudónimo no reversible.
+Separar `identity` (IDs de proveedor), `ledger` (integridad económica), `publicProfile` (nombre moderado), `contentTelemetry` y `rawMessage`. Valor inicial de diseño: **no persistir mensaje bruto en sistema de negocio**; mantener digest del evento y referencia durante ventana de diagnóstico mínima. Guardar perfiles de temporada solo hasta que exista una política formal de conservación/borrado. **Objetivo: 30 días de datos operativos**; excepciones explícitas para registros fiscales/contables y otras obligaciones legales. La ejecución de purga, derechos de acceso/borrado y tratamientos de menores exige diseño y revisión formal para España/UE, público general. Anonimizar exportaciones históricas al ejercerse derechos aplicables, preservando asientos contables que legalmente deban retenerse mediante seudónimo no reversible.
 
 ## Repositorio público
 

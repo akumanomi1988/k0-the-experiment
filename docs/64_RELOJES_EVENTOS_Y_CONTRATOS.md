@@ -35,12 +35,14 @@ En cada subsegmento se aplica orden:
 
 **Ack ≠ progreso económico:** el ingreso de comando puede producir un ACK persistido rápido; su efecto productivo se contabiliza en el segmento que corresponde al siguiente ciclo de economía. SLO <1 s aplica a ACK P95 cuando la infraestructura lo demuestre; la aplicación a producción puede tardar hasta el siguiente tick de 5 s. Ninguna promesa de <1 s para mutación económica con tick 5 s.
 
+**Plazos de incidencia:** torneo compartido en PAUSED por pérdida de cualquiera de las tres presencias LIVE -> `CANCELLED` después de 72 h de UtcWallClock desde el primer inicio de pausa no resuelta; sin pérdidas, costes ni sanción. Abandono confirmado del broadcaster primario -> temporada PAUSED global y `ABORTED` a los siete días UTC, sin que la economía offline prosiga durante la pausa extraordinaria. Una sesión OFFLINE por sí sola no activa esta cancelación.
+
 ## 3. Estados de sesión
 
 - Season: DRAFT→PREPARED→RUNNING→COMPLETED→ARCHIVED, con PAUSED/RECOVERY_REQUIRED/ABORTED por gestión; COMPLETE no vuelve a RUNNING.
 - Binding: INVITED→PENDING_AUTH→AUTHORIZED→HEALTHY, con DEGRADED / REVOKED / DISABLED; no se etiqueta HEALTHY sin prueba real.
 - ProviderLive: OFFLINE_CONFIRMED, LIVE_CONFIRMED, UNCERTAIN. Estado separado de OBS_CONNECTED / OBS_DISCONNECTED.
-- Vote: QUEUED, OPEN, PAUSED, RESOLVED, CANCELLED, PAYMENT_BLOCKED. PAUSED no pierde ballot ni elapsedLiveSeconds; un cierre terminal se aplica UNA vez.
+- Vote: QUEUED, OPEN, PAUSED, RESOLVED, CANCELLED. PAYMENT_BLOCKED no forma parte del Consejo gratuito; una reserva ordinaria inconsistente hace fallar la transacción. PAUSED no pierde ballot ni elapsedLiveSeconds; un cierre terminal se aplica UNA vez.
 - Competition: SCHEDULED→WAITING_FOR_ALL_LIVE→RUNNING→PAUSED→RUNNING/ CANCELLED→RESOLVED. Pause congela CompetitionLiveClock para todas las naciones.
 - Overlay: CONNECTING→SYNCING→LIVE_VIEW→STALE/RECONNECTING→SYNCING; tras TTL sin fuente válida muestra SAFE_SCENE, nunca inventa un ganador.
 - Contribution: todo desactivado de inicio; RECEIVED→AUTHENTICATED→VERIFIED→CREDITED/REJECTED→REVERSED, solo evidencias y reversos autorizados.
