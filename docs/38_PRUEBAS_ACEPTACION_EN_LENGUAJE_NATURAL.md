@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 38 — Casos de aceptación funcional sin código
 
 **Propósito:** convertir reglas en ejemplos observables para el día que se implemente el motor. No hay scripts, frameworks ni código fuente. Los escenarios usan valores establecidos en v2.0; su ejecución futura será un trabajo diferente.

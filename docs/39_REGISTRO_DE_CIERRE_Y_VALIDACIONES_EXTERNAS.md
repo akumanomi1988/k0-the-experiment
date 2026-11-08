@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 39 — Registro de cierre documental y validaciones externas
 
 **Estado:** registro histórico v2.1 ampliado por `docs/41` y `docs/60` de v2.2; diseño, no validación de implementación. La definición es suficientemente detallada para orientar implementación, pero no se declara producto al 100 % probado. Se conserva distinción entre decisiones cerradas, supuestos de balance y hechos externos.

@@ -1,4 +1,6 @@
-> **Enmienda v2.3:** los 10 edificios de Interestelar son fichas de epílogo visual; ningún edificio se construye después de SeasonCompleted. Las eras 1–12 siguen según catálogo. [CURRENT_SPEC](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda v2.3:** los 10 edificios de Interestelar son fichas de epílogo visual; ningún edificio se construye después de SeasonCompleted. Las eras 1–12 siguen según catálogo. [CURRENT_SPEC](../ESPECIFICACION_MAESTRA.md).
 
 # 34 — Catálogo legible de los 130 edificios básicos
 

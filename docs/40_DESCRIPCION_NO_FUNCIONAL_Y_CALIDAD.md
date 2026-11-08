@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 40 — Requisitos no funcionales y calidad de producto
 
 **Estado:** criterios de diseño y validación futura. No se incluyen Docker, YAML de CI/CD ni scripts. Los números de rendimiento de `docs/22` son objetivos de diseño, no resultados de medición.

@@ -1,4 +1,6 @@
-> **Enmienda v2.3:** un Consejo por nación y era jugable (una terna de tres proyectos, solo uno construido). Las dos opciones descartadas no se vuelven a votar en esa era. El contenido interestelar es ceremonial, no construible tras ganar. [CURRENT_SPEC](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda v2.3:** un Consejo por nación y era jugable (una terna de tres proyectos, solo uno construido). Las dos opciones descartadas no se vuelven a votar en esa era. El contenido interestelar es ceremonial, no construible tras ganar. [CURRENT_SPEC](../ESPECIFICACION_MAESTRA.md).
 
 # 35 — Catálogo legible: proyectos de Consejo y maravillas (v2.2)
 
@@ -72,4 +74,4 @@ Tres opciones distintas de Consejo, del mismo período habilitado, no construida
 
 Las maravillas se habilitan solo mediante evento separado cuando la campaña permite la competencia y son exclusivas globalmente por primer commit de finalización. La maravilla interestelar se considera pieza de epílogo; no puede abrir otra carrera tras el cierre.
 
-Ver `docs/44_CONSEJO_GRATUITO_PATROCINIO_Y_ECONOMIA_v2.2.md`. Este catálogo está sujeto a revisión de balance y de representación gráfica; sus números no fueron ensayados en motor .NET.
+Ver `docs/44_CONSEJO_GRATUITO_PATROCINIO_Y_ECONOMIA.md`. Este catálogo está sujeto a revisión de balance y de representación gráfica; sus números no fueron ensayados en motor .NET.

@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 37 — Profesiones, habilidades y gobiernos: catálogo legible
 
 **Estado:** derivación de las definiciones canónicas `data/professions.v2.json`, `data/skills.v2.json`, `data/governments.v2.json` y `data/eras.v2.json`. La profesión se elige una única vez por temporada; el oficio cambia su denominación estética según la era, sin cambiar de familia funcional.

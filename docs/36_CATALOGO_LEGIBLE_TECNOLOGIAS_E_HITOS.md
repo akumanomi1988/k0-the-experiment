@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 36 — Catálogo legible de tecnologías, hitos y misiones por era (v2.3)
 
 **Generado a partir de los datos vigentes v2.3**: tecnologías, hitos, misiones de era y eras. No es un test de jugabilidad ni sustituye al balance simulado.
@@ -240,4 +242,4 @@ Las eras 1–12 tienen 5 hitos únicos × 20 puntos, incluido el de misión espe
 
 ## Integridad del catálogo
 
-El runtime debe usar IDs y condiciones de `data/*.json` y pruebas de `tools/validate_design_catalogs.py`. Este archivo es una vista legible, no autoridad de cálculos. Enmiendas y orden de eventos: [CURRENT_SPEC](CURRENT_SPEC.md), [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md).
+El runtime debe usar IDs y condiciones de `data/*.json` y pruebas de `tools/validate_design_catalogs.py`. Este archivo es una vista legible, no autoridad de cálculos. Enmiendas y orden de eventos: [CURRENT_SPEC](../ESPECIFICACION_MAESTRA.md), [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).

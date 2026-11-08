@@ -1,4 +1,6 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** OWNER controla la campaña, BROADCASTER controla exclusivamente su propia emisión, MODERATOR modera y OPERATOR opera eventos auditados. Invitaciones y revocaciones por temporada, sin permisos económicos para el broadcaster. [Especificación vigente](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda normativa v2.3 (multistreamer distribuido):** OWNER controla la campaña, BROADCASTER controla exclusivamente su propia emisión, MODERATOR modera y OPERATOR opera eventos auditados. Invitaciones y revocaciones por temporada, sin permisos económicos para el broadcaster. [Especificación vigente](../ESPECIFICACION_MAESTRA.md).
 
 # 32 — Responsabilidades del operador y gobierno del experimento
 
