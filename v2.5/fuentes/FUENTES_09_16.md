@@ -1,6 +1,6 @@
 # Fuentes íntegras v2.5 — capítulos 9–16
 
-> **Anexo de preservación literal**, no nuevo conjunto de reglas. Contiene los textos completos que se habían definido, incluso redacciones heredadas. En caso de contradicción manda [norma unificada](../ESPECIFICACION_MAESTRA_v2.5.md). Los valores ejecutables se consultan en JSON canónicos.
+ > **Archivo de preservación de contenido completo (encabezados reindentados).** No es una segunda autoridad: la [especificación maestra](../ESPECIFICACION_MAESTRA_v2.5.md) resuelve reglas sustituidas. Los enlaces relativos del texto interno pertenecen al documento original citado, por lo que debe abrirse ese archivo para navegar sus enlaces.
 
 ---
 
