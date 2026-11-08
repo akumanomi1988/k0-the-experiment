@@ -1,3 +1,5 @@
+> **Enmienda normativa v2.3 (multistreamer distribuido):** incorporar aceptación de 3 streamers remotos y separar evidencia documental de pruebas reales. No confundir v2.3 con producto cerrado. [Especificación vigente](CURRENT_SPEC.md).
+
 # 60 — Definition of Ready: qué significa realmente «todo definido»
 
 ## Niveles de preparación
@@ -29,6 +31,17 @@
 - [ ] Ingesta idempotente, escritura única, determinismo, replays y backups restaurados con evidencia.
 - [ ] Pruebas de carga y mediciones de costes con perfiles realistas y 30 FPS OBS estable.
 - [ ] Autorización del proveedor, cuotas, política LIVE y límites de monetización comprobados por **cuenta**, no por idea.
+
+## Gate multistreamer distribuido v2.3
+
+- [ ] Una campaña de tres streamers independientes se completa desde 3 equipos y redes distintos sin ejecutar motor local en ninguno.
+- [ ] Tres cuentas de mismo proveedor verificadas y tres overlays separados; mezclas de proveedores solo cuando los permisos reales lo demuestren.
+- [ ] OBS de un streamer cae sin alterar LIVE certificado ni economía; desconexión LIVE de una nación congela simultáneamente reloj global de RPS en tres viewers.
+- [ ] Invitaciones, scopes, OAuth, revocación, aislamiento de identidades y salida pública minimizada probados.
+- [ ] CURRENT_SPEC, catálogos, API, SQL y versiones de reglas concuerdan; CI verde y migraciones PostgreSQL realmente ejecutadas.
+- [ ] Cuenta real de proveedor, volumen de audiencia, arte, legal y restore con evidencia verificable, no texto.
+
+**El estado permanece D1 ampliado; este añadido no demuestra D2 ni un juego implementado.**
 
 ## Gate de cierre comercial y normativo
 
