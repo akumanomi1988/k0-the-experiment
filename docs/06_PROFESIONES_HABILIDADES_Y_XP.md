@@ -1,4 +1,4 @@
-> **Regla vigente:**** el límite de 2500 trabajadores humanos efectivos aplica **a toda la nación**, entre todas las profesiones hasta revisar el balance; la XP usa deltaEconomy efectivo una sola vez. Ver [CURRENT_SPEC](ESPECIFICACION.md) y [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
+> **Regla vigente:** el límite de 2500 trabajadores humanos efectivos aplica **a toda la nación**, entre todas las profesiones por decisión confirmada del propietario; la calibración se realiza entre temporadas; la XP usa deltaEconomy efectivo una sola vez. Ver [especificación vigente](ESPECIFICACION.md) y [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
 
 # 06 — Ciudadanos, profesión única, XP y especializaciones
 

@@ -1,4 +1,4 @@
-> **Regla vigente:**** StreamerSeat, ProviderConnection, BroadcastOutput y ProviderLiveSession son entidades distintas; cada streamer autentica y autoriza su propio canal. La señal OBS no acredita LIVE; ver capítulo 63. [Especificación vigente](ESPECIFICACION.md).
+> **Regla vigente:** StreamerSeat, ProviderConnection, BroadcastOutput y ProviderLiveSession son entidades distintas; cada streamer autentica y autoriza su propio canal. La señal OBS no acredita LIVE; ver capítulo 63. [Especificación vigente](ESPECIFICACION.md).
 
 # 02 — Topología configurable de canales y ciudadanía
 

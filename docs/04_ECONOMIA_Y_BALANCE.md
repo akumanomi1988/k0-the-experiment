@@ -1,4 +1,4 @@
-> **Regla vigente:**** evitar doble ralentización offline; [semántica de reloj única](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
+> **Regla vigente:** evitar doble ralentización offline; [semántica de reloj única](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
 
 # 04 — Reglas numéricas del motor económico
 

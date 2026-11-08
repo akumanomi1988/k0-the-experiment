@@ -1,4 +1,4 @@
-> **Regla vigente:**** un Consejo por nación y era jugable, tres alternativas financiables sin oro; las dos no elegidas se descartan para esa era. Las obras ordinarias siguen siendo automáticas. [Norma actual](ESPECIFICACION.md).
+> **Regla vigente:** un Consejo por nación y era jugable, tres alternativas financiables sin oro; las dos no elegidas se descartan para esa era. Las obras ordinarias siguen siendo automáticas. [Norma actual](ESPECIFICACION.md).
 
 # 05 — Construcciones básicas, proyectos y mapa
 

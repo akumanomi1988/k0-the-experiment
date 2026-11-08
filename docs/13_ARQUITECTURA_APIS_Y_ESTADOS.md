@@ -1,4 +1,4 @@
-> **Regla vigente:**** backend .NET compartido en hosting central; tres Browser Sources en PCs diferentes, un escritor por nación, Inbox/Outbox y global SeasonArbiter. No servidores locales ni P2P. [Especificación vigente](ESPECIFICACION.md).
+> **Regla vigente:** backend .NET compartido en hosting central; tres Browser Sources en PCs diferentes, un escritor por nación, Inbox/Outbox y global SeasonArbiter. No servidores locales ni P2P. [Especificación vigente](ESPECIFICACION.md).
 
 # 13 — Arquitectura modular, dominio y APIs
 

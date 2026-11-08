@@ -1,4 +1,4 @@
-> **Regla vigente:**** la conexión OAuth y evidencia de cada capacidad corresponde a cada streamer/canal. Twitch/YouTube solo bajo scopes propios y TikTok no se afirma disponible; consulta 66 para onboarding, seguridad y permisos. [Especificación vigente](ESPECIFICACION.md).
+> **Regla vigente:** la conexión OAuth y evidencia de cada capacidad corresponde a cada streamer/canal. Twitch/YouTube solo bajo scopes propios y TikTok no se afirma disponible; consulta 66 para onboarding, seguridad y permisos. [Especificación vigente](ESPECIFICACION.md).
 
 **Primer proveedor elegido:** YouTube Live, exclusivamente tras completar las doce eras en simulación, validar permisos de cuenta/canal, cuotas y políticas reales. Primer operador SINGLE_OPERATOR con tres canales, multistreamer posteriormente. TikTok/Twitch siguen disponibles solo en modelos contractuales, no se les atribuyen permisos no probados.
 
