@@ -1,0 +1,200 @@
+{
+  "status": "V2_3_DESIGN_CANDIDATE_NOT_BALANCED",
+  "schemaVersion": "2.3.0",
+  "description": "Misión colectiva de cada era jugable independiente de misiones diarias/semanales; completada por trabajo productivo real de NPC o humanos, sin oro ni reward extra; el hito de misión es quien otorga los 20 puntos.",
+  "unit": "effective_worker_minutes",
+  "missions": [
+    {
+      "id": "era_mission_paleolithic",
+      "eraId": "paleolithic",
+      "eraIndex": 1,
+      "name": "Esfuerzo colectivo — Paleolítico",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 1000
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    },
+    {
+      "id": "era_mission_neolithic",
+      "eraId": "neolithic",
+      "eraIndex": 2,
+      "name": "Esfuerzo colectivo — Neolítico",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 1200
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    },
+    {
+      "id": "era_mission_copper",
+      "eraId": "copper",
+      "eraIndex": 3,
+      "name": "Esfuerzo colectivo — Edad del Cobre",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 1400
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    },
+    {
+      "id": "era_mission_bronze",
+      "eraId": "bronze",
+      "eraIndex": 4,
+      "name": "Esfuerzo colectivo — Edad del Bronce",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 1600
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    },
+    {
+      "id": "era_mission_iron",
+      "eraId": "iron",
+      "eraIndex": 5,
+      "name": "Esfuerzo colectivo — Edad del Hierro",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 1800
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    },
+    {
+      "id": "era_mission_antiquity",
+      "eraId": "antiquity",
+      "eraIndex": 6,
+      "name": "Esfuerzo colectivo — Antigüedad",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 2000
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    },
+    {
+      "id": "era_mission_medieval",
+      "eraId": "medieval",
+      "eraIndex": 7,
+      "name": "Esfuerzo colectivo — Edad Media",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 2200
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    },
+    {
+      "id": "era_mission_renaissance",
+      "eraId": "renaissance",
+      "eraIndex": 8,
+      "name": "Esfuerzo colectivo — Renacimiento",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 2400
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    },
+    {
+      "id": "era_mission_industrial",
+      "eraId": "industrial",
+      "eraIndex": 9,
+      "name": "Esfuerzo colectivo — Era Industrial",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 2600
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    },
+    {
+      "id": "era_mission_modern",
+      "eraId": "modern",
+      "eraIndex": 10,
+      "name": "Esfuerzo colectivo — Era Moderna",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 2800
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    },
+    {
+      "id": "era_mission_digital",
+      "eraId": "digital",
+      "eraIndex": 11,
+      "name": "Esfuerzo colectivo — Era Digital",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 3000
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    },
+    {
+      "id": "era_mission_space",
+      "eraId": "space",
+      "eraIndex": 12,
+      "name": "Esfuerzo colectivo — Era Espacial",
+      "goal": {
+        "kind": "productive_effective_worker_minutes",
+        "units": 3200
+      },
+      "npcCanComplete": true,
+      "oncePerEra": true,
+      "reward": {},
+      "historicalPoints": 0,
+      "countsOnlyWithinEra": true,
+      "goldRequired": false
+    }
+  ]
+}
