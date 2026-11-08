@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 29 — Matriz de casos límite y degradación funcional
 
 **Propósito:** especificar qué debe ocurrir cuando el mundo no está en las condiciones ideales; el diseño debe seguir siendo coherente con ausencia de público, sin oro y con proveedores intermitentes.

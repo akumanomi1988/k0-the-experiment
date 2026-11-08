@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 28 — Libro de estilo y protocolo narrativo de Doctor K-0
 
 **Estado:** especificación editorial. K-0 es narrador y agente de presentación; **no** autoriza comandos de dominio.

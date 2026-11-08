@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 25 — Biblia narrativa del experimento
 
 **Estado:** dirección narrativa editorial v2.1. Expande la presentación sin introducir mecánicas nuevas. El tono es ciencia ficción cómica, no simulación de historia humana literal. Las 13 eras representan analogías de avance tecnológico para especies propias.

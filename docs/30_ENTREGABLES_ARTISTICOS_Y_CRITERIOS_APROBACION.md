@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 30 — Lista de entregables de arte, animación, mapa y audio
 
 **Estado:** encargo artístico completo en intención; no se entregan sprites, voces ni música. El arte es un producto futuro y debe pasar revisión humana antes de considerarse aprobado.
@@ -41,4 +43,4 @@ La cifra de skins es una cobertura conceptual, **no** una promesa de 700 archivo
 
 ## Ampliación v2.2: ejército y 13 maravillas individualizadas
 
-El catálogo de combate requiere **39 formas rol/era × 3 culturas = 117 skins** adicionales, con tres siluetas de rol definidas y reutilización de rig. Las trece maravillas tienen nombres propios y motivos visuales exclusivos en `docs/61_CATALOGO_ARTISTICO_DE_EDIFICIOS_Y_MARAVILLAS_v2.2.md`. No se cuentan como PNG entregados o aprobados.
+El catálogo de combate requiere **39 formas rol/era × 3 culturas = 117 skins** adicionales, con tres siluetas de rol definidas y reutilización de rig. Las trece maravillas tienen nombres propios y motivos visuales exclusivos en `docs/61_CATALOGO_ARTISTICO_DE_EDIFICIOS_Y_MARAVILLAS.md`. No se cuentan como PNG entregados o aprobados.

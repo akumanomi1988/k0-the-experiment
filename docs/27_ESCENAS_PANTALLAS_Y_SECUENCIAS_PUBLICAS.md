@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 27 — Especificación de escenas, pantallas y estados visibles
 
 **Objetivo:** definir qué se debe ver en cada momento sin entregar componentes React, escenas Phaser ni archivos OBS. Las dimensiones son lógicas y se escalan con píxel más próximo.

@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 26 — Biblia visual: legibilidad, tres culturas y 13 eras
 
 **Estado:** especificación conceptual cerrada para orientar la producción artística; no implica que los assets estén dibujados o aprobados. Fuentes cuantitativas: `data/art_spec.v2.json`, `data/factions.v2.json` y `docs/12`.

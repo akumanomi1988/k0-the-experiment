@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 23 — Glosario, jerarquía de decisiones y alcance documental
 
 **Estado:** definición documental v2.1. No se propone código ni una nueva mecánica. Fuente principal: reglas históricas 1–92, documentos 01–22 de v2.0 y catálogos de `data/`.

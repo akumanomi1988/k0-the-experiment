@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 24 — Recorridos del espectador y experiencia del ciudadano
 
 **Objetivo:** cerrar la experiencia observable por un usuario en chat sin depender de cómo se implemente la integración. Se mantiene una identidad de ciudadanía por nación y temporada; la existencia de distintas cuentas no altera la pertenencia de la nación.
