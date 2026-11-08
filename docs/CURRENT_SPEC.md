@@ -1,3 +1,5 @@
+> **Archivo histórico v2.3 — no usar como especificación principal.** La autoridad vigente es la [ESPECIFICACIÓN MAESTRA v2.5](../v2.5/ESPECIFICACION_MAESTRA_v2.5.md) y su [registro de cambios](../v2.5/REGISTRO_DE_CONSOLIDACION_v2.5.md). Este fichero se conserva para trazabilidad.
+
 # K0: The Experiment — especificación vigente y autoridad (baseline v2.3)
 
 **Fecha:** 2026-11-08. **Estado:** especificación de diseño para implementación; NO software construido, balance validado, arte aprobado ni acceso LIVE autorizado. **Propósito:** impedir que 62 capítulos históricos se interpreten como 62 fuentes simultáneas de verdad.
