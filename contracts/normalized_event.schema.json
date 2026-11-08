@@ -20,7 +20,7 @@
   ],
   "properties": {
     "schemaVersion": {
-      "const": "2.0.0"
+      "const": "2.3.0"
     },
     "eventId": {
       "type": "string",
@@ -35,11 +35,8 @@
       "minLength": 1
     },
     "nationId": {
-      "enum": [
-        "micelios",
-        "runicos",
-        "ferrinos"
-      ]
+      "type": "string",
+      "format": "uuid"
     },
     "bindingId": {
       "type": "string",
@@ -94,6 +91,13 @@
     },
     "contributionId": {
       "type": "string"
+    },
+    "factionId": {
+      "enum": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
     }
   }
 }
