@@ -81,6 +81,31 @@ paths:
         '202': {description: Action accepted for authoritative worker}
         '403': {description: Insufficient role}
         '409': {$ref: '#/components/responses/Conflict'}
+  /api/v2/operator/seasons/{seasonId}/primary-return:
+    post:
+      tags: [operator]
+      summary: Verify same primary broadcaster and resume a departure pause before 7-day UTC deadline
+      description: >-
+        OWNER-only, serializable and idempotent. Verify same primary K0 account,
+        authorized original channel/binding revision and current CHAT_READ/LIVE_PRESENCE.
+        Must reach commit strictly before deadline; at equality ABORTED wins.
+        Never resume ABORTED or re-open CANCELLED competitions. No retroactive clocks.
+        Design-only: endpoint is not deployed.
+      security: [{operatorJwt: [owner]}]
+      parameters:
+        - {name: seasonId, in: path, required: true, schema: {type: string, format: uuid}}
+        - {name: Idempotency-Key, in: header, required: true, schema: {type: string, minLength: 12}}
+        - {name: If-Match, in: header, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/PrimaryBroadcasterReturn'}
+      responses:
+        '202': {description: Verified return command accepted idempotently; authoritative worker performs fenced commit}
+        '400': {description: Invalid account, insufficient capability evidence or inconsistent binding revision}
+        '403': {description: OWNER approval or scope missing}
+        '409': {description: Active incident missing, deadline elapsed or season already ABORTED}
   /health/live:
     get:
       responses: {'200': {description: Host responsive}}
@@ -148,7 +173,20 @@ components:
       required: [assignments]
       properties:
         assignments: {type: array, minItems: 3, maxItems: 3, items: {type: object}}
+    PrimaryBroadcasterReturn:
+      type: object
+      additionalProperties: false
+      required: [schemaVersion, incidentId, primaryAccountId, nationId, bindingId, bindingRevision, ownerReason]
+      properties:
+        schemaVersion: {const: '2.4.0'}
+        incidentId: {type: string, format: uuid}
+        primaryAccountId: {type: string, format: uuid}
+        nationId: {type: string, format: uuid}
+        bindingId: {type: string, format: uuid}
+        bindingRevision: {type: integer, minimum: 1}
+        ownerReason: {type: string, minLength: 3}
     OperatorAction:
+      description: General operational commands; RESUME cannot override an active primary departure pause or terminal ABORTED state.
       type: object
       required: [kind, reason]
       properties:
