@@ -58,7 +58,7 @@ En cada subsegmento se aplica orden:
 
 ## 5. API pública y privada propuesta
 
-La API base histórica es /api/v2. Las siguientes rutas amplían ese contrato; se consolidarán en un OpenAPI operativo generado a partir de DTO .NET antes de implementación.
+La configuración de creación de Season incluye broadcastMode=SINGLE_OPERATOR|MULTI_STREAMER. PREPARED rechaza MULTI_STREAMER si no hay tres primarios aceptados y distintos, junto con los tres bindings verificados. La API base histórica es /api/v2. Las siguientes rutas amplían ese contrato; se consolidarán en un OpenAPI operativo generado a partir de DTO .NET antes de implementación.
 
 | Endpoint | Actor | Comportamiento |
 |---|---|---|
