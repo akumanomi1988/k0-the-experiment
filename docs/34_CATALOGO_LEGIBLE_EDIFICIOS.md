@@ -1,4 +1,4 @@
-> **Regla vigente:**** los 10 edificios de Interestelar son fichas de epílogo visual; ningún edificio se construye después de SeasonCompleted. Las eras 1–12 siguen según catálogo. [CURRENT_SPEC](ESPECIFICACION.md).
+> **Regla vigente:** los 10 edificios de Interestelar son fichas de epílogo visual; ningún edificio se construye después de SeasonCompleted. Las eras 1–12 siguen según catálogo. [especificación vigente](ESPECIFICACION.md).
 
 # 34 — Catálogo legible de los 130 edificios básicos
 

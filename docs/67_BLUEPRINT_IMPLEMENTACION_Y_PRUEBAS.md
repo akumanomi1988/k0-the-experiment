@@ -68,7 +68,7 @@ Los SQL 001 (base), 002 (ejércitos/patrocinio) y 003 (multistreamer) documentan
 
 | Fase | Entregable verificable | Criterio de salida |
 |---|---|---|
-| **P0 — Contratos** | CURRENT_SPEC, validadores JSON y contratos TS/C#, migraciones reales, CI, matrices C-01–C-18 | Cero referencias huérfanas/ciclos de progreso; tests en verde |
+| **P0 — Contratos** | docs/ESPECIFICACION.md, validadores JSON y contratos TS/C#, migraciones reales, CI, matrices C-01–C-18 | Cero referencias huérfanas/ciclos de progreso; tests en verde |
 | **P1 — Simulación** | 3 naciones en memoria + PostgreSQL, 24 NPC cada una, 5 oficios, Paleolítico y todos sus hitos | 0 chat/0 oro completa primera era bajo LIVE sintético |
 | **P2 — Experiencia** | Overlays 360×640/640×360, K-0 textual, portales, escenas, Consejo/elecciones | 3 Browser Sources sincronizados por evento y reconnect |
 | **P3 — Remoto** | Invitación, OAuth de K0, roles, 3 streamers de 3 redes, tres bindings simulados | OBS de uno cae sin modificar economía/torneo ajeno |

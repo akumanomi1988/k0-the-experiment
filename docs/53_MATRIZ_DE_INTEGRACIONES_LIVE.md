@@ -1,4 +1,4 @@
-> **Regla vigente:**** se exige CapabilityEvidence por cada cuenta de los tres streamers. Tres cuentas del mismo proveedor son tres autorizaciones distintas. No hay crédito de oro real ni integración TikTok sin aprobación específica. [Especificación vigente](ESPECIFICACION.md).
+> **Regla vigente:** se exige CapabilityEvidence por cada cuenta de los tres streamers. Tres cuentas del mismo proveedor son tres autorizaciones distintas. No hay crédito de oro real ni integración TikTok sin aprobación específica. [Especificación vigente](ESPECIFICACION.md).
 
 # 53 — Matriz de proveedores LIVE y atribución de eventos
 
