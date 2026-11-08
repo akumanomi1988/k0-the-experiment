@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 56 — Modelo económico, cálculos y metodología de balance
 
 **Estado: CANDIDATE_BALANCE, NO VALIDADO.** Esta hoja de cálculo mental y reglas reproducibles no sustituyen un motor de simulación. Las cifras canónicas están en `data/ruleset.v2.json` y catálogos v2.2.

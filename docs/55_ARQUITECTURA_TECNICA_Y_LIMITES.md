@@ -1,4 +1,6 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** arquitectura autoritativa central .NET/PostgreSQL, tres streamers en equipos/redes diferentes y overlays OBS read-only; detalles de identidad, sincronía y falla en capítulos 63/64. SLO distingue ACK de mutación económica. [Especificación vigente](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda normativa v2.3 (multistreamer distribuido):** arquitectura autoritativa central .NET/PostgreSQL, tres streamers en equipos/redes diferentes y overlays OBS read-only; detalles de identidad, sincronía y falla en capítulos 63/64. SLO distingue ACK de mutación económica. [Especificación vigente](../ESPECIFICACION_MAESTRA.md).
 
 # 55 — Arquitectura técnica de producción propuesta
 

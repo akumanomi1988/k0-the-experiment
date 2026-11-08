@@ -1,4 +1,6 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** cada streamer puede emitir en horarios distintos; la economía LIVE/OFFLINE es local a su nación, y los torneos compartidos requieren tres LIVE simultáneos y congelación global en desconexión. El plan de 4h es ejemplo editorial, no reloj obligatorio. [Especificación vigente](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda normativa v2.3 (multistreamer distribuido):** cada streamer puede emitir en horarios distintos; la economía LIVE/OFFLINE es local a su nación, y los torneos compartidos requieren tres LIVE simultáneos y congelación global en desconexión. El plan de 4h es ejemplo editorial, no reloj obligatorio. [Especificación vigente](../ESPECIFICACION_MAESTRA.md).
 
 # 52 — Operación editorial, calendario de emisión y ritmo de espectáculo
 

@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 58 — Identidad de marca, narrativa pública y descubrimiento
 
 **Marca de trabajo:** **K0: The Experiment**. No existe confirmación de registro de marca, dominio o handles. Los identificadores técnicos `CHAOS` son históricos y no obligan a enseñar ese nombre al público.

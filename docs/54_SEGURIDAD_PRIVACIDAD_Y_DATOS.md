@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 54 — Seguridad, privacidad, abuso y retención
 
 **Estado: política técnica propuesta, no dictamen jurídico.** El producto puede recibir IDs estables, mensajes, nombres y eventos monetarios. No almacenar texto de chat íntegro sin necesidad operativa o base legal aplicable.

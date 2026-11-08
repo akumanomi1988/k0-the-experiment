@@ -1,4 +1,6 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** se exige CapabilityEvidence por cada cuenta de los tres streamers. Tres cuentas del mismo proveedor son tres autorizaciones distintas. No hay crédito de oro real ni integración TikTok sin aprobación específica. [Especificación vigente](CURRENT_SPEC.md).
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
+> **Enmienda normativa v2.3 (multistreamer distribuido):** se exige CapabilityEvidence por cada cuenta de los tres streamers. Tres cuentas del mismo proveedor son tres autorizaciones distintas. No hay crédito de oro real ni integración TikTok sin aprobación específica. [Especificación vigente](../ESPECIFICACION_MAESTRA.md).
 
 # 53 — Matriz de proveedores LIVE y atribución de eventos
 

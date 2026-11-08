@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 51 — Generación de mapa, distribución y simulación visual
 
 **Objetivo:** que todos los escenarios produzcan un mundo estable, legible y reproducible sin convertir pathfinding en lógica económica.
