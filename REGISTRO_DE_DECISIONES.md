@@ -1,6 +1,6 @@
-# K0 / Project CHAOS — Registro de consolidación y excepciones v2.5
+# Registro de decisiones, conflictos y excepciones
 
-**Este documento hace auditable el merge.** No es una promesa de arte terminado, balance demostrado ni permiso de proveedor. Cada enmienda indica la fuente anterior, la interpretación vigente, el impacto y el trabajo de verificación pendiente. La [especificación maestra](ESPECIFICACION_MAESTRA_v2.5.md) es normativa; los [anexos](fuentes/) conservan todos los textos y las 92 decisiones sin borrado.
+**Este documento hace auditable el merge.** No es una promesa de arte terminado, balance demostrado ni permiso de proveedor. Cada enmienda indica la fuente anterior, la interpretación vigente, el impacto y el trabajo de verificación pendiente. La [especificación maestra](ESPECIFICACION_MAESTRA.md) es normativa; los [capítulos](docs/) conservan todos los textos y las 92 decisiones sin borrado.
 
 ## A. Cambios consolidados que sustituyen reglas anteriores
 
@@ -37,15 +37,15 @@
 
 ## B. Decisiones confirmadas y preservadas sin cambio mecánico
 
-Las 92 decisiones se preservan íntegramente en [registro](fuentes/DECISIONES_1_92.md) y en [JSON original](../data/legacy_user_decisions_1_92.json). Se mantienen: tres naciones, NPC sin público, fin al llegar primero a era final, profesiones permanentes, actividad 2h, historial entre temporadas, hambre sin muerte, almacenes con límite, obras automáticas vs estratégicas votadas, tres candidatos NPC, narrador sarcástico neutral, torneos anunciados, biomas sin ventajas, arte pixel retro y no microservicios en MVP. Los cambios históricos registrados REPLACED/PARTIALLY_REPLACED no se interpretan como norma actual.
+Las 92 decisiones se preservan íntegramente en [registro original](data/legacy_user_decisions_1_92.json) y en [JSON original](data/legacy_user_decisions_1_92.json). Se mantienen: tres naciones, NPC sin público, fin al llegar primero a era final, profesiones permanentes, actividad 2h, historial entre temporadas, hambre sin muerte, almacenes con límite, obras automáticas vs estratégicas votadas, tres candidatos NPC, narrador sarcástico neutral, torneos anunciados, biomas sin ventajas, arte pixel retro y no microservicios en MVP. Los cambios históricos registrados REPLACED/PARTIALLY_REPLACED no se interpretan como norma actual.
 
-Los capítulos [18](../docs/18_DECISIONES_DE_BASE_CORREGIDAS.md), [41](../docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA_v2.2.md) y [auditoría C-01..C-18](../audit/AUDITORIA_K0_PROJECT_CHAOS_V2_2.md) se conservan; no todos sus textos son actuales, pero constituyen la justificación documental.
+Los capítulos [18](docs/18_DECISIONES_DE_BASE_CORREGIDAS.md), [41](docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA.md) y [auditoría C-01..C-18](audit/AUDITORIA_K0_PROJECT_CHAOS.md) se conservan; no todos sus textos son actuales, pero constituyen la justificación documental.
 
 ## C. Estado real de artefactos después del merge
 
 | Clase | Situación | Qué significa |
 |---|---|---|
-| 67 capítulos + 92 decisiones | Copia íntegra preservada en v2.5/fuentes | Cobertura histórica completa de definiciones y trade-offs |
+| 67 capítulos + 92 decisiones | Los 67 capítulos se conservan en docs/; las revisiones anteriores están en Git | Cobertura histórica completa de definiciones y trade-offs |
 | Especificación maestra v2.5 | Consolidada y normativa en lo explícito | Se puede diseñar/planificar sin acudir a 4 versiones contradictorias |
 | Catálogos JSON v2/v2.2/v2.3 | Los actuales siguen siendo datos de referencia | Evitar renombrarlos engañosamente sin versión de esquema o migración |
 | SQL 001/002/003 | Diseños, no cadena de migraciones ejecutadas | Integrar/versionar bajo código y PostgreSQL real |
@@ -66,7 +66,7 @@ Los capítulos [18](../docs/18_DECISIONES_DE_BASE_CORREGIDAS.md), [41](../docs/4
 6. **Migraciones y esquemas:** SQL 001/002/003 sigue siendo referencia, no garantía que se haya ejecutado; uniones, CHECK y contratos de proveedor deben comprobarse con DB.
 7. **Producto SaaS futuro:** pricing, tenancy, SLA y derecho comercial no son necesarios para probar el producto propio; no deben presentarse como desarrollados.
 
-## E. Procedimiento de cambios posteriores a v2.5
+## E. Procedimiento de cambios documentales
 
 Todo PR de cambio de norma debe incluir: identificador V25-xx / decisión 1–92 impactada; antes/después; impacto en gameplay, esquema, renderer, integraciones, seguridad, UX y arte; referencias del catálogo; migración si hay datos vivos; escenarios y pruebas; versión de reglas/hash y compatibilidad de temporada. Si es una mejora que depende de datos reales, estado PROPOSED/PENDING_VALIDATION hasta obtenerlos. Nunca modificar en caliente una temporada RUNNING por actualizar el Markdown.
 
