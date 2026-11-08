@@ -1,3 +1,5 @@
+> **Enmienda normativa v2.3 (multistreamer distribuido):** arquitectura autoritativa central .NET/PostgreSQL, tres streamers en equipos/redes diferentes y overlays OBS read-only; detalles de identidad, sincronía y falla en capítulos 63/64. SLO distingue ACK de mutación económica. [Especificación vigente](CURRENT_SPEC.md).
+
 # 55 — Arquitectura técnica de producción propuesta
 
 **No es código ni infraestructura creada.** Se mantienen las tecnologías ya discutidas: motor autoritativo .NET/C#, PostgreSQL como almacenamiento transaccional, entrada por adaptadores de streaming, API/SignalR de solo proyección, cliente Phaser/React para OBS.
@@ -35,4 +37,4 @@ Un backend .NET modular + worker de simulación + PostgreSQL gestionado + UI ove
 
 ## SLO propuestos, no logrados
 
-Tick de 5s con CPU interna objetivo de 50 ms por nación a carga de referencia; P95 de Inbox→aplicación <1s; P95 delta visible <2s; escena 30 FPS; RPO/RTO solo se fijan tras ensayar backups y recuperación. La alta disponibilidad de un proveedor no se presume. Meter 100k ciudadanos en DB no implica 100k entidades renderizadas.
+Tick de 5s con CPU interna objetivo de 50 ms por nación a carga de referencia; P95 de Inbox→ACK validado <1s como objetivo candidato; aplicación económica en tick de hasta 5s; P95 delta visible <2s; escena 30 FPS; RPO/RTO solo se fijan tras ensayar backups y recuperación. La alta disponibilidad de un proveedor no se presume. Meter 100k ciudadanos en DB no implica 100k entidades renderizadas.
