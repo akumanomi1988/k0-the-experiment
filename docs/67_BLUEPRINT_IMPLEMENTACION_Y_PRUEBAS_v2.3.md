@@ -39,6 +39,8 @@ No se pretende construir de golpe: la evidencia de cierre se acumula por gates y
     /docs                                  # specs y ADR
     /.github/workflows                    # CI build/test/contract/format
 
+El manifiesto congelable de entradas está en [data/content_manifest.v2.3.json](../data/content_manifest.v2.3.json). Sus hashes se computan en el build, no se fingen en documentos.
+
 Un cambio de juego empieza en contrato/manifest/test; lógica y UI solo consumen esas fuentes. No duplicar umbrales a mano entre servidor, TS y JSON.
 
 ## 4. Modelo y algoritmos mínimos de producción
