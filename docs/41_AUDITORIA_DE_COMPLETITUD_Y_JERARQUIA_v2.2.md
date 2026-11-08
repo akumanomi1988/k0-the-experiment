@@ -1,3 +1,5 @@
+> **Nota de vigencia:** auditoría histórica de revisión v2.2. Las enmiendas posteriores y el diseño multistreamer están registrados en [CURRENT_SPEC v2.3](CURRENT_SPEC.md), [arquitectura distribuida](63_ARQUITECTURA_MULTISTREAMER_v2.3.md) y [blueprint QA](67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS_v2.3.md). No asumir que los gates se han validado.
+
 # 41 — Auditoría de completitud, decisiones y jerarquía v2.2
 
 **Estado: REVISIÓN DOCUMENTAL, NO VERIFICACIÓN DE PRODUCTO.** Este archivo es el índice de riesgo vigente. No debe publicarse la expresión «100 % terminado», «balance certificado» o «arte final» sin evidencia. K0: The Experiment es el nombre público de trabajo; Project CHAOS permanece en identificadores heredados.
