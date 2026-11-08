@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "2.3.0",
+  "manifestId": "k0-design-v2.3",
+  "status": "DESIGN_CANDIDATE_NOT_HASHED_OR_RELEASED",
+  "description": "Declarative list of referenced catalogs. The build computes canonical hashes; values are not claimed before compilation.",
+  "canonicalization": {
+    "algorithm": "RFC8785-JCS-for-each-JSON-file",
+    "encoding": "UTF-8",
+    "fileOrder": "lexicographic_path",
+    "manifestDigest": "SHA256 concatenation of path + LF + hex(SHA256(canonical JSON bytes)) + LF for all season scope files in lexicographic order",
+    "rulesetHash": "SHA256 canonical JSON bytes of data/ruleset.v2.json",
+    "hashingExcludes": "generated digest fields and explanatory documentation outside listed catalogs"
+  },
+  "files": [
+    {
+      "path": "data/ruleset.v2.json",
+      "kind": "rules",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/eras.v2.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/factions.v2.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/professions.v2.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/skills.v2.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/buildings.v2.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/technologies.v2.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/milestones.v2.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/era_missions.v2.3.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/missions.v2.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/strategic_projects.v2.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/combat_units.v2.2.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/events.v2.json",
+      "kind": "gameplay",
+      "scope": "season",
+      "required": true
+    },
+    {
+      "path": "data/cosmetic_sponsorship.v2.2.json",
+      "kind": "cosmetic",
+      "scope": "future_gated",
+      "required": true
+    },
+    {
+      "path": "data/art_spec.v2.json",
+      "kind": "visual",
+      "scope": "release",
+      "required": true
+    }
+  ],
+  "deploymentGates": [
+    "catalog_contract_validation",
+    "season_mission_engine_implemented",
+    "full_season_balance_simulation",
+    "OBS_cross_device_test",
+    "provider_authorization_per_channel"
+  ],
+  "notes": "ContentHash in Season is emitted only after validated build artifact is frozen. Never change contents of a RUNNING season without migration and explicit audit."
+}
