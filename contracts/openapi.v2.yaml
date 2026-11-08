@@ -131,9 +131,10 @@ components:
         eventCue: {type: string}
     CreateSeason:
       type: object
-      required: [campaignId, rulesetHash, contentHash, seed]
+      required: [campaignId, rulesetHash, contentHash, seed, broadcastMode]
       properties:
-        campaignId: {type: string}
+        campaignId: {type: string, format: uuid}
+        broadcastMode: {type: string, enum: [SINGLE_OPERATOR,MULTI_STREAMER]}
         rulesetHash: {type: string, pattern: '^[a-f0-9]{64}$'}
         contentHash: {type: string, pattern: '^[a-f0-9]{64}$'}
         seed: {type: string, pattern: '^[a-f0-9]{64}$'}
