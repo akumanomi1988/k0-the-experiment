@@ -1,5 +1,7 @@
 # 62 — Biblia de gobernantes NPC y evolución de sus vestuarios
 
+**Gate de entrega confirmado:** los nueve gobernantes y su evolución visual a través de las **doce eras jugables**, y el epílogo, deben contar con assets reales aprobados antes del primer piloto. Las fichas descriptivas no son sprites, retratos ni audio entregados.
+
 **Estado: diseño narrativo y visual, no retratos aprobados.** Los 9 candidatos recurrentes son personajes del universo, no ciudadanos reales. Cambian ropas y herramientas entre eras pero preservan rostro/silueta. Solo existe un gobernante activo por nación y era jugable, elegido mediante voto colectivo.
 
 ## Micelios

@@ -1,5 +1,7 @@
 # 39 — Registro de cierre documental y validaciones externas
 
+**Cierre de decisiones del propietario:** veinte respuestas confirmadas (8-11-2026), consolidadas en `docs/ESPECIFICACION.md` y `data/ruleset.json`. Se han cerrado las preferencias funcionales de duración 45–90 días, cupo nacional 2.500, mononación K0, fallback de voz y alcance de lanzamiento. **No** cerrar las evidencias externas de arte, proveedores, balance, RGPD o presupuesto con afirmaciones documentales.
+
 **Estado:** registro histórico v2.1 ampliado por `docs/41` y `docs/60` de v2.2; diseño, no validación de implementación. La definición es suficientemente detallada para orientar implementación, pero no se declara producto al 100 % probado. Se conserva distinción entre decisiones cerradas, supuestos de balance y hechos externos.
 
 ## Diseñado y expresado documentalmente
@@ -22,7 +24,7 @@ El esquema de canales admite tres cuentas del mismo proveedor, distintas platafo
 
 - Aprobación de los textos que reformulan decisiones previas (documento 18).
 - Identidad visual final de las tres especies y del presentador, suficiente para un prototipo artístico.
-- Declaración de proveedor/cuentas que se probarán primero.
+- **Proveedor decidido:** YouTube Live primero, siempre sujeto a permisos y pruebas de cuenta y después de completar doce eras sin integración real.
 - Confirmación legal y técnica de las capacidades de chat previstas.
 - Revisión de hipótesis de balance con simulación real antes de prometer calendarios de temporada.
 

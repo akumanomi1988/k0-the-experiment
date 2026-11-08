@@ -1,5 +1,7 @@
 # 23 — Glosario, jerarquía de decisiones y alcance documental
 
+**Fuente de verdad vigente:** `docs/ESPECIFICACION.md` incluye las 20 decisiones explícitas del propietario. El ruleset fija cuota humana nacional de 2.500, la identidad K0 fija una sola nación por temporada y la duración objetivo es 45–90 días. Este glosario no puede revivir instrucciones históricas contrarias.
+
 **Estado:** definición documental v2.1. No se propone código ni una nueva mecánica. Fuente principal: reglas históricas 1–92, documentos 01–22 de v2.0 y catálogos de `data/`.
 
 ## Diccionario obligatorio
@@ -41,4 +43,4 @@ Una mecánica se considera documentada cuando identifica sujeto, disparador, ent
 
 ## Fuera de alcance de esta fase
 
-No crear repositorios, backend, cliente, scripts Python, tests ejecutables, Docker Compose, CI/CD ni configuraciones con secretos. Es válido conservar SQL como **modelo de datos propuesto** y JSON/YAML de contratos y catálogos como **definición declarativa**, sin ejecutar ninguno. La documentación no se debe confundir con una aplicación funcional.
+**La fase actual requiere implementar y probar backend, cliente, scripts, tests y CI/CD**, sin incluir secretos en el repositorio. Git registra las revisiones; no hay documentos duplicados ni nombres versionados. Es válido conservar SQL como **modelo de datos propuesto** y JSON/YAML de contratos y catálogos como **definición declarativa**, sin ejecutar ninguno. La documentación no se debe confundir con una aplicación funcional.

@@ -1,10 +1,12 @@
 > **Regla vigente:**** cada streamer puede emitir en horarios distintos; la economía LIVE/OFFLINE es local a su nación, y los torneos compartidos requieren tres LIVE simultáneos y congelación global en desconexión. El plan de 4h es ejemplo editorial, no reloj obligatorio. [Especificación vigente](ESPECIFICACION.md).
 
+**Temporada objetivo de 45–90 días naturales.** El arranque multistreamer requiere tres canales autorizados, **no** tres directos simultáneos. Un torneo pausado por ausencia de un LIVE vence a las **72 h UTC** sin sanciones. El abandono definitivo confirmado congela toda la temporada y provoca cancelación a los **7 días UTC**.
+
 # 52 — Operación editorial, calendario de emisión y ritmo de espectáculo
 
 ## Objetivo
 
-La simulación puede existir offline, pero el espectáculo requiere sesiones programadas. El calendario editorial debe proteger la equidad de las tres naciones y no prometer actividad LIVE cuando no está confirmada.
+La simulación puede existir offline, pero el espectáculo requiere sesiones programadas. Se permite que una nación acumule más horas LIVE y avance más; no se compensan horas de emisión. Mostrar horas LIVE por nación y no prometer actividad cuando no está confirmada.
 
 ## Secuencia recomendada de una sesión de cuatro horas
 
