@@ -1,0 +1,332 @@
+{
+  "schemaVersion": "2.3.0",
+  "rulesetId": "chaos-default-2026-11",
+  "status": "DESIGN_BASELINE_CANDIDATE_NOT_IMPLEMENTED",
+  "sourcePriority": [
+    "latest-explicit-user-message",
+    "docs/ESPECIFICACION.md",
+    "confirmed-user-decisions-1-92-except-traced-overrides",
+    "active-structured-catalogs",
+    "historical-git-commits"
+  ],
+  "nations": {
+    "count": 3,
+    "factionIds": [
+      "micelios",
+      "runicos",
+      "ferrinos"
+    ],
+    "sameCompetitiveStart": true,
+    "speciesStatAdvantages": false,
+    "maxActiveBindingsPerNation": 3,
+    "bindingAssignment": "exclusive_per_season_channel",
+    "channelNamespace": "provider+providerChannelId",
+    "allowOneProviderMultipleChannels": true,
+    "allowMixedProviders": true,
+    "allowNoLiveProviderSimulation": true,
+    "clockAuthorityBindingsPerNation": 1
+  },
+  "simulation": {
+    "tickSeconds": 5,
+    "resourceScale": 1000,
+    "basisPoints": 10000,
+    "liveEconomyBp": 10000,
+    "offlineEconomyBp": 2000,
+    "activityWindowSeconds": 7200,
+    "emitLogicalSnapshotSeconds": 15,
+    "emitNationDeltaMinMs": 500,
+    "offlineCatchupMaxDays": 7,
+    "longGapPolicy": "simulate_exact_up_to_seven_days_then_pause_needs_operator_review",
+    "clockZone": "UTC",
+    "activeSimPenaltyOnlyOnLive": true,
+    "rng": "sha256-counter-64-v1",
+    "partitionOrder": "persisted_ingest_seq_then_partitioned_time_boundaries",
+    "rounding": "floor_with_persistent_integer_remainders",
+    "economyFactorAppliedOnce": true,
+    "competitionLiveClock": "global_three_nations_live_confirmed"
+  },
+  "citizens": {
+    "startingNpcPopulation": 24,
+    "maximumNpcPopulation": 120,
+    "initialNpcAllocation": {
+      "food": 7,
+      "wood": 5,
+      "mine": 4,
+      "build": 4,
+      "research": 4
+    },
+    "maxRegisteredHumans": 100000,
+    "activeHumanWorkersSoftCap": 2500,
+    "humanContributionCurve": {
+      "first": 100,
+      "firstBp": 10000,
+      "last": 2500,
+      "lastBp": 2500,
+      "afterLastBp": 0
+    },
+    "npcBasePerformanceBp": 10000,
+    "humanBasePerformanceBp": 10000,
+    "npcGrowthPerEra": 2,
+    "humanActivityRenewalCooldownSeconds": 60,
+    "xpPerEffectiveWorkMinute": 6,
+    "xpLevelFormula": "250*(level-1)^2",
+    "maxLevel": 20,
+    "talentLevels": [
+      3,
+      7,
+      12
+    ],
+    "talentPointsPerTier": 1,
+    "highestIndividualProductivityBp": 11800,
+    "activeHumanWorkersSoftCapScope": "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE",
+    "humanQuotaAssignment": "deterministic_hash_rotation_per_profession_live_600s",
+    "humanWorkXpEligibility": "accepted_effective_work_only"
+  },
+  "resources": {
+    "ordinary": [
+      "food",
+      "wood",
+      "stone",
+      "ore",
+      "knowledge"
+    ],
+    "gold": "gold",
+    "stockInitial": {
+      "food": 0,
+      "wood": 0,
+      "stone": 0,
+      "ore": 0,
+      "knowledge": 0,
+      "gold": 0
+    },
+    "capacityInitial": {
+      "food": 3500,
+      "wood": 3500,
+      "stone": 3500,
+      "ore": 3500,
+      "knowledge": 15000
+    },
+    "initialNaturalSites": true,
+    "produceNotOverCapacity": true,
+    "foodConsumedPerNpcUnitPerMinuteMilli": 150,
+    "foodShortageProductionBp": 6500,
+    "foodUpkeepRealTimeSegmented": true,
+    "foodUpkeepNpcOnlyPlusActiveHumans": true,
+    "resourceNegativeAllowed": false,
+    "goldCreditOrigin": "verified_approved_platform_contribution_only",
+    "goldNotTradable": true,
+    "goldNotConvertibleToRealMoney": true,
+    "goldDebtLedger": true,
+    "goldPrestigeRemainderMultiplier": 1,
+    "foodConsumedPerEffectiveHumanWorkerMinuteMilli": 150,
+    "maxHumanFoodUpkeepEquivalentWorkers": 50
+  },
+  "baseOutputMilliPerWorkerMinute": {
+    "food": 2400,
+    "wood": 1800,
+    "stone": 1400,
+    "ore": 650,
+    "knowledge": 1200,
+    "buildWork": 1200
+  },
+  "production": {
+    "oreAvailableStartingEraIndex": 3,
+    "mineOreWorkerShareBp": 2500,
+    "oldBuildingProductivityBp": 8000,
+    "productionBonusStackCapBp": 15000,
+    "governmentEconomyBp": 300,
+    "governmentResearchBp": 300,
+    "governmentDefenseBp": 500,
+    "priorityBonusBp": 800,
+    "priorityDurationLiveSeconds": 5400,
+    "perEraFacilityBoostBp": 300,
+    "maxFacilityBoostBp": 3000
+  },
+  "buildings": {
+    "basicAutoPlannerIntervalSeconds": 60,
+    "maxAutoQueuedPerNation": 2,
+    "maxConcurrentWorks": 5,
+    "goldRequiredForFreePath": false,
+    "constructionStagesBp": [
+      1500,
+      4000,
+      7000,
+      10000
+    ],
+    "capInitialPopulationWithoutHousing": 24,
+    "npcGrowWhenFoodSustainableAndHousing": true,
+    "npcGrowOnePerLiveHours": 4,
+    "npcGrowOffline": false,
+    "minimumNatureWorksites": 1,
+    "footprintProjection": "32x16_tile_sprites",
+    "mapInitialWidth": 48,
+    "mapInitialHeight": 48,
+    "expandTileMarginPerEra": 8,
+    "mapMaxWidth": 256,
+    "mapMaxHeight": 256,
+    "workshopResearchRequireEraTech": true
+  },
+  "progression": {
+    "eras": [
+      "paleolithic",
+      "neolithic",
+      "copper",
+      "bronze",
+      "iron",
+      "antiquity",
+      "medieval",
+      "renaissance",
+      "industrial",
+      "modern",
+      "digital",
+      "space",
+      "interstellar"
+    ],
+    "historyPointsPerEra": 100,
+    "milestonesPerEra": 5,
+    "pointsPerMilestone": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "milestoneTriggerKinds": [
+      "food_production",
+      "materials_production",
+      "knowledge_production",
+      "signature_basic_building_completed",
+      "mission_completed"
+    ],
+    "milestoneOneTimeOnly": true,
+    "offlineEraAdvance": false,
+    "seasonWinEvent": "enter_final_era_committed",
+    "finalEraIndex": 13,
+    "allowEraAdvanceOnlyLiveNation": true,
+    "averageEraTargetDays": 2.5,
+    "raceNoGoldInfluence": true,
+    "eraMissionCatalog": "era_missions.v2.3.json",
+    "finalEraGameplayEnabled": false
+  },
+  "governments": {
+    "electionLiveSeconds": 3600,
+    "runoffLiveSeconds": 180,
+    "priorityVoteLiveSeconds": 300,
+    "priorityStart": "after_election_result",
+    "ballots": "last_valid_vote_wins",
+    "noVoteGovernment": "uniform_seeded_random",
+    "persistentTie": "uniform_seeded_random_among_tied",
+    "noVotePriority": "seeded_rotation",
+    "priorityTie": "uniform_seeded_random_among_tied",
+    "governorCannotOverrideVotes": true
+  },
+  "strategic": {
+    "voteLiveSeconds": 600,
+    "candidateCount": 3,
+    "candidateSelection": "three_distinct_unbuilt_affordable_projects_current_era",
+    "maxConcurrentCouncilPerNation": 1,
+    "hold": "componentwise_max_cost_vector",
+    "goldEffects": "cosmetic_prestige_only",
+    "voteMode": "last_valid_before_close",
+    "zeroBallots": "uniform_seeded_random_three",
+    "tie": "uniform_seeded_random_among_tied",
+    "costPayment": "atomic_full_on_approval",
+    "cancelReleasesHold": true,
+    "wonderClaim": "global_atomic_first_completed",
+    "requiresGoldForCouncilOrWonders": false,
+    "goldPrestigeOnlyAndSeparateCosmeticSponsorship": true,
+    "cosmeticSponsorshipCatalog": "cosmetic_sponsorship.v2.2.json",
+    "oneCouncilPerNationPerPlayableEra": true
+  },
+  "tournaments": {
+    "kind": "triangular_rps",
+    "scheduledOnly": true,
+    "requireAllThreeNationsLive": true,
+    "roundCount": 5,
+    "extraTieBreakerRounds": 2,
+    "roundVoteLiveSeconds": 90,
+    "roundBreakLiveSeconds": 30,
+    "rpsOptions": [
+      "rock",
+      "paper",
+      "scissors"
+    ],
+    "rpsBallotMode": "first_valid_irrevocable",
+    "pairWinPoints": 2,
+    "pairDrawPoints": 1,
+    "pairLossPoints": 0,
+    "zeroVoteMove": "pass",
+    "maxMaterialLossPercent": 2,
+    "territoryPenaltyActiveSeconds": 1800,
+    "territoryMaxNationOutputShareBp": 1000,
+    "drawAfterExtraRounds": "joint_winners_no_penalty",
+    "noGoldRewardsOrLosses": true,
+    "allowAutomaticAttacks": false,
+    "automatedBattleCatalog": "combat_units.v2.2.json",
+    "automatedBattleScheduledOnly": true,
+    "automatedBattleCooldownLiveHours": 24,
+    "automatedBattleNoGoldNoPermaLoss": true
+  },
+  "missions": {
+    "timezone": "UTC",
+    "dailyWindowSeconds": 86400,
+    "weeklyWindowSeconds": 604800,
+    "dailyRewardResource": "food",
+    "weeklyRewardResource": "wood",
+    "missionMaxClaimPerNationPeriod": 1,
+    "allowRepeatableMilestonePoints": false,
+    "catchupMissionRewards": false
+  },
+  "presentation": {
+    "artStyle": "retro_pixel_art_low_resolution_oblique_2_to_1",
+    "tileWidthPx": 32,
+    "tileHeightPx": 16,
+    "characterCanvasPx": [
+      16,
+      24
+    ],
+    "sourceResolutionVerticalPx": [
+      360,
+      640
+    ],
+    "sourceResolutionHorizontalPx": [
+      640,
+      360
+    ],
+    "renderTargetVerticalPx": [
+      1080,
+      1920
+    ],
+    "renderTargetHorizontalPx": [
+      1920,
+      1080
+    ],
+    "nearestNeighbor": true,
+    "fpsTarget": 30,
+    "visibleCharacterTargetVertical": 45,
+    "visibleCharacterTargetHorizontal": 90,
+    "cosmeticBiomesOnly": true,
+    "approvedFinalSprites": false,
+    "combatUnitSkinsThreeFactions": true
+  },
+  "operator": {
+    "fullLiveUnattendedAllowed": false,
+    "commandReplayAntiFraud": true,
+    "maximumInboundMessageAgeSeconds": 600,
+    "moderateDisplayNames": true,
+    "k0MayChangeAuthoritativeState": false,
+    "monetizationDefaultEnabled": false,
+    "perSourceOutputVisibility": "same_source_by_default",
+    "allowCrossPlatformOverlayOnlyIfPolicyApproved": true
+  },
+  "season": {
+    "startState": "DRAFT",
+    "endState": "COMPLETED",
+    "noCarryEconomicResources": true,
+    "keepAchievements": true,
+    "keepStats": true,
+    "keepHistory": true,
+    "goldToPrestigeNoBonus": true,
+    "tieOrdering": "database_committed_event_sequence_then_nation_id"
+  }
+}

@@ -1,6 +1,6 @@
 # 37 — Profesiones, habilidades y gobiernos: catálogo legible
 
-**Estado:** derivación de las definiciones canónicas `data/professions.v2.json`, `data/skills.v2.json`, `data/governments.v2.json` y `data/eras.v2.json`. La profesión se elige una única vez por temporada; el oficio cambia su denominación estética según la era, sin cambiar de familia funcional.
+**Estado:** derivación de las definiciones canónicas `data/professions.json`, `data/skills.json`, `data/governments.json` y `data/eras.json`. La profesión se elige una única vez por temporada; el oficio cambia su denominación estética según la era, sin cambiar de familia funcional.
 
 ## Etiquetas de oficio por época
 

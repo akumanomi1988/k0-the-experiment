@@ -1,0 +1,85 @@
+{
+  "status": "V2_BASELINE",
+  "commands": [
+    {
+      "id": "join",
+      "syntax": "!join",
+      "arguments": [],
+      "precondition": "authenticated_provider_identity",
+      "effect": "citizen_created_or_returned",
+      "repeatSemantics": "IDEMPOTENT_PER_EVENT"
+    },
+    {
+      "id": "work",
+      "syntax": "!work <food|wood|mine|build|research>",
+      "arguments": [
+        "profession"
+      ],
+      "precondition": "registered_citizen",
+      "effect": "choose_once_or_valid_same_reactivation",
+      "repeatSemantics": "60_SEC_COOLDOWN"
+    },
+    {
+      "id": "active",
+      "syntax": "!active",
+      "arguments": [],
+      "precondition": "registered_with_profession",
+      "effect": "active_until_utc_plus_7200s",
+      "repeatSemantics": "60_SEC_COOLDOWN"
+    },
+    {
+      "id": "skill",
+      "syntax": "!skill <id>",
+      "arguments": [
+        "skillId"
+      ],
+      "precondition": "registered_with_profession",
+      "effect": "lock_current_tier_option",
+      "repeatSemantics": "IDEMPOTENT"
+    },
+    {
+      "id": "build",
+      "syntax": "!build <projectId>",
+      "arguments": [
+        "projectId"
+      ],
+      "precondition": "eligible_during_strategic_vote",
+      "effect": "replace_ballot",
+      "repeatSemantics": "LAST_VALID"
+    },
+    {
+      "id": "gov",
+      "syntax": "!gov <economy|military|science>",
+      "arguments": [
+        "government"
+      ],
+      "precondition": "eligible_during_government_vote",
+      "effect": "replace_ballot",
+      "repeatSemantics": "LAST_VALID"
+    },
+    {
+      "id": "priority",
+      "syntax": "!priority <economy|science|defense>",
+      "arguments": [
+        "priority"
+      ],
+      "precondition": "eligible_during_priority_vote",
+      "effect": "replace_ballot",
+      "repeatSemantics": "LAST_VALID"
+    },
+    {
+      "id": "rps",
+      "syntax": "!rps <rock|paper|scissors>",
+      "arguments": [
+        "move"
+      ],
+      "precondition": "eligible_during_rps_round",
+      "effect": "ballot_first_valid_only",
+      "repeatSemantics": "FIRST_VALID"
+    }
+  ],
+  "inputNormalization": "NFKC, casefold for command token and enums only; preserve usernames as provider identity; single ASCII space separating tokens; no prefix overlap; reject extra args",
+  "maxCommandBytesUtf8": 160,
+  "idempotency": "provider+channel+event-id globally, and citizen+vote-id as appropriate",
+  "providerWriteBack": "best effort never authoritative"
+}

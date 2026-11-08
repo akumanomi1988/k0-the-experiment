@@ -5,7 +5,7 @@
 ## Matriz de sprites requerida
 
 - **Ciudadanos:** 3 facciones × 13 eras × 5 profesiones = 195 combinaciones visuales; 4 orientaciones por combinación. Las herramientas evolucionan según profesión y época sin alterar colisiones.
-- **Animaciones de ciudadano:** 9 acciones (`idle`, `walk`, `gather`, `haul`, `build`, `research`, `celebrate`, `rest`, `react`) con número de cuadros y FPS fijado en `art_spec.v2.json`.
+- **Animaciones de ciudadano:** 9 acciones (`idle`, `walk`, `gather`, `haul`, `build`, `research`, `celebrate`, `rest`, `react`) con número de cuadros y FPS fijado en `art_spec.json`.
 - **Gobernantes:** 9 personajes base recurrentes (3 orientaciones por facción) con 13 variaciones de vestuario = 117 diseños de apariencia; reutilizar rigs y siluetas.
 - **Edificios básicos:** 130 definiciones × 3 facciones = 390 skins de edificios, con cuatro etapas de construcción (umbrales oficiales).
 - **Proyectos estratégicos:** 39 × 3 facciones = 117 skins si una pieza global requiere variante local; revisar la política de unicidad antes de producción.
@@ -41,4 +41,4 @@ La cifra de skins es una cobertura conceptual, **no** una promesa de 700 archivo
 
 ## Ampliación v2.2: ejército y 13 maravillas individualizadas
 
-El catálogo de combate requiere **39 formas rol/era × 3 culturas = 117 skins** adicionales, con tres siluetas de rol definidas y reutilización de rig. Las trece maravillas tienen nombres propios y motivos visuales exclusivos en `docs/61_CATALOGO_ARTISTICO_DE_EDIFICIOS_Y_MARAVILLAS_v2.2.md`. No se cuentan como PNG entregados o aprobados.
+El catálogo de combate requiere **39 formas rol/era × 3 culturas = 117 skins** adicionales, con tres siluetas de rol definidas y reutilización de rig. Las trece maravillas tienen nombres propios y motivos visuales exclusivos en `docs/61_CATALOGO_ARTISTICO_DE_EDIFICIOS_Y_MARAVILLAS.md`. No se cuentan como PNG entregados o aprobados.

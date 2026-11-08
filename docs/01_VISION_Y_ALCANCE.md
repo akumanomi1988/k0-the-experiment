@@ -1,4 +1,4 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** tres streamers pueden competir desde tres equipos/redes distintos; servidor K0 central y overlays OBS independientes; un canal por nación, mismas reglas sin instalación del motor local. [Especificación vigente](CURRENT_SPEC.md).
+> **Regla vigente:**** tres streamers pueden competir desde tres equipos/redes distintos; servidor K0 central y overlays OBS independientes; un canal por nación, mismas reglas sin instalación del motor local. [Especificación vigente](ESPECIFICACION.md).
 
 # 01 — Producto, alcance y principios no negociables (v2.0)
 
@@ -19,7 +19,7 @@ K0: The Experiment (título público de trabajo; antes Project CHAOS) es un jueg
 ## Cierre de definición de v2.0 y revisión v2.2 y revisión v2.2
 Valores desconocidos de balance y reglas ambiguas pasan a convertirse en **defaults de producto v2.0**. Son decisiones técnicas/de producto tomadas en virtud de la autorización del usuario de este turno, *no respuestas históricas atribuidas al usuario*. Se pueden versionar antes de abrir una temporada; nunca alterarse a mitad de temporada sin migración explícita y auditoría.
 
-No existe en este documento ninguna autorización implícita para extraer datos con APIs no oficiales ni para simular un beneficio monetario. Tampoco confundir especificación de sprites con haberlos creado; `art_spec.v2.json` es especificación, y las integraciones LIVE reales se mantienen bloqueadas hasta pruebas verificables.
+No existe en este documento ninguna autorización implícita para extraer datos con APIs no oficiales ni para simular un beneficio monetario. Tampoco confundir especificación de sprites con haberlos creado; `art_spec.json` es especificación, y las integraciones LIVE reales se mantienen bloqueadas hasta pruebas verificables.
 
 ## El juego no es pay-to-win
 El oro se usa exclusivamente en proyectos opcionales de estética/prestigio, monumentos y homenajes. Todos los umbrales de historia y el motor de investigación son gratuitos. Para evitar la ventaja matemática por riqueza, un proyecto financiado con oro no aporta puntos históricos, capacidad productiva, voto extra, velocidad científica ni fuerza militar. Una maravilla entrega prestigio y reconocimiento visual, no economía. Este ajuste solventa el riesgo de que una donación sea la condición tácita de victoria.

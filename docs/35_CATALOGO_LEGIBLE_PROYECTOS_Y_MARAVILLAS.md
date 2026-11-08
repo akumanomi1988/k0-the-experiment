@@ -1,8 +1,8 @@
-> **Enmienda v2.3:** un Consejo por nación y era jugable (una terna de tres proyectos, solo uno construido). Las dos opciones descartadas no se vuelven a votar en esa era. El contenido interestelar es ceremonial, no construible tras ganar. [CURRENT_SPEC](CURRENT_SPEC.md).
+> **Regla vigente:**** un Consejo por nación y era jugable (una terna de tres proyectos, solo uno construido). Las dos opciones descartadas no se vuelven a votar en esa era. El contenido interestelar es ceremonial, no construible tras ganar. [CURRENT_SPEC](ESPECIFICACION.md).
 
 # 35 — Catálogo legible: proyectos de Consejo y maravillas (v2.2)
 
-**Derivado de `data/strategic_projects.v2.json`.** Costes expresados en recursos ordinarios; **ninguna obra exige oro**. Todas tienen efectos estéticos y de prestigio, nunca producción, ciencia o puntos históricos competitivos.
+**Derivado de `data/strategic_projects.json`.** Costes expresados en recursos ordinarios; **ninguna obra exige oro**. Todas tienen efectos estéticos y de prestigio, nunca producción, ciencia o puntos históricos competitivos.
 
 ## 39 proyectos estratégicos: tres por era
 
@@ -72,4 +72,4 @@ Tres opciones distintas de Consejo, del mismo período habilitado, no construida
 
 Las maravillas se habilitan solo mediante evento separado cuando la campaña permite la competencia y son exclusivas globalmente por primer commit de finalización. La maravilla interestelar se considera pieza de epílogo; no puede abrir otra carrera tras el cierre.
 
-Ver `docs/44_CONSEJO_GRATUITO_PATROCINIO_Y_ECONOMIA_v2.2.md`. Este catálogo está sujeto a revisión de balance y de representación gráfica; sus números no fueron ensayados en motor .NET.
+Ver `docs/44_CONSEJO_GRATUITO_PATROCINIO_Y_ECONOMIA.md`. Este catálogo está sujeto a revisión de balance y de representación gráfica; sus números no fueron ensayados en motor .NET.

@@ -1,4 +1,5 @@
-name: K0 design baseline consistency
+name: Project CHAOS documentation and contracts
+
 on:
   push:
     branches: [main]
@@ -7,32 +8,41 @@ on:
       - 'contracts/**'
       - 'architecture/**'
       - 'docs/**'
-      - 'v2.5/**'
+      - 'audit/**'
       - 'README.md'
-      - 'DOCS_INDEX_v2.5.md'
-      - 'tools/validate_design_catalogs.py'
-      - 'tools/validate_v25_consolidation.py'
-      - '.github/workflows/design-spec-check.yml'
+      - 'AGENTS.md'
+      - 'tools/**'
+      - '.github/workflows/**'
   pull_request:
     paths:
       - 'data/**'
       - 'contracts/**'
       - 'architecture/**'
       - 'docs/**'
-      - 'v2.5/**'
+      - 'audit/**'
       - 'README.md'
-      - 'DOCS_INDEX_v2.5.md'
-      - 'tools/validate_design_catalogs.py'
-      - 'tools/validate_v25_consolidation.py'
-      - '.github/workflows/design-spec-check.yml'
+      - 'AGENTS.md'
+      - 'tools/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
-  validate-design:
+  documentation:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Validate static catalogs, IDs and contracts
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check normative specification and forbidden duplicates
+        run: python3 tools/check_active_spec.py --check
+      - name: Validate structured game catalogs and contracts
         run: python3 tools/validate_design_catalogs.py
-      - name: Validate complete v2.5 archive, lineage and documentation links
-        run: python3 tools/validate_v25_consolidation.py
+      - name: Validate Markdown links and canonical document list
+        run: python3 tools/validate_documentation.py
