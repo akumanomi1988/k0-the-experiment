@@ -1,41 +1,43 @@
-# K0: The Experiment — Game Design & Technical Specification
+# K0: The Experiment — especificación de juego multistreamer
 
-> **Estado: DISEÑO DOCUMENTAL v2.2 / SIN JUEGO IMPLEMENTADO.** Repositorio canónico público. Google Drive queda como respaldo histórico. No hay código de aplicación, scripts, CI/CD ni infraestructura desplegada.
+> **Estado real: DISEÑO DOCUMENTAL v2.3; SIN JUEGO IMPLEMENTADO NI APIS LIVE AUTORIZADAS.** Este repositorio contiene el baseline técnico/narrativo y catálogos de contenido, no un servicio desplegado. Los gates de pruebas y licencias siguen abiertos.
 
-Tres civilizaciones no humanas — **Micelios, Rúnicos y Ferrinos** — evolucionan desde el Paleolítico hasta la Era Interestelar en un espectáculo interactivo presentado por **Doctor K-0**, científico cyborg neutral. Los espectadores participan desde tres fuentes de chat diferenciadas (mismo proveedor o varios, cuando existan permisos). Estilo propuesto: pixel art retro 2D de baja resolución, proyección oblicua 2:1.
+**K0: The Experiment** (Project CHAOS, nombre de trabajo histórico) es una competición narrativa entre tres civilizaciones no humanas — **Micelios, Rúnicos y Ferrinos** — a través de 12 eras jugables hasta entrar en la 13.ª, Interestelar, que cierra la temporada. El científico cyborg **Doctor K-0** presenta el espectáculo; espectadores eligen oficios, trabajan, votan y participan mediante el chat de su nación.
 
-## Empieza aquí
+## Nueva decisión clave v2.3: tres streamers, tres equipos, un mundo
 
-1. **[Auditoría de alcance y correcciones v2.2](docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA_v2.2.md)** — qué está y no está cerrado.
-2. **[Índice de los 62 capítulos](DOCS_INDEX_v2.2.md)** — navegación de todo el diseño.
-3. **[Visión y reglas de base](docs/01_VISION_Y_ALCANCE.md)**, **[economía](docs/04_ECONOMIA_Y_BALANCE.md)**, **[progresión](docs/07_PROGRESION_TECNOLOGICA_Y_TEMPORADAS.md)**.
-4. **[Universo y personajes](docs/25_BIBLIA_NARRATIVA_UNIVERSO_Y_PERSONAJES.md)**, **[estilo visual](docs/46_MANUAL_DE_ESTILO_PIXEL_ART_v2.2.md)**, **[HUD](docs/47_LAYOUT_HUD_Y_ESCENAS_PIXEL_PERFECT_v2.2.md)**.
-5. **[Contratos de integridad](docs/42_CONTRATOS_DE_ESTADOS_Y_TIEMPO_v2.2.md)**, **[arquitectura](docs/55_ARQUITECTURA_TECNICA_Y_LIMITES_v2.2.md)** y **[criterios de cierre](docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md)**.
+K0 está diseñado para **tres streamers independientes**, con cuentas propias en la misma plataforma o en plataformas distintas, cada uno con su PC, su OBS y su Browser Source. Las tres naciones conviven en **un servidor .NET central autoritativo con PostgreSQL**: los PCs solo reciben overlays y envían participación a través de APIs oficiales de proveedor, nunca calculan recursos ni ganadores. Puede funcionar además con un único operador y tres canales distintos, o tres fuentes simuladas.
 
-## Directorios
+- **Twitch A + Twitch B + Twitch C** (tres streamers, mismo proveedor): diseño soportado, sujeto a autorización real de cada cuenta.
+- **Twitch + YouTube + proveedor C**: diseño soportado solo cuando todas las capacidades necesarias están verificadas.
+- **Tres cuentas TikTok:** topología compatible, **no** equivale a disponibilidad/permiso de una API LIVE de chat/regalos.
+- **Un solo chat para tres naciones**: no es un modo admitido por las reglas actuales. Un canal se asigna a una única nación.
 
-| Ruta | Contenido |
-|---|---|
-| [`docs/`](docs/) | 62 capítulos Markdown (01–40 históricos vigentes salvo enmiendas; 41–62 nuevos y normativos donde se indique) |
-| [`data/`](data/) | Catálogos declarativos JSON, no lógica ejecutable |
-| [`architecture/`](architecture/) | Modelo SQL base y anexo v2.2 de diseño **sin ejecutar**; transacciones conceptuales |
-| [`contracts/`](contracts/) | JSON Schema/OpenAPI/SignalR de diseño y anexo v2.2, aún no consolidados en versión API operativa |
-| [`audit/`](audit/) | Registro histórico, riesgos, checksums y simulación simplificada no autoritativa |
-| [`PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md`](PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v2.1.md) | Compendio **histórico v2.1**, no prevalece sobre correcciones v2.2 |
+Que se cierre OBS en uno de los equipos no detiene los demás; que falle el LIVE de una nación cambia solo su economía/ventanas y congela los eventos competitivos globales cuando se requieren las tres transmisiones.
 
-## Revisiones relevantes v2.2
+## Empieza aquí (fuente de verdad)
 
-- Todos los **39 proyectos de Consejo** y **13 maravillas** tienen coste de oro igual a **cero** para mantener participación gratuita. El oro verificado, si se habilita, se dedica a cosméticos no competitivos.
-- Tecnologías troncales ahora se corresponden con prerrequisitos reales de talleres y centros de investigación.
-- Nueva definición de **guarniciones y 39 unidades de combate automático**; **no** es código funcional ni balance probado.
-- Manuales ampliados de estética, sonido, composición de pantalla, K-0, UX, streaming, proveedores, seguridad, arquitectura, balance, QA y aceptación.
+1. **[CURRENT_SPEC v2.3](docs/CURRENT_SPEC.md)**: precedencia y decisiones de producto vigentes, con indicación expresa de lo no validado.
+2. **[Índice completo de 67 capítulos](DOCS_INDEX_v2.3.md)**: diseño histórico más enmiendas normativas.
+3. **[Arquitectura de tres streamers remotos](docs/63_ARQUITECTURA_MULTISTREAMER_v2.3.md)** y **[relojes, sincronía y contratos](docs/64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md)**.
+4. **[Diseño de portal, overlays y pixel art](docs/65_DISENO_STREAMER_OVERLAYS_Y_ARTE_v2.3.md)** y **[integraciones, seguridad y operación](docs/66_INTEGRACIONES_SEGURIDAD_Y_OPERACION_v2.3.md)**.
+5. **[Blueprint de implementación y QA](docs/67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS_v2.3.md)**; [auditoría histórica de incoherencias](audit/AUDITORIA_K0_PROJECT_CHAOS_V2_2.md) y [gates D0–D4](docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE_v2.2.md).
 
-## Jerarquía de decisiones
+## Inventario existente
 
-Mensaje explícito posterior del propietario → 92 decisiones originales confirmadas (salvo sustituciones trazadas) → enmiendas documentadas v2.2 → datos canónicos → documentos heredados 01–40 → históricos anteriores. Las enmiendas D-01–D-10 se explican en `docs/41`.
+- **docs/**: 67 capítulos de visión, economía, roles, edificios, 13 eras, gobiernos, eventos, narración, pixel art, UX, redes, emisión e ingeniería; nuevos 63–67 sobre multistreamer.
+- **data/**: reglas y catálogos declarativos. 130 básicos, 39 proyectos, 13 maravillas, 39 unidades, cinco oficios, 30 opciones de habilidad, tecnologías, hitos, misiones de era, misiones diarias/semanales. **Todos son diseño, no contenido ejecutado**.
+- **contracts/**: JSON Schema/OpenAPI históricos ajustados y contrato de diseño multistreamer v2.3; falta generar/verificar contratos runtime contra implementación.
+- **architecture/**: SQL de diseño 001/002/003. **No son migraciones de producción probadas**.
+- **tools/validate_design_catalogs.py** + **.github/workflows/design-spec-check.yml**: control estático de coherencia de catálogos; pasar este control no implica balance simulado ni código funcional.
+- **audit/**: riesgos, trazabilidad y dependencias externas pendientes.
 
-**No se presume que todo esté validado.** Los artefactos visuales siguen sin dibujar/aprobar; el juego no está programado; el SQL no está ejecutado; las APIs de proveedores no se han autorizado para las cuentas; la simulación simplificada anterior no prueba los cinco hitos de cada era. Todos los gates están inventariados en `docs/60`.
+## Arquitectura recomendada
 
-## Repositorio público y derechos
+.NET 10, ASP.NET Core, PostgreSQL 16+, Inbox/Outbox, sim worker lógico único por nación y arbitraje global de ganador/maravillas, React/TypeScript + Phaser en Browser Source OBS, SignalR para snapshots/deltas y adaptadores LIVE oficiales por canal autorizado. Monolito modular y despliegue único al principio: **no microservicios ni servidor instalado por streamer**. Tres overlays pueden mostrar perspectivas diferentes del mismo estado sin cambiarlo.
 
-No subir tokens, credenciales, emails de espectadores, conversaciones privadas, material de terceros sin derechos ni datos de pago. La denominación **K0: The Experiment** está pendiente de comprobación registral; publicar documentación no garantiza exclusividad comercial. No existe licencia explícita para uso por terceros: decidirla antes de invitar contribuciones externas.
+## Qué NO está cerrado como hecho comprobado
+
+Sin implementación del motor o de interfaces, sin sprites finales aprobados, sin migraciones SQL ejecutadas, sin simulaciones completas de balance y concurrencia, sin tres cuentas LIVE autorizadas, sin prueba de OBS 30 FPS en tres PCs, sin respaldo/restore ensayado ni revisión legal/comercial de marca y contenido. El estado documental continúa **D1 ampliado; no D2, D3 ni D4**. Estas dependencias no se pueden resolver añadiendo adjetivos a README: requieren evidencia trazable.
+
+**Derechos y seguridad:** repositorio público, sin licencia explícita de reutilización de terceros; no incluir tokens, emails, chat privado, nombres no consentidos, contenidos ajenos sin derechos o datos financieros. El nombre comercial K0 está pendiente de comprobación registral.
