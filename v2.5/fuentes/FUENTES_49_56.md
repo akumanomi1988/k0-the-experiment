@@ -1,6 +1,6 @@
 # Fuentes íntegras v2.5 — capítulos 49–56
 
-> **Transcripción íntegra histórica**; consultar [norma v2.5](../ESPECIFICACION_MAESTRA_v2.5.md) para resolver cualquier regla sustituida. Aprobación artística y balance no se certifican por esta copia.
+> **Archivo de preservación de contenido completo (encabezados reindentados).** No es una segunda autoridad: la [especificación maestra](../ESPECIFICACION_MAESTRA_v2.5.md) resuelve reglas sustituidas. Los enlaces relativos del texto interno pertenecen al documento original citado; para navegar, abra ese archivo de origen.
 
 ---
 
