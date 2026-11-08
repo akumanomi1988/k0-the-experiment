@@ -21,7 +21,7 @@
 | 15 | [15 — Pruebas automáticas y criterios de aceptación](15_PRUEBAS_Y_CIERRE_DE_DEFINICION.md) |
 | 16 | [16 — Capacidades LIVE verificables y políticas](16_INTEGRACIONES_Y_CUMPLIMIENTO.md) |
 | 17 | [17 — Runbook del operador y flujos E2E](17_OPERADOR_ESCENARIOS_Y_DIAGRAMA_E2E.md) |
-| 18 | [18 — Correcciones estructurales realizadas en](18_DECISIONES_DE_BASE_CORREGIDAS.md) |
+| 18 | [18 — Correcciones estructurales de base](18_DECISIONES_DE_BASE_CORREGIDAS.md) |
 | 19 | [19 — Máquinas de estados y rechazos (contrato de dominio)](19_MAQUINAS_DE_ESTADO_Y_ERRORES.md) |
 | 20 | [20 — UX de jugador, escenas OBS y panel de operador](20_PANTALLAS_PANEL_OPERADOR_Y_ROLES.md) |
 | 21 | [21 — Generación de mapa completamente determinista](21_MAPAS_Y_SEMILLAS_DETERMINISTAS.md) |
