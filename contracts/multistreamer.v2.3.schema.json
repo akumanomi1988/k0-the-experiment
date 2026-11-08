@@ -74,11 +74,9 @@
         },
         "role": {
           "enum": [
-            "OWNER",
             "BROADCASTER",
             "COHOST",
-            "MODERATOR",
-            "AUDITOR"
+            "MODERATOR"
           ]
         },
         "seatState": {
