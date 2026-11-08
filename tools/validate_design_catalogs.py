@@ -28,6 +28,17 @@ def load(path: str):
 
 
 def main() -> int:
+    manifest = load("data/content_manifest.v2.3.json")
+    catalog_paths = [item.get("path", "") for item in manifest.get("files", [])]
+    check(manifest.get("status") == "DESIGN_CANDIDATE_NOT_HASHED_OR_RELEASED",
+          "Manifest must not pretend it has been released")
+    check(len(catalog_paths) == len(set(catalog_paths)) and len(catalog_paths) >= 15,
+          "Manifest paths must be unique and cover canonical catalogs")
+    for entry in manifest.get("files", []):
+        check((ROOT / entry.get("path", "")).is_file(),
+              f"Manifest references missing file {entry.get('path')}")
+    check("data/era_missions.v2.3.json" in catalog_paths,
+          "Manifest missing era mission catalog")
     rules = load("data/ruleset.v2.json")
     eras = load("data/eras.v2.json").get("eras", [])
     milestones = load("data/milestones.v2.json").get("milestones", [])
