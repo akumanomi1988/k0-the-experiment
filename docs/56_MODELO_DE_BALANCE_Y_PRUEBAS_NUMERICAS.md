@@ -2,7 +2,7 @@
 
 **Coherencia de cuotas:** un solo cupo de **2.500 humanos efectivos por nación**, las cinco profesiones comparten los primeros 100 al 100 % y los siguientes 2.400 al 25 %. Rotación nacional cada 600 s LIVE. Medir escenarios de distribución de oficios y horarios asimétricos, sin compensación de horas; los números son objetivo a validar, no simulaciones ya ejecutadas.
 
-**Estado: CANDIDATE_BALANCE, NO VALIDADO.** Esta hoja de cálculo mental y reglas reproducibles no sustituyen un motor de simulación. Las cifras canónicas están en `data/ruleset.json` y catálogos v2.2.
+**Estado: CANDIDATE_BALANCE, NO VALIDADO.** Esta hoja de cálculo mental y reglas reproducibles no sustituyen un motor de simulación. Las cifras canónicas están en `data/ruleset.json` y catálogos activos de `data/`.
 
 ## Parámetros fijados
 
@@ -14,13 +14,15 @@ Tick 5s; recurso en milésimas; basis points 10.000=100%; NPC 24 de inicio distr
 - **Madera inicial 60s LIVE:** `5 × 1,8 = 9` unidades. **Piedra antes de era 3:** `4 × 1,4 = 5,6`. **Investigación:** `4 × 1,2 = 4,8`. **Construcción:** `4 × 1,2 = 4,8` unidades de obra.
 - **Offline base 60s reales con multiplicador 20 %:** producción alimentaria nominal `16,8 × 0,2 = 3,36`; mantenimiento NPC nominal `3,6 × 0,2 = 0,72`, antes de aplicar capacidad/hambre/factores.
 - **Duración mínima de 1ª investigación troncal con 4 NPC científicos y 0 ventajas:** 290 / 4,8 = 60,4167 minutos LIVE equivalentes de ciencia, si conocimiento no se consume en otra cosa y las reglas de prioridad lo permiten. No incluye ticks, edificación ni requisito histórico.
-- **Coste estratégico Paleolítico v2.2:** 120 madera + 85 piedra + 20 conocimiento + **0 oro** por proyecto. El holding entre tres opciones de coste idéntico es ese vector una sola vez, no triple.
+- **Coste estratégico Paleolítico vigente:** 120 madera + 85 piedra + 20 conocimiento + **0 oro** por proyecto. El holding entre tres opciones de coste idéntico es ese vector una sola vez, no triple.
 
 Los cálculos anteriores son algebraicos, no evidencia de que un NPC en una temporada real llegue de Paleolítico a Interestelar con todos los bloqueos resueltos. La antigua simulación simplificada registra `milestonesAchieved:0` a la vez que llega a era 13; por eso **no sirve para certificar los hitos** y queda archivada como referencia insuficiente.
 
 ## Modelo obligatorio de evaluación de una temporada futura
 
-Para cada perfil de participación de (0, 10, 100, 1000, 10000 ciudadanos), cruzar distribución de oficios equilibrada y sesgada × sesiones 0/1/4/24h LIVE día × disponibilidad de cada nación (simultánea, asimétrica, una desconectada) × 0 aportaciones económicas × 3 seeds de mapa × eventos de crisis/penalización. Para aceptación de balance, ninguna nación con 24 NPC debe quedar bloqueada en las eras 1–12 por falta estructural de recursos o dependencias, y ninguna aportación debe acelerar victoria.
+Para cada perfil de participación de (0, 10, 100, 1000, 10000 ciudadanos), cruzar distribución de oficios equilibrada y sesgada × sesiones 0/1/4/24h LIVE día × disponibilidad de cada nación (simultánea, asimétrica, una desconectada) × 0 aportaciones económicas × **100 seeds de mapa** × eventos de crisis/penalización. Para aceptación de balance, ninguna nación con 24 NPC debe quedar bloqueada en las eras 1–12 por falta estructural de recursos o dependencias, y ninguna aportación debe acelerar victoria.
+
+**Interpretación obligatoria:** los escenarios con 0 h LIVE/día no pueden entrar en otra era porque la transición exige LIVE certificado, por lo que no se les aplica el objetivo de 45–90 días. El perfil objetivo de calendario usa **4 h LIVE diarias por nación**, con las horas asimétricas permitidas, sin compensación; exigir P50 entre 45 y 90 días para los casos nominales sin bloquear ruta gratuita (0 humanos, 0 oro, 24 NPC). Los demás perfiles documentan sensibilidad, no deben forzarse al mismo plazo.
 
 ## Métricas por escenario
 

@@ -1,4 +1,4 @@
-> **Regla vigente:**** incorporar aceptación de 3 streamers remotos y separar evidencia documental de pruebas reales. No confundir v2.3 con producto cerrado. [Especificación vigente](ESPECIFICACION.md).
+> **Regla vigente:** incorporar aceptación de 3 streamers remotos y separar evidencia documental de pruebas reales. No confundir v2.3 con producto cerrado. [Especificación vigente](ESPECIFICACION.md).
 
 **Criterio de aceptación comprometido:** antes de integración real de plataformas debe existir motor para **doce eras jugables** y entrada terminal a Interestelar, con PostgreSQL, 3 naciones, repetibilidad y ruta 0 chat/0 oro. **Antes del primer piloto**, arte real completo de las 12 eras/facciones y epílogo; Doctor K-0 LLM/TTS dinámico con fallback, HUD vertical/horizontal ES. Primer modo SINGLE_OPERATOR y YouTube Live posterior solo con cuentas verificadas. Las 20 decisiones están en `docs/ESPECIFICACION.md`; ninguna casilla puede marcarse sin ejecución y prueba.
 
@@ -21,14 +21,14 @@
 ## Gate de cierre artístico
 
 - [ ] Captura/arte conceptual final aprobado de Micelios, Rúnicos, Ferrinos y K-0.
-- [ ] Tres eras representativas (Paleolítico, Industrial y Espacial) diseñadas para las tres especies.
+- [ ] **Arte producido y aprobado para las 12 eras jugables y el epílogo Interestelar** en las tres facciones, con overlays vertical/horizontal ES; no bastan tres muestras.
 - [ ] Sprite 16×24, 32×16 tile, sombras, paletas, variantes, HUD y animaciones probados a 1× y en stream vertical.
 - [ ] Fuente, sonido, música, voz y derechos comerciales acreditados.
 - [ ] Texto y subtítulos legibles sin depender de audio; safe areas verificadas por plataforma.
 
 ## Gate de cierre técnico
 
-- [ ] Anexo SQL v2.2 integrado y validado para combate, patrocinios y demás nuevos estados; migraciones reales ejecutadas con tests transaccionales.
+- [ ] **Migraciones de datos existentes probadas** con tests de concurrencia y rollback. Los scripts 001–003 pasan en PostgreSQL 16 **vacío**; este PASS aislado no certifica upgrade, handlers ni restore.
 - [ ] Contratos REST/SignalR actualizados a las entidades efectivas y sus versiones.
 - [ ] Ingesta idempotente, escritura única, determinismo, replays y backups restaurados con evidencia.
 - [ ] Pruebas de carga y mediciones de costes con perfiles realistas y 30 FPS OBS estable.
@@ -40,10 +40,17 @@
 - [ ] Tres cuentas de mismo proveedor verificadas y tres overlays separados; mezclas de proveedores solo cuando los permisos reales lo demuestren.
 - [ ] OBS de un streamer cae sin alterar LIVE certificado ni economía; desconexión LIVE de una nación congela simultáneamente reloj global de RPS en tres viewers.
 - [ ] Invitaciones, scopes, OAuth, revocación, aislamiento de identidades y salida pública minimizada probados.
-- [ ] CURRENT_SPEC, catálogos, API, SQL y versiones de reglas concuerdan; CI verde y migraciones PostgreSQL realmente ejecutadas.
+- [ ] `docs/ESPECIFICACION.md`, ruleset, catálogos, OpenAPI y SQL concuerdan; CI verde, migraciones PostgreSQL con datos históricos y restauración realmente ejecutadas.
 - [ ] Cuenta real de proveedor, volumen de audiencia, arte, legal y restore con evidencia verificable, no texto.
 
 **El estado permanece D1 ampliado; este añadido no demuestra D2 ni un juego implementado.**
+
+## Gates de retorno, balance y coste
+
+- [ ] Retorno del mismo broadcaster verificado y aprobado por OWNER **antes** del límite de 7 días; el retorno en igualdad de deadline se rechaza y `ABORTED` es terminal; segundo abandono genera nuevo incidente, sin doble Outbox.
+- [ ] Torneo pausado caduca a las 72 horas UTC sin sanción y **no reabre** aunque posteriormente se reanude la temporada.
+- [ ] El motor completo (no el simulador simplificado) alcanza 12 eras/5 hitos por era sin oro y con 24 NPC, **100 seeds** y perfiles 0/10/100/1000/10000; para 4 h LIVE/día el P50 de temporada está entre **45–90 días**. 0 h LIVE no debe avanzar era; publicar P10/P50/P90 y casos sin ruta.
+- [ ] Infraestructura y LLM/TTS: **coste realmente medido ≤100 €/mes** en perfil de referencia de tres canales; fallback de narración automático ante presupuesto, cuotas o seguridad, sin degradar reglas. Publicar métricas y precio efectivo del proveedor, no una estimación sin pruebas.
 
 ## Gate de cierre comercial y normativo
 

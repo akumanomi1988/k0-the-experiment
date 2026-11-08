@@ -24,6 +24,8 @@
 | Reinicio de OBS o navegador | Simulación del servidor | Solo representación | Reconectar a último snapshot |
 | Fallo del servidor | Ninguna simulación nueva sin writer | Emisión se considera degradada | Restaurar snapshot + Inbox/Outbox |
 | Interrupción mayor de siete días | Estado persistido | Catch-up a partir de límite | Revisión documentada del operador |
+| Regreso del primario antes de 7 días tras abandono confirmado | Estado y votos intactos tras un retorno verificado y aprobado por OWNER | Gap económico/competitivo durante PAUSED; eventos ya CANCELLED no reabren | Comparar mismo K0 account/binding y capabilities; reanudar solo desde snapshot, sin catch-up |
+| Regreso en o después de 7 días UTC | Solo historial y archivo | Temporada `ABORTED` irreversible | Rechazar retorno, sin ganador; nueva temporada si procede |
 | Fin de temporada mientras hay votación | Resultado final y archivo | Nuevos votos, gastos no comprometidos | Cierre/cancelación auditable |
 
 ## Política de claridad

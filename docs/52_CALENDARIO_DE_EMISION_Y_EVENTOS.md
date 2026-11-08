@@ -1,6 +1,6 @@
 > **Regla vigente:**** cada streamer puede emitir en horarios distintos; la economía LIVE/OFFLINE es local a su nación, y los torneos compartidos requieren tres LIVE simultáneos y congelación global en desconexión. El plan de 4h es ejemplo editorial, no reloj obligatorio. [Especificación vigente](ESPECIFICACION.md).
 
-**Temporada objetivo de 45–90 días naturales.** El arranque multistreamer requiere tres canales autorizados, **no** tres directos simultáneos. Un torneo pausado por ausencia de un LIVE vence a las **72 h UTC** sin sanciones. El abandono definitivo confirmado congela toda la temporada y provoca cancelación a los **7 días UTC**.
+**Temporada objetivo de 45–90 días naturales.** El arranque multistreamer requiere tres canales autorizados, **no** tres directos simultáneos. Un torneo pausado por ausencia de un LIVE vence a las **72 h UTC** sin sanciones. El abandono definitivo confirmado congela toda la temporada y provoca cancelación a los **7 días UTC**, salvo retorno del **mismo responsable primario** aprobado por OWNER y reautorizado **antes** del vencimiento. No se genera producción retroactiva ni se reabren torneos ya cancelados.
 
 # 52 — Operación editorial, calendario de emisión y ritmo de espectáculo
 

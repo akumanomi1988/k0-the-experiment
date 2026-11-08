@@ -30,4 +30,6 @@ Escenas visuales de 360×640 y 640×360, render objetivo 30 FPS, escalado entero
 
 ## Gestión de calidad
 
+**Gates cuantitativos:** 12 eras realmente ejecutables con 24 NPC/cero oro y 100 semillas; P50 en 45–90 días bajo 4 h LIVE/día y sin deadlocks en escenarios de cero espectadores. Medir coste mensual de tres canales y LLM/TTS ≤100 €, incluido fallback al tope. Retorno de streamer a T−1 ms/T y 72 h torneo con pruebas transaccionales y sin eventos duplicados. Los tests documentales y SQL en base vacía NO equivalen a esas pruebas.
+
 Antes de aceptar una temporada pública: ensayo completo de historia, pruebas de estrés, recuperación, seguridad, inclusión de HUD, moderación, corrección de elecciones y monetización verificada si se activa. Los requisitos no funcionales se aprueban con evidencia y no con una declaración de diseño.

@@ -11,3 +11,6 @@
 Consultar la tabla de veinte decisiones de `docs/ESPECIFICACION.md`: **12 eras jugables antes de proveedores**, primer modo **SINGLE_OPERATOR**, primer proveedor **YouTube Live** condicionado a permisos, temporada objetivo **45–90 días**, 100 % LIVE/20 % OFFLINE **sin compensación** y horas públicas, arranque multistreamer con **tres canales autorizados sin LIVE simultáneo**, abandono confirmado **PAUSED→ABORTED en 7 días UTC**, torneo congelado **CANCELLED en 72 h UTC**, cupo nacional único **2.500**, **una nación por cuenta K0** sin login obligatorio para el chat, pseudónimo por defecto y alias con opt-in, monetización solo tras validar juego, **LLM/TTS dinámico** seguro, **arte de las 12 eras y epílogo** antes del piloto, overlays ES vertical/horizontal, España/UE público general con protección de menores, retención operativa **30 días** salvo ley, priorizar show propio, **techo 100 €/mes**.
 
 No crear otra especificación ni documentos con sufijos de versión. El usuario confirmó estas decisiones; no reabrirlas sin que lo pida.
+
+
+**Retorno de broadcaster:** mismo primario K0 y canal autorizado, re-verificación, OWNER, cutoff estricto 7 días, `ABORTED` terminal, sin catch-up ni reabrir torneo CANCELLED. Cualquier cambio exige actualización de `docs/ESPECIFICACION.md`, contrato y pruebas.
