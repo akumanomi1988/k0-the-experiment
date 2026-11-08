@@ -8,15 +8,13 @@
 
 No sumar segundos a ciegas: cada segmento `[lastProcessedUtc, nowUtc)` se particiona por cambios de estado LIVE, expiraciones de trabajadores, cierre de sesiones y vencimientos de comandos. La producción y experiencia se calculan en el mismo segmento. Un comando entra al tick siguiente; `receivedUtc` decide si se admite en una votación abierta cuando se recibió durante intervalo. Eventos con `providerTimestamp` fuera de tolerancia se ponen en cuarentena.
 
-## Orden canónico por tick
-1. Consumir `Inbox` autenticado y deduplicado y ordenar por `ingestSeq` (no reloj del proveedor cuando contradiga secuencia persistida).
-2. Aplicar cambios de `LIVE` auditados con sello de instante.
-3. Aplicar comandos de ciudadanos y papeletas llegadas antes del cierre.
-4. Cerrar ventanas exactas de voto cuyo LiveClock alcanzó su deadline; una papeleta en instante de cierre se rechaza.
-5. Aplicar disponibilidad de trabajadores (segmentada); gastos de comida y mantenimiento; producción limitada a capacidad; XP.
-6. Resolver planificación automática, avances de construcción, tecnologías y misiones.
-7. Reconocer hitos únicos y transición de era (solo LIVE). La entrada a la última era genera evento global terminal.
-8. Registrar estados, ledger, outbox y checksum antes de notificar clientes. Actualizar snapshots cada 60 segundos de economía o 100 eventos críticos, lo que suceda primero.
+## Orden canónico por tick (enmienda v2.3)
+
+**Fuente normativa:** [64 — Relojes y eventos](64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md). Durante cada subsegmento se procesan: (1) eventos autenticados con ingestSeq y cambios LIVE; (2) comandos/papeletas recibidos antes del límite del reloj LIVE; (3) cierres de voto/competición vencidos; (4) alimentación, economía, XP; (5) edificios, investigación, misiones; (6) hitos y transición de era; (7) arbitraje global de ganador/maravillas; (8) commit de estado/ledger/outbox, y publicación posterior. Las subfronteras temporales se preservan para un replay exacto.
+
+**Economía:** el delta efectivo es tiempo UTC segmentado × factor LIVE 100 % u OFFLINE/UNCERTAIN 20 % una sola vez. No se vuelve a multiplicar al calcular output ni XP. La aceptación de un comando (ACK) puede preceder al siguiente tick productivo; la mutación de economía no promete latencia inferior al tick de 5 s.
+
+**Competición:** RPS y batalla automática usan CompetitionLiveClock global solo con tres LIVE confirmados; ante caída de una nación se congela en las tres.
 
 ## Idempotencia y replay
 `sourceEventKey=SHA256(provider + bindingId + originalEventId + eventType)`; `commandId` se asigna una vez tras inbox. `rulesetHash`, `contentHash`, `seasonSeed`, `engineVersion`, `remainderVectors` se guardan en snapshot. RNG `sha256-counter-64-v1`: `sha256(seed||domain||counter_be64)`, valor uniforme por rechazo para evitar sesgo (`limit = floor(2^64/n)*n`). Counters separados por dominio (`elections`, `tournaments`, `map`, `events`) y nación; este detalle evita cambios de resultados al añadir más narración.
