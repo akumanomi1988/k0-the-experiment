@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 67 — Blueprint de implementación, entregas y matriz de verificación (v2.3)
 
 **Normativo para planificación de desarrollo; estados de tests NOT_RUN.** Describe cómo desarrollar todo el producto sin inventar evidencias. Complementa docs 15,38,40,57,60 y auditoría C-01 a C-18.

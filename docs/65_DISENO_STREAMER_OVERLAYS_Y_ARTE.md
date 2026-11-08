@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 65 — Diseño de producto, experiencia del streamer, overlays y arte (v2.3)
 
 **Normativo para las nuevas experiencias multistreamer.** Complementa 20,24–30,46–50,61–62; **no sustituye** manuales artísticos ni implica que se hayan dibujado sprites o aprobado capturas. Mismo mundo lógico; cada streamer tiene una vista y un canal propios.

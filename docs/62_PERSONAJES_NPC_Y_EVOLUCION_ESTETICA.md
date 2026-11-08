@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 62 — Biblia de gobernantes NPC y evolución de sus vestuarios
 
 **Estado: diseño narrativo y visual, no retratos aprobados.** Los 9 candidatos recurrentes son personajes del universo, no ciudadanos reales. Cambian ropas y herramientas entre eras pero preservan rostro/silueta. Solo existe un gobernante activo por nación y era jugable, elegido mediante voto colectivo.

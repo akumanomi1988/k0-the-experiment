@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 66 — Integraciones LIVE, seguridad, despliegue y operación multistreamer (v2.3)
 
 **Normativo para desarrollo, proveedor pendiente de pruebas.** Esta especificación completa docs 14,16,31,32,53,54 y 59. Consulta documental oficial a 2026-11-08; no constituye autorización concedida a cuentas reales.

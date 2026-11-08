@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 63 — Arquitectura multistreamer distribuida (v2.3)
 
 **Normativo para diseño, no implementación validada.** Esta especificación amplía docs 02,13,31,32,55. La nación no equivale a streamer ni a proveedor. Cada emisor puede estar en otro PC, ciudad, sistema operativo o red; la conexión pública HTTPS al servicio K0 es el único requisito de red del cliente de emisión.

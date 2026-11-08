@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 64 — Contratos de reloj, sincronización y API multistreamer (v2.3)
 
 **Normativo para nuevos componentes y corrección de docs 03,19,42,55.** Contratos de referencia, aún no compilados ni validados contra código. Ninguna marca de tiempo aportada por el cliente OBS es autoridad.

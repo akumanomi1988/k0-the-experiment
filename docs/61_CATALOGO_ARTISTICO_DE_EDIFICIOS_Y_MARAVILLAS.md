@@ -1,3 +1,5 @@
+> **Documento de detalle.** La fuente normativa vigente es [ESPECIFICACION_MAESTRA.md](../ESPECIFICACION_MAESTRA.md). Este capítulo no prevalece ante una regla corregida en la especificación; versiones anteriores en Git.
+
 # 61 — Catálogo de dirección artística para 130 edificios y 13 maravillas
 
 **Estado VISUAL_BRIEF, no sprites finales.** Cada fila vincula familia, época y edificio concreto (`data/buildings.v2.json`); la silueta final debe mantener **la huella lógica exacta** y las cuatro etapas de obra. Las tres facciones usan misma regla y colisión, pero diferente arquitectura.
