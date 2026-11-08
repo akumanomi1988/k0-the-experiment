@@ -1,3 +1,5 @@
+> **Enmienda v2.3:** la terna ofrece **un único Consejo ordinario por nación/era jugable**; mantener decisiones históricas sobre coste oro=0. Ver [CURRENT_SPEC](CURRENT_SPEC.md).
+
 # 44 — Consejo gratuito, maravillas y patronazgo cosmético
 
 ## Corrección prioritaria v2.2
@@ -6,7 +8,7 @@ Los 39 proyectos estratégicos y las 13 maravillas dejan de requerir oro. Todos 
 
 ## Consejo: semántica exacta
 
-1. Evento habilitante de era/hito y ninguna votación de gobierno/prioridad abierta en nación. 2. Seleccionar tres opciones distintas, no construidas, pertenecientes a era válida, cada una costeable con stock disponible ordinario. 3. Bloquear reserva vectorial `hold[r] = max(costO1[r],costO2[r],costO3[r])`. 4. Voto comunitario 600 segundos LIVE, `!build <id>`, última papeleta válida por ciudadano. 5. Elegir mayoría; en empate RNG uniforme determinista; cero votos también sorteo auditado. 6. Deducir SOLO coste elegido desde reserva y liberar resto; insertar obra sin duplicados. 7. Las otras dos opciones continúan para futuros Consejos si las reglas de elegibilidad siguen dándoles acceso.
+1. Evento habilitante de era/hito y ninguna votación de gobierno/prioridad abierta en nación. 2. Seleccionar tres opciones distintas, no construidas, pertenecientes a era válida, cada una costeable con stock disponible ordinario. 3. Bloquear reserva vectorial `hold[r] = max(costO1[r],costO2[r],costO3[r])`. 4. Voto comunitario 600 segundos LIVE, `!build <id>`, última papeleta válida por ciudadano. 5. Elegir mayoría; en empate RNG uniforme determinista; cero votos también sorteo auditado. 6. Deducir SOLO coste elegido desde reserva y liberar resto; insertar obra sin duplicados. 7. Las otras dos opciones quedan descartadas para esa nación durante esa era. No se abre un segundo Consejo ordinario de la misma era: los tres candidatos se consumen como terna al resolver una única votación.
 
 Ejemplo con tres proyectos cuyos costes son (madera,piedra)=(120,85),(120,85),(120,85): la reserva es (120,85), **no** (360,255). Si el ganador cuesta (120,85), se consumen una sola vez 120 y 85. Si cambian recursos mientras se vota, la reserva mantiene su derecho; gastos de otras obras solo utilizan `stock - reserved`.
 
