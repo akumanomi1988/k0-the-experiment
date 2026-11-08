@@ -358,7 +358,12 @@
     "startCondition": "THREE_AUTHORIZED_CHANNELS_NOT_THREE_SIMULTANEOUS_LIVES",
     "streamerAbandonmentPolicy": "CONFIRMED_EXIT_GLOBAL_PAUSE_ABORT_AFTER_7_WALL_DAYS",
     "streamerAbandonmentCancelAfterDays": 7,
-    "showAccumulatedLiveHoursByNation": true
+    "showAccumulatedLiveHoursByNation": true,
+    "streamerReturnPolicy": "SAME_PRIMARY_REVERIFIED_OWNER_APPROVED_BEFORE_DEADLINE",
+    "streamerReturnDeadline": "STRICT_BEFORE_7_DAY_UTC_DEADLINE_ABORT_AT_EQUALITY",
+    "streamerReturnPauseClockPolicy": "NO_RETROACTIVE_ECONOMY_OR_LIVE_CATCHUP",
+    "streamerReturnCancelledCompetitionPolicy": "NEVER_REOPEN_CANCELLED",
+    "streamerReturnMultipleIncidents": "AUDIT_EACH_INCIDENT_ONE_ACTIVE_PER_SEASON"
   },
   "release": {
     "firstDelivery": "TWELVE_PLAYABLE_ERAS_ENGINE_COMPLETE_BEFORE_PLATFORM_INTEGRATION",

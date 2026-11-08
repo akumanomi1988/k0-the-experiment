@@ -37,6 +37,8 @@ En cada subsegmento se aplica orden:
 
 **Plazos de incidencia:** torneo compartido en PAUSED por pérdida de cualquiera de las tres presencias LIVE -> `CANCELLED` después de 72 h de UtcWallClock desde el primer inicio de pausa no resuelta; sin pérdidas, costes ni sanción. Abandono confirmado del broadcaster primario -> temporada PAUSED global y `ABORTED` a los siete días UTC, sin que la economía offline prosiga durante la pausa extraordinaria. Una sesión OFFLINE por sí sola no activa esta cancelación.
 
+**Retorno antes de la cancelación (regla operativa):** únicamente el **mismo broadcaster primario y la misma cuenta K0** pueden reanudar. Deben acreditar de nuevo control del canal, `CHAT_READ` y `LIVE_PRESENCE` (capabilities por cuenta), y el OWNER debe aprobar la recuperación con motivo e `Idempotency-Key`. El comando se admite **estrictamente antes** de `confirmedAt+7 días UTC`; en el instante de vencimiento prevalece `ABORTED` y jamás se resucita una temporada terminal. En transacción serializable/fenced se valida el estado `PAUSED` y el incidente activo, se marca `RESUMED`, se cancela el deadline, se emite Outbox y se retorna a `RUNNING`. No se reasignan asientos ni se recalculan los relojes durante la pausa; tras reanudar solo corren los relojes de las fuentes realmente autorizadas y LIVE, sin catch-up retroactivo. Un torneo ya `CANCELLED` tras 72 h **no se reabre**; los eventos aún pausados conservan votos y tiempo y reanudan solo según sus requisitos LIVE. Un retorno tardío exige **crear otra temporada**, no modificar la anterior.
+
 ## 3. Estados de sesión
 
 - Season: DRAFT→PREPARED→RUNNING→COMPLETED→ARCHIVED, con PAUSED/RECOVERY_REQUIRED/ABORTED por gestión; COMPLETE no vuelve a RUNNING.
@@ -73,6 +75,7 @@ La configuración de creación de Season incluye broadcastMode=SINGLE_OPERATOR|M
 | GET /api/v2/public/seasons/{seasonId}/nations/{nationId}/deltas?afterSequence=N | Overlay autorizado | Deltas contiguos o 409 SNAPSHOT_REQUIRED |
 | POST /api/v2/overlay/{outputId}/session | Overlay read-only | Intercambia secreto revocable por sesión de lectura corta |
 | POST /api/v2/operator/seasons/{seasonId}/actions | OWNER/OPERATOR | Start/pause/cancel event con Idempotency-Key |
+| POST /api/v2/operator/seasons/{seasonId}/primary-return | **OWNER**, autenticación fuerte | `Idempotency-Key`, primario K0 y binding verificados, deadline estricto, CAS/fencing, Outbox, error `SEASON_ABORTED` o `RETURN_DEADLINE_EXPIRED` sin cambios |
 | GET /api/v2/operator/seasons/{seasonId}/health | OWNER/OPERATOR | Tres proveedores, reloj, lag, overlay, inbox, errores |
 | GET /api/v2/public/seasons/{seasonId}/competition | Overlay autorizado | Estado de evento y CompetitionLiveSeconds restante |
 

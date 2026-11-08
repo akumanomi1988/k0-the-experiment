@@ -73,7 +73,7 @@ Los SQL 001 (base), 002 (ejércitos/patrocinio) y 003 (multistreamer) documentan
 | **P2 — Experiencia** | Overlays 360×640/640×360, K-0 textual, portales, escenas, Consejo/elecciones | 3 Browser Sources sincronizados por evento y reconnect |
 | **P3 — Remoto** | Invitación, OAuth de K0, roles, 3 streamers de 3 redes, tres bindings simulados | OBS de uno cae sin modificar economía/torneo ajeno |
 | **P4 — Contenido** | Eras 2–12, arte modular, 130 básicos, proyectos, maravillas, batallas, políticas | Simulación íntegra 12 eras, sin deadlock, hash reproducible |
-| **P5 — Proveedores** | Twitch/YouTube (los que demuestren permisos), LIVE health, reconexión, cuota, uso cruzado | 3 canales reales y cuentas autorizadas, failover ensayado |
+| **P5 — Proveedores** | **YouTube Live primero**, exclusivamente con permisos verificados por cuenta/canal, LIVE health, reconexión y cuotas reales; otros proveedores después | 3 canales YouTube reales autorizados, failover y degradación ensayados |
 | **P6 — Lanzamiento** | QA arte/accesibilidad, 30 FPS OBS, privacidad/licencias, backups/alertas, balance y costes | D4/public gate con evidencias, no checklist teórico |
 | **P7 — SaaS eventual** | Campañas de terceros, billing, aislamiento multi-tenant, SDK/adaptadores | Solo después de validación de retención y ROI |
 
@@ -94,7 +94,7 @@ Los SQL 001 (base), 002 (ejércitos/patrocinio) y 003 (multistreamer) documentan
 | C-09 | Proyectos y maravillas gratuitos | Trace histórica y tests zero-gold |
 | C-10 | Interestelar epílogo | Flags de catálogo v2.3 y docs 34/35/36; falta bloquear runtime tras terminal |
 | C-11 | EraMission propia | 12 misiones, hitos y doc 36 ya generados; falta scheduler y test dos eras mismo día |
-| C-12 | Balance humano candidato, cap por profesión | Alcance explícito en ruleset/docs; falta simulación por perfiles y calibración |
+| C-12 | Balance humano candidato, **cupo nacional único de 2.500** compartido entre los cinco oficios | Ámbito y rotación global fijados en ruleset; falta simulación completa 45–90 días por perfiles y calibración |
 | C-13 | Texto viejo sobre oro inválido | candidatePool y docs 05/44 ya alineados; extender limpieza de archivos legados y ejecutar CI |
 | C-14 | SQL 001/002/003 no migrado | Migrations y test transaccional |
 | C-15 | Constructor XP ocioso | Instrumentación y ajuste tras simulación |
@@ -120,6 +120,10 @@ Las decisiones de diseño quedan explícitas; **no marcar como corrección IMPLE
 | OPS | rollback, restart, restore real DB, doble worker/fencing, outbox duplicado, alerta de stream y OBS, capacidad real con 30 FPS |
 
 Cada prueba PASS exige commit, entorno, versión de catálogo, datos/seed/entradas, resultado, timestamp y evidencia. Mientras falte, estado NOT_RUN. Suite de balance debe publicar P10/P50/P90 para duración por era y por perfil; evitar afirmar «2,5 días por era» como hecho.
+
+**Test de recuperación requerido:** salida del primario confirmada; retorno verificable del mismo broadcaster en T−1 ms => `PAUSED→RUNNING` sin catch-up; retorno en T exacto o posterior => `ABORTED` inmutable; reintentos duplicados y dos workers rivales no reanudan ni cancelan dos veces; segundo abandono tras una recuperación abre incidente distinto y auditable. Torneo expirado a 72 h sigue `CANCELLED` tras reanudación de temporada. Registrar `sessionVersion`, `writerEpoch`, snapshot/hash y Outbox en el commit.
+
+**Gate cuantitativo obligatorio:** el motor completo, y no un modelo de referencia, simula las 12 eras con 24 NPC por nación y cinco hitos/era; perfil editorial nominal de 4 h LIVE/día con 100 seeds y perfiles de audiencia 0/10/100/1000/10000. Publicar P10/P50/P90; P50 del nominal debe situarse en 45–90 días, ninguna semilla puede quedarse sin ruta gratuita con LIVE y cero oro. La simulación de 0 h LIVE no puede reclamar evolución de era. Presupuesto ≤100 € mensuales **medido** de infraestructura+LLM/TTS al perfil de referencia, con stop/degradación narrativos al alcanzar el límite; si falla este gate no se publica como validado.
 
 **Nuevo orden vinculante:** P1 termina el motor de las doce eras jugables y fin Interestelar (3 naciones, replay/DB, sin proveedores). P2 termina todas las artes de esas doce eras y epílogo para tres facciones, dos layouts ES, Doctor K-0 con LLM y TTS seguros y fallback. P3 piloto SINGLE_OPERATOR con tres canales simulados. P5 prioriza YouTube Live con cuentas autorizadas; MULTI_STREAMER viene después. P7 explotación comercial del show propio antes de SaaS. Plan de balance: 45–90 días con LIVE asimétrico, publicado y no compensado. Presupuesto operativo objetivo 100 €/mes, sin acreditación de coste real.
 
