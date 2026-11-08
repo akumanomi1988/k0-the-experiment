@@ -38,6 +38,10 @@ def main() -> int:
     for name in sorted(x for x in relative if x.endswith(".md")):
         doc = ROOT / name
         text = doc.read_text(encoding="utf-8")
+        check("**Regla vigente:****" not in text,
+              f"{name}: encabezado Markdown incorrecto de regla vigente")
+        check("CURRENT_SPEC" not in text,
+              f"{name}: etiqueta histórica de norma reemplazada (usar ESPECIFICACION)")
         for raw in LINK.findall(text):
             raw = raw.strip().split(" ", 1)[0].strip("<>")
             if not raw or raw.startswith(("http://", "https://", "mailto:", "#", "data:")):

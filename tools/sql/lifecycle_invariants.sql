@@ -67,6 +67,18 @@ BEGIN
     NULL;
   END;
 
+  -- Credentials must be verified AFTER the abandonment, never reused stale.
+  BEGIN
+    UPDATE season_primary_departures SET state='RESUMED',
+      returned_primary_account_id=primary_acc,
+      reverified_at=baseline - interval '1 second',
+      resolved_at=baseline + interval '1 day',
+      resumed_by_owner_account_id=owner_acc WHERE id=incident;
+    RAISE EXCEPTION 'Stale provider proof incorrectly accepted';
+  EXCEPTION WHEN check_violation THEN
+    NULL;
+  END;
+
   -- Strict-before deadline success: now a second departure can be recorded.
   UPDATE season_primary_departures SET state='RESUMED',
     returned_primary_account_id=primary_acc,

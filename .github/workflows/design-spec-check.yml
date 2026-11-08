@@ -46,6 +46,8 @@ jobs:
         run: python3 tools/validate_design_catalogs.py
       - name: Validate 20 owner choices and canonical contracts
         run: python3 tools/validate_owner_decisions.py
+      - name: Unit-test UTC lifecycle reference and deadlines
+        run: python3 -m unittest discover -s tools -p 'test_*.py' -v
       - name: Validate Markdown links and canonical document list
         run: python3 tools/validate_documentation.py
 

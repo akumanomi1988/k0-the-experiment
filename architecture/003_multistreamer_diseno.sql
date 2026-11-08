@@ -263,7 +263,8 @@ CREATE TABLE season_primary_departures (
       AND resumed_by_owner_account_id IS NULL)
     OR
     (state = 'RESUMED' AND resolved_at >= confirmed_at AND resolved_at < cancel_after
-      AND reverified_at IS NOT NULL AND reverified_at <= resolved_at
+      AND reverified_at IS NOT NULL AND reverified_at >= confirmed_at
+      AND reverified_at <= resolved_at
       AND returned_primary_account_id = primary_account_id
       AND resumed_by_owner_account_id IS NOT NULL)
     OR
