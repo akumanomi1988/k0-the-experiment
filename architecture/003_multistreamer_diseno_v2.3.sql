@@ -5,6 +5,11 @@
 -- No provider OAuth access tokens or overlay secrets in clear text in database.
 BEGIN;
 
+ALTER TABLE seasons ADD COLUMN broadcast_mode text NOT NULL DEFAULT 'SINGLE_OPERATOR'
+  CHECK (broadcast_mode IN ('SINGLE_OPERATOR','MULTI_STREAMER'));
+-- For MULTI_STREAMER PREPARED requires three DIFFERENT accepted primary accounts,
+-- one per nation; enforce at aggregate transaction / trigger, not by default.
+
 CREATE TABLE k0_accounts (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   issuer text NOT NULL,
@@ -22,6 +27,10 @@ CREATE TABLE campaign_memberships (
   created_at timestamptz NOT NULL DEFAULT now(),
   PRIMARY KEY (campaign_id,account_id,role)
 );
+
+CREATE UNIQUE INDEX ux_active_campaign_owner
+  ON campaign_memberships(campaign_id)
+  WHERE role='OWNER' AND state='ACTIVE';
 
 CREATE TABLE streamer_seats (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
