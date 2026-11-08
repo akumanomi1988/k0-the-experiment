@@ -1,5 +1,7 @@
 # 56 — Modelo económico, cálculos y metodología de balance
 
+**Coherencia de cuotas:** un solo cupo de **2.500 humanos efectivos por nación**, las cinco profesiones comparten los primeros 100 al 100 % y los siguientes 2.400 al 25 %. Rotación nacional cada 600 s LIVE. Medir escenarios de distribución de oficios y horarios asimétricos, sin compensación de horas; los números son objetivo a validar, no simulaciones ya ejecutadas.
+
 **Estado: CANDIDATE_BALANCE, NO VALIDADO.** Esta hoja de cálculo mental y reglas reproducibles no sustituyen un motor de simulación. Las cifras canónicas están en `data/ruleset.json` y catálogos v2.2.
 
 ## Parámetros fijados
@@ -26,7 +28,7 @@ Para cada perfil de participación de (0, 10, 100, 1000, 10000 ciudadanos), cruz
 
 ## Criterios de calibración (propuestos)
 
-Objetivo narrativo: mediana de 2–3 días por era con horario editorial estándar, sin forzar. No adoptar tolerancia hasta ver distribución: documentar P10/P50/P90 por perfil y exposición LIVE. Si P90 queda bloqueado, priorizar corregir dependencias o reserva antes de subir por sistema las tasas. Balancear tres facciones con mismas condiciones y RNG de juego equivalente; no dar ventaja silenciosa al canal con más público. Congelar cambios al comenzar temporada; revisar únicamente entre temporadas.
+**Objetivo de producto confirmado:** temporada completa de **45–90 días naturales**, mediana orientativa 66 días (≈5,5 días por cada una de las 12 eras jugables). No forzar evolución artificialmente para cuadrar el calendario. No adoptar tolerancia hasta ver distribución: documentar P10/P50/P90 por perfil y exposición LIVE. Si P90 queda bloqueado, priorizar corregir dependencias o reserva antes de subir por sistema las tasas. Balancear tres facciones con mismas condiciones y RNG de juego equivalente; no dar ventaja silenciosa al canal con más público. Congelar cambios al comenzar temporada; revisar únicamente entre temporadas.
 
 ## Invariantes que deben poder demostrarse
 

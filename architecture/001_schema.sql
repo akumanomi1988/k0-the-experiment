@@ -68,8 +68,10 @@ CREATE TABLE citizens (
   FOREIGN KEY(provider,provider_user_id) REFERENCES provider_identities(provider,provider_user_id),
   UNIQUE(season_id,nation_id,provider,provider_user_id)
 );
--- Multiple nations may legitimately have distinct citizens for the same provider identity.
--- The unique key above is (season,nation,provider,provider_user_id), preventing duplication only within nation.
+-- Historical v2 base key scoped citizens by nation. Active design now requires ONE
+-- nation per K0 account per season. architecture/003_multistreamer_diseno.sql
+-- adds citizens.account_id with UNIQUE(season_id,account_id), identity link and
+-- consent tables. Never use only this old key to authorize a new citizen.
 CREATE TABLE selected_skills (
   season_id uuid NOT NULL, nation_id uuid NOT NULL, citizen_id uuid NOT NULL,
   tier smallint NOT NULL CHECK(tier IN (1,2,3)), skill_id text NOT NULL,

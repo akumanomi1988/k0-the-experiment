@@ -44,5 +44,69 @@ jobs:
         run: python3 tools/check_active_spec.py --check
       - name: Validate structured game catalogs and contracts
         run: python3 tools/validate_design_catalogs.py
+      - name: Validate 20 owner choices and canonical contracts
+        run: python3 tools/validate_owner_decisions.py
       - name: Validate Markdown links and canonical document list
         run: python3 tools/validate_documentation.py
+
+  postgres-design-smoke:
+    name: postgres-design-smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: chaos
+          POSTGRES_PASSWORD: chaos_test_only
+          POSTGRES_DB: chaos
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U chaos -d chaos"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+    env:
+      PGHOST: localhost
+      PGPORT: 5432
+      PGUSER: chaos
+      PGPASSWORD: chaos_test_only
+      PGDATABASE: chaos
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install PostgreSQL client
+        run: command -v psql >/dev/null || (sudo apt-get update && sudo apt-get install -y postgresql-client)
+      - name: Run design SQL 001 to 003 on empty PostgreSQL 16
+        run: |
+          psql -v ON_ERROR_STOP=1 -f architecture/001_schema.sql
+          psql -v ON_ERROR_STOP=1 -f architecture/002_extensiones_diseno.sql
+          psql -v ON_ERROR_STOP=1 -f architecture/003_multistreamer_diseno.sql
+      - name: Verify owner-decision integrity constraints exist
+        run: |
+          psql -v ON_ERROR_STOP=1 <<'SQL'
+          DO $$
+          BEGIN
+            IF NOT EXISTS (SELECT 1 FROM pg_indexes
+                           WHERE indexname='ux_citizen_one_nation_per_k0_account_season') THEN
+              RAISE EXCEPTION 'No one-nation per account unique index';
+            END IF;
+            IF NOT EXISTS (SELECT 1 FROM information_schema.columns
+                           WHERE table_name='citizens' AND column_name='account_id'
+                             AND is_nullable='NO') THEN
+              RAISE EXCEPTION 'Citizen account FK is nullable';
+            END IF;
+            IF NOT EXISTS (SELECT 1 FROM pg_constraint
+                           WHERE conname='ck_abort_has_no_winner') THEN
+              RAISE EXCEPTION 'ABORTED must have no winner';
+            END IF;
+            IF NOT EXISTS (SELECT 1 FROM information_schema.columns
+                           WHERE table_name='competition_clock_states'
+                             AND column_name='cancel_at_utc') THEN
+              RAISE EXCEPTION 'Missing tournament timeout';
+            END IF;
+          END;
+          $$;
+          SQL

@@ -4,7 +4,7 @@
 `UNREGISTERED --!join--> JOINED_NO_PROFESSION --!work(valid)--> ACTIVE --UTC expiry--> RESTING --!active or !work(same)--> ACTIVE`. `!work(different)` desde ACTIVE/RESTING rechaza `PROFESSION_LOCKED`. Ciudadanos no se borran por desconexión ni falta de alimentos. En cierre, `ARCHIVED` conserva historial y stats; siguiente temporada crea ciudadano nuevo.
 
 ## Elecciones y votaciones
-`QUEUED → OPEN → RESOLVED`; `OPEN → PAUSED` si nación LIVE desaparece, `PAUSED → OPEN` cuando regresa; `OPEN/PAUSED → CANCELLED` solo por operador con motivo. Consejo además `RESOLVED → PAYMENT_BLOCKED` si reverso simultáneo invalida la reserva; no se crea proyecto. `BALLOT` debe referenciar voto abierto, opción admisible, ciudadano de nación, input deduplicado y sello LIVE válido. En `RPS`, una primera papeleta válida es irrevocable; en `GOVERNMENT`, `PRIORITY` y `STRATEGIC` la última papeleta válida sustituye la anterior en la misma fila. `GOVERNMENT_RUNOFF` solo ofrece previamente empatados.
+`QUEUED → OPEN → RESOLVED`; `OPEN → PAUSED` si nación LIVE desaparece, `PAUSED → OPEN` cuando regresa; `OPEN/PAUSED → CANCELLED` solo por operador con motivo. **El Consejo no admite `PAYMENT_BLOCKED` por oro**: usa solo recursos ordinarios. Si una reserva de madera/piedra/conocimiento es inconsistente, la transacción falla con causa auditable y no se crea el proyecto ni se cobra parcialmente. `BALLOT` debe referenciar voto abierto, opción admisible, ciudadano de nación, input deduplicado y sello LIVE válido. En `RPS`, una primera papeleta válida es irrevocable; en `GOVERNMENT`, `PRIORITY` y `STRATEGIC` la última papeleta válida sustituye la anterior en la misma fila. `GOVERNMENT_RUNOFF` solo ofrece previamente empatados.
 
 ## Obra
 `WAITING_RESOURCES → WAITING_PLOT → QUEUED → BUILDING → COMPLETED`; una obra puede saltar WAITING_PLOT si parcela disponible, pero nunca saltarse el pago. Costes se comprometen atómicamente una vez al entrar QUEUED; construcción por tramos visuales; `CANCELLED` antes de pagar libera reserva, después de pagar solo permitido por fallo grave y con compensación auditable que no deshaga trabajos anteriores.
@@ -14,6 +14,9 @@
 
 ## Sesión de directo
 `OFFLINE_CONFIRMED → LIVE_CONFIRMED` requiere evidencia y TTL, `LIVE_CONFIRMED → UNCERTAIN` si señal/autoridad pierde health, `UNCERTAIN → LIVE_CONFIRMED` solo al recuperar evidencia. `UNCERTAIN → OFFLINE_CONFIRMED` tras confirmación de fin de emisión o caducidad de TTL. Manual override solo para modo SIMULATED o con autorización operador auditada; un override no valida contribuciones financieras.
+
+## Abandono de streamer y torneos
+`BROADCASTER_PRIMARY_LEFT` confirmado por OWNER → temporada `PAUSED` global sin progreso económico, político o competitivo. Plazo de siete días de reloj UTC real desde confirmación; a la expiración `ABORTED` sin ganador ni premios. OFFLINE temporal o OBS caído no son abandono. Un torneo `PAUSED` por indisponibilidad de un LIVE no consume reloj de competición y expira tras 72 horas UTC desde la pausa inicial: `CANCELLED` sin sanción; si se recupera antes, reanuda votos y tiempo restante. Las transiciones de expiración son idempotentes.
 
 ## Fin de carrera
 `RUNNING` con tres naciones activas → `EraAdvanced to interstellar` → `SeasonWinnerClaim` (unique season) → `COMPLETED`; winner se registra antes de guardar Outbox. Los ticks posteriores no pueden reabrir gobierno ni extender construcción competitiva. `COMPLETED → ARCHIVED` tras cierre y snapshot; no existe `COMPLETED → RUNNING`.

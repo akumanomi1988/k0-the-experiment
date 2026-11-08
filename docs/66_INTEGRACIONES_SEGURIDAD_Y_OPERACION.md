@@ -21,6 +21,8 @@ Fuentes normativas externas para consultar antes de cada integración:
 
 **No hay fallback clandestino:** fallo de OAuth/permisos/cursor → capability deshabilitada, no lectura por cookies ni reenvío de chat entre cuentas.
 
+**Hoja de ruta confirmada:** primera entrega = 12 eras ejecutables en simulación local. Primer modo de emisión = SINGLE_OPERATOR con tres canales; conector externo inicial = **YouTube Live** tras autorizar y probar cada cuenta, sin asumir capacidades. MULTI_STREAMER se incorpora después; tres canales verificados permiten iniciar sin tres presencias LIVE simultáneas.
+
 ## 2. OAuth, invitaciones y roles
 
 Portal K0 usa OIDC propio o proveedor de identidad verificado, auth code + PKCE; OWNER y OPERATOR con MFA. Cada streamer vincula **su cuenta**, concede los scopes mínimos y ve claramente qué se lee/publica. Tokens OAuth y refresh tokens:
@@ -36,6 +38,8 @@ Portal K0 usa OIDC propio o proveedor de identidad verificado, auth code + PKCE;
 El mínimo cliente es OBS Browser Source HTTPS. URL de setup contiene solo identificador público y **secreto revocable de lectura**; preferible fragmento de URL para que no aparezca en logs HTTP, con posterior intercambio por sesión read-only de corta duración. El secreto es un credential: no enviarlo por capturas/chat, guardarlo hasheado en backend y permitir rotación inmediata. No insertar refresh token de proveedores en OBS; no abrir puertos entrantes en equipos de streamer. La pantalla renderizada se suscribe con su outputId y allowedNationIds; heartbeat de overlay SOLO indica conexión visual.
 
 Seguridad de cliente: CSP cerrada para scripts/medios autorizados, SRI cuando corresponda, HTTPS/WSS, anti-clickjacking del panel, rate limits en intercambio de token, expiración/rotación, no mezclar capacidades de operador con vistas públicas. Si secret overlay se filtra: revocar y emitir URL nueva; no afecta cuentas o estado lógico.
+
+**Retención por defecto:** 30 días para datos operativos, con excepción de datos sujetos a conservación legal; no conservar chat crudo en negocio. Público inicial general España/UE y menores: se requiere evaluación RGPD y salvaguardas de edad, minimización y prohibición de segmentación monetaria a menores. Pseudónimos generados, alias solo con consentimiento expreso revocable.
 
 ## 4. Privacidad y redifusión
 
@@ -73,6 +77,8 @@ Recomendación de referencia: API ASP.NET Core .NET 10 y worker de simulación c
 - No desplegar Redis, Kafka, RabbitMQ, Kubernetes ni servidor de juego dedicado por streamer inicialmente.
 - Ingress multi-proveedor puede escalar a procesos separables sin mover la autoridad del motor ni los datos.
 - Backups cifrados y restauración programada; hasta pruebas no se anuncian RPO/RTO numéricos como realizados.
+
+**Coste máximo inicial objetivo: 100 €/mes de infraestructura (incluido LLM/TTS)**; control y alertas por gasto, degradación narrativa antes que gameplay, sin garantía de capacidad no medida. Monetización inicialmente desactivada; negocio prioritario: espectáculo propio, no SaaS/licencias desde el primer piloto. La plataforma prioritaria requiere permisos concretos; el software no está implementado.
 
 ## 7. Presupuesto, costes y SaaS futuro
 

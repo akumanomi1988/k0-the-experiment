@@ -76,7 +76,7 @@ Cada output mantiene campos accesibles: broadcasterAlias moderado, factionName, 
 - Comandos existentes !join, !work, !active, !gov, !priority, !build, !rps, !skill. No crear comandos nuevos del stream principal sin contrato.
 - Voto en RPS no revela distribución por opción antes de cierre; en elecciones/Consejo se pueden mostrar barras autorizadas. Una papeleta no puede aparecer aceptada si Inbox no confirmó.
 - Voto pausado muestra segundos LIVE congelados, banner «esperando confirmación de transmisión» y origen afectado sin exponer datos sensibles.
-- Si un streamer abandona la temporada, se mantiene nación e historial, entra política de reasignación de asiento/binding auditada; no transfiere usuarios a otro canal silenciosamente.
+- Si el propietario confirma abandono definitivo del broadcaster primario, la temporada completa entra en PAUSED y se **cancela a los siete días UTC** sin sustitución automática, ganador ni premios; conservar nación e historial auditado. Una caída de OBS o emisión fuera de directo no activa el plazo.
 - No conceder notoriedad visual competitiva por donaciones; patrocinio cosmético sin efectos y con consentimiento/moderación.
 
 ## 6. Sonido, K-0 y transmisión cruzada
@@ -96,6 +96,8 @@ Cada output mantiene campos accesibles: broadcasterAlias moderado, factionName, 
 - ART-M01: siluetas de 3 facciones identificables en monocromo y 1×; K-0 reconociblemente cyborg.
 - ART-M02: 3 style frames (Paleolítico, Industrial, Espacial) x 3 culturas, contrastados en 360×640 y 640×360.
 - ART-M03: 4 orientaciones y 9 acciones del contrato original solo se aprueban cuando estén dibujadas, animadas y comprobadas, no por describirlas.
+
+**Gate del primer piloto:** todos los assets de las doce eras jugables, tres facciones y epílogo Interestelar deben estar producidos/aprobados antes del primer piloto, en overlay vertical y horizontal en español. La reutilización modular y los atlas reducen coste, pero no eximen de la cobertura completa. Doctor K-0 debe contar con narración generativa LLM y TTS dinámico filtrados, con subtítulos/plantillas de respaldo.
 
 ## 8. Orden de producción con máximo ROI
 

@@ -1,5 +1,7 @@
 # 49 — Audio, música, accesibilidad y localización
 
+**Lanzamiento acordado:** Doctor K-0 genera voz TTS dinámica desde LLM moderado en **es-ES**, con subtítulos y plantillas seguras si el servicio o el presupuesto fallan. No hay promesa de voces ni audio ya producidos.
+
 **Estado: especificación editorial, no bandas sonoras ni locuciones producidas.** El juego no debe depender de voz o música para que las reglas se entiendan.
 
 ## Identidad sonora
@@ -31,7 +33,7 @@ Todos los eventos se expresan también por texto, icono y contexto; no únicamen
 
 ## Localización
 
-El paquete editorial de salida deberá admitir `es-ES` y `en-US`; IDs de comandos (`!join`, `!work`, etc.) permanecen invariantes inicialmente para reducir ambigüedad. Todos los textos de UI y narración se almacenan por clave, con variables tipadas como `nation`, `era`, `remainingLiveSeconds`, `points`, `displayNameModerated`. Ningún nombre visible se traduce de forma automática (nombre propio K-0, Micelios, Rúnicos, Ferrinos). Todo texto de HUD debe tener versión abreviada y versión de accesibilidad. No concatenar gramaticalmente frases dependientes del género sin plantillas correctas.
+**El primer piloto solo requiere español (`es-ES`)** para dos layouts (360×640 vertical y 640×360 horizontal); `en-US` y nuevos idiomas son posteriores y deben mantenerse internacionalizables; IDs de comandos (`!join`, `!work`, etc.) permanecen invariantes inicialmente para reducir ambigüedad. Todos los textos de UI y narración se almacenan por clave, con variables tipadas como `nation`, `era`, `remainingLiveSeconds`, `points`, `displayNameModerated`. Ningún nombre visible se traduce de forma automática (nombre propio K-0, Micelios, Rúnicos, Ferrinos). Todo texto de HUD debe tener versión abreviada y versión de accesibilidad. No concatenar gramaticalmente frases dependientes del género sin plantillas correctas.
 
 ## Gate
 

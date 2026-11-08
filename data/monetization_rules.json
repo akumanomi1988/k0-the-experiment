@@ -25,5 +25,11 @@
     "reversal_test",
     "legal_policy_review",
     "operator_and_approval_timestamp"
-  ]
+  ],
+  "activationPolicy": "AFTER_GAME_VALIDATED_AND_LEGAL_PLATFORM_EVIDENCE",
+  "initialPublicLaunchEnabled": false,
+  "firstBusinessModel": "OWN_LIVE_SHOW",
+  "saasDeferredUntilOwnShowValidated": true,
+  "publicAudience": "ES_EU_GENERAL_AUDIENCE",
+  "minorTargetedMonetizationAllowed": false
 }

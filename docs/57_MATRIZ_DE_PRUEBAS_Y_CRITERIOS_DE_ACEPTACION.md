@@ -1,5 +1,7 @@
 > **Regla vigente:**** nuevos tests MS-01..MS-08: tres ordenadores/proveedores autorizados, caída OBS aislada, reloj global RPS, revocación de invitados/tokens y reconexión sin afectar hash del motor. Ver docs 63–67. [Especificación vigente](ESPECIFICACION.md).
 
+**Decisiones confirmadas y ahora exigibles en QA:** demostrar 12 eras jugables completas antes de conectar un proveedor, tres naciones sin oro, cupo nacional único 2.500, identidad de cuenta K0 mono-nación auto-creada desde chat, START con canales autorizados sin LIVE simultáneo, cancelación de temporada tras siete días de abandono confirmado y torneo tras 72 h pausado. El primer piloto añade arte completo de las doce eras y epílogo, ambos layouts ES, narración LLM/TTS con fallback, público general UE y retención operativa 30 días salvo ley. Monetización OFF y presupuesto objetivo 100 €/mes. **Todo sigue NOT_RUN hasta disponer de motor, assets, integración y mediciones**.
+
 # 57 — Matriz de cobertura de pruebas y aceptación futura
 
 **Estado: catálogo de pruebas que se deberán ejecutar, no resultados de test.** Evita confundir «caso escrito» con «software probado».

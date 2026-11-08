@@ -1,5 +1,7 @@
 # 28 — Libro de estilo y protocolo narrativo de Doctor K-0
 
+**Modalidad de lanzamiento confirmada:** narración **generativa mediante LLM con TTS dinámico** en español, a partir de eventos confirmados. El ShowDirector mantiene prioridad y whitelist; texto y voz se moderan antes de emisión, sin instrucciones crudas del chat, acceso a PII ni mutación de reglas. Si hay errores, latencia excesiva o se alcanza presupuesto, fallback a plantillas/subtítulos, jamás se detiene el motor.
+
 **Estado:** especificación editorial. K-0 es narrador y agente de presentación; **no** autoriza comandos de dominio.
 
 ## Carácter fijo

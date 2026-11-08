@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "status": "V2_2_SPECIFICATION_ONLY_NO_ASSETS_RENDERED",
+  "status": "FULL_12_PLAYABLE_ERAS_AND_EPILOGUE_REQUIRED_NOT_YET_PRODUCED",
   "tileSize": [
     32,
     16
@@ -83,5 +83,15 @@
     "no faction-dependent collision",
     "no 3D depth advantage",
     "no stolen Terraria/other proprietary sprites"
+  ],
+  "requireAllPlayableEraArtBeforeFirstPilot": true,
+  "requiredPlayableEraCount": 12,
+  "terminalEpilogueArtRequired": true,
+  "pilotLocales": [
+    "es-ES"
+  ],
+  "pilotLayouts": [
+    "VERTICAL_360_640",
+    "HORIZONTAL_640_360"
   ]
 }

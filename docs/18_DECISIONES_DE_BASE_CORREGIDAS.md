@@ -1,5 +1,7 @@
 # 18 — Correcciones estructurales realizadas en v2.0
 
+**Registro histórico, no norma alternativa.** La fuente actual es `docs/ESPECIFICACION.md`: veinte decisiones ratificadas, incluido cupo **único de 2.500 por nación** y usuario K0 mono-nación. El histórico se recupera desde Git, sin restaurar reglas sustituidas.
+
 ## Ajustes deliberados y por qué
 
 | ADR | Antes | Ahora | Motivo | Impacto |
@@ -23,7 +25,7 @@ Esta tabla guarda la historia; para Consejo/Maravillas y dependencia tecnológic
 
 ## Enmienda v2.2
 
-Esta tabla guarda la historia; para Consejo/Maravillas y dependencia tecnológica prevalecen las decisiones D-01/D-02 de `docs/41_AUDITORIA_DE_COMPLETITUD_Y_JERARQUIA.md`. No aplicar retrospectivamente a temporadas ya iniciadas.
+
 
 ## Jerarquía
 Las 92 decisiones originales se preservan literalmente en `data/legacy_user_decisions_1_92.json` y se relacionan en `audit/decision_traceability.json`. La **nueva instrucción expresa del usuario** modifica la asignación rígida plataformas→naciones (antiguos supuestos); no reemplaza el número de naciones, las tres facciones, las reglas sociales ni la independencia de los mundos. Ninguna otra regla original se cambia sin registrar su motivo.

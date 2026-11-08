@@ -1,9 +1,11 @@
 # 59 — Modelo económico del producto, infraestructura y límites de monetización
 
+**Decisión económica del propietario:** la primera experiencia pública es gratuita en lo competitivo y sin aportaciones monetarias verificadas; solo monetizar después de validar funcionalidad, proveedor y revisión jurídica. Modelo comercial inicial = **show propio**, no SaaS ni licencias a terceros. **Techo objetivo 100 €/mes** incluyendo servidor, PostgreSQL, proyecciones, métricas y LLM/TTS; degradar solo narración/cosméticos cuando se alcanza el tope y registrar el coste medido.
+
 ## Distinción de dos economías
 
 1. **Economía del videojuego:** comida, madera, piedra, mineral, conocimiento, trabajo, oro de prestigio. No hay relación directa entre apoyo monetario y resultado competitivo.
-2. **Economía del creador/empresa:** coste de servidores, uso de APIs, TTS, arte, moderación, licencias, legal y soporte; eventual facturación mediante suscripción/licencia del software. Las tasas no se confunden ni se convierten automáticamente unas en otras.
+2. **Economía del creador/empresa:** coste de servidores, uso de APIs, TTS, arte, moderación, licencias, legal y soporte; **estrategia inicial de explotación del espectáculo propio**; SaaS/licencias para terceros se aplazan hasta demostrar retención, ingresos, demanda y ROI. Las tasas no se confunden ni se convierten automáticamente unas en otras.
 
 ## Cost drivers
 

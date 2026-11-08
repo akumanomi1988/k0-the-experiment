@@ -140,7 +140,7 @@ def main() -> int:
     check(rules.get("progression", {}).get("finalEraGameplayEnabled") is False,
           "Interestellar must be terminal")
     check(rules.get("citizens", {}).get("activeHumanWorkersSoftCapScope") ==
-          "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE", "Human cap scope is ambiguous")
+          "PER_NATION_TOTAL", "Human cap scope is ambiguous")
 
     sql = (ROOT / "architecture/001_schema.sql").read_text(encoding="utf-8")
     check("'PAUSED'" in sql and "'COSMETIC_SPEND'" in sql,

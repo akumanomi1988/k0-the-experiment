@@ -1,5 +1,7 @@
 > **Regla vigente:**** las tres cuentas pueden pertenecer a tres personas distintas y ejecutarse desde PCs/OBS diferentes. Cada broadcaster dispone de asiento, auth, Browser Source y estado de emisión propios; ningún PC aloja el motor. [Especificación vigente](ESPECIFICACION.md).
 
+**Orden de integración confirmado:** primero motor completo con 12 eras sin plataformas, después **SINGLE_OPERATOR** con tres canales autorizados, preferentemente **YouTube Live** cuando se acrediten permisos y cuotas. MULTI_STREAMER sigue en fase posterior. Una temporada de tres streamers puede comenzar con canales autorizados aunque no estén todos LIVE simultáneamente. Mostrar horas LIVE por nación y no compensar horarios dispares.
+
 # 31 — Diseño de emisión con una, dos o tres plataformas
 
 **Propósito:** separar por completo las naciones de las plataformas y documentar cómo configurar cuentas sin inferir permisos reales de lectura LIVE.

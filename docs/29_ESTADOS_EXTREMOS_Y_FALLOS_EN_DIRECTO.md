@@ -1,5 +1,7 @@
 # 29 — Matriz de casos límite y degradación funcional
 
+**Incidentes de temporada:** una emisión OFFLINE o una caída de OBS no son abandono. Solo la salida **definitiva confirmada por OWNER** inicia pausa global de temporada; tras **siete días UTC** se registra `ABORTED` sin ganador ni premio. Un torneo pausado por ausencia de LIVE expira a las **72 horas UTC** sin penalización.
+
 **Propósito:** especificar qué debe ocurrir cuando el mundo no está en las condiciones ideales; el diseño debe seguir siendo coherente con ausencia de público, sin oro y con proveedores intermitentes.
 
 | Incidente | Continúa | Se congela | Acción del operador / audiencia |

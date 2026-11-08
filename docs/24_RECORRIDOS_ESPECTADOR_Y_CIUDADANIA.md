@@ -1,6 +1,6 @@
 # 24 — Recorridos del espectador y experiencia del ciudadano
 
-**Objetivo:** cerrar la experiencia observable por un usuario en chat sin depender de cómo se implemente la integración. Se mantiene una identidad de ciudadanía por nación y temporada; la existencia de distintas cuentas no altera la pertenencia de la nación.
+**Objetivo:** cerrar la experiencia observable por un usuario en chat sin depender de cómo se implemente la integración. Se permite **una única nación por cuenta K0 y temporada**. El primer `!join` autenticado desde chat crea automáticamente la cuenta interna sin login manual; la identidad del proveedor queda vinculada de manera verificable.
 
 ## Usuario nuevo
 
@@ -18,7 +18,7 @@ Al volver al directo, el usuario recupera identidad por identificador estable de
 
 ## Usuario con varias cuentas o canales
 
-Un canal concreto se asigna a una sola nación por temporada. La misma cuenta del proveedor puede participar en naciones diferentes solo cuando sus canales correspondientes se asignan a ellas; las estadísticas permanecen separadas. Varias cuentas de un mismo ser humano no son identificables con certeza y no debe prometerse prevención absoluta del multicuenta.
+Un canal concreto se asigna a una sola nación por temporada. La misma **cuenta K0** no puede votar o trabajar en otra nación esa temporada: el comando se rechaza con `NATION_LOCKED`. Un mismo humano con cuentas de proveedor no vinculadas no puede deduplicarse de forma fiable por alias; el enlace entre plataformas requiere acreditación y consentimiento. En pantalla aparece pseudónimo generado, y el alias de plataforma solo tras opt-in revocable.
 
 Una cuenta de creador puede aparecer en distintas escenas OBS; ello no implica que los espectadores adquieran identidades compartidas entre canales.
 

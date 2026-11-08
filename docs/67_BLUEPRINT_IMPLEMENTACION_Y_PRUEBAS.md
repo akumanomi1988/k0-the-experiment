@@ -121,6 +121,8 @@ Las decisiones de diseño quedan explícitas; **no marcar como corrección IMPLE
 
 Cada prueba PASS exige commit, entorno, versión de catálogo, datos/seed/entradas, resultado, timestamp y evidencia. Mientras falte, estado NOT_RUN. Suite de balance debe publicar P10/P50/P90 para duración por era y por perfil; evitar afirmar «2,5 días por era» como hecho.
 
+**Nuevo orden vinculante:** P1 termina el motor de las doce eras jugables y fin Interestelar (3 naciones, replay/DB, sin proveedores). P2 termina todas las artes de esas doce eras y epílogo para tres facciones, dos layouts ES, Doctor K-0 con LLM y TTS seguros y fallback. P3 piloto SINGLE_OPERATOR con tres canales simulados. P5 prioriza YouTube Live con cuentas autorizadas; MULTI_STREAMER viene después. P7 explotación comercial del show propio antes de SaaS. Plan de balance: 45–90 días con LIVE asimétrico, publicado y no compensado. Presupuesto operativo objetivo 100 €/mes, sin acreditación de coste real.
+
 ## 9. Gates externos y definición del producto
 
 No se puede escribir en GitHub una licencia de marca, permiso LIVE, desempeño de hardware, consentimiento real ni resultado de una simulación que todavía no existe. Mantener estas dependencias rastreables: proveedor/cuenta, legal/privacidad, arte/licencias, infraestructura/backup, rendimiento OBS, economía completa, costes reales y experimento con usuarios. Cada gate lleva responsable, evidencia, fecha, URL/documento y estado; ningún gate se cierra con prosa.

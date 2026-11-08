@@ -4,7 +4,7 @@
 **Estado verificable:** DESIGN_BASELINE / NO IMPLEMENTADO / NO CERTIFICADO PARA LIVE PÚBLICO.  
 **Alcance:** reglas de juego, identidad, arte, UX, contenido, operadores, multistreamer, integraciones, motor, datos, seguridad, negocio y validación.
 
-> Esta especificación reúne las decisiones confirmadas y sus enmiendas. Concilia decisiones de usuario 1–92, las correcciones v2.0–v2.2, la arquitectura multistreamer v2.3 y los catálogos existentes. Cuando una decisión histórica fue sustituida, **la v2.5 identifica expresamente su reemplazo**. Las propuestas de balance y los requisitos externos se mantienen como tales; documentar no significa ejecutar o aprobar.
+> Esta especificación reúne las decisiones confirmadas y sus enmiendas. Concilia decisiones de usuario 1–92, las correcciones v2.0–v2.2, la arquitectura multistreamer v2.3 y los catálogos existentes. Las decisiones confirmadas el 8 de noviembre de 2026 se integran en este mismo archivo, sin crear otro documento por versión. Las propuestas de balance y los requisitos externos se mantienen como tales; documentar no significa ejecutar o aprobar.
 
 ## 0. Cómo leer esta especificación
 
@@ -43,7 +43,7 @@ La nación **no equivale a plataforma**. El supuesto v0.8 que fijaba TikTok=Mice
 
 Existe **una partida central compartida** (Campaign→Season→tres Nation), no tres motores instalados en PC de streamers. Pueden competir tres creadores independientes desde equipos, redes y cuentas de la misma plataforma o de plataformas distintas:
 
-- **SINGLE_OPERATOR:** un responsable controla las tres fuentes de chat distintas, incluso en una misma plataforma; puede usar una escena combinada.
+- **SINGLE_OPERATOR (primer lanzamiento):** un responsable controla tres fuentes de chat distintas, incluso en una misma plataforma, y puede usar una escena combinada. MULTI_STREAMER se entrega después de validar el espectáculo propio. La primera entrega funcional es el **motor completo de las 12 eras jugables y final interestelar**, con tres naciones y pruebas locales, **antes** de integrar plataformas reales.
 - **MULTI_STREAMER:** tres cuentas K0 **distintas** son responsables primarias, una por nación, con invitación aceptada, canal propio y Browser Source OBS independiente. El propietario de campaña arbitra permisos, no votos/resultados. Cofundadores o cohosts pueden observar o presentar sin crear otro controlador de la nación.
 - Una cuenta/canal de origen se asigna a **una única nación por temporada**. Un solo chat que controle simultáneamente las tres naciones NO es una capacidad admitida.
 - Mismo proveedor, tres canales diferentes, está admitido en el **modelo** (Twitch A/B/C, YouTube A/B/C, o TikTok A/B/C únicamente si hay permiso real). También configuraciones mixtas con capacidades por cuenta verificadas.
@@ -51,13 +51,13 @@ Existe **una partida central compartida** (Campaign→Season→tres Nation), no 
 - El backend .NET autoritativo recibe eventos de proveedor, valida identidad y binding, procesa simulación y publica snapshots/deltas/cues. El OBS local solo dibuja la vista de esa salida.
 - **Que se caiga OBS/Browser Source no significa que el proveedor haya dejado de estar LIVE**. El motor continúa si existe presencia LIVE auténtica. El overlay recupera snapshot y eventos vigentes; no altera horas de trabajo ni relojes.
 - Que termine el LIVE de una nación desacelera **esa** economía, congela **sus** votos/progreso de era y pausa todos los torneos compartidos que requieran tres LIVE; no desconecta B/C ni invalida sus culturas.
-- Las distintas horas emitidas pueden crear **asimetría de progresión**. La regla vigente la permite (100 % LIVE / 20 % offline); no está acreditada como equilibrio perfecto. El tiempo de emisión debe ser visible y analizarse antes de lanzar.
-- Un mismo espectador puede tener ciudadanos distintos si interactúa desde distintas cuentas y naciones; **no** deduplicar cuentas de Twitch y YouTube por alias. Los nombres públicos son moderados, nunca claves de identidad.
+- Las distintas horas emitidas **pueden crear asimetría de progresión y están permitidas** (100 % LIVE / 20 % OFFLINE) sin límite compensatorio de horas. El HUD y el operador publican horas LIVE acumuladas por nación y las métricas de competición permiten auditar la diferencia. No se ralentiza a quien emite más ni se obliga a simultaneidad para comenzar una temporada.
+- **Una cuenta K0 solo puede pertenecer a una nación por temporada**. El primer `!join` autenticado en chat crea automáticamente una cuenta K0 interna (sin formulario de registro), la vincula a la identidad inmutable del proveedor y fija su nación; otro canal de otra nación devuelve `NATION_LOCKED`. Un mismo titular que se identifique en varias plataformas solo puede unificarse mediante vinculación verificada y consentida: **sin ella no es técnicamente posible garantizar unicidad de persona entre proveedores**. Los nombres son pseudónimos generados por defecto; exhibir alias del canal necesita consentimiento explícito, revocable, y moderación.
 - El operador puede asignar distintas políticas de presentación por salida, pero no mezclar mensajes o avatares crudos entre plataformas sin permisos.
 
 **Modelo de identidad:** AccountUser, CampaignMembership, StreamerSeat, ProviderConnection, ChannelBinding, ProviderLiveSession, BroadcastOutput, ViewerCitizen. NationId interno UUID; FactionId estable micelios/runicos/ferrinos. OutputId ≠ BindingId ≠ ProviderSessionId. Roles de owner/operator/broadcaster/moderator/auditor; broadcaster no puede modificar economía ni ganar la partida desde su panel.
 
-**Flujo de alta:** campaña DRAFT → tres Nation → invitaciones de un solo uso con caducidad → aceptación por cada streamer → autorización de su canal mediante proveedor → prueba de permisos CHAT_READ y LIVE_PRESENCE independientes → seleccionar overlay vertical/horizontal y copiar URL revocable → preflight → PREPARED/RUNNING. La cuenta OAuth no se entrega a OBS.
+**Flujo de alta:** campaña DRAFT → tres Nation → en modo multistreamer, invitaciones de un solo uso con caducidad y aceptación por cada streamer → autorización de tres canales distintos mediante el proveedor (en modo operador único controla los tres) → prueba de permisos CHAT_READ y LIVE_PRESENCE independientes → seleccionar overlay vertical/horizontal y copiar URL revocable → preflight → PREPARED/RUNNING. **No se exigen tres emisiones LIVE simultáneas para iniciar la temporada**; cada nación evoluciona con su reloj. La cuenta OAuth no se entrega a OBS.
 
 [Diseño de referencia de entidades, fallos y sesiones](../docs/63_ARQUITECTURA_MULTISTREAMER.md); [semántica distribuida](../docs/64_RELOJES_EVENTOS_Y_CONTRATOS.md).
 
@@ -73,7 +73,7 @@ Cada era 1–12 se completa por **cinco hitos distintos de 20 puntos cada uno**:
 
 **Misiones:** tres tipos diarios y dos semanales siguen en ciclos UTC para recompensas ordinarias; no vuelven a dar puntos históricos por repetición. Para cada era 1–12 hay una **misión propia** (12 instancias posibles), completada por trabajo productivo real de NPC/humanos en esa era, independiente del corte diario; diseñada para que cero espectadores no bloquee el progreso. Objetivos del catálogo de misiones son **candidatos de balance**, no resultados simulados.
 
-Al cerrar temporada se conservan historial, estadísticas, logros, memoria narrativa y prestigio cosmético; se reinician saldos ordinarios, nivel, habilidades y economía competitiva para la siguiente. No hay importación de ventajas desde el campeón anterior. No hay muerte permanente de ciudadano.
+Al cerrar temporada se conservan historial, estadísticas, logros, memoria narrativa y prestigio cosmético; se reinician saldos ordinarios, nivel, habilidades y economía competitiva para la siguiente. No hay importación de ventajas desde el campeón anterior. No hay muerte permanente de ciudadano. **La temporada objetivo dura 45–90 días naturales (mediana orientativa ~66 días, ≈5,5 días por cada una de las doce eras jugables)**, sin forzar la simulación para llegar a un plazo; el balance deberá demostrar o recalibrar esa duración exclusivamente antes de congelar una temporada.
 
 ## 4. Ciudadanos, trabajo, habilidades y NPC
 
@@ -89,9 +89,9 @@ Un ciudadano nace con !join desde una identidad **autenticada por el proveedor e
 
 El oficio cambia **nombre, ropa, herramienta y acciones visuales** con era, pero no su ID ni XP. Niveles 1–20 con umbrales XP acumulada 250×(nivel−1)²; trabajo efectivo aporta 6 XP por minuto-trabajador efectivo con restos enteros persistentes. Tres elecciones de habilidad en niveles 3, 7 y 12, con dos alternativas por bifurcación y un máximo personal de +1800 basis points de bonus; no se autoelige si el ciudadano no usa !skill. Las habilidades son personales, no auras globales multiplicables por audiencia. Los NPC no suben de nivel, no obtienen habilidades ni generan votos ficticios.
 
-Los 24 NPC iniciales se distribuyen 7 comida, 5 madera, 4 minería, 4 obras y 4 ciencia. Cap NPC de nación 120; crecimiento candidato +2 por era y +1 por cuatro horas LIVE si comida/vivienda lo permiten. Usuarios humanos permitidos hasta 100 000 registrados y productividad marginal escalonada: primeros 100 activos por oficio al 100 %, siguientes hasta 2500 por oficio/nación al 25 %, más allá solo representación/participación según reglas de XP reales. **Asignación de cuota:** los 100 puestos plenos y los siguientes 2.400 marginales se calculan **independientemente por profesión y por nación**, sin cupo global único de las cinco profesiones. Los puestos rotan cada **600 segundos de NationLiveClock confirmado** de la nación: ranking determinista por SHA-256 de `(seasonSeed,nationId,professionId,rotationIndex,citizenId)`, con desempate estable por `citizenId`; las ventanas LIVE se congelan durante OFFLINE/UNCERTAIN y el orden es reproducible a partir de seed y entradas. En cada segmento se ponderan los segundos realmente efectivos del ciudadano según cuota, y no se entrega XP de trabajo a quien tenga peso cero o no tenga tarea/producto aceptado (incluido bloqueo de capacidad). Los cambios de actividad recalculan elegibilidad sin inventar producción ni duplicar el factor offline. Estas reglas explicitan el detalle histórico de rotación del capítulo 06 y sustituyen la ordenación por antigüedad indicada en el antiguo capítulo 04; no son pruebas de balance.
+Los 24 NPC iniciales se distribuyen 7 comida, 5 madera, 4 minería, 4 obras y 4 ciencia; cap NPC 120 por nación y crecimiento candidato +2/era y +1/4h LIVE sujeto a alimento y vivienda. **Límite humano único nacional de 2.500 activos efectivos, compartido entre las cinco profesiones**, con hasta 100 puestos plenos al 100 %, puestos 101–2500 al 25 % y resto al 0 %. No hay cinco cupos por oficio. Los activos se ordenan de forma reproducible por SHA-256 de `(seasonSeed,nationId,rotationIndex,citizenId)` y desempate `citizenId` **cada 600 segundos confirmados de NationLiveClock**, sin contar OFFLINE/UNCERTAIN; una entrada/salida de actividad recalcula la lista elegible, nunca reinicia el índice de rotación. La profesión permanece fija, el trabajo se distribuye tras determinar el peso global, y el NPC no ocupa cuota humana. Un peso cero, ausencia de tarea real o bloqueo de capacidad producen **cero recursos y cero XP laboral**; el voto, los logros no productivos y la presencia visual siguen habilitados. Los restos enteros hacen el cálculo independiente de partición de ticks. Las cifras y su equidad requieren simulaciones, pero **el ámbito nacional ya no es una propuesta ambigua**.
 
-Es **balance candidato**; no asegurar equidad a gran escala sin simulaciones. LOD de sprites desacoplado de población: que haya 10k ciudadanos no implica 10k agentes visuales.
+La **calibración cuantitativa es candidata** y requiere simulaciones de población extrema y temporadas de 45–90 días; no asegurar equidad a gran escala sin medir. LOD de sprites desacoplado de población: que haya 10k ciudadanos no implica 10k agentes visuales.
 
 Comandos de ciudadano y política exacta: [capítulo 06](../docs/06_PROFESIONES_HABILIDADES_Y_XP.md), [catálogos](../data/professions.json) y [skills](../data/skills.json).
 
@@ -162,9 +162,9 @@ Tras elección, votación separada de prioridad !priority economy|science|defens
 
 **Oro solo desde aportación real autenticada y verificada si el proveedor permite el evento concreto**, nunca desde chat, likes, NPC, trabajo, evento demo o escritura del operador. **Adquisición desactivada por defecto**. Los históricos v0.8/v2.0 que lo requerían en proyectos estratégicos quedan **sustituidos**: Consejo y maravillas ordinarios son 100 % gratuitos respecto a oro, incluso con 0 donaciones.
 
-Reconocimientos opcionales no competitivos con precios de diseño en oro interno: insignia 25, placa 100, dedicatoria ceremonial 250, sujetos a moderación y consentimiento para nombre público. Ningún pago altera probabilidades de evento, visibilidad competitiva, velocidad histórica, defensa ni votos. Conversión de regalos a oro exige tasa y permisos aprobados por proveedor/cuenta, no equiparar importes entre TikTok/Twitch/YouTube ni inventar euros. Reversos crean compensación/deuda trazable, nunca saldo negativo o eliminación del asiento. Si monetización deshabilitada, tampoco se ofrecen compras de reconocimientos.
+**Primer espectáculo público sin monetización** hasta que el juego íntegro, las cuentas/plataformas y la revisión legal hayan sido validados. La monetización futura seguirá siendo exclusivamente cosmética y separada del juego. Reconocimientos opcionales no competitivos con precios de diseño en oro interno: insignia 25, placa 100, dedicatoria ceremonial 250, sujetos a moderación y consentimiento para nombre público. Ningún pago altera probabilidades de evento, visibilidad competitiva, velocidad histórica, defensa ni votos. Conversión de regalos a oro exige tasa y permisos aprobados por proveedor/cuenta, no equiparar importes entre TikTok/Twitch/YouTube ni inventar euros. Reversos crean compensación/deuda trazable, nunca saldo negativo o eliminación del asiento. Si monetización deshabilitada, tampoco se ofrecen compras de reconocimientos.
 
-El ingreso para el creador/empresa es distinto al oro del juego. Una futura licencia SaaS para otros streamers se evaluará después de medir retención, coste operativo, permisos, derechos y demanda; no requiere multi-tenant/billing en MVP.
+**Objetivo comercial principal:** explotar primero el espectáculo propio de K0, demostrar audiencia y retención y solo después valorar licencias o SaaS. El ingreso para el creador/empresa es distinto al oro del juego; no se añade multi-tenant/billing al primer producto.
 
 ## 10. Dirección artística, sprites, mundo y UI
 
@@ -172,7 +172,7 @@ El ingreso para el creador/empresa es distinto al oro del juego. Una futura lice
 
 **Nueve acciones por personaje**: idle, walk, gather, haul, build, research, celebrate, rest, react; cantidad de frames y FPS por acción definidos en [art_spec](../data/art_spec.json). Roles equivalentes conservan anclajes y huellas, sin ventaja perceptiva por facción. Paletas y materiales se diversifican para Micelios/Rúnicos/Ferrinos a lo largo de 13 eras; el lenguaje de cada época no necesita imitar literalmente historia humana.
 
-**Inventario artístico conceptual:** 3×13×5 = 195 combinaciones visuales de ciudadanos, 9 gobernantes×13 atuendos=117, 130 edificios×3 facciones=390 skins, 39 estratégicos×3=117, 13 maravillas×3=39, 39 tipos/era/rol×3 skins=117 guerreros, más Doctor K-0, terrenos, partículas, iconos, retratos y sonido. Son **combinaciones de dirección artística**, no archivos producidos ni sprites aprobados. Reutilizar atlas, herramientas, paletas y rigs para controlar coste.
+**Inventario artístico conceptual:** 3×13×5 = 195 combinaciones visuales de ciudadanos, 9 gobernantes×13 atuendos=117, 130 edificios×3 facciones=390 skins, 39 estratégicos×3=117, 13 maravillas×3=39, 39 tipos/era/rol×3 skins=117 guerreros, más Doctor K-0, terrenos, partículas, iconos, retratos y sonido. Son **combinaciones de dirección artística**, no archivos producidos ni sprites aprobados. **Antes del primer piloto debe estar aprobado y producido el arte de las doce eras jugables completas, para las tres facciones, más el epílogo Interestelar**; los assets se reutilizan mediante atlas, paletas y rigs para controlar coste. No declarar terminado el arte solo porque existan descripciones.
 
 **Doctor K-0:** silueta inequívocamente cyborg: cabeza asimétrica, ojo óptico dominante, máscara/mandíbula mecánica, cuello cableado, torso de laboratorio reforzado, un brazo claramente cibernético, manos expresivas y botas. Sprite de mundo y retrato de HUD más detallado, sin volverse personaje distinto. Estados NEUTRAL, CURIOUS, AMUSED, WARNING, CELEBRATING, DISAPPOINTED, ERROR_SAFE. Neutral ante facciones y decisiones de voto.
 
@@ -180,13 +180,13 @@ El ingreso para el creador/empresa es distinto al oro del juego. Una futura lice
 
 **Escenas obligatorias:** BOOT_CHECK, WORLD, GOV_VOTE, PRIORITY_VOTE, COUNCIL_VOTE, TOURNAMENT, ERA_TRANSITION, SEASON_END; en modo multistreamer también CONNECTING, MULTISTREAMER_WAITING, GLOBAL_EVENT_PAUSED, CHANNEL_REVOKED, RECOVERING, SAFE_SCENE. Output NATION_FOCUS por defecto (mi mundo + resumen público rivales), SHARED_WORLD autorizado, EVENT_STAGE y SAFE_SCENE. Distinto compositor en cada PC, mismo resultado autoritativo.
 
-**Accesibilidad y derechos:** interfaz entendible sin chat ni audio; subtítulos y estado real LIVE/UNCERTAIN/OFFLINE; contraste y siluetas no dependen solo de color; glifos ES/EN, textos largos, tamaños móviles, licencias comerciales y control de duplicación de nombres de espectador. Capturas y style frames reales siguen pendientes de producir/aprobar.
+**Accesibilidad y derechos:** lanzamiento inicialmente **en español** (es-ES), en **overlay vertical 360×640 y horizontal 640×360**; otros idiomas son una fase posterior. Interfaz entendible sin chat ni audio; subtítulos y estado LIVE/UNCERTAIN/OFFLINE; contraste y siluetas no dependen solo de color; textos largos, tamaños móviles y licencias comerciales. Público inicial **general en España/UE**, con salvaguardas específicas para menores, moderación, privacidad por defecto y sin incentivos comerciales dirigidos a niños. Capturas y style frames reales siguen pendientes de producir/aprobar.
 
 [Manual pixel art](../docs/46_MANUAL_DE_ESTILO_PIXEL_ART.md), [visual por eras](../docs/26_BIBLIA_VISUAL_FACCIONES_EPOCAS_Y_SILUETAS.md), [K-0](../docs/48_DOCTOR_K0_PERSONAJE_VOZ_Y_NARRACION.md), [catálogo artístico](../docs/61_CATALOGO_ARTISTICO_DE_EDIFICIOS_Y_MARAVILLAS.md), [NPC vestuario](../docs/62_PERSONAJES_NPC_Y_EVOLUCION_ESTETICA.md).
 
 ## 11. Narración, audio, idiomas y ShowDirector
 
-El ShowDirector determinista autoriza cues de gameplay por estado/evento confirmado, cooldown y prioridades. NarrationService utiliza plantillas primero; opcionalmente un LLM transforma humor/estilo **sin autoridad** para iniciar eventos, alterar resultados o interpretar chat como instrucciones. K-0 conoce hechos agregados y confirmados, no PII ni credenciales. TTS sustituible y cacheable por texto/voz, fallo seguro a subtítulos; idioma inicial es-ES, alternativa en-US cuando existan assets. Objetivo editorial: máximo una intervención prioritaria por ~20 s con cola controlada de 20; un efecto/cue narrativo caducado se omite, sin bloquear mutaciones.
+El ShowDirector determinista autoriza cues de gameplay por estado/evento confirmado, cooldown y prioridades. **Doctor K-0 usa LLM generativo y TTS dinámico desde la primera emisión**, solo para convertir hechos del backend ya confirmados en lenguaje y voz; el LLM **no tiene herramientas de mutación, no recibe chat bruto, PII, credenciales ni resultados ocultos**, y su salida pasa filtro de moderación y límites de coste. Si el LLM, TTS, seguridad o presupuesto fallan, cae automáticamente a plantillas aprobadas y subtítulos sin retrasar el motor. Audio en español; idiomas adicionales se posponen. Objetivo editorial: máximo una intervención prioritaria por ~20 s con cola controlada de 20; un efecto/cue narrativo caducado se omite, sin bloquear mutaciones.
 
 Los tres outputs pueden compartir cueId y texto, pero el audio se activa/mezcla por salida para evitar ecos o redistribución de audio de terceros. Proveedor de voz, música y derechos por adquirir y comprobar. No divulgar secretos, nombres moderados indebidamente, pagos reales o votos RPS ocultos.
 
@@ -195,11 +195,11 @@ Los tres outputs pueden compartir cueId y texto, pero el audio se activa/mezcla 
 **IPlatformAdapter** normaliza eventos por origen real (provider, providerChannelId, providerUserId, providerEventId, receivedUtc servidor, digest, authorizationStatus, eventType), firma/verificación, estado LIVE, cursor/TTL, idempotencia y error. Capabilities por cuenta y binding: CHAT_READ, LIVE_PRESENCE, CHAT_WRITE, EVENTS_MONETARY, EVENTS_REVERSAL, CURSOR_RESUME, ACCOUNT_IDENTITY, OUTPUT_DISTRIBUTION_POLICY. Cada una DISABLED/PENDING_VERIFICATION/VERIFIED/REVOKED/NOT_AVAILABLE con evidencia y versión. Salidas OBS no acreditan fuente LIVE ni chat.
 
 - **Twitch:** EventSub/chat, autenticación del canal, webhook/WS y reconexión según documentación oficial; no asumir replay perfecto.
-- **YouTube:** LiveChatMessages streamList/list cuando existe canal/broadcast autorizados y cuotas suficientes; no asumir historial ilimitado.
+- **YouTube Live (primera plataforma externa prioritaria):** LiveChatMessages streamList/list cuando existe canal/broadcast autorizados y cuotas suficientes; tres canales distintos en la modalidad inicial de operador único. **La integración comienza después de demostrar las doce eras completas sin proveedores**, y se activa únicamente con permisos y pruebas de cuenta concretos.
 - **TikTok:** arquitectura preparada, pero chat LIVE/monetización **bloqueados** sin permisos oficiales verificables para cada cuenta. No activar scraper no autorizado como workaround.
 - **SIMULATED:** tres cuentas/sesiones ficticias para tests; no se convierten en donaciones o presencia LIVE pública.
 
-Cuando un streamer revoca OAuth o termina su directo, deshabilitar solo sus capabilities y roles dependientes, conservar citizens/ledger/temporada y aplicar degradación correcta. Nunca publicar mensajes crudos o avatares ajenos en otro canal por defecto. Las políticas de simulcast y distribución se revisan para la configuración concreta antes de emitir.
+Cuando un streamer revoca OAuth o termina su directo temporalmente, deshabilitar solo sus capabilities y roles dependientes, conservar citizens/ledger/temporada y aplicar degradación correcta. **Abandono definitivo del broadcaster primario, confirmado y auditado por el propietario**, inicia un incidente de siete días naturales UTC: el estado pasa a `PAUSED`, se congelan los tres relojes económicos, políticos y competitivos y no hay sustitución automática del asiento. Al cumplirse siete días sin resolución, el backend registra `ABORTED` sin ganador ni premio competitivo; conservar archivo e historial. Una mera sesión OFFLINE o un fallo de OBS NO constituyen abandono ni activan plazo. Nunca publicar mensajes crudos o avatares ajenos en otro canal por defecto. Las políticas de simulcast y distribución se revisan para la configuración concreta antes de emitir.
 
 ## 13. Arquitectura de desarrollo y persistencia
 
@@ -209,7 +209,7 @@ Módulos lógicos: CampaignConfiguration, Accounts/Memberships, ProviderIngress 
 
 **Principios:** un escritor lógico por nación, arbitraje transaccional global para maravillas/primera entrada interestelar; Inbox deduplicada, Outbox tras commit, sourceKey estable, idempotencia por causeId; locks/versiones, fencing para múltiples workers. No guardar estado de juego en navegador OBS, usar secuencia + hash en snapshot/delta y recuperar sobre huecos. Contratos públicos de mínimo dato por stream y rutas admin separadas con RBAC/MFA. Estado SQL 001/002/003 de repositorio es modelo no migrado; se exige crear migraciones reales, integrarlas en CI y demostrar rollback/restore antes de LIVE.
 
-**Pipeline mínimo:** validar JSON y referencias, compilar contratos tipados C#/TS, ejecutar xUnit + Testcontainers PostgreSQL, tests de simulación determinista e integración transaccional, UI Playwright, test OBS real en tres equipos, migración staging, backups cifrados, health checks, despliegue versionado y rollback seguro. SLO, RPO/RTO se registran con medidas, no con promesas. Hosting inicial central con conectores procesados en backend, coste por temporada rastreable.
+**Pipeline mínimo:** validar JSON y referencias, compilar contratos tipados C#/TS, ejecutar xUnit + Testcontainers PostgreSQL, tests de simulación determinista e integración transaccional, UI Playwright, test OBS real en tres equipos, migración staging, backups cifrados, health checks, despliegue versionado y rollback seguro. SLO, RPO/RTO se registran con medidas, no con promesas. Hosting inicial central con conectores procesados en backend, coste por temporada rastreable. **Techo de gasto mensual inicial: 100 € de infraestructura total** (hosting, PostgreSQL, proyecciones, observabilidad y consumo LLM/TTS presupuestado). Alertas de gasto y límites estrictos; ante exceso se degrada primero narración/cosmética, jamás se inventan recursos, y se requiere revisar arquitectura o presupuesto antes de admitir mayor carga. La cifra es una condición comercial, **no una garantía de que se cumplan los SLO sin medir**.
 
 ## 14. Paneles, roles y experiencia real
 
@@ -225,7 +225,7 @@ Tokens de OAuth de proveedores cifrados en vault solo servidor; token overlay re
 
 Estados LIVE_CONFIRMED/OFFLINE_CONFIRMED/UNCERTAIN separados de OBS_CONNECTED/DISCONNECTED. Una interrupción puede llevar a RECOVERY_REQUIRED; no asignar segundo ganador, generar votos ficticios o dejar a streamer alternar naciones por reconexión. Si backend/DB caen, overlays muestran último snapshot confirmado con timestamp/SAFE_SCENE y luego resync. Eventos de pagos con compensación y deuda aparte; ledger append-only.
 
-Plan de retención minimizado, derechos de usuarios y RGPD, impuestos y términos comerciales requieren revisión real en las jurisdicciones de operación. Objetivos de backup RPO 15 min y RTO 2 h citados en diseño histórico son **hipótesis**, no resultados. Restaurar base y repetir eventos con stateHash antes del lanzamiento. No operar 24/7 sin supervisión en fase piloto.
+**Política inicial de retención: 30 días para datos operativos** no sujetos a obligación legal superior. No conservar chat bruto en almacenamiento de negocio; identidad de plataforma minimizada; perfiles históricos pseudonimizados; borrado/anonymización verificables, acceso y revocación. Asientos fiscales/contables y evidencias bajo obligación legal se retienen por su plazo aplicable, no se borran a los 30 días. Público general España/UE exige revisión RGPD y protección reforzada de menores antes de abrir emisiones. Derechos de usuarios, impuestos y términos de proveedor requieren revisión jurídica real. Objetivos de backup RPO 15 min y RTO 2 h citados en diseño histórico son **hipótesis**, no resultados. Restaurar base y repetir eventos con stateHash antes del lanzamiento. No operar 24/7 sin supervisión en fase piloto.
 
 ## 16. Métricas, economía de negocio y fases de desarrollo
 
@@ -233,24 +233,56 @@ KPIs del juego: visitante→!join, !join→oficio, activos 1/7/30 días, votos v
 
 **Orden de ingeniería:**
 1. P0 — Contratos, migraciones PostgreSQL, validación estática de datos, tests y semántica de reloj, un solo escritor.
-2. P1 — Simulación local con 3 naciones sintéticas, 24 NPC cada una, primer Paleolítico con cinco hitos reales, una misión de era, construcción y Consejo gratuitos. Cero donaciones.
-3. P2 — Phaser/React 2D, HUD vertical/horizontal, K-0 con plantillas y subtítulos, portal y operador, escenas básicas.
-4. P3 — Tres streamers en **tres PCs/redes diferentes**, invitaciones, cuentas, autorizaciones simuladas y OBS, reconexión/fallos demostrados.
+2. P1 — Motor local real con tres naciones sintéticas, PostgreSQL, 24 NPC por nación, **las doce eras jugables completas y entrada terminal a Interestelar**, cinco hitos distintos por era, construcción y Consejo gratuitos, 0 chat/0 oro, recuperación y replay probado. **Gate obligatorio antes de plataformas reales**.
+3. P2 — Phaser/React 2D, HUD vertical/horizontal **en español**, arte **completo de todas las eras jugables y epílogo**, K-0 con LLM generativo/TTS dinámico seguro y fallback a plantillas/subtítulos, portal y operador. **Gate artístico anterior al primer piloto**.
+4. P3 — **Primer piloto SINGLE_OPERATOR** con tres bindings simulados, invitaciones y tres streamers remotos después, OBS, reconexión/fallos demostrados. No exigir tres LIVE simultáneos para iniciar multistreamer posterior.
 5. P4 — Eras 2–12 y epílogo, 130 edificios, facciones completas, gobiernos, eventos, RPS/guarniciones, maravillas, arte y balance completo de 0/10/100/1000/10000 ciudadanos.
-6. P5 — Conector real de proveedores en cuentas verificadas, cuota, permisos, fallos, políticas cross-platform y moderación.
+6. P5 — **Conector YouTube Live** primero, únicamente con permisos por cuenta verificados, cuotas medidas, fallos, políticas de datos y moderación; Twitch/TikTok posteriores según autorización.
 7. P6 — Ensayo público con rendimiento OBS real, backups restaurados, derechos de arte/audio/voz, privacidad, normas del proveedor, costes, telemetría y autorización explícita.
-8. P7 — SaaS/licencias para otros creadores solo tras validar necesidad comercial/ROI, sin arrastrar multi-tenant y billing al primer producto.
+8. P7 — **Explotación del show propio primero**, medición de retención e ingresos reales; licencias/SaaS solo si se justifica ROI, sin multi-tenant ni billing temprano.
 
 **Estado actual no mejorado por esta fusión:** documentación D1 ampliada, no implementación D3 ni lanzamiento D4. El paso a D2/D3/D4 requiere evidencias de software, arte y proveedor. [Gates externos](../audit/EXTERNAL_GATES.md) y [criterios de aceptación](../docs/60_DEFINITION_OF_READY_Y_GATES_DE_CIERRE.md).
 
 ## 17. Inventario documental, archivos fuente y reglas de versión
 
-La carpeta [documentos por materia](INDICE.md) contiene las **transcripciones completas** de los 67 capítulos de diseño y el registro de 92 decisiones históricas. No deben editarse como nuevas fuentes de verdad. Los 15 archivos del [content_manifest v2.3](../data/content_manifest.json) y el catálogo de gobiernos, misiones, eventos, arte y contratos existentes siguen siendo datos de lectura y código generado; ninguna copia markdown invalida sus IDs. Un catálogo 13.ª era que exista para arte no autoriza activarlo tras SeasonCompleted. Para facilitar handoff sin omisiones, este archivo declara todas las áreas y su conexión con fuentes/JSON; los detalles artísticos y tablas grandes se leen en anexos íntegros y catálogos directamente.
+La carpeta [documentos por materia](INDICE.md) contiene las **transcripciones completas** de los 67 capítulos de diseño y el registro de 92 decisiones históricas. No deben editarse como nuevas fuentes de verdad. Los 15 archivos del [manifiesto de catálogos actual](../data/content_manifest.json) y el catálogo de gobiernos, misiones, eventos, arte y contratos existentes siguen siendo datos de lectura y código generado; ninguna copia markdown invalida sus IDs. Un catálogo 13.ª era que exista para arte no autoriza activarlo tras SeasonCompleted. Para facilitar handoff sin omisiones, este archivo declara todas las áreas y su conexión con fuentes/JSON; los detalles artísticos y tablas grandes se leen en anexos íntegros y catálogos directamente.
 
-**Versionado v2.5:** el presente merge publica la versión documental consolidada. No renombra migraciones históricas como si estuvieran ejecutadas, no fabrica endpoints oficiales, no genera assets y no modifica saldos/partidas reales. El nuevo baseline de referencia para desarrolladores será este archivo, seguido del registro de enmiendas y los catálogos JSON existentes. Los archivos anteriores permanecen para trazabilidad, pero su jerarquía es inferior.
+**Historial mediante Git:** este archivo único se edita in situ al cambiar el diseño; ninguna copia numerada compite como norma actual. No renombra migraciones históricas como si estuvieran ejecutadas, no fabrica endpoints oficiales, no genera assets y no modifica saldos/partidas reales. El nuevo baseline de referencia para desarrolladores será este archivo, seguido del registro de enmiendas y los catálogos JSON existentes. Los archivos anteriores permanecen para trazabilidad, pero su jerarquía es inferior.
 
 **Completitud documental:** se preservan todas las fuentes localizadas en GitHub y sus decisiones históricas. **Completitud implementada o artística:** no acreditada. El alcance técnico, el diseño y los criterios de verificación están descritos, pero la inexistencia de un motor funcional o permisos LIVE impide calificar al producto como terminado.
 
+
+
+## Decisiones confirmadas por el propietario — 8 de noviembre de 2026
+
+Estas **20 decisiones explícitas** prevalecen sobre los supuestos históricos y forman parte de esta especificación única. Los valores operativos añadidos para hacerlas implementables se prueban y versionan en `data/ruleset.json`; **no son resultados medidos ni permisos obtenidos**.
+
+| # | Ámbito | Política vigente | Prueba de aceptación |
+|---:|---|---|---|
+| 01 | Primera entrega | Motor real con 12 eras jugables y entrada terminal Interestelar antes de integrar proveedores | 12×5 hitos, 0 chat/0 oro, replay, 3 naciones, persistencia |
+| 02 | Emisión inicial | SINGLE_OPERATOR con tres canales; multistreamer después | Preflight y RBAC por modalidad |
+| 03 | Plataforma prioritaria | YouTube Live tras permisos reales; no asumir LIVE al simular | Autorización de tres cuentas/canales y cuotas |
+| 04 | Duración objetivo | 45–90 días por temporada, mediana de referencia 66 | P10/P50/P90 simulados; no forzar duración artificialmente |
+| 05 | Equidad de emisión | 100 % LIVE/20 % offline; sin compensación horaria, horas visibles | Comparativa de horas y resultados por nación |
+| 06 | Inicio multistreamer | Tres canales autorizados; sin simultaneidad LIVE obligatoria | DRAFT→PREPARED con tres bindings; A LIVE/B OFFLINE |
+| 07 | Abandono de streamer | Salida definitiva confirmada: pausa global y ABORTED a los 7 días naturales | Timeout UTC, idempotencia y no ganador |
+| 08 | Torneo suspendido | Timeout 72 h UTC desde pausa global; CANCELLED sin penalización | Reanudación/expiración exacta sin doble sanción |
+| 09 | Límite humano | 2.500 efectivos por nación, todas las profesiones comparten cupo; rotación hash 600 s LIVE | Cotas 100/101/2500/2501 y cinco profesiones |
+| 10 | Multinación por usuario | Una nación por cuenta K0 y temporada; bloqueos cross-channel | UNIQUE(seasonId,accountId), NATION_LOCKED |
+| 11 | Registro spectator | Chat con identidad autenticada crea cuenta K0 interna automáticamente; sin login adicional | Dedup provider, enrolamiento idempotente |
+| 12 | Identidad visible | Pseudónimo generado; alias de plataforma solo opt-in revocable | Sin consentimiento no se expone alias |
+| 13 | Monetización | Desactivada en primer piloto; solo tras juego, permisos y legal validados | Gates y cero créditos monetarios iniciales |
+| 14 | Doctor K-0 | LLM generativo con TTS dinámico, solo hechos; moderado y sin autoridad | Injection tests, presupuesto, subtítulos fallback |
+| 15 | Arte | Doce eras jugables completas y epílogo antes del primer piloto | Checklist assets por facción/era/layout |
+| 16 | Idiomas/formatos | ES y overlays vertical/horizontal en el piloto | Pruebas 360×640 y 640×360 ES |
+| 17 | Mercado | España/UE, público general con salvaguardas de menores | Evaluación RGPD/menores antes de publicar |
+| 18 | Retención | 30 días operativos salvo conservación obligatoria legal | TTL, borrado, excepción contable |
+| 19 | Negocio | Primero el espectáculo propio; licencias/SaaS diferidos | KPIs y ROI de explotación propia |
+| 20 | Costes | Techo inicial de infraestructura 100 € al mes | Alertas, degradación LLM/TTS, medición real |
+
+**Identidad cross-provider:** una cuenta K0 queda ligada a una única nación por temporada, pero la misma persona puede presentar identidades independientes no vinculadas en proveedores distintos. No deducir equivalencia por alias, IP o heurística. La vinculación debe ser voluntaria y verificable; si ambos IDs ya tienen naciones incompatibles, rechazar fusión durante temporada y mantener auditoría.
+
+**Separación entre decisión y evidencia:** objetivo de 45–90 días, límite de 100 €/mes, catálogo artístico completo y capacidad de YouTube son compromisos de diseño, no balance certificado, gasto garantizado, assets existentes ni permiso LIVE concedido. Los gates públicos no se marcan `PASS` sin evidencia.
 
 ## Anexo: decisiones de consolidación
 
@@ -275,7 +307,7 @@ Estas decisiones sustituyen descripciones anteriores que permanecen únicamente 
 | V25-15 | Docs 19 state votes.PAUSED vs SQL CHECK sin PAUSED | PAUSED adoptado en diseño, solo tras migración real | DDL/DTO/updater | DB integration state transitions |
 | V25-16 | P95 entrada→aplicación <1s vs tick económico 5s | P95 <1s como objetivo de ACK, no aplicación del tick; economía hasta siguiente tick | Separate ingress vs worker | Latency metrics |
 | V25-17 | v0.8 proponía SQLite local como primera DB | PostgreSQL 16+ desde primer slice (con workers e Inbox/Outbox centrales) | Central ACID DB | Real SQL migrations |
-| V25-18 | Público 10000 humanos y 24 NPC sin calibración | Control marginal de trabajo por profesión/nación según ruleset, todavía balance candidato | Cohort simulator | P10/P50/P90 by audience |
+| V25-18 | Público 10000 humanos y 24 NPC sin calibración | Cupo humano único nacional de 2500 con rotación 600 s LIVE, decisión 09 confirmada; balance pendiente | Cohort simulator | P10/P50/P90 by audience |
 | V25-19 | Históricos menciones de gobierno elegible por espectadores | 3 NPC por nación/era, 1 cargo, 60m LIVE, 3m segunda vuelta; elección ciudadanos para NPC | Politics module | Ballot/tie deterministic |
 | V25-20 | Personaje alien / coral y Doctor K-0 poco cyborg | Solo Micelios/Rúnicos/Ferrinos; K-0 claramente cyborg con ojo óptico y brazo mecánico | Art direction | Silhouette real test |
 | V25-21 | Guerra continua, ataques o PvP libre no se especificaron consistentemente | Solo RPS triangular y batalla automática programados, 3 LIVE, daños acotados y sin muerte permanente | Competition Engine | Match+penalty tests |

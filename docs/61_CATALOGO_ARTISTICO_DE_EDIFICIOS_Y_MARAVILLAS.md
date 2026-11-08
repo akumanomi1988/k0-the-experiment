@@ -1,5 +1,7 @@
 # 61 — Catálogo de dirección artística para 130 edificios y 13 maravillas
 
+**Gate de entrega confirmado:** este catálogo debe materializarse en assets reales **para cada una de las doce eras jugables y las tres facciones**, más el epílogo visual Interestelar, **antes del primer piloto**. Las tablas conceptuales y el reuse de atlas no significan arte creado o aceptado. Enfatizar pruebas en ambas salidas ES, vertical y horizontal.
+
 **Estado VISUAL_BRIEF, no sprites finales.** Cada fila vincula familia, época y edificio concreto (`data/buildings.json`); la silueta final debe mantener **la huella lógica exacta** y las cuatro etapas de obra. Las tres facciones usan misma regla y colisión, pero diferente arquitectura.
 
 ## Transformadores culturales de cualquier edificio

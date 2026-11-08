@@ -1,5 +1,7 @@
 # 17 — Runbook del operador y flujos E2E
 
+**Plan de ejecución:** primera versión completa = 12 eras jugables, 0 oro, tres naciones, sin proveedores reales. Primer operador = SINGLE_OPERATOR con tres canales; primer proveedor = YouTube LIVE solo autorizado. Antes del primer piloto el arte de las doce eras y epílogo debe estar terminado y los overlays vertical/horizontal en español.
+
 ## Preparación
 Crear temporada DRAFT y asignar 3 facciones. Elegir tres canales distintos, o simulados, y comprobar health por rol. Crear mapas a partir del mismo `seasonSeed` pero visualmente distintos por bioma. Revisar documentalmente que reglas y catálogos concuerden, y dejar constancia de los cambios antes de abrir una temporada. Registrar `rulesetHash`, `contentHash`, versión de motor y modo monetario. Iniciar solo tras ver 3 naciones PREPARED y snapshots iniciales.
 

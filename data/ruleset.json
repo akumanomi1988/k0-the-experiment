@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "2.3.0",
-  "rulesetId": "chaos-default-2026-11",
+  "schemaVersion": "2.4.0",
+  "rulesetId": "chaos-owner-decisions-2026-11-08",
   "status": "DESIGN_BASELINE_CANDIDATE_NOT_IMPLEMENTED",
   "sourcePriority": [
     "latest-explicit-user-message",
@@ -24,7 +24,12 @@
     "allowOneProviderMultipleChannels": true,
     "allowMixedProviders": true,
     "allowNoLiveProviderSimulation": true,
-    "clockAuthorityBindingsPerNation": 1
+    "clockAuthorityBindingsPerNation": 1,
+    "initialReleaseBroadcastMode": "SINGLE_OPERATOR",
+    "firstExternalProvider": "youtube",
+    "multistreamerStartCondition": "three_authorized_bindings_no_simultaneous_live_required",
+    "unequalLiveSchedulesAllowed": true,
+    "unequalLiveHoursCompensation": false
   },
   "simulation": {
     "tickSeconds": 5,
@@ -78,9 +83,13 @@
     ],
     "talentPointsPerTier": 1,
     "highestIndividualProductivityBp": 11800,
-    "activeHumanWorkersSoftCapScope": "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE",
-    "humanQuotaAssignment": "deterministic_hash_rotation_per_profession_live_600s",
-    "humanWorkXpEligibility": "accepted_effective_work_only"
+    "activeHumanWorkersSoftCapScope": "PER_NATION_TOTAL",
+    "humanQuotaAssignment": "deterministic_hash_rotation_nation_live_600s",
+    "humanWorkXpEligibility": "accepted_effective_work_only",
+    "accountAllegiance": "ONE_K0_ACCOUNT_ONE_NATION_PER_SEASON",
+    "chatIdentityFlow": "AUTO_PROVISION_K0_ACCOUNT_FROM_VERIFIED_PROVIDER_IDENTITY",
+    "crossProviderUniqueness": "REQUIRES_EXPLICIT_VERIFIED_ACCOUNT_LINK",
+    "displayIdentityPolicy": "GENERATED_PSEUDONYM_ALIAS_OPT_IN"
   },
   "resources": {
     "ordinary": [
@@ -203,10 +212,12 @@
     "seasonWinEvent": "enter_final_era_committed",
     "finalEraIndex": 13,
     "allowEraAdvanceOnlyLiveNation": true,
-    "averageEraTargetDays": 2.5,
+    "averageEraTargetDays": 5.5,
     "raceNoGoldInfluence": true,
     "eraMissionCatalog": "era_missions.v2.3.json",
-    "finalEraGameplayEnabled": false
+    "finalEraGameplayEnabled": false,
+    "targetSeasonWallDaysMin": 45,
+    "targetSeasonWallDaysMax": 90
   },
   "governments": {
     "electionLiveSeconds": 3600,
@@ -265,7 +276,9 @@
     "automatedBattleCatalog": "combat_units.v2.2.json",
     "automatedBattleScheduledOnly": true,
     "automatedBattleCooldownLiveHours": 24,
-    "automatedBattleNoGoldNoPermaLoss": true
+    "automatedBattleNoGoldNoPermaLoss": true,
+    "maxPausedTournamentWallHours": 72,
+    "pausedTournamentTimeoutPolicy": "CANCEL_WITHOUT_PENALTY"
   },
   "missions": {
     "timezone": "UTC",
@@ -307,7 +320,17 @@
     "visibleCharacterTargetHorizontal": 90,
     "cosmeticBiomesOnly": true,
     "approvedFinalSprites": false,
-    "combatUnitSkinsThreeFactions": true
+    "combatUnitSkinsThreeFactions": true,
+    "pilotLocales": [
+      "es-ES"
+    ],
+    "pilotLayouts": [
+      "VERTICAL_360_640",
+      "HORIZONTAL_640_360"
+    ],
+    "allPlayableEraArtRequiredBeforeFirstPilot": true,
+    "requiredPlayableEraArtCount": 12,
+    "terminalEpilogueArtRequiredBeforeFirstPilot": true
   },
   "operator": {
     "fullLiveUnattendedAllowed": false,
@@ -317,7 +340,11 @@
     "k0MayChangeAuthoritativeState": false,
     "monetizationDefaultEnabled": false,
     "perSourceOutputVisibility": "same_source_by_default",
-    "allowCrossPlatformOverlayOnlyIfPolicyApproved": true
+    "allowCrossPlatformOverlayOnlyIfPolicyApproved": true,
+    "narrationMode": "GENERATIVE_LLM_REALTIME_DYNAMIC_TTS",
+    "narrationAuthority": "CONFIRMED_FACTS_ONLY_NO_GAME_MUTATIONS",
+    "narrationFallback": "APPROVED_TEMPLATES_AND_SUBTITLES",
+    "maxMonthlyInfrastructureBudgetEur": 100
   },
   "season": {
     "startState": "DRAFT",
@@ -327,6 +354,29 @@
     "keepStats": true,
     "keepHistory": true,
     "goldToPrestigeNoBonus": true,
-    "tieOrdering": "database_committed_event_sequence_then_nation_id"
+    "tieOrdering": "database_committed_event_sequence_then_nation_id",
+    "startCondition": "THREE_AUTHORIZED_CHANNELS_NOT_THREE_SIMULTANEOUS_LIVES",
+    "streamerAbandonmentPolicy": "CONFIRMED_EXIT_GLOBAL_PAUSE_ABORT_AFTER_7_WALL_DAYS",
+    "streamerAbandonmentCancelAfterDays": 7,
+    "showAccumulatedLiveHoursByNation": true
+  },
+  "release": {
+    "firstDelivery": "TWELVE_PLAYABLE_ERAS_ENGINE_COMPLETE_BEFORE_PLATFORM_INTEGRATION",
+    "firstLaunchMode": "SINGLE_OPERATOR_THREE_CHANNELS",
+    "firstRealPlatform": "youtube",
+    "requiresAuthorizedProviderEvidence": true,
+    "publicLaunchMarket": "ES_EU_GENERAL_AUDIENCE",
+    "minorSafeguardsRequired": true,
+    "monetizationGate": "AFTER_GAME_VALIDATED_AND_PLATFORM_LEGAL_APPROVED",
+    "ownShowFirst": true,
+    "saasDeferred": true,
+    "maxMonthlyInfraBudgetEur": 100
+  },
+  "privacy": {
+    "operationalDataRetentionDays": 30,
+    "exceptions": "LEGAL_OBLIGATIONS_AND_ACCOUNTING_REQUIRING_LONGER_RETENTION",
+    "publicNamePolicy": "PSEUDONYM_BY_DEFAULT_ALIAS_ONLY_WITH_CONSENT",
+    "noRawCrossPlatformChat": true,
+    "minorProtection": "EU_GENERAL_AUDIENCE_MINIMIZATION_NO_TARGETED_MONETIZATION"
   }
 }

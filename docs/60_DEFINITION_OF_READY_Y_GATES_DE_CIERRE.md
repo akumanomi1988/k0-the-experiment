@@ -1,5 +1,7 @@
 > **Regla vigente:**** incorporar aceptación de 3 streamers remotos y separar evidencia documental de pruebas reales. No confundir v2.3 con producto cerrado. [Especificación vigente](ESPECIFICACION.md).
 
+**Criterio de aceptación comprometido:** antes de integración real de plataformas debe existir motor para **doce eras jugables** y entrada terminal a Interestelar, con PostgreSQL, 3 naciones, repetibilidad y ruta 0 chat/0 oro. **Antes del primer piloto**, arte real completo de las 12 eras/facciones y epílogo; Doctor K-0 LLM/TTS dinámico con fallback, HUD vertical/horizontal ES. Primer modo SINGLE_OPERATOR y YouTube Live posterior solo con cuentas verificadas. Las 20 decisiones están en `docs/ESPECIFICACION.md`; ninguna casilla puede marcarse sin ejecución y prueba.
+
 # 60 — Definition of Ready: qué significa realmente «todo definido»
 
 ## Niveles de preparación

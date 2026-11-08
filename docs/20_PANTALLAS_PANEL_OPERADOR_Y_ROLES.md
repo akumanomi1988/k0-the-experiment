@@ -1,11 +1,13 @@
 # 20 — UX de jugador, escenas OBS y panel de operador
 
+**Plan confirmado:** primer modo SINGLE_OPERATOR con tres canales, preferentemente YouTube Live tras validar permisos; LLM/TTS en K-0 con modo seguro y sin efectos de gameplay. Las horas LIVE por nación deben verse y no hay compensación competitiva. Pseudónimos por defecto, alias solo bajo opt-in.
+
 ## Escenas públicas
 - **UniverseOverview**: tres naciones en miniatura, era, barra 0–100 y estado LIVE, ganador o empate; solo metadatos agregados compartibles.
 - **NationWorldVertical**: mundo 66 %, HUD superior 14 %, HUD inferior 20 %; zona de cámara sigue obras/visitas de K-0, viewport lógico 360x640.
 - **NationWorldHorizontal**: 73 % viewport, 27 % panel lateral, 640x360 lógico; componentes reposicionados, no escalados arbitrariamente.
 - **ElectionOverlay**: tres candidatos, tiempo LIVE restante, recuento total y porcentajes permitidos después de cierre.
-- **StrategicCouncilOverlay**: tres alternativas, costes ordinarios y oro, aviso «opcional/estético», timer 10min y estado de reserva.
+- **StrategicCouncilOverlay**: tres alternativas y **solo costes ordinarios (oro = 0)**, aviso «proyecto gratuito respecto al oro», timer 10min y estado de reserva.
 - **TournamentOverlay**: tres equipos, votos totales por nación, ocultación de opciones hasta cierre, puntuación de duelos por parejas y penalizaciones activas.
 - **SeasonFinale**: ganador, estadísticas y museo con historial sin saldo de oro como moneda útil.
 

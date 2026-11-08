@@ -1,6 +1,6 @@
--- K0 / Project CHAOS v2.3 — DISTRIBUTED MULTISTREAMER DESIGN ADDENDUM.
+-- K0 / Project CHAOS — DISTRIBUTED MULTISTREAMER DESIGN ADDENDUM.
 -- NOT A PRODUCTION MIGRATION. Not run against PostgreSQL.
--- Requires architecture/001_schema_v2.sql and design/002; review conflicts,
+-- Requires architecture/001_schema.sql and architecture/002_extensiones_diseno.sql; review conflicts,
 -- migrate CHECK votes.state for PAUSED, NationId DTO and resource_ledger gold kind.
 -- No provider OAuth access tokens or overlay secrets in clear text in database.
 BEGIN;
@@ -158,11 +158,17 @@ CREATE TABLE competition_clock_states (
   state text NOT NULL CHECK(state IN ('SCHEDULED','WAITING_FOR_ALL_LIVE','RUNNING','PAUSED','RESOLVED','CANCELLED')),
   elapsed_live_ms bigint NOT NULL DEFAULT 0 CHECK(elapsed_live_ms>=0),
   last_integrated_at timestamptz,
+  paused_at_utc timestamptz,
+  cancel_at_utc timestamptz,
+  CHECK (cancel_at_utc IS NULL OR (paused_at_utc IS NOT NULL AND cancel_at_utc = paused_at_utc + interval '72 hours')),
   ruleset_hash char(64) NOT NULL,
   version bigint NOT NULL DEFAULT 0,
   PRIMARY KEY (season_id,competition_event_id)
 );
 -- Aggregate global CompetitionLiveClock increments only if 3 LIVE_CONFIRMED.
+-- On continuous PAUSED due to any provider LIVE loss, store paused_at_utc and
+-- cancel_at_utc (+72h UTC); resume clears these fields. Deadline cancel is
+-- idempotent, has zero penalties and cannot debit resources.
 
 CREATE TABLE season_global_sequences (
   season_id uuid PRIMARY KEY REFERENCES seasons(id),
@@ -201,6 +207,57 @@ CREATE TABLE era_mission_instances (
 );
 -- Only 1 era mission per nation/era; must be completable via NPC. Does not
 -- repeat daily/weekly rewards. Mission content catalog still to be authored.
+
+-- Owner decisions: a viewer can belong to exactly one nation in a season.
+-- !join verifies provider identity and auto-provisions a K0 account; no interactive
+-- K0 login is needed. Cross-provider linkage requires explicit verified ownership.
+CREATE TABLE viewer_provider_account_links (
+  provider text NOT NULL CHECK(provider IN ('twitch','youtube','tiktok','simulated')),
+  provider_user_subject_hash char(64) NOT NULL,
+  account_id uuid NOT NULL REFERENCES k0_accounts(id),
+  linked_at timestamptz NOT NULL DEFAULT now(),
+  verified_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY(provider, provider_user_subject_hash)
+);
+-- Fresh design requires the account FK on EVERY citizen row, not just new ones.
+-- An upgrade from pre-existing rows must backfill and reconcile identities
+-- BEFORE applying this DDL; this file is not an in-place production migration.
+ALTER TABLE citizens ADD COLUMN account_id uuid NOT NULL REFERENCES k0_accounts(id);
+CREATE UNIQUE INDEX ux_citizen_one_nation_per_k0_account_season
+ ON citizens(season_id,account_id);
+
+CREATE TABLE viewer_display_consents (
+  season_id uuid NOT NULL,
+  nation_id uuid NOT NULL,
+  citizen_id uuid NOT NULL,
+  alias_opt_in boolean NOT NULL DEFAULT false,
+  explicit_consent_at timestamptz,
+  revoked_at timestamptz,
+  PRIMARY KEY(season_id,nation_id,citizen_id),
+  FOREIGN KEY(season_id,nation_id,citizen_id)
+   REFERENCES citizens(season_id,nation_id,id),
+  CHECK (alias_opt_in = false OR explicit_consent_at IS NOT NULL)
+);
+-- Generated pseudonym is the default; alias exposure must check unrevoked consent.
+-- Retention policy (30d for operational records) is implemented as a reviewed job;
+-- financial/legal records may require longer. Never auto-delete accounting ledger.
+
+CREATE TABLE season_primary_departures (
+  season_id uuid PRIMARY KEY REFERENCES seasons(id),
+  primary_account_id uuid NOT NULL REFERENCES k0_accounts(id),
+  nation_id uuid NOT NULL,
+  confirmed_at timestamptz NOT NULL,
+  cancel_after timestamptz NOT NULL,
+  state text NOT NULL CHECK (state IN ('PAUSED','ABORTED')),
+  confirmed_by_account_id uuid NOT NULL REFERENCES k0_accounts(id),
+  FOREIGN KEY(season_id,nation_id) REFERENCES nations(season_id,nation_id),
+  CHECK (cancel_after = confirmed_at + interval '7 days')
+);
+ALTER TABLE seasons ADD CONSTRAINT ck_abort_has_no_winner
+ CHECK (state <> 'ABORTED' OR winner_nation_id IS NULL);
+-- Transactional invariant: confirmed departure moves Season to PAUSED; all
+-- economy, votes and competitive clocks pause. At cancel_after (UTC wall time)
+-- it moves to ABORTED without winner/reward. No automatic seat replacement.
 
 COMMIT;
 

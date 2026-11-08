@@ -1,5 +1,7 @@
 # 12 — Diseño visual y producción de assets
 
+**Gate artístico confirmado:** el primer piloto exige assets completos de **las doce eras jugables de las tres facciones y epílogo Interestelar**, no únicamente la primera era. Deben comprobarse ambas composiciones **vertical y horizontal en español**. Las descripciones, combinaciones y atlas actuales no acreditan sprites entregados.
+
 ## Dirección artística cerrada
 Pixel art retro de baja resolución, tiles de 32×16 proyección oblicua 2:1, personaje de 16×24 píxeles, contorno de 1 px, hasta 24 colores por spritesheet, sin filtrado bilineal. Micelios: fungoides vivos y tecnología biofotónica. Rúnicos: cuerpos minerales con runas. Ferrinos: seres orgánicos con exoesqueleto ferruginoso, **no** robots ni corales. Siluetas deben diferenciarse claramente a 360×640 canvas lógico vertical. Para cada era la misma funcionalidad y collider en todas las naciones; solo cambian apariencia y FX.
 

@@ -25,6 +25,8 @@ Cada evento se normaliza a `(provider,channelId,providerEventId,providerUserId,r
 
 1. Conectar tres canales diferentes y demostrar que los mensajes no se cruzan. 2. Revocar credenciales de uno y comprobar que los demás mantienen su nación, sin falsear LIVE. 3. Reintentar el mismo evento 100 veces: un solo comando económico. 4. Desactivar chat: HUD lo explica, la temporada no interpreta mensajes perdidos como votos. 5. Contar límites de cuota y coste mensual de polling/stream. 6. Confirmar un LIVE desde la fuente propia, no solo por OBS. 7. Evaluar uso cruzado de chat, nombres y datos entre plataformas según política y consentimiento. 8. Para monetización, test de devolución/cancelación y regla legal por proveedor. 9. Registrar versiones exactas de APIs, scopes y captura de autorización.
 
+**Decisión del propietario:** YouTube Live es el primer proveedor a integrar **después** de completar y probar las doce eras en simulación y solo con permisos verificables por cuenta. No se prometen regalos, monetización o tres canales verificados por una API documentada.
+
 ## Decisión de lanzamiento recomendada
 
-Elegir **un solo proveedor con APIs y permisos realmente comprobados** para las primeras tres fuentes. Desarrollar el motor en modo simulado antes de conectar cuentas reales. El adaptador TikTok no se considera listo por encontrar bibliotecas de scraping no oficiales: eso añade riesgo operativo y contractual y no pertenece a la especificación autorizada.
+Priorizar **YouTube Live** para las primeras tres fuentes, exigiendo APIs y permisos realmente comprobados por cuenta. Desarrollar el motor en modo simulado antes de conectar cuentas reales. El adaptador TikTok no se considera listo por encontrar bibliotecas de scraping no oficiales: eso añade riesgo operativo y contractual y no pertenece a la especificación autorizada.

@@ -45,11 +45,11 @@ def main() -> int:
     check(rules.get("sourcePriority", [None, None])[1] == "docs/ESPECIFICACION.md",
           "Ruleset apunta a documento de versión obsoleta")
     check(rules["citizens"]["activeHumanWorkersSoftCapScope"] ==
-          "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE",
-          "Cuota humana debe ser por profesión y nación")
+          "PER_NATION_TOTAL",
+          "Cuota humana debe ser una sola por nación")
     check(rules["citizens"]["humanQuotaAssignment"] ==
-          "deterministic_hash_rotation_per_profession_live_600s",
-          "La cuota debe rotar de forma reproducible cada 600s LIVE")
+          "deterministic_hash_rotation_nation_live_600s",
+          "La cuota nacional debe rotar de forma reproducible cada 600s LIVE")
     check(rules["citizens"]["humanWorkXpEligibility"] ==
           "accepted_effective_work_only",
           "XP no puede concederse por trabajo no aceptado")
@@ -61,8 +61,8 @@ def main() -> int:
           "!join requiere identidad autenticada, no ciudadano previo")
     check(command["work"]["precondition"] == "registered_citizen",
           "!work requiere ciudadanía")
-    check("por profesión" in txt and "600 segundos" in txt and "XP de trabajo" in txt,
-          "Reglas de cuota y XP no sincronizadas con la especificación")
+    check("2.500 activos efectivos" in txt and "600 segundos" in txt and "XP laboral" in txt,
+          "Reglas de cuota nacional y XP no sincronizadas con la especificación")
     delta = load("contracts/nation_delta.schema.json")
     check(delta["properties"]["nationId"].get("format") == "uuid",
           "NationId público UUID en diseño actual")

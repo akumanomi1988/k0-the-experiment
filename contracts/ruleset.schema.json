@@ -21,12 +21,14 @@
     "missions",
     "presentation",
     "operator",
-    "season"
+    "season",
+    "release",
+    "privacy"
   ],
   "additionalProperties": false,
   "properties": {
     "schemaVersion": {
-      "const": "2.3.0"
+      "const": "2.4.0"
     },
     "rulesetId": {
       "type": "string",
@@ -41,7 +43,12 @@
         "count",
         "factionIds",
         "sameCompetitiveStart",
-        "allowMixedProviders"
+        "allowMixedProviders",
+        "initialReleaseBroadcastMode",
+        "firstExternalProvider",
+        "multistreamerStartCondition",
+        "unequalLiveSchedulesAllowed",
+        "unequalLiveHoursCompensation"
       ],
       "properties": {
         "count": {
@@ -59,6 +66,21 @@
         },
         "allowMixedProviders": {
           "const": true
+        },
+        "initialReleaseBroadcastMode": {
+          "const": "SINGLE_OPERATOR"
+        },
+        "firstExternalProvider": {
+          "const": "youtube"
+        },
+        "multistreamerStartCondition": {
+          "const": "three_authorized_bindings_no_simultaneous_live_required"
+        },
+        "unequalLiveSchedulesAllowed": {
+          "const": true
+        },
+        "unequalLiveHoursCompensation": {
+          "const": false
         }
       },
       "additionalProperties": true
@@ -109,7 +131,11 @@
         "talentLevels",
         "activeHumanWorkersSoftCapScope",
         "humanQuotaAssignment",
-        "humanWorkXpEligibility"
+        "humanWorkXpEligibility",
+        "accountAllegiance",
+        "chatIdentityFlow",
+        "crossProviderUniqueness",
+        "displayIdentityPolicy"
       ],
       "properties": {
         "startingNpcPopulation": {
@@ -131,13 +157,25 @@
           ]
         },
         "activeHumanWorkersSoftCapScope": {
-          "const": "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE"
+          "const": "PER_NATION_TOTAL"
         },
         "humanQuotaAssignment": {
-          "const": "deterministic_hash_rotation_per_profession_live_600s"
+          "const": "deterministic_hash_rotation_nation_live_600s"
         },
         "humanWorkXpEligibility": {
           "const": "accepted_effective_work_only"
+        },
+        "accountAllegiance": {
+          "const": "ONE_K0_ACCOUNT_ONE_NATION_PER_SEASON"
+        },
+        "chatIdentityFlow": {
+          "const": "AUTO_PROVISION_K0_ACCOUNT_FROM_VERIFIED_PROVIDER_IDENTITY"
+        },
+        "crossProviderUniqueness": {
+          "const": "REQUIRES_EXPLICIT_VERIFIED_ACCOUNT_LINK"
+        },
+        "displayIdentityPolicy": {
+          "const": "GENERATED_PSEUDONYM_ALIAS_OPT_IN"
         }
       },
       "additionalProperties": true
@@ -195,7 +233,10 @@
         "finalEraIndex",
         "seasonWinEvent",
         "finalEraGameplayEnabled",
-        "eraMissionCatalog"
+        "eraMissionCatalog",
+        "averageEraTargetDays",
+        "targetSeasonWallDaysMin",
+        "targetSeasonWallDaysMax"
       ],
       "properties": {
         "eras": {
@@ -234,6 +275,15 @@
         },
         "eraMissionCatalog": {
           "const": "era_missions.v2.3.json"
+        },
+        "averageEraTargetDays": {
+          "const": 5.5
+        },
+        "targetSeasonWallDaysMin": {
+          "const": 45
+        },
+        "targetSeasonWallDaysMax": {
+          "const": 90
         }
       },
       "additionalProperties": true
@@ -287,7 +337,9 @@
       "type": "object",
       "required": [
         "kind",
-        "territoryPenaltyActiveSeconds"
+        "territoryPenaltyActiveSeconds",
+        "maxPausedTournamentWallHours",
+        "pausedTournamentTimeoutPolicy"
       ],
       "properties": {
         "kind": {
@@ -295,6 +347,12 @@
         },
         "territoryPenaltyActiveSeconds": {
           "const": 1800
+        },
+        "maxPausedTournamentWallHours": {
+          "const": 72
+        },
+        "pausedTournamentTimeoutPolicy": {
+          "const": "CANCEL_WITHOUT_PENALTY"
         }
       },
       "additionalProperties": true
@@ -316,18 +374,61 @@
       "required": [
         "artStyle",
         "tileWidthPx",
-        "tileHeightPx"
+        "tileHeightPx",
+        "pilotLocales",
+        "pilotLayouts",
+        "allPlayableEraArtRequiredBeforeFirstPilot",
+        "requiredPlayableEraArtCount",
+        "terminalEpilogueArtRequiredBeforeFirstPilot"
       ],
-      "additionalProperties": true
+      "additionalProperties": true,
+      "properties": {
+        "pilotLocales": {
+          "const": [
+            "es-ES"
+          ]
+        },
+        "pilotLayouts": {
+          "const": [
+            "VERTICAL_360_640",
+            "HORIZONTAL_640_360"
+          ]
+        },
+        "allPlayableEraArtRequiredBeforeFirstPilot": {
+          "const": true
+        },
+        "requiredPlayableEraArtCount": {
+          "const": 12
+        },
+        "terminalEpilogueArtRequiredBeforeFirstPilot": {
+          "const": true
+        }
+      }
     },
     "operator": {
       "type": "object",
       "required": [
-        "monetizationDefaultEnabled"
+        "monetizationDefaultEnabled",
+        "narrationMode",
+        "narrationAuthority",
+        "narrationFallback",
+        "maxMonthlyInfrastructureBudgetEur"
       ],
       "properties": {
         "monetizationDefaultEnabled": {
           "const": false
+        },
+        "narrationMode": {
+          "const": "GENERATIVE_LLM_REALTIME_DYNAMIC_TTS"
+        },
+        "narrationAuthority": {
+          "const": "CONFIRMED_FACTS_ONLY_NO_GAME_MUTATIONS"
+        },
+        "narrationFallback": {
+          "const": "APPROVED_TEMPLATES_AND_SUBTITLES"
+        },
+        "maxMonthlyInfrastructureBudgetEur": {
+          "const": 100
         }
       },
       "additionalProperties": true
@@ -338,9 +439,27 @@
         "keepAchievements",
         "keepStats",
         "keepHistory",
-        "goldToPrestigeNoBonus"
+        "goldToPrestigeNoBonus",
+        "startCondition",
+        "streamerAbandonmentPolicy",
+        "streamerAbandonmentCancelAfterDays",
+        "showAccumulatedLiveHoursByNation"
       ],
-      "additionalProperties": true
+      "additionalProperties": true,
+      "properties": {
+        "startCondition": {
+          "const": "THREE_AUTHORIZED_CHANNELS_NOT_THREE_SIMULTANEOUS_LIVES"
+        },
+        "streamerAbandonmentPolicy": {
+          "const": "CONFIRMED_EXIT_GLOBAL_PAUSE_ABORT_AFTER_7_WALL_DAYS"
+        },
+        "streamerAbandonmentCancelAfterDays": {
+          "const": 7
+        },
+        "showAccumulatedLiveHoursByNation": {
+          "const": true
+        }
+      }
     },
     "sourcePriority": {
       "type": "array",
@@ -349,6 +468,82 @@
         "type": "string",
         "minLength": 1
       }
+    },
+    "release": {
+      "type": "object",
+      "required": [
+        "firstDelivery",
+        "firstLaunchMode",
+        "firstRealPlatform",
+        "requiresAuthorizedProviderEvidence",
+        "publicLaunchMarket",
+        "minorSafeguardsRequired",
+        "monetizationGate",
+        "ownShowFirst",
+        "saasDeferred",
+        "maxMonthlyInfraBudgetEur"
+      ],
+      "properties": {
+        "firstDelivery": {
+          "const": "TWELVE_PLAYABLE_ERAS_ENGINE_COMPLETE_BEFORE_PLATFORM_INTEGRATION"
+        },
+        "firstLaunchMode": {
+          "const": "SINGLE_OPERATOR_THREE_CHANNELS"
+        },
+        "firstRealPlatform": {
+          "const": "youtube"
+        },
+        "requiresAuthorizedProviderEvidence": {
+          "const": true
+        },
+        "publicLaunchMarket": {
+          "const": "ES_EU_GENERAL_AUDIENCE"
+        },
+        "minorSafeguardsRequired": {
+          "const": true
+        },
+        "monetizationGate": {
+          "const": "AFTER_GAME_VALIDATED_AND_PLATFORM_LEGAL_APPROVED"
+        },
+        "ownShowFirst": {
+          "const": true
+        },
+        "saasDeferred": {
+          "const": true
+        },
+        "maxMonthlyInfraBudgetEur": {
+          "const": 100
+        }
+      },
+      "additionalProperties": true
+    },
+    "privacy": {
+      "type": "object",
+      "required": [
+        "operationalDataRetentionDays",
+        "exceptions",
+        "publicNamePolicy",
+        "noRawCrossPlatformChat",
+        "minorProtection"
+      ],
+      "properties": {
+        "operationalDataRetentionDays": {
+          "const": 30
+        },
+        "exceptions": {
+          "const": "LEGAL_OBLIGATIONS_AND_ACCOUNTING_REQUIRING_LONGER_RETENTION"
+        },
+        "publicNamePolicy": {
+          "const": "PSEUDONYM_BY_DEFAULT_ALIAS_ONLY_WITH_CONSENT"
+        },
+        "noRawCrossPlatformChat": {
+          "const": true
+        },
+        "minorProtection": {
+          "const": "EU_GENERAL_AUDIENCE_MINIMIZATION_NO_TARGETED_MONETIZATION"
+        }
+      },
+      "additionalProperties": true
     }
   }
 }
