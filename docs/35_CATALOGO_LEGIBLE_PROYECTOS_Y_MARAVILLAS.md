@@ -1,3 +1,5 @@
+> **Enmienda v2.3:** un Consejo por nación y era jugable (una terna de tres proyectos, solo uno construido). Las dos opciones descartadas no se vuelven a votar en esa era. El contenido interestelar es ceremonial, no construible tras ganar. [CURRENT_SPEC](CURRENT_SPEC.md).
+
 # 35 — Catálogo legible: proyectos de Consejo y maravillas (v2.2)
 
 **Derivado de `data/strategic_projects.v2.json`.** Costes expresados en recursos ordinarios; **ninguna obra exige oro**. Todas tienen efectos estéticos y de prestigio, nunca producción, ciencia o puntos históricos competitivos.
