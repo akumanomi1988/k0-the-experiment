@@ -1,4 +1,4 @@
-> **Regla vigente:**** los plazos de voto se miden con reloj LIVE acumulado, no UTC fijo; el Consejo es uno por era y se cierra tras elegir un proyecto. Ver [64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
+> **Regla vigente:** los plazos de voto se miden con reloj LIVE acumulado, no UTC fijo; el Consejo es uno por era y se cierra tras elegir un proyecto. Ver [64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
 
 # 08 — Elecciones NPC, prioridades y Consejo de Construcción
 

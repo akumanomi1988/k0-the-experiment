@@ -1,4 +1,4 @@
-> **Regla vigente:**** 12 eras jugables con misión propia; era 13 epílogo sin ciclo ni autoplanner. Ver [CURRENT_SPEC](ESPECIFICACION.md) y [misiones de era](../data/era_missions.json).
+> **Regla vigente:** 12 eras jugables con misión propia; era 13 epílogo sin ciclo ni autoplanner. Ver [especificación vigente](ESPECIFICACION.md) y [misiones de era](../data/era_missions.json).
 
 # 07 — Progresión histórica, investigación y temporadas
 

@@ -1,4 +1,4 @@
-> **Regla vigente:**** arquitectura autoritativa central .NET/PostgreSQL, tres streamers en equipos/redes diferentes y overlays OBS read-only; detalles de identidad, sincronía y falla en capítulos 63/64. SLO distingue ACK de mutación económica. [Especificación vigente](ESPECIFICACION.md).
+> **Regla vigente:** arquitectura autoritativa central .NET/PostgreSQL, tres streamers en equipos/redes diferentes y overlays OBS read-only; detalles de identidad, sincronía y falla en capítulos 63/64. SLO distingue ACK de mutación económica. [Especificación vigente](ESPECIFICACION.md).
 
 # 55 — Arquitectura técnica de producción propuesta
 

@@ -1,4 +1,4 @@
-> **Nota de vigencia:** auditoría histórica de revisión v2.2. Las enmiendas posteriores y el diseño multistreamer están registrados en [CURRENT_SPEC v2.3](ESPECIFICACION.md), [arquitectura distribuida](63_ARQUITECTURA_MULTISTREAMER.md) y [blueprint QA](67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS.md). No asumir que los gates se han validado.
+> **Nota de vigencia:** auditoría histórica de revisión v2.2. Las enmiendas posteriores y el diseño multistreamer están registrados en [especificación vigente](ESPECIFICACION.md), [arquitectura distribuida](63_ARQUITECTURA_MULTISTREAMER.md) y [blueprint QA](67_BLUEPRINT_IMPLEMENTACION_Y_PRUEBAS.md). No asumir que los gates se han validado.
 
 **Vigencia:** la autoridad actual es `docs/ESPECIFICACION.md` y sus veinte decisiones ratificadas, no esta auditoría histórica. La cuota humana es **única por nación**, no por profesión. Primera entrega: doce eras antes de proveedores; YouTube Live después de comprobar permisos. Esta auditoría describe riesgos y verificaciones, no reglas alternativas.
 

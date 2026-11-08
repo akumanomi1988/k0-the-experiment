@@ -33,6 +33,9 @@
     },
     {
       "$ref": "#/$defs/ViewerAccountAllegiance"
+    },
+    {
+      "$ref": "#/$defs/PrimaryBroadcasterReturn"
     }
   ],
   "$defs": {
@@ -709,6 +712,12 @@
         },
         "tournamentPausedCancelAfterHours": {
           "const": 72
+        },
+        "primaryReturnPolicy": {
+          "const": "SAME_PRIMARY_REVERIFIED_OWNER_APPROVED_BEFORE_DEADLINE"
+        },
+        "primaryReturnClockPolicy": {
+          "const": "NO_RETROACTIVE_ECONOMY_OR_LIVE_CATCHUP"
         }
       }
     },
@@ -754,6 +763,72 @@
         }
       },
       "description": "Internal viewer mapping; one nation per K0 account and season. Cross-provider identity merging requires explicit verification; never match by alias."
+    },
+    "PrimaryBroadcasterReturn": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "seasonId",
+        "incidentId",
+        "primaryAccountId",
+        "nationId",
+        "bindingId",
+        "bindingRevision",
+        "ownerApprovalUtc",
+        "verifiedCapabilities",
+        "ownerReason"
+      ],
+      "description": "Owner-only, same primary reverified, strict-before-7-day deadline, fenced transition PAUSED→RESUMED. No catch-up and no revival of already cancelled competitions.",
+      "properties": {
+        "schemaVersion": {
+          "const": "2.4.0"
+        },
+        "seasonId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "incidentId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "primaryAccountId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "bindingId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "bindingRevision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ownerApprovalUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "verifiedCapabilities": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "CHAT_READ",
+              "LIVE_PRESENCE"
+            ]
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "ownerReason": {
+          "type": "string",
+          "minLength": 3
+        }
+      }
     }
   }
 }

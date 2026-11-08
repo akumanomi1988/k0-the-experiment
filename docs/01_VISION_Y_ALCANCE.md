@@ -1,4 +1,4 @@
-> **Regla vigente:**** tres streamers pueden competir desde tres equipos/redes distintos; servidor K0 central y overlays OBS independientes; un canal por nación, mismas reglas sin instalación del motor local. [Especificación vigente](ESPECIFICACION.md).
+> **Regla vigente:** tres streamers pueden competir desde tres equipos/redes distintos; servidor K0 central y overlays OBS independientes; un canal por nación, mismas reglas sin instalación del motor local. [Especificación vigente](ESPECIFICACION.md).
 
 # 01 — Producto, alcance y principios no negociables (v2.0)
 

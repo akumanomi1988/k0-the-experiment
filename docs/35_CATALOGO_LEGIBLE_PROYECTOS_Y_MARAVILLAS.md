@@ -1,4 +1,4 @@
-> **Regla vigente:**** un Consejo por nación y era jugable (una terna de tres proyectos, solo uno construido). Las dos opciones descartadas no se vuelven a votar en esa era. El contenido interestelar es ceremonial, no construible tras ganar. [CURRENT_SPEC](ESPECIFICACION.md).
+> **Regla vigente:** un Consejo por nación y era jugable (una terna de tres proyectos, solo uno construido). Las dos opciones descartadas no se vuelven a votar en esa era. El contenido interestelar es ceremonial, no construible tras ganar. [especificación vigente](ESPECIFICACION.md).
 
 # 35 — Catálogo legible: proyectos de Consejo y maravillas (v2.2)
 

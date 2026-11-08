@@ -78,6 +78,8 @@ Recomendación de referencia: API ASP.NET Core .NET 10 y worker de simulación c
 - Ingress multi-proveedor puede escalar a procesos separables sin mover la autoridad del motor ni los datos.
 - Backups cifrados y restauración programada; hasta pruebas no se anuncian RPO/RTO numéricos como realizados.
 
+**Retorno verificado:** no basta con volver a emitir: ante abandono ya confirmado, OWNER debe autorizar el regreso del MISMO responsable primario con identidades/capabilities de canal actualizadas **antes** del deadline de siete días UTC, en transición transaccional con fencing e idempotencia; un `RESUME` genérico no sirve y `ABORTED` no se revierte. El retorno no recupera segundos económicos perdidos ni revive torneos cancelados. Las cuentas de espectadores asociadas a múltiples proveedores solo se fusionan con prueba explícita de titularidad.
+
 **Coste máximo inicial objetivo: 100 €/mes de infraestructura (incluido LLM/TTS)**; control y alertas por gasto, degradación narrativa antes que gameplay, sin garantía de capacidad no medida. Monetización inicialmente desactivada; negocio prioritario: espectáculo propio, no SaaS/licencias desde el primer piloto. La plataforma prioritaria requiere permisos concretos; el software no está implementado.
 
 ## 7. Presupuesto, costes y SaaS futuro

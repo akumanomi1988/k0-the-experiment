@@ -1,4 +1,4 @@
-> **Regla vigente:**** la terna ofrece **un único Consejo ordinario por nación/era jugable**; mantener decisiones históricas sobre coste oro=0. Ver [CURRENT_SPEC](ESPECIFICACION.md).
+> **Regla vigente:** la terna ofrece **un único Consejo ordinario por nación/era jugable**; mantener decisiones históricas sobre coste oro=0. Ver [especificación vigente](ESPECIFICACION.md).
 
 # 44 — Consejo gratuito, maravillas y patronazgo cosmético
 

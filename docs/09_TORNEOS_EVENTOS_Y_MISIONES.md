@@ -1,4 +1,4 @@
-> **Regla vigente:**** torneos triangulares requieren CompetitionLiveClock global que se congela si deja de estar LIVE cualquiera de las tres naciones. Consultar [64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
+> **Regla vigente:** torneos triangulares requieren CompetitionLiveClock global que se congela si deja de estar LIVE cualquiera de las tres naciones. Consultar [64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
 
 **Incidente de competición:** si falta un LIVE confirmado, el torneo se pausa para las tres naciones y congela su reloj; tras **72 horas UTC** de pausa inicial no resuelta se cancela **sin sanciones**, conservando votos y auditoría de lo ocurrido. Una campaña puede tener horarios LIVE asimétricos sin compensación de producción.
 

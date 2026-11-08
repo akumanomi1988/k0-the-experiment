@@ -135,7 +135,8 @@
         "accountAllegiance",
         "chatIdentityFlow",
         "crossProviderUniqueness",
-        "displayIdentityPolicy"
+        "displayIdentityPolicy",
+        "accountAllegianceAppliesTo"
       ],
       "properties": {
         "startingNpcPopulation": {
@@ -176,6 +177,9 @@
         },
         "displayIdentityPolicy": {
           "const": "GENERATED_PSEUDONYM_ALIAS_OPT_IN"
+        },
+        "accountAllegianceAppliesTo": {
+          "const": "VIEWER_CITIZEN_ONLY_NOT_STREAMER_OR_OWNER_ROLES"
         }
       },
       "additionalProperties": true
@@ -443,7 +447,12 @@
         "startCondition",
         "streamerAbandonmentPolicy",
         "streamerAbandonmentCancelAfterDays",
-        "showAccumulatedLiveHoursByNation"
+        "showAccumulatedLiveHoursByNation",
+        "streamerReturnPolicy",
+        "streamerReturnDeadline",
+        "streamerReturnPauseClockPolicy",
+        "streamerReturnCancelledCompetitionPolicy",
+        "streamerReturnMultipleIncidents"
       ],
       "additionalProperties": true,
       "properties": {
@@ -458,6 +467,21 @@
         },
         "showAccumulatedLiveHoursByNation": {
           "const": true
+        },
+        "streamerReturnPolicy": {
+          "const": "SAME_PRIMARY_REVERIFIED_OWNER_APPROVED_BEFORE_DEADLINE"
+        },
+        "streamerReturnDeadline": {
+          "const": "STRICT_BEFORE_7_DAY_UTC_DEADLINE_ABORT_AT_EQUALITY"
+        },
+        "streamerReturnPauseClockPolicy": {
+          "const": "NO_RETROACTIVE_ECONOMY_OR_LIVE_CATCHUP"
+        },
+        "streamerReturnCancelledCompetitionPolicy": {
+          "const": "NEVER_REOPEN_CANCELLED"
+        },
+        "streamerReturnMultipleIncidents": {
+          "const": "AUDIT_EACH_INCIDENT_ONE_ACTIVE_PER_SEASON"
         }
       }
     },

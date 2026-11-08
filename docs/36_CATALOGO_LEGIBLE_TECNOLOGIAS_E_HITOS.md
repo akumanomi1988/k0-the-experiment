@@ -240,4 +240,4 @@ Las eras 1–12 tienen 5 hitos únicos × 20 puntos, incluido el de misión espe
 
 ## Integridad del catálogo
 
-El runtime debe usar IDs y condiciones de `data/*.json` y pruebas de `tools/validate_design_catalogs.py`. Este archivo es una vista legible, no autoridad de cálculos. Enmiendas y orden de eventos: [CURRENT_SPEC](ESPECIFICACION.md), [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).
+El runtime debe usar IDs y condiciones de `data/*.json` y pruebas de `tools/validate_design_catalogs.py`. Este archivo es una vista legible, no autoridad de cálculos. Enmiendas y orden de eventos: [especificación vigente](ESPECIFICACION.md), [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS.md).

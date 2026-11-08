@@ -21,6 +21,8 @@
 | Operación | horas de moderación/soporte | incidentes y horas de emisión |
 | Derechos/legal | licencia o servicio | titulares, territorios, documentos |
 
+**Contrato de viabilidad:** un mes de facturación de tres canales debe sumar **≤100 € de cargos efectivos** de servidor, almacenamiento/backup, redes, observabilidad, herramientas recurrentes y narración LLM/TTS; impuestos incluidos cuando corresponda. Simular el perfil editorial de **4 h/día por canal** y medir tokens, segundos de voz, egress, IOPS, coste base y picos, junto al número de intervenciones. Ante previsión de superar el tope, degradar la narración a plantillas/subtítulos, reducir tareas no críticas o aplazar lanzamiento; jamás degradar consistencia del motor, inventar cuota ilimitada ni superar el presupuesto sin nueva autorización del propietario. Producción de arte, salarios y campañas comerciales se informan por separado: **no quedan mágicamente cubiertos por 100 €**.
+
 ## Cálculo de capacidad, no tarifa real
 
 Con un tick cada 5 s se ejecutan `86400/5=17.280` ticks por nación por día continuo; tres naciones implican `51.840` ticks de motor por día. Esto es un contador teórico de oportunidades de tick, **no** una medición de CPU ni facturación. Si cada nación emite un snapshot lógico cada 15 s, habrá hasta `3×86400/15=17.280` snapshots/día antes de considerar compactación, caídas de conexión y deltas. Dimensionar tráfico después de medir tamaño real de mensajes y conexiones OBS, no asignar euros ficticios.
