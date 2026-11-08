@@ -1,4 +1,4 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** incorporar aceptación de 3 streamers remotos y separar evidencia documental de pruebas reales. No confundir v2.3 con producto cerrado. [Especificación vigente](CURRENT_SPEC.md).
+> **Regla vigente:**** incorporar aceptación de 3 streamers remotos y separar evidencia documental de pruebas reales. No confundir v2.3 con producto cerrado. [Especificación vigente](ESPECIFICACION.md).
 
 # 60 — Definition of Ready: qué significa realmente «todo definido»
 

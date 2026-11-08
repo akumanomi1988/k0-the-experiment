@@ -1,4 +1,4 @@
-> **Enmienda normativa v2.3 (multistreamer distribuido):** nuevos tests MS-01..MS-08: tres ordenadores/proveedores autorizados, caída OBS aislada, reloj global RPS, revocación de invitados/tokens y reconexión sin afectar hash del motor. Ver docs 63–67. [Especificación vigente](CURRENT_SPEC.md).
+> **Regla vigente:**** nuevos tests MS-01..MS-08: tres ordenadores/proveedores autorizados, caída OBS aislada, reloj global RPS, revocación de invitados/tokens y reconexión sin afectar hash del motor. Ver docs 63–67. [Especificación vigente](ESPECIFICACION.md).
 
 # 57 — Matriz de cobertura de pruebas y aceptación futura
 

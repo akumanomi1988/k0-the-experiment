@@ -1,6 +1,6 @@
 # 61 — Catálogo de dirección artística para 130 edificios y 13 maravillas
 
-**Estado VISUAL_BRIEF, no sprites finales.** Cada fila vincula familia, época y edificio concreto (`data/buildings.v2.json`); la silueta final debe mantener **la huella lógica exacta** y las cuatro etapas de obra. Las tres facciones usan misma regla y colisión, pero diferente arquitectura.
+**Estado VISUAL_BRIEF, no sprites finales.** Cada fila vincula familia, época y edificio concreto (`data/buildings.json`); la silueta final debe mantener **la huella lógica exacta** y las cuatro etapas de obra. Las tres facciones usan misma regla y colisión, pero diferente arquitectura.
 
 ## Transformadores culturales de cualquier edificio
 

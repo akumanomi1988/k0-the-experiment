@@ -84,7 +84,7 @@ Grupos filtrados por autorización:
 - output:{outputId}:presentation (cues/escenas específicas).
 - season:{seasonId}:operator (solo panel autorizado).
 
-Envelope fijo (schema en contracts/multistreamer.v2.3.schema.json):
+Envelope fijo (schema en contracts/multistreamer.schema.json):
 - schemaVersion, seasonId, nationId o globalScope, sequence global, nationSequence, eventId, emittedAtUtc, type, payload, stateHash, rulesetHash y contentHash.
 - Cues artísticos llevan cueId, scene, audienceScope, authoritativeEventSequence, presentationAtUtc, expiresAtUtc.
 - Secuencia por commit y outbox, no instante de render. El cliente exige continuidad; gaps → snapshot + resubscription. Evento vencido se ignora visualmente, nunca se aplica otra vez.
@@ -104,7 +104,7 @@ Después de un evento persistido, el ShowDirector emite cue opcional con present
 - Backend interrumpido: al reiniciar, usar snapshots + Inbox/Outbox + segments; <=7 días catch-up auditable de economía, sin avances de era offline; >7 días RECOVERY_REQUIRED y decisión de operador, tal como docs 03.
 - Single writer por nación con fencing token; no simular en dos workers durante failover.
 
-**ContentHash del diseño:** los archivos versionados que participan en el hash se enumeran en [content_manifest.v2.3.json](../data/content_manifest.v2.3.json). Cada temporada congela archivo, manifest digest, rulesetHash, seed y engineVersion; no recalcularlos con datos actuales tras una migración. Los digests aún no se han compilado.
+**ContentHash del diseño:** los archivos versionados que participan en el hash se enumeran en [content_manifest.json](../data/content_manifest.json). Cada temporada congela archivo, manifest digest, rulesetHash, seed y engineVersion; no recalcularlos con datos actuales tras una migración. Los digests aún no se han compilado.
 
 ## 9. Escenarios de prueba obligatorios
 
