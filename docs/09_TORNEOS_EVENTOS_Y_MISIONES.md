@@ -1,3 +1,5 @@
+> **Enmienda v2.3:** torneos triangulares requieren CompetitionLiveClock global que se congela si deja de estar LIVE cualquiera de las tres naciones. Consultar [64](64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md).
+
 # 09 — Torneos, sanciones, eventos y misiones
 
 ## RPS triangular exacto
@@ -13,7 +15,7 @@ Solo hay sanción material a una nación con menos puntos que **un ganador únic
 Únicamente eventos preautorizados de `events.v2.json` activados por `ShowDirector` u operador, con anuncio previo y cooldown; nada de agresiones automáticas, fauna hostil permanente o desastres espontáneos. `catchup_challenge` se ofrece solo a naciones al menos 2 eras retrasadas, máximo 2 veces en temporada, +5 % NPC durante 30 minutos LIVE, sin puntos históricos directos ni oro. `resource_storm` es evento anunciado de reducción temporal moderada, frecuencia máxima cada 12 horas LIVE; `wildlife_parade` cosmético; `wonder_festival` abre actividad especial de maravilla si las reglas lo admiten.
 
 ## Misiones
-Tres tipos diarios y dos semanales definidos en `missions.v2.json`. Periodos UTC completos: día desde 00:00 UTC; semana desde lunes 00:00 UTC. Los NPC pueden progresar y completar objetivos colectivos cuando no hay público; recompensas automáticas por nación una sola vez por instancia; al expirar la ventana se descarta misión no completada. Recompensas son materiales ordinarios no restringidos por monetización y **no añaden puntos a la barra de hitos**. Recompensas que excedan almacén se recortan con `rewardOverflowDiscarded`, auditado.
+Tres tipos diarios y dos semanales definidos en `missions.v2.json`; aparte, una misión productiva por era jugable (`era_missions.v2.3.json`) que puede cumplir NPC sin depender del cambio de día UTC. Periodos UTC completos: día desde 00:00 UTC; semana desde lunes 00:00 UTC. Los NPC pueden progresar y completar objetivos colectivos cuando no hay público; recompensas automáticas por nación una sola vez por instancia; al expirar la ventana se descarta misión no completada. Recompensas son materiales ordinarios no restringidos por monetización y **no añaden puntos a la barra de hitos**. Recompensas que excedan almacén se recortan con `rewardOverflowDiscarded`, auditado.
 
 ## Segunda modalidad de evento definida en v2.2
 
