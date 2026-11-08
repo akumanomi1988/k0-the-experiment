@@ -115,7 +115,7 @@ Las decisiones de diseño quedan explícitas; **no marcar como corrección IMPLE
 | DETERMINISM | misma seed + ruleset/content hash + segmentos + entrada canónica generan mismo stateHash y winner; tick 5s vs particiones compatibles |
 | VOTES | exactamente deadline, pausa, reintento, cambio de voto válido, salida LIVE, noVotes/tie, Council hold y un solo cobro |
 | COMPETITION | 3 transmisiones LIVE, pérdida de una, reanudación/cancelación, ciclo RPS 2-2-2, empates y penalizaciones no acumuladas |
-| MS | 3 streamers, mismo proveedor, proveedores mixtos con capacidad, otros PCs/redes, invitados expirados, permisos, token revocado, reconnect OBS |
+| MS | broadcastMode MULTI_STREAMER con 3 cuentas K0 primarias diferentes; mismo proveedor, proveedores mixtos con capacidad, otros PCs/redes, invitados expirados, permisos, token revocado, reconnect OBS |
 | SECURITY | OAuth PKCE, firmas webhook, PII redaction, prompt injection en nombre, accesos cruzados y secretos, CSRF/CSP, rate limits |
 | OPS | rollback, restart, restore real DB, doble worker/fencing, outbox duplicado, alerta de stream y OBS, capacidad real con 30 FPS |
 
