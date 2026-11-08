@@ -29,7 +29,7 @@
 1. Última instrucción explícita del propietario del proyecto.
 2. Decisiones originales registradas (92) que no hayan sido sustituidas expresamente.
 3. Reglas canónicas de v2.0 y correcciones registradas en `docs/18`.
-4. Datos estructurados con valores numéricos (`data/ruleset.v2.json` y catálogos canónicos).
+4. Datos estructurados con valores numéricos (`data/ruleset.json` y catálogos canónicos).
 5. Ampliaciones documentales de v2.1, exclusivamente cuando aclaren el diseño sin cambiar su semántica.
 6. Ejemplos ilustrativos y propuestas futuras (no prevalecen).
 
