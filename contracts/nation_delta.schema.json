@@ -15,22 +15,20 @@
     "liveState",
     "resources",
     "buildingChanges",
-    "activeCitizenCount"
+    "activeCitizenCount",
+    "factionId"
   ],
   "properties": {
     "schemaVersion": {
-      "const": "2.0.0"
+      "const": "2.3.0"
     },
     "seasonId": {
       "type": "string",
       "minLength": 1
     },
     "nationId": {
-      "enum": [
-        "micelios",
-        "runicos",
-        "ferrinos"
-      ]
+      "type": "string",
+      "format": "uuid"
     },
     "sequence": {
       "type": "integer",
@@ -103,6 +101,13 @@
     },
     "eventCue": {
       "type": "string"
+    },
+    "factionId": {
+      "enum": [
+        "micelios",
+        "runicos",
+        "ferrinos"
+      ]
     }
   }
 }
