@@ -1,5 +1,5 @@
 {
-  "status": "V2_BASELINE",
+  "status": "V2_3_DESIGN_CANDIDATE_NOT_BALANCED",
   "milestones": [
     {
       "id": "paleolithic_food_production",
@@ -56,11 +56,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_paleolithic"
       ]
     },
     {
@@ -118,11 +114,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_neolithic"
       ]
     },
     {
@@ -180,11 +172,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_copper"
       ]
     },
     {
@@ -242,11 +230,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_bronze"
       ]
     },
     {
@@ -304,11 +288,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_iron"
       ]
     },
     {
@@ -366,11 +346,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_antiquity"
       ]
     },
     {
@@ -428,11 +404,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_medieval"
       ]
     },
     {
@@ -490,11 +462,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_renaissance"
       ]
     },
     {
@@ -552,11 +520,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_industrial"
       ]
     },
     {
@@ -614,11 +578,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_modern"
       ]
     },
     {
@@ -676,11 +636,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_digital"
       ]
     },
     {
@@ -738,11 +694,7 @@
       "requiresGold": false,
       "targetCount": 1,
       "eligibleMissionIds": [
-        "daily_supply",
-        "daily_materials",
-        "daily_discovery",
-        "weekly_builder",
-        "weekly_population"
+        "era_mission_space"
       ]
     },
     {
@@ -808,5 +760,5 @@
       ]
     }
   ],
-  "definition": "era-lifetime cumulative production accepted; materials requires wood AND stone; research needs current era basic tech; first collective mission each era counts once; building is automatic; no gold points."
+  "definition": "Era 1-12 has one era-specific NPC-completable mission; daily/weekly missions are not milestone prerequisites. Era 13 catalog remains epilogue only. Resource and research milestone semantics unchanged."
 }
