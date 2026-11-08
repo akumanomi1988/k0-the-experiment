@@ -2,7 +2,8 @@
 
 ## Relojes tipados
 - `UtcClock`: tiempo físico, monotónico verificado contra reloj de sistema; expiraciones de ciudadanos (+7200s), caducidades de OAuth, misiones UTC. Se almacena la fecha absoluta además del evento.
-- `NationLiveClock`: integra exclusivamente segundos `LIVE_CONFIRMED`; elección 3600s, segunda vuelta 180s, proyecto 600s, prioridad 300s, RPS 90s, bonus prioridad 5400s. Se congela en `UNCERTAIN`, `PAUSED` o `OFFLINE_CONFIRMED`.
+- `NationLiveClock`: integra exclusivamente segundos `LIVE_CONFIRMED`; elección 3600s, segunda vuelta 180s, proyecto 600s, prioridad 300s, bonus prioridad 5400s. Se congela en `UNCERTAIN`, `PAUSED` o `OFFLINE_CONFIRMED`.
+- `CompetitionLiveClock`: global por evento programado, avanza 1s solo cuando las tres naciones están LIVE confirmadas; RPS 90s y descansos 30s; congelación conjunta ante cualquier caída.
 - `NationEconomyClock`: 1 segundo equivalente en LIVE, 0,2 en OFFLINE/UNCERTAIN; sin doble aplicar al recuperar.
 - `NationActivePenaltyClock`: avanza 1s solo en LIVE; una región penalizada consume exactamente 1800s activos; NUNCA consume segundos fuera de emisión.
 
