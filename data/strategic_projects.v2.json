@@ -1,5 +1,5 @@
 {
-  "status": "V2_2_DESIGN_BASELINE_NOT_TESTED",
+  "status": "V2_3_DESIGN_CANDIDATE_NOT_BALANCED",
   "projects": [
     {
       "id": "paleolithic_memorial",
@@ -30,7 +30,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "paleolithic_spectacle",
@@ -61,7 +62,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "paleolithic_archive",
@@ -92,7 +94,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "neolithic_memorial",
@@ -123,7 +126,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "neolithic_spectacle",
@@ -154,7 +158,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "neolithic_archive",
@@ -185,7 +190,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "copper_memorial",
@@ -216,7 +222,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "copper_spectacle",
@@ -247,7 +254,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "copper_archive",
@@ -278,7 +286,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "bronze_memorial",
@@ -309,7 +318,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "bronze_spectacle",
@@ -340,7 +350,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "bronze_archive",
@@ -371,7 +382,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "iron_memorial",
@@ -402,7 +414,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "iron_spectacle",
@@ -433,7 +446,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "iron_archive",
@@ -464,7 +478,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "antiquity_memorial",
@@ -495,7 +510,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "antiquity_spectacle",
@@ -526,7 +542,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "antiquity_archive",
@@ -557,7 +574,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "medieval_memorial",
@@ -588,7 +606,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "medieval_spectacle",
@@ -619,7 +638,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "medieval_archive",
@@ -650,7 +670,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "renaissance_memorial",
@@ -681,7 +702,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "renaissance_spectacle",
@@ -712,7 +734,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "renaissance_archive",
@@ -743,7 +766,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "industrial_memorial",
@@ -774,7 +798,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "industrial_spectacle",
@@ -805,7 +830,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "industrial_archive",
@@ -836,7 +862,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "modern_memorial",
@@ -867,7 +894,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "modern_spectacle",
@@ -898,7 +926,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "modern_archive",
@@ -929,7 +958,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "digital_memorial",
@@ -960,7 +990,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "digital_spectacle",
@@ -991,7 +1022,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "digital_archive",
@@ -1022,7 +1054,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "space_memorial",
@@ -1053,7 +1086,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "space_spectacle",
@@ -1084,7 +1118,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "space_archive",
@@ -1115,7 +1150,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": true
     },
     {
       "id": "interstellar_memorial",
@@ -1146,7 +1182,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": false
     },
     {
       "id": "interstellar_spectacle",
@@ -1177,7 +1214,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": false
     },
     {
       "id": "interstellar_archive",
@@ -1208,7 +1246,8 @@
       },
       "maxInstancesPerNation": 1,
       "requiresOtherStrategic": false,
-      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY"
+      "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
+      "gameplayAvailable": false
     }
   ],
   "wonders": [
@@ -1232,7 +1271,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_paleolithic"
+      "visualBriefId": "wonder_art_paleolithic",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_neolithic",
@@ -1254,7 +1294,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_neolithic"
+      "visualBriefId": "wonder_art_neolithic",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_copper",
@@ -1276,7 +1317,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_copper"
+      "visualBriefId": "wonder_art_copper",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_bronze",
@@ -1298,7 +1340,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_bronze"
+      "visualBriefId": "wonder_art_bronze",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_iron",
@@ -1320,7 +1363,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_iron"
+      "visualBriefId": "wonder_art_iron",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_antiquity",
@@ -1342,7 +1386,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_antiquity"
+      "visualBriefId": "wonder_art_antiquity",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_medieval",
@@ -1364,7 +1409,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_medieval"
+      "visualBriefId": "wonder_art_medieval",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_renaissance",
@@ -1386,7 +1432,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_renaissance"
+      "visualBriefId": "wonder_art_renaissance",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_industrial",
@@ -1408,7 +1455,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_industrial"
+      "visualBriefId": "wonder_art_industrial",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_modern",
@@ -1430,7 +1478,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_modern"
+      "visualBriefId": "wonder_art_modern",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_digital",
@@ -1452,7 +1501,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_digital"
+      "visualBriefId": "wonder_art_digital",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_space",
@@ -1474,7 +1524,8 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_space"
+      "visualBriefId": "wonder_art_space",
+      "gameplayAvailable": true
     },
     {
       "id": "wonder_interstellar",
@@ -1496,9 +1547,10 @@
       "historicalPoints": 0,
       "availableOnlyAsSeparateCosmeticEvent": true,
       "accessPolicy": "FREE_ORDINARY_RESOURCES_ONLY",
-      "visualBriefId": "wonder_art_interstellar"
+      "visualBriefId": "wonder_art_interstellar",
+      "gameplayAvailable": false
     }
   ],
-  "candidatePool": "three strategic options per era; no gold means no vote; future wonders are separately triggered optional event; current era options must be all individually affordable",
+  "candidatePool": "one council vote per nation per playable era (1-12), exactly three distinct unbuilt ordinary-resource-affordable options; each has zero gold cost; remaining two are not reoffered in that era after selection",
   "goldPolicy": "GOLD_ONLY_FOR_SEPARATE_NONCOMPETITIVE_ACKNOWLEDGEMENT_ITEMS"
 }
