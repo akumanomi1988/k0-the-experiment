@@ -1,5 +1,7 @@
 # Validaciones externas no sustituibles por documentación
 
+**Prioridades confirmadas:** YouTube Live es la primera integración propuesta, **después de motor para 12 eras**. El primer piloto incluye arte terminado de 12 eras/epílogo, LLM/TTS moderado, dos layouts ES y 0 monetización hasta validación. Mercado inicial España/UE general con protección de menores; retención operativa 30 días salvo ley; coste de infraestructura objetivo ≤100 €/mes. Estos son gates que requieren evidencia real.
+
 Estos puntos no constituyen ambigüedad del diseño sino dependencias de acceso, pruebas o hechos externos. Están **bloqueados**, no resueltos arbitrariamente:
 
 - `LIVE-01` Autorización real de lectura y (si existe) respuesta chat por cada canal/cuenta, especialmente TikTok; evidencia y términos archivados.
