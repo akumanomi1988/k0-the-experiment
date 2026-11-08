@@ -104,6 +104,8 @@ Después de un evento persistido, el ShowDirector emite cue opcional con present
 - Backend interrumpido: al reiniciar, usar snapshots + Inbox/Outbox + segments; <=7 días catch-up auditable de economía, sin avances de era offline; >7 días RECOVERY_REQUIRED y decisión de operador, tal como docs 03.
 - Single writer por nación con fencing token; no simular en dos workers durante failover.
 
+**ContentHash del diseño:** los archivos versionados que participan en el hash se enumeran en [content_manifest.v2.3.json](../data/content_manifest.v2.3.json). Cada temporada congela archivo, manifest digest, rulesetHash, seed y engineVersion; no recalcularlos con datos actuales tras una migración. Los digests aún no se han compilado.
+
 ## 9. Escenarios de prueba obligatorios
 
 SYNC-01 voto 1 ms antes del deadline LIVE aceptado, exactamente deadline rechazado; SYNC-02 desconectar LIVE B durante voto y mantener segundos restantes; SYNC-03 RPS con B caído conserva mismo reloj A/B/C; SYNC-04 60s offline equivalen a 12s economía (sin doble factor); SYNC-05 2 workers con lease vencida no duplican trabajo; SYNC-06 Outbox duplicada no repite ganador/compra; SYNC-07 tres overlays con distintas latencias alcanzan mismo stateHash; SYNC-08 dos Interestelar simultáneas → ganador único; SYNC-09 reconexión con hueco de sequence fuerza snapshot; SYNC-10 caducidad de OAuth deshabilita solo las capacidades dependientes, sin cambiar nación.
