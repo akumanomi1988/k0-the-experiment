@@ -243,21 +243,49 @@ CREATE TABLE viewer_display_consents (
 -- financial/legal records may require longer. Never auto-delete accounting ledger.
 
 CREATE TABLE season_primary_departures (
-  season_id uuid PRIMARY KEY REFERENCES seasons(id),
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  season_id uuid NOT NULL REFERENCES seasons(id),
   primary_account_id uuid NOT NULL REFERENCES k0_accounts(id),
   nation_id uuid NOT NULL,
   confirmed_at timestamptz NOT NULL,
   cancel_after timestamptz NOT NULL,
-  state text NOT NULL CHECK (state IN ('PAUSED','ABORTED')),
+  state text NOT NULL CHECK (state IN ('PAUSED','RESUMED','ABORTED')),
   confirmed_by_account_id uuid NOT NULL REFERENCES k0_accounts(id),
+  resolved_at timestamptz,
+  returned_primary_account_id uuid REFERENCES k0_accounts(id),
+  reverified_at timestamptz,
+  resumed_by_owner_account_id uuid REFERENCES k0_accounts(id),
   FOREIGN KEY(season_id,nation_id) REFERENCES nations(season_id,nation_id),
-  CHECK (cancel_after = confirmed_at + interval '7 days')
+  CHECK (cancel_after = confirmed_at + interval '7 days'),
+  CONSTRAINT ck_departure_resolution CHECK (
+    (state = 'PAUSED' AND resolved_at IS NULL
+      AND returned_primary_account_id IS NULL AND reverified_at IS NULL
+      AND resumed_by_owner_account_id IS NULL)
+    OR
+    (state = 'RESUMED' AND resolved_at >= confirmed_at AND resolved_at < cancel_after
+      AND reverified_at IS NOT NULL AND reverified_at <= resolved_at
+      AND returned_primary_account_id = primary_account_id
+      AND resumed_by_owner_account_id IS NOT NULL)
+    OR
+    (state = 'ABORTED' AND resolved_at >= cancel_after
+      AND returned_primary_account_id IS NULL AND reverified_at IS NULL
+      AND resumed_by_owner_account_id IS NULL)
+  )
 );
+-- A primary can depart again after a verified return: keep both audit records,
+-- but no more than one active incident per season.
+CREATE UNIQUE INDEX ux_one_active_primary_departure_per_season
+ ON season_primary_departures(season_id) WHERE state='PAUSED';
 ALTER TABLE seasons ADD CONSTRAINT ck_abort_has_no_winner
  CHECK (state <> 'ABORTED' OR winner_nation_id IS NULL);
 -- Transactional invariant: confirmed departure moves Season to PAUSED; all
 -- economy, votes and competitive clocks pause. At cancel_after (UTC wall time)
 -- it moves to ABORTED without winner/reward. No automatic seat replacement.
+-- A rejoin BEFORE deadline needs OWNER approval, the SAME verified K0 primary,
+-- verified chat/live channel capabilities, serializable season/departure locks,
+-- writer fencing and idempotent Outbox. At equality, ABORTED wins.
+-- The PAUSED gap never incurs catch-up or economic/competition credit.
+-- Already CANCELLED competitions do not reopen upon verified return.
 
 COMMIT;
 

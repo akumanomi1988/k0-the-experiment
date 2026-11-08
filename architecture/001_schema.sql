@@ -1,4 +1,4 @@
--- Design alignment v2.3: votes.PAUSED and cosmetic-only gold spending (NOT EXECUTED).
+-- Design alignment: votes.PAUSED and cosmetic-only gold spending; CI smoke-tested on PostgreSQL 16, NOT a production migration.
 -- Project CHAOS v2.0: schema DDL reference; PostgreSQL >= 16.
 -- This script defines persistence topology and integrity constraints; not tested against a live PostgreSQL instance.
 -- Economy writes MUST use transactional application code/stored procedures respecting ledger and holds.
@@ -153,7 +153,7 @@ CREATE TABLE technologies_completed (
 CREATE TABLE votes (
   season_id uuid NOT NULL, nation_id uuid NOT NULL, id uuid NOT NULL DEFAULT gen_random_uuid(),
   vote_kind text NOT NULL CHECK(vote_kind IN ('GOVERNMENT','GOVERNMENT_RUNOFF','PRIORITY','STRATEGIC','RPS')),
-  scope_id text NOT NULL, state text NOT NULL CHECK(state IN ('QUEUED','OPEN','PAUSED','RESOLVED','CANCELLED','PAYMENT_BLOCKED')),
+  scope_id text NOT NULL, state text NOT NULL CHECK(state IN ('QUEUED','OPEN','PAUSED','RESOLVED','CANCELLED')),
   opened_utc timestamptz, closed_utc timestamptz, live_clock_start bigint NOT NULL DEFAULT 0,
   duration_seconds bigint NOT NULL CHECK(duration_seconds>0),
   option_ids text[] NOT NULL, winner_option text, result_digest char(64),
