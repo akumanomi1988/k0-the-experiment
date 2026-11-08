@@ -1,0 +1,28 @@
+name: K0 design baseline consistency
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'contracts/**'
+      - 'architecture/**'
+      - 'docs/**'
+      - 'tools/validate_design_catalogs.py'
+      - '.github/workflows/design-spec-check.yml'
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'contracts/**'
+      - 'architecture/**'
+      - 'docs/**'
+      - 'tools/validate_design_catalogs.py'
+      - '.github/workflows/design-spec-check.yml'
+jobs:
+  validate-design:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate static catalogs, IDs and contracts
+        run: python3 tools/validate_design_catalogs.py
