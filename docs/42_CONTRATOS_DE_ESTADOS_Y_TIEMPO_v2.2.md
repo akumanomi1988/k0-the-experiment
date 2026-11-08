@@ -14,11 +14,11 @@
 
 La señal de proveedor incierta NO se interpreta como LIVE. Los temporizadores de elección/voto/torneo se congelan, la economía usa perfil conservador offline cuando se confirma desconexión y, en `UNCERTAIN`, aplica la política de seguridad del capítulo 29 hasta recuperar señal. Un reinicio de OBS no cambia tiempos de economía ni estado competitivo.
 
-## Orden lógico de un tick de 5 segundos
+## Orden lógico de un tick de 5 segundos (enmienda v2.3)
 
-1. Establecer el segmento del reloj y fuente de autoridad. 2. Consumir entradas autenticadas e idempotentes en secuencia de ingesta. 3. Validar comandos y votos contra estado anterior a la frontera de cierre. 4. Aplicar gastos/compensaciones confirmados. 5. Consumir mantenimiento de alimento. 6. Calcular productividad segmentada tras hambre. 7. Limitar producción por almacenes y registrar bloqueo, sin recurso negativo. 8. Aplicar avance de obras e investigación, sin dobles cargos. 9. Evaluar misiones e hitos únicos. 10. Marcar `EraReadyPending` si llega a 100; realizar la transición solo si LIVE confirmado y no es temporada terminada. 11. Cerrar elecciones/torneos vencidos y calcular efecto una sola vez. 12. Publicar delta con secuencia de estado final.
+Prevalece el orden exacto de [doc 64](64_RELOJES_EVENTOS_Y_CONTRATOS_v2.3.md): entrada LIVE/Inbox idempotente → comandos y papeletas válidos → cierres de votos/torneos → comida/economía/XP → obras/investigación/misiones → hitos/era → ganador/maravillas → commit y deltas. El tick se particiona por fronteras reales; recibidos exactamente en el límite LIVE de cierre son rechazados. Una elección pausada **no** tiene deadline UTC absoluto fijo; computar su tiempo restante en NationLiveClock.
 
-**Fronteras:** un voto recibido exactamente en `closeUtc` no es válido; se valida `receivedUtc < closeUtc`. Para ventanas exclusivamente LIVE, el instante de cierre se deriva de segundos de LIVE acumulados, no de hora UTC estimada. Duplicados no renuevan actividad ni aportaciones. Dos avances simultáneos a Interestelar se ordenan por commit global; el siguiente ganador se registra como finalista, no segundo ganador.
+Se deriva una sola vez economyDelta a partir del intervalo real y el multiplicador 100 %/20 %. En RPS/batalla, CompetitionLiveClock avanza solo cuando las tres naciones están LIVE; pérdida de una congela tiempo y resultado global, sin votos ni sanciones ficticios.
 
 ## Identidad, experiencia y estados
 
