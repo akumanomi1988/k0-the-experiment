@@ -11,7 +11,7 @@
   "additionalProperties": false,
   "properties": {
     "schemaVersion": {
-      "const": "2.0.0"
+      "const": "2.3.0"
     },
     "status": {
       "type": "string"
@@ -37,15 +37,13 @@
         "type": "object",
         "required": [
           "nationId",
-          "bindings"
+          "bindings",
+          "factionId"
         ],
         "properties": {
           "nationId": {
-            "enum": [
-              "micelios",
-              "runicos",
-              "ferrinos"
-            ]
+            "type": "string",
+            "format": "uuid"
           },
           "bindings": {
             "type": "array",
@@ -110,6 +108,13 @@
               },
               "additionalProperties": false
             }
+          },
+          "factionId": {
+            "enum": [
+              "micelios",
+              "runicos",
+              "ferrinos"
+            ]
           }
         },
         "additionalProperties": false
