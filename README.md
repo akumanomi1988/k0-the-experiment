@@ -1,10 +1,10 @@
 # K0: The Experiment — Project CHAOS
 
-> **Documentación consolidada v2.5 — diseño de producto y desarrollo.** No existe todavía motor de videojuego funcional ni despliegue público certificado. Ni los permisos LIVE por cuenta ni el arte final ni el balance integral están validados. El repositorio es especificación y contenido, no el ejecutable de K0.
+> **Documentación consolidada — consulta la [versión vigente](CURRENT.md) antes de trabajar.** No existe todavía motor de videojuego funcional ni despliegue público certificado. Ni los permisos LIVE por cuenta ni el arte final ni el balance integral están validados. El repositorio es especificación y contenido, no el ejecutable de K0.
 
-## Fuente de verdad: v2.5
+## Fuente de verdad actual: [CURRENT.md](CURRENT.md)
 
-**[Leer la ESPECIFICACIÓN MAESTRA v2.5](v2.5/ESPECIFICACION_MAESTRA_v2.5.md)** — toda la definición vigente del producto, reglas, mecánicas, UX, diseño, personajes, estilo, infraestructura, integración y operación.
+**[Leer la ESPECIFICACIÓN MAESTRA v2.5](v2.5/ESPECIFICACION_MAESTRA_v2.5.md)** — esta revisión está activa según [CURRENT.md](CURRENT.md) y contiene toda la definición vigente del producto, reglas, mecánicas, UX, diseño, personajes, estilo, infraestructura, integración y operación.
 
 Complementos de la versión:
 

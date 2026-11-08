@@ -12,6 +12,10 @@ on:
       - 'DOCS_INDEX_v2.5.md'
       - 'tools/validate_design_catalogs.py'
       - 'tools/validate_v25_consolidation.py'
+      - 'tools/check_active_spec.py'
+      - 'data/active_documentation.json'
+      - 'CURRENT.md'
+      - 'AGENTS.md'
       - '.github/workflows/design-spec-check.yml'
   pull_request:
     paths:
@@ -32,6 +36,8 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+      - name: Check active documentation authority and semantics
+        run: python3 tools/check_active_spec.py --check
       - name: Validate static catalogs, IDs and contracts
         run: python3 tools/validate_design_catalogs.py
       - name: Validate complete v2.5 archive, lineage and documentation links

@@ -79,7 +79,9 @@
     ],
     "talentPointsPerTier": 1,
     "highestIndividualProductivityBp": 11800,
-    "activeHumanWorkersSoftCapScope": "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE"
+    "activeHumanWorkersSoftCapScope": "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE",
+    "humanQuotaAssignment": "deterministic_hash_rotation_per_profession_live_600s",
+    "humanWorkXpEligibility": "accepted_effective_work_only"
   },
   "resources": {
     "ordinary": [

@@ -66,6 +66,16 @@ Los capítulos [18](../docs/18_DECISIONES_DE_BASE_CORREGIDAS.md), [41](../docs/4
 6. **Migraciones y esquemas:** SQL 001/002/003 sigue siendo referencia, no garantía que se haya ejecutado; uniones, CHECK y contratos de proveedor deben comprobarse con DB.
 7. **Producto SaaS futuro:** pricing, tenancy, SLA y derecho comercial no son necesarios para probar el producto propio; no deben presentarse como desarrollados.
 
+## D.1 Corrección operativa de coherencia v2.5 (2026-11-08)
+
+| ID | Discrepancia detectada | Regla normativa y prueba |
+|---|---|---|
+| V25-27 | `!join` tenía precondición `registered_user` aunque crea el ciudadano | Solo requiere identidad de proveedor autenticada y canal autorizado; `!work` requiere ciudadanía ya creada. El validador comprueba ambas precondiciones. |
+| V25-28 | El capítulo 04 heredado ordenaba por antigüedad mientras el 06 proponía rotación de cupo | El cupo sigue siendo **por profesión y nación**, y se rota cada 600s LIVE con ranking hash reproducible. La XP de trabajo es cero con peso cero o tarea no aceptada. El ruleset y su JSON Schema fijan la semántica; CI la verifica. |
+| V25-29 | v2.2 y v2.5 mantenían entradas paralelas e incompatibles | `CURRENT.md` es un punto estable de lectura generado desde `data/active_documentation.json`; CI rechaza divergencias de autoridad o versión. El PR histórico v2.2 queda obsoleto y no debe fusionarse. |
+
+Las 92 decisiones y los 67 capítulos históricos se mantienen intactos. Las correcciones anteriores son definiciones de ingeniería propuestas para el baseline v2.5; no sustituyen las validaciones de motor, balance o autorizaciones externas.
+
 ## E. Procedimiento de cambios posteriores a v2.5
 
 Todo PR de cambio de norma debe incluir: identificador V25-xx / decisión 1–92 impactada; antes/después; impacto en gameplay, esquema, renderer, integraciones, seguridad, UX y arte; referencias del catálogo; migración si hay datos vivos; escenarios y pruebas; versión de reglas/hash y compatibilidad de temporada. Si es una mejora que depende de datos reales, estado PROPOSED/PENDING_VALIDATION hasta obtenerlos. Nunca modificar en caliente una temporada RUNNING por actualizar el Markdown.

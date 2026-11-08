@@ -107,7 +107,9 @@
         "startingNpcPopulation",
         "initialNpcAllocation",
         "talentLevels",
-        "activeHumanWorkersSoftCapScope"
+        "activeHumanWorkersSoftCapScope",
+        "humanQuotaAssignment",
+        "humanWorkXpEligibility"
       ],
       "properties": {
         "startingNpcPopulation": {
@@ -130,6 +132,12 @@
         },
         "activeHumanWorkersSoftCapScope": {
           "const": "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE"
+        },
+        "humanQuotaAssignment": {
+          "const": "deterministic_hash_rotation_per_profession_live_600s"
+        },
+        "humanWorkXpEligibility": {
+          "const": "accepted_effective_work_only"
         }
       },
       "additionalProperties": true

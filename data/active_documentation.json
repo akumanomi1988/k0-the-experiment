@@ -1,0 +1,10 @@
+{
+  "documentationVersion": "2.5",
+  "master": "v2.5/ESPECIFICACION_MAESTRA_v2.5.md",
+  "registry": "v2.5/REGISTRO_DE_CONSOLIDACION_v2.5.md",
+  "coverage": "v2.5/INDICE_DE_COBERTURA_v2.5.md",
+  "index": "DOCS_INDEX_v2.5.md",
+  "ruleset": "data/ruleset.v2.json",
+  "manifest": "data/content_manifest.v2.3.json",
+  "status": "DESIGN_BASELINE_NOT_IMPLEMENTED"
+}

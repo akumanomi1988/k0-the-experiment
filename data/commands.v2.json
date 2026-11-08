@@ -5,7 +5,7 @@
       "id": "join",
       "syntax": "!join",
       "arguments": [],
-      "precondition": "registered_user",
+      "precondition": "authenticated_provider_identity",
       "effect": "citizen_created_or_returned",
       "repeatSemantics": "IDEMPOTENT_PER_EVENT"
     },
@@ -15,7 +15,7 @@
       "arguments": [
         "profession"
       ],
-      "precondition": "registered_user",
+      "precondition": "registered_citizen",
       "effect": "choose_once_or_valid_same_reactivation",
       "repeatSemantics": "60_SEC_COOLDOWN"
     },
