@@ -8,7 +8,8 @@
 |---|---|---|---|---|
 | `UtcWallClock` | ms UTC | Sí | Sí | Timestamps, 2 h de actividad humana, periodos diarios/semanales |
 | `NationEconomyClock` | segundos de simulación | 100 % de tiempo real | 20 % de tiempo real | Producción, mantenimiento, autoplanner |
-| `NationLiveClock` | segundos LIVE | Sí | No | Elecciones, Consejo, prioridades, torneos, penalización territorial |
+| `NationLiveClock` | segundos LIVE | Sí | No | Elecciones, Consejo, prioridades, penalización territorial |
+| `CompetitionLiveClock` | segundos de evento | Solo con 3 naciones LIVE confirmadas a la vez | No | RPS, descansos, batallas programadas |
 | `SeasonClock` | secuencia lógica | Sí | Según evento de sistema | Orden de commits, snapshots y desempates |
 | `PresentationClock` | frames | Sí | Sí cuando render está activo | Animación/subtítulos, jamás decide recursos |
 
