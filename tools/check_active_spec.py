@@ -1,129 +1,89 @@
 #!/usr/bin/env python3
-"""Read-only CI guard for the active K0 design. --write refreshes CURRENT.md only."""
+"""Guard de una sola especificación actual. Git conserva el historial."""
 from __future__ import annotations
-import argparse
-import json
 from pathlib import Path
+import json
 import re
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+PROBLEMS: list[str] = []
 
-def read(path):
-    p = (ROOT / path).resolve()
-    if not p.is_relative_to(ROOT.resolve()):
-        raise ValueError("Path outside repository: " + path)
-    return p.read_text(encoding="utf-8")
+def check(ok: bool, message: str) -> None:
+    if not ok:
+        PROBLEMS.append(message)
 
-def load(path):
-    return json.loads(read(path))
+def load(name: str):
+    return json.loads((ROOT / name).read_text(encoding="utf-8"))
 
-def current(pointer, rules, manifest):
-    version = pointer["documentationVersion"]
-    lines = [
-        "# Documentación vigente — K0: The Experiment",
-        "",
-        "<!-- GENERADO: python3 tools/check_active_spec.py --write -->",
-        "",
-        "**Especificación documental activa: v" + version + ".** Diseño no implementado ni certificado para LIVE.",
-        "",
-        "- Norma: [" + pointer["master"] + "](" + pointer["master"] + ")",
-        "- Enmiendas: [" + pointer["registry"] + "](" + pointer["registry"] + ")",
-        "- Cobertura histórica: [" + pointer["coverage"] + "](" + pointer["coverage"] + ")",
-        "- Índice histórico: [" + pointer["index"] + "](" + pointer["index"] + ")",
-        "- Ruleset: " + pointer["ruleset"] + " (schema " + rules["schemaVersion"] + ")",
-        "- Manifiesto de catálogos: " + pointer["manifest"] + " (schema " + manifest["schemaVersion"] + ")",
-        "- Cuota humana: " + rules["citizens"]["activeHumanWorkersSoftCapScope"],
-        "- Rotación: " + rules["citizens"]["humanQuotaAssignment"],
-        "- XP de trabajo: " + rules["citizens"]["humanWorkXpEligibility"],
-        "",
-        "Contratos v2.5: nationId es UUID; factionId es slug independiente. El comando !join no requiere ciudadanía previa.",
-        "",
-        "Los 67 capítulos originales y otras versiones son fuentes históricas, no normas paralelas.",
-        "Para actualizar este archivo: python3 tools/check_active_spec.py --write. La CI ejecuta --check.",
-        "Esta CI no valida motor, arte, autorizaciones de proveedores, migraciones reales ni balance global.",
-        "",
-    ]
-    return "\n".join(lines)
-
-def validate(write=False):
-    errs=[]
-    def check(ok,msg):
-        if not ok: errs.append(msg)
-    ptr=load("data/active_documentation.json")
-    version=ptr["documentationVersion"]
-    master=ptr["master"]
-    check(master == "v" + version + "/ESPECIFICACION_MAESTRA_v" + version + ".md",
-          "Active master path/version mismatch")
-    check(ptr["registry"].startswith("v"+version+"/"), "Active registry version mismatch")
-    check(ptr["coverage"].startswith("v"+version+"/"), "Active coverage version mismatch")
-    check(ptr["index"] == "DOCS_INDEX_v"+version+".md", "Active index version mismatch")
-    dirs = [tuple(int(x) for x in match.groups()) for d in ROOT.iterdir()
-            if d.is_dir() and (match := re.fullmatch(r"v(\d+)\.(\d+)", d.name))]
-    check(bool(dirs) and version == ".".join(map(str,max(dirs))),
-          "Newer documentation version exists: update active pointer")
-    for field in ("master","registry","coverage","index","ruleset","manifest"):
-        try:
-            read(ptr[field])
-        except (OSError,ValueError) as exc:
-            errs.append(field + " missing/unsafe: " + str(exc))
-    if errs:
-        return errs
-    master_text=read(master)
-    readme=read("README.md")
-    rules=load(ptr["ruleset"])
-    schema=load("contracts/ruleset.schema.json")
-    manifest=load(ptr["manifest"])
-    commands={x["id"]:x for x in load("data/commands.v2.json")["commands"]}
-    delta=load("contracts/nation_delta.schema.json")
-    check("v"+version in master_text[:350], "Master title is not active version")
-    check("("+master+")" in readme and "(CURRENT.md)" in readme,
-          "README does not lead to current normative version")
-    check("v"+version in rules["sourcePriority"][1],
-          "Ruleset priority still names superseded documentation")
-    citizens=rules["citizens"]
-    check(citizens["activeHumanWorkersSoftCapScope"] ==
-          "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE", "Quota scope drift")
-    check(citizens["humanQuotaAssignment"] ==
-          "deterministic_hash_rotation_per_profession_live_600s", "Quota rotation drift")
-    check(citizens["humanWorkXpEligibility"] == "accepted_effective_work_only",
-          "Phantom XP policy drift")
-    required=schema["properties"]["citizens"]["required"]
-    check(all(key in required for key in
-              ("activeHumanWorkersSoftCapScope","humanQuotaAssignment",
-               "humanWorkXpEligibility")), "JSON schema does not require quota/XP semantics")
-    check("600 segundos" in master_text and "por profesión" in master_text,
-          "Master lacks quota rotation semantics")
-    check("XP de trabajo" in master_text,
-          "Master lacks accepted-effective-work XP semantics")
-    check(commands["join"]["precondition"] == "authenticated_provider_identity",
-          "!join circular prereq: citizenship should not be required")
-    check(commands["work"]["precondition"] == "registered_citizen",
-          "!work must require prior citizen registration")
+def main() -> int:
+    spec = ROOT / "docs/ESPECIFICACION.md"
+    index = ROOT / "docs/INDICE.md"
+    check(spec.is_file(), "Falta norma única docs/ESPECIFICACION.md")
+    check(index.is_file(), "Falta índice único docs/INDICE.md")
+    check(not (ROOT / "CURRENT.md").exists(), "CURRENT.md es una copia normativa duplicada")
+    check(not (ROOT / "docs/CURRENT_SPEC.md").exists(), "CURRENT_SPEC.md es copia obsoleta")
+    check(not (ROOT / "data/active_documentation.json").exists(), "Puntero de versiones documentales obsoleto")
+    check(not any(ROOT.glob("DOCS_INDEX_v*.md")), "Índice paralelo versionado")
+    check(not any(ROOT.glob("MANIFIESTO_DOCUMENTAL_v*.md")), "Manifiesto histórico duplicado")
+    check(not any(ROOT.glob("PROJECT_CHAOS_DOCUMENTACION_MAESTRA_v*.md")),
+          "Compendio histórico paralelo")
+    check(not any(p.is_dir() for p in ROOT.iterdir() if re.fullmatch(r"v\d+(?:\.\d+)*", p.name)),
+          "Carpeta versionada de documentos")
+    if not spec.exists():
+        return report()
+    txt = spec.read_text(encoding="utf-8")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    check(len(txt) > 30000, "Especificación consolidada parece truncada")
+    check("## Anexo: decisiones de consolidación" in txt and "V25-26" in txt,
+          "Decisiones de consolidación no integradas")
+    check("docs/ESPECIFICACION.md" in readme and "Git" in readme,
+          "README no declara la norma única y Git como histórico")
+    rules = load("data/ruleset.json")
+    command = {x["id"]: x for x in load("data/commands.json")["commands"]}
+    schema = load("contracts/ruleset.schema.json")
+    check(rules.get("sourcePriority", [None, None])[1] == "docs/ESPECIFICACION.md",
+          "Ruleset apunta a documento de versión obsoleta")
+    check(rules["citizens"]["activeHumanWorkersSoftCapScope"] ==
+          "PER_PROFESSION_PER_NATION_DESIGN_CANDIDATE",
+          "Cuota humana debe ser por profesión y nación")
+    check(rules["citizens"]["humanQuotaAssignment"] ==
+          "deterministic_hash_rotation_per_profession_live_600s",
+          "La cuota debe rotar de forma reproducible cada 600s LIVE")
+    check(rules["citizens"]["humanWorkXpEligibility"] ==
+          "accepted_effective_work_only",
+          "XP no puede concederse por trabajo no aceptado")
+    for field in ("activeHumanWorkersSoftCapScope", "humanQuotaAssignment",
+                  "humanWorkXpEligibility"):
+        check(field in schema["properties"]["citizens"]["required"],
+              f"Schema no exige {field}")
+    check(command["join"]["precondition"] == "authenticated_provider_identity",
+          "!join requiere identidad autenticada, no ciudadano previo")
+    check(command["work"]["precondition"] == "registered_citizen",
+          "!work requiere ciudadanía")
+    check("por profesión" in txt and "600 segundos" in txt and "XP de trabajo" in txt,
+          "Reglas de cuota y XP no sincronizadas con la especificación")
+    delta = load("contracts/nation_delta.schema.json")
     check(delta["properties"]["nationId"].get("format") == "uuid",
-          "Public nationId must be UUID in v2.5")
+          "NationId público UUID en diseño actual")
     check(set(delta["properties"]["factionId"]["enum"]) ==
-          {"micelios","runicos","ferrinos"}, "Public factionId enum drift")
+          {"micelios", "runicos", "ferrinos"}, "FactionId no es slug separado")
+    manifest = load("data/content_manifest.json")
     check(manifest["status"] == "DESIGN_CANDIDATE_NOT_HASHED_OR_RELEASED",
-          "Unreleased manifest must remain marked design candidate")
-    expected=current(ptr,rules,manifest)
-    target=ROOT/"CURRENT.md"
-    observed=target.read_text(encoding="utf-8") if target.exists() else ""
-    if observed != expected:
-        if write:
-            target.write_text(expected,encoding="utf-8")
-            print("UPDATED CURRENT.md")
-        else:
-            errs.append("CURRENT.md stale: run python3 tools/check_active_spec.py --write")
-    return errs
+          "No confundir catálogos de diseño con una release")
+    check(len(manifest["files"]) == 15, "Manifiesto activo debe cubrir los 15 catálogos")
+    for entry in manifest["files"]:
+        check((ROOT / entry["path"]).is_file(), "Catálogo ausente " + entry["path"])
+    return report()
+
+def report() -> int:
+    if PROBLEMS:
+        print(f"FAIL: {len(PROBLEMS)} problemas de autoridad")
+        for x in PROBLEMS:
+            print(" - " + x)
+        return 1
+    print("PASS: especificación única, reglas, ciudadanía, cuota e identidad actuales")
+    return 0
 
 if __name__ == "__main__":
-    parser=argparse.ArgumentParser()
-    parser.add_argument("--write",action="store_true")
-    parser.add_argument("--check",action="store_true")
-    args=parser.parse_args()
-    errors=validate(args.write)
-    if errors:
-        for error in errors: print("FAIL:",error)
-        raise SystemExit(1)
-    print("PASS: current version authority, citizenship, quota, XP and ID contracts")
-    print("NOTE: no runtime or provider access verified")
+    sys.exit(main())
