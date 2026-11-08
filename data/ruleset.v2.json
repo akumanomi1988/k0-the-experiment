@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.0.0",
+  "schemaVersion": "2.3.0",
   "rulesetId": "chaos-default-2026-11",
   "status": "DESIGN_BASELINE_CANDIDATE_NOT_IMPLEMENTED",
   "sourcePriority": [
