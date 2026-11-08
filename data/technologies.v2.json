@@ -1,5 +1,5 @@
 {
-  "status": "V2_BASELINE",
+  "status": "V2_3_DESIGN_CANDIDATE_NOT_BALANCED",
   "technologies": [
     {
       "id": "tech_paleolithic",
@@ -15,7 +15,7 @@
         "paleolithic_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
@@ -70,7 +70,7 @@
         "neolithic_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
@@ -125,7 +125,7 @@
         "copper_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
@@ -180,7 +180,7 @@
         "bronze_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
@@ -235,7 +235,7 @@
         "iron_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
@@ -290,7 +290,7 @@
         "antiquity_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
@@ -345,7 +345,7 @@
         "medieval_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
@@ -400,7 +400,7 @@
         "renaissance_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
@@ -455,7 +455,7 @@
         "industrial_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
@@ -510,7 +510,7 @@
         "modern_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
@@ -565,7 +565,7 @@
         "digital_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
@@ -620,7 +620,7 @@
         "space_research"
       ],
       "historicalPoints": 0,
-      "isRequiredForMilestone": false,
+      "isRequiredForMilestone": true,
       "autoprogressWhenKnowledgeSufficient": true
     },
     {
