@@ -1,14 +1,14 @@
 {
-  "schemaVersion": "2.3.0",
-  "manifestId": "k0-design-v2.3",
+  "schemaVersion": "2.4.0",
+  "manifestId": "k0-design-owner-decisions-2026-11-08",
   "status": "DESIGN_CANDIDATE_NOT_HASHED_OR_RELEASED",
-  "description": "Declarative list of referenced catalogs. The build computes canonical hashes; values are not claimed before compilation.",
+  "description": "Active declarative catalogs. Ruleset changes alter season hash; hashes are computed only in a validated build, not claimed here.",
   "canonicalization": {
     "algorithm": "RFC8785-JCS-for-each-JSON-file",
     "encoding": "UTF-8",
     "fileOrder": "lexicographic_path",
     "manifestDigest": "SHA256 concatenation of path + LF + hex(SHA256(canonical JSON bytes)) + LF for all season scope files in lexicographic order",
-    "rulesetHash": "SHA256 canonical JSON bytes of data/ruleset.v2.json",
+    "rulesetHash": "SHA256 canonical JSON bytes of data/ruleset.json",
     "hashingExcludes": "generated digest fields and explanatory documentation outside listed catalogs"
   },
   "files": [

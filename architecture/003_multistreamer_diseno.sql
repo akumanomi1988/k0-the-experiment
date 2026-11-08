@@ -202,6 +202,54 @@ CREATE TABLE era_mission_instances (
 -- Only 1 era mission per nation/era; must be completable via NPC. Does not
 -- repeat daily/weekly rewards. Mission content catalog still to be authored.
 
+-- Owner decisions: a viewer can belong to exactly one nation in a season.
+-- !join verifies provider identity and auto-provisions a K0 account; no interactive
+-- K0 login is needed. Cross-provider linkage requires explicit verified ownership.
+CREATE TABLE viewer_provider_account_links (
+  provider text NOT NULL CHECK(provider IN ('twitch','youtube','tiktok','simulated')),
+  provider_user_subject_hash char(64) NOT NULL,
+  account_id uuid NOT NULL REFERENCES k0_accounts(id),
+  linked_at timestamptz NOT NULL DEFAULT now(),
+  verified_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY(provider, provider_user_subject_hash)
+);
+ALTER TABLE citizens ADD COLUMN account_id uuid REFERENCES k0_accounts(id);
+-- New citizen creation MUST supply account_id, in a locked transaction.
+-- Existing rows need a backfill and conflict reconciliation before NOT NULL.
+CREATE UNIQUE INDEX ux_citizen_one_nation_per_k0_account_season
+ ON citizens(season_id,account_id) WHERE account_id IS NOT NULL;
+
+CREATE TABLE viewer_display_consents (
+  season_id uuid NOT NULL,
+  nation_id uuid NOT NULL,
+  citizen_id uuid NOT NULL,
+  alias_opt_in boolean NOT NULL DEFAULT false,
+  explicit_consent_at timestamptz,
+  revoked_at timestamptz,
+  PRIMARY KEY(season_id,nation_id,citizen_id),
+  FOREIGN KEY(season_id,nation_id,citizen_id)
+   REFERENCES citizens(season_id,nation_id,id),
+  CHECK (alias_opt_in = false OR explicit_consent_at IS NOT NULL)
+);
+-- Generated pseudonym is the default; alias exposure must check unrevoked consent.
+-- Retention policy (30d for operational records) is implemented as a reviewed job;
+-- financial/legal records may require longer. Never auto-delete accounting ledger.
+
+CREATE TABLE season_primary_departures (
+  season_id uuid PRIMARY KEY REFERENCES seasons(id),
+  primary_account_id uuid NOT NULL REFERENCES k0_accounts(id),
+  nation_id uuid NOT NULL,
+  confirmed_at timestamptz NOT NULL,
+  cancel_after timestamptz NOT NULL,
+  state text NOT NULL CHECK (state IN ('PAUSED','ABORTED')),
+  confirmed_by_account_id uuid NOT NULL REFERENCES k0_accounts(id),
+  FOREIGN KEY(season_id,nation_id) REFERENCES nations(season_id,nation_id),
+  CHECK (cancel_after = confirmed_at + interval '7 days')
+);
+-- Transactional invariant: confirmed departure moves Season to PAUSED; all
+-- economy, votes and competitive clocks pause. At cancel_after (UTC wall time)
+-- it moves to ABORTED without winner/reward. No automatic seat replacement.
+
 COMMIT;
 
 -- REQUIRED BEFORE PRODUCTION: state migration votes.OPEN↔PAUSED,
