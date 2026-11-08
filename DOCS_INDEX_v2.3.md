@@ -89,5 +89,5 @@
 
 - **[CURRENT_SPEC](docs/CURRENT_SPEC.md)**: jerarquía y decisiones v2.3 con estado DESIGN_DECIDED.
 - **[Modelo de sesión e identidad](contracts/multistreamer.v2.3.schema.json)** y **[anexo SQL de diseño](architecture/003_multistreamer_diseno_v2.3.sql)**; no son contrato compilado ni migraciones ejecutadas.
-- **[Misiones de era](data/era_missions.v2.3.json)** y **[validador de catálogos](tools/validate_design_catalogs.py)**; CI en .github/workflows/design-spec-check.yml.
+- **[Manifiesto de contenido](data/content_manifest.v2.3.json)**, **[misiones de era](data/era_missions.v2.3.json)** y **[validador de catálogos](tools/validate_design_catalogs.py)**; CI en .github/workflows/design-spec-check.yml.
 - Los streamers son emisores remotos; el backend central es autoritativo y no se instala en los tres equipos. Ver capítulos 63–67.
