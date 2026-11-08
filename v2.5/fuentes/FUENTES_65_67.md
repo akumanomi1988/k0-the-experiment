@@ -1,6 +1,6 @@
 # Fuentes íntegras v2.5 — capítulos 65–67
 
-> **Anexo de preservación literal y trazabilidad**. [Especificación consolidada](../ESPECIFICACION_MAESTRA_v2.5.md) prevalece para cualquier punto aclarado, sin reemplazar datos canónicos.
+> **Archivo de preservación de contenido completo (encabezados reindentados).** No es una segunda autoridad: la [especificación maestra](../ESPECIFICACION_MAESTRA_v2.5.md) resuelve reglas sustituidas. Los enlaces relativos del texto interno pertenecen al documento original citado; para navegar, abra ese archivo de origen.
 
 ---
 
