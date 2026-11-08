@@ -40,6 +40,11 @@ def main() -> int:
     check("data/era_missions.v2.3.json" in catalog_paths,
           "Manifest missing era mission catalog")
     rules = load("data/ruleset.v2.json")
+    rules_schema = load("contracts/ruleset.schema.json")
+    check(rules.get("schemaVersion") == rules_schema.get("properties", {}).get("schemaVersion", {}).get("const"),
+          "Ruleset schemaVersion does not match schema")
+    check(rules.get("status") == rules_schema.get("properties", {}).get("status", {}).get("const"),
+          "Ruleset status does not match schema")
     eras = load("data/eras.v2.json").get("eras", [])
     milestones = load("data/milestones.v2.json").get("milestones", [])
     techs = load("data/technologies.v2.json").get("technologies", [])
